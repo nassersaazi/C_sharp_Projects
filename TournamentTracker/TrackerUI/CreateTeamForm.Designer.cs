@@ -230,7 +230,7 @@
             this.createMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createMemberButton.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.createMemberButton.Location = new System.Drawing.Point(83, 263);
+            this.createMemberButton.Location = new System.Drawing.Point(81, 279);
             this.createMemberButton.Name = "createMemberButton";
             this.createMemberButton.Size = new System.Drawing.Size(180, 37);
             this.createMemberButton.TabIndex = 18;
