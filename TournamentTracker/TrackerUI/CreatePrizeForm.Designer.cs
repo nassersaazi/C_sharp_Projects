@@ -46,25 +46,6 @@
             orLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // createPrizeLabel
-            // 
-            this.createPrizeLabel.AutoSize = true;
-            this.createPrizeLabel.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createPrizeLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.createPrizeLabel.Location = new System.Drawing.Point(12, 9);
-            this.createPrizeLabel.Name = "createPrizeLabel";
-            this.createPrizeLabel.Size = new System.Drawing.Size(209, 50);
-            this.createPrizeLabel.TabIndex = 12;
-            this.createPrizeLabel.Text = "Create Prize";
-            // 
-            // placeNumberValue
-            // 
-            this.placeNumberValue.AccessibleName = "";
-            this.placeNumberValue.Location = new System.Drawing.Point(224, 75);
-            this.placeNumberValue.Name = "placeNumberValue";
-            this.placeNumberValue.Size = new System.Drawing.Size(171, 35);
-            this.placeNumberValue.TabIndex = 14;
-            // 
             // placeNumberLabel
             // 
             placeNumberLabel.AccessibleName = "F";
@@ -76,14 +57,6 @@
             placeNumberLabel.Size = new System.Drawing.Size(183, 37);
             placeNumberLabel.TabIndex = 13;
             placeNumberLabel.Text = "Place Number";
-            // 
-            // placeNameValue
-            // 
-            this.placeNameValue.AccessibleName = "";
-            this.placeNameValue.Location = new System.Drawing.Point(224, 147);
-            this.placeNameValue.Name = "placeNameValue";
-            this.placeNameValue.Size = new System.Drawing.Size(171, 35);
-            this.placeNameValue.TabIndex = 16;
             // 
             // placeNameLabel
             // 
@@ -97,14 +70,6 @@
             placeNameLabel.TabIndex = 15;
             placeNameLabel.Text = "Place Name";
             // 
-            // amountValue
-            // 
-            this.amountValue.AccessibleName = "";
-            this.amountValue.Location = new System.Drawing.Point(224, 219);
-            this.amountValue.Name = "amountValue";
-            this.amountValue.Size = new System.Drawing.Size(171, 35);
-            this.amountValue.TabIndex = 18;
-            // 
             // amountLabel
             // 
             amountLabel.AccessibleName = "F";
@@ -116,14 +81,6 @@
             amountLabel.Size = new System.Drawing.Size(112, 37);
             amountLabel.TabIndex = 17;
             amountLabel.Text = "Amount";
-            // 
-            // percentageValue
-            // 
-            this.percentageValue.AccessibleName = "";
-            this.percentageValue.Location = new System.Drawing.Point(224, 337);
-            this.percentageValue.Name = "percentageValue";
-            this.percentageValue.Size = new System.Drawing.Size(171, 35);
-            this.percentageValue.TabIndex = 20;
             // 
             // percentageLabel
             // 
@@ -149,6 +106,49 @@
             orLabel.TabIndex = 21;
             orLabel.Text = "-or-";
             // 
+            // createPrizeLabel
+            // 
+            this.createPrizeLabel.AutoSize = true;
+            this.createPrizeLabel.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createPrizeLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.createPrizeLabel.Location = new System.Drawing.Point(12, 9);
+            this.createPrizeLabel.Name = "createPrizeLabel";
+            this.createPrizeLabel.Size = new System.Drawing.Size(209, 50);
+            this.createPrizeLabel.TabIndex = 12;
+            this.createPrizeLabel.Text = "Create Prize";
+            // 
+            // placeNumberValue
+            // 
+            this.placeNumberValue.AccessibleName = "";
+            this.placeNumberValue.Location = new System.Drawing.Point(224, 75);
+            this.placeNumberValue.Name = "placeNumberValue";
+            this.placeNumberValue.Size = new System.Drawing.Size(171, 35);
+            this.placeNumberValue.TabIndex = 14;
+            // 
+            // placeNameValue
+            // 
+            this.placeNameValue.AccessibleName = "";
+            this.placeNameValue.Location = new System.Drawing.Point(224, 147);
+            this.placeNameValue.Name = "placeNameValue";
+            this.placeNameValue.Size = new System.Drawing.Size(171, 35);
+            this.placeNameValue.TabIndex = 16;
+            // 
+            // amountValue
+            // 
+            this.amountValue.AccessibleName = "";
+            this.amountValue.Location = new System.Drawing.Point(224, 219);
+            this.amountValue.Name = "amountValue";
+            this.amountValue.Size = new System.Drawing.Size(171, 35);
+            this.amountValue.TabIndex = 18;
+            // 
+            // percentageValue
+            // 
+            this.percentageValue.AccessibleName = "";
+            this.percentageValue.Location = new System.Drawing.Point(224, 337);
+            this.percentageValue.Name = "percentageValue";
+            this.percentageValue.Size = new System.Drawing.Size(171, 35);
+            this.percentageValue.TabIndex = 20;
+            // 
             // createPrizeButton
             // 
             this.createPrizeButton.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -164,6 +164,7 @@
             this.createPrizeButton.TabIndex = 26;
             this.createPrizeButton.Text = "Create Prize";
             this.createPrizeButton.UseVisualStyleBackColor = true;
+            this.createPrizeButton.Click += new System.EventHandler(this.createPrizeButton_Click);
             // 
             // CreatePrizeForm
             // 

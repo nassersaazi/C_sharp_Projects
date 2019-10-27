@@ -40,9 +40,9 @@
             this.addMemberButton = new System.Windows.Forms.Button();
             this.addNewMemberGroupBox = new System.Windows.Forms.GroupBox();
             this.createMemberButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cellphoneValue = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lastNameValue = new System.Windows.Forms.TextBox();
             this.firstNameValue = new System.Windows.Forms.TextBox();
             this.teamMembersListBox = new System.Windows.Forms.ListBox();
             this.deleteSelectedPlayerButton = new System.Windows.Forms.Button();
@@ -174,11 +174,11 @@
             // 
             this.addNewMemberGroupBox.AccessibleName = "";
             this.addNewMemberGroupBox.Controls.Add(this.createMemberButton);
-            this.addNewMemberGroupBox.Controls.Add(this.textBox2);
+            this.addNewMemberGroupBox.Controls.Add(this.cellphoneValue);
             this.addNewMemberGroupBox.Controls.Add(cellphoneNumberLabel);
             this.addNewMemberGroupBox.Controls.Add(this.emailTextBox);
             this.addNewMemberGroupBox.Controls.Add(EmailLabel);
-            this.addNewMemberGroupBox.Controls.Add(this.textBox1);
+            this.addNewMemberGroupBox.Controls.Add(this.lastNameValue);
             this.addNewMemberGroupBox.Controls.Add(lastNameLabel);
             this.addNewMemberGroupBox.Controls.Add(this.firstNameValue);
             this.addNewMemberGroupBox.Controls.Add(firstNameLabel);
@@ -208,29 +208,29 @@
             this.createMemberButton.Text = "Create Member";
             this.createMemberButton.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // cellphoneValue
             // 
-            this.textBox2.AccessibleName = "firstNameValue";
-            this.textBox2.Location = new System.Drawing.Point(157, 214);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 43);
-            this.textBox2.TabIndex = 16;
+            this.cellphoneValue.AccessibleName = "";
+            this.cellphoneValue.Location = new System.Drawing.Point(157, 214);
+            this.cellphoneValue.Name = "cellphoneValue";
+            this.cellphoneValue.Size = new System.Drawing.Size(171, 43);
+            this.cellphoneValue.TabIndex = 16;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.AccessibleName = "firstNameValue";
+            this.emailTextBox.AccessibleName = "";
             this.emailTextBox.Location = new System.Drawing.Point(157, 158);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(171, 43);
             this.emailTextBox.TabIndex = 14;
             // 
-            // textBox1
+            // lastNameValue
             // 
-            this.textBox1.AccessibleName = "firstNameValue";
-            this.textBox1.Location = new System.Drawing.Point(157, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 43);
-            this.textBox1.TabIndex = 12;
+            this.lastNameValue.AccessibleName = "";
+            this.lastNameValue.Location = new System.Drawing.Point(157, 103);
+            this.lastNameValue.Name = "lastNameValue";
+            this.lastNameValue.Size = new System.Drawing.Size(171, 43);
+            this.lastNameValue.TabIndex = 12;
             // 
             // firstNameValue
             // 
@@ -319,9 +319,9 @@
         private System.Windows.Forms.Button addMemberButton;
         private System.Windows.Forms.GroupBox addNewMemberGroupBox;
         private System.Windows.Forms.TextBox firstNameValue;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lastNameValue;
         private System.Windows.Forms.Button createMemberButton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox cellphoneValue;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.ListBox teamMembersListBox;
         private System.Windows.Forms.Button deleteSelectedPlayerButton;
