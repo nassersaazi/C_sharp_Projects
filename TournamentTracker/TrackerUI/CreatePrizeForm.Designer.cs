@@ -140,6 +140,7 @@
             this.amountValue.Name = "amountValue";
             this.amountValue.Size = new System.Drawing.Size(171, 35);
             this.amountValue.TabIndex = 18;
+            this.amountValue.Text = "0";
             // 
             // percentageValue
             // 
@@ -148,6 +149,7 @@
             this.percentageValue.Name = "percentageValue";
             this.percentageValue.Size = new System.Drawing.Size(171, 35);
             this.percentageValue.TabIndex = 20;
+            this.percentageValue.Text = "0";
             // 
             // createPrizeButton
             // 
