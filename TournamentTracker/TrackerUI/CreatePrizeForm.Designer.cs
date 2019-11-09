@@ -141,6 +141,7 @@
             this.amountValue.Size = new System.Drawing.Size(171, 35);
             this.amountValue.TabIndex = 18;
             this.amountValue.Text = "0";
+            this.amountValue.TextChanged += new System.EventHandler(this.amountValue_TextChanged);
             // 
             // percentageValue
             // 

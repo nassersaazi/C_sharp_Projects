@@ -88,5 +88,10 @@ namespace TrackerUI
 
             return output;
         }
+
+        private void amountValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
