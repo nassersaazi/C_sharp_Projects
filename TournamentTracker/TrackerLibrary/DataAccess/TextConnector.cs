@@ -7,11 +7,12 @@ using TrackerLibrary.DataAccess.TextHelpers;
 namespace TrackerLibrary.DataAccess
 
 {
-    public class TextConnector : IDataConnection
-
+    public class TextConnector : IDataConnection  
+    {
         private const string PrizesFile = "PrizesModel.csv";
 
-    {   // TODO - Wire up the CreatePrize for text files 
+
+        // TODO - Wire up the CreatePrize for text files 
         public PrizeModel CreatePrize(PrizeModel model)
         {
         // Load the text file and convert the text to List<prizeModel>
@@ -24,8 +25,11 @@ namespace TrackerLibrary.DataAccess
         //Add the new record with the new ID (max +1)
         prizes.Add(model);
 
-        //Convert the prizes to list<string>
-        //Save the list<string> to the text file
+            //Convert the prizes to list<string>
+            //Save the list<string> to the text file
+            prizes.SaveToPrizeFile(PrizesFile);
+
+            return model;
         }
     }
 }

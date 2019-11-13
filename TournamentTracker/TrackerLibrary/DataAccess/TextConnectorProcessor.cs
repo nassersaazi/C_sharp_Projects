@@ -1,5 +1,5 @@
 ﻿using System;
-//using System.Configuration;
+using System.Configuration;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,14 +12,14 @@ using TrackerLibrary.Models;
 //Add the new record with the new ID (max + 1)
 // Convert the prizes to list<string>
 // Save the list<string> to the text file
-
+ 
 namespace TrackerLibrary.DataAccess.TextHelpers
 {
-    public static class TextConnectorProcessor
+    public static class TextConnectorProcessor 
     {
-        public static string FullFilePath(string fileName ) //PrizeModels.csv
+        public static string FullFilePath(this string fileName ) //PrizeModels.csv
         {
-            return $"{ ConfigurationManager.AppSettings["filePath"] }\\{ fileName}"
+            return $"{ ConfigurationManager.AppSettings["filePath"] }\\{ fileName}";
         }
 
         public static List<string> LoadFile(this string file)
