@@ -10,9 +10,10 @@ namespace TrackerLibrary.DataAccess.TextHelpers
 {
     public static class TextConnectorProcessor
     {
-        public static string FullFilePath(string fileName)
+        public static string FullFilePath(this string fileName)
         {
-            return $"{ ConfigurationManager.AppSettings["filePath"] }\\{ fileName } ";
+            string path = "C:\\data\\TournamentTracker";
+            return $"{ path }\\{ fileName } ";
         }
 
         public static List<string> LoadFile(this string file)
