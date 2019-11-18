@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-4">
             <div>
-                <img class="detailImage"  src="@Model.ImageUrl"  />
+                <img class="detailImage" src="@Model.ImageUrl" />
             </div>
         </div>
         <div class="col-md-4">
@@ -18,15 +18,45 @@
             <p id="itemType">@Model.Type</p>
             <p id="itemLocation">@Model.CurrentLocation</p>
 
+            @if (Model.Status == "Lost")
+            {
+                <p>This item has been lost. It cannot be checked out</p>
+                <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="MarkFound" asp-route-id="@Model.AssetId" >Mark Item Found</a></p>
+
+
+
+            }
+
             @if (Model.Status == "Checked Out")
             {
-            <p id="itemPatron">Checked Out By: @Model.PatronName</p>
+                <p id="itemPatron">Checked Out By: @Model.PatronName</p>
+                <p><a class="btn btn-lg btn-success" role="button" asp-controller="Catalog" asp-action="CheckIn" asp-route-id="@Model.AssetId" >Check In</a></p>
+                <p><a class="btn btn-lg btn-warning" role="button" asp-controller="Catalog" asp-action="Hold" asp-route-id="@Model.AssetId" >Place Hold</a></p>
+
             }
 
             @if (Model.Status == "Available")
             {
-            <p><a class="btn btn-lg btn-info" role="button"asp-controller="Catalog" asp-action="Checkout" asp-route-id="@Model.AssetId" href="#">Check Out</a></p>
+                <p><a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="Checkout" asp-route-id="@Model.AssetId" >Check Out</a></p>
             }
+        </div>
+        <div class="col-md-4 detailInfo">
+            <div>
+                <table>
+                    <tr>
+                        <td class="itemLabel">ISBN: </td>
+                        <td class="itemValue">@Model.ISBN </td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Call Number: </td>
+                        <td class="itemValue">@Model.DeweyCallNumber </td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Replacement Cost: </td>
+                        <td class="itemValue">@Model.Cost </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
