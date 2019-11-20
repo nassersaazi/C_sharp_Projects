@@ -75,7 +75,7 @@ namespace LibraryServices
         }
 
         private void UpdateAssetStatus(int assetId, string v)
-        {
+        {   // Library asset to be retrieved from the database
             var item = _context.LibraryAssets
                 .FirstOrDefault(a => a.Id == assetId);
 
