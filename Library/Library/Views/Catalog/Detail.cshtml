@@ -73,7 +73,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                   
+                   @foreach (var checkout in Model.CheckoutHistory)
+                   {
+                       <tr>
+                           <td>
+                               @checkout.CheckedOut
+                           </td>
+                           <td>
+                               @checkout.CheckedIn
+                           </td>
+                           <td>
+                               @checkout.LibraryCard.Id
+                           </td>
+                       </tr>
+                   } 
 
                 </tbody>
             </table>
@@ -83,23 +96,37 @@
 
            
         </div>
-        <div class="col-md-4 detailInfo">
-            <div>
-                <table>
+        <div class="col-lg-6">
+            <h4>Current History</h4>
+            <table class="table-bordered table-hover table-condensed">
+                <thead>
                     <tr>
-                        <td class="itemLabel">ISBN: </td>
-                        <td class="itemValue">@Model.ISBN </td>
+                        <th>Hold Placed</th>
+                        <th>Patron</th>
+                        
                     </tr>
-                    <tr>
-                        <td class="itemLabel">Call Number: </td>
-                        <td class="itemValue">@Model.DeweyCallNumber </td>
-                    </tr>
-                    <tr>
-                        <td class="itemLabel">Replacement Cost: </td>
-                        <td class="itemValue">@Model.Cost </td>
-                    </tr>
-                </table>
-            </div>
+                </thead>
+                <tbody>
+                    @foreach (var hold in Model.CurrentHolds)
+                    {
+                        <tr>
+                            <td>
+                                @hold.HoldPlaced
+                            </td>
+                            <td>
+                                @hold.PatronName
+                            </td>
+                             
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+
+
+
+
         </div>
     </div>
 
