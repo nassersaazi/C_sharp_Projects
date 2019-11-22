@@ -88,10 +88,47 @@ rentHolds = currentHolds
             return View(model);
         }
 
+        public IActionResult Hold(int id)
+        {
+            var asset = _assets.GetbyId(id);
+            var model = new CheckoutModel
+            {
+                AssetId = id,
+                ImageUrl = asset.ImageUrl,
+                Title = asset.Title,
+                LibraryCardId = "",
+                IsCheckedOut = _checkouts.IsCheckedOut(id),
+                HoldCount = _checkouts.GetCurrentHolds(id).Count()
+            };
+
+            return View(model);
+        }
+
+        public IActionResult MarkLost(int assetId)
+        {
+            _checkouts.MarkLost(assetId);
+            return RedirectToAction("Detail", new { id = assetId });
+        }
+
+        public IActionResult MarkFound(int assetId)
+        {
+            _checkouts.MarkFound(assetId);
+            return RedirectToAction("Detail", new { id = assetId });
+        }
+
+        [HttpPost]
         public IActionResult PlaceCheckout(int assetId, int libraryCardId)
         {
             _checkouts.CheckInItem(assetId, libraryCardId);
             return RedirectToAction("Detail", new { id = assetId });
         }
+
+        [HttpPost]
+        public IActionResult PlaceHold(int assetId, int libraryCardId)
+        {
+            _checkouts.PlaceHold(assetId, libraryCardId);
+            return RedirectToAction("Detail", new { id = assetId });
+        }
+
     }
 }
