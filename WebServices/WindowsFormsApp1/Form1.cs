@@ -14,7 +14,11 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial" +
+                " Catalog=sp;Integrated Security=True";
+
         WebService1SoapClient obj;
+
         public Form1()
         {
             InitializeComponent();
@@ -60,31 +64,61 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial" +
-                " Catalog=sp;Integrated Security=True");
-            conn.Open();
-            //SqlCommand cmd = new SqlCommand("insert into users(name,type) values('"+name.Text+ "','"+type.Text+"')",conn);
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Execute spSaveDetails @name,@type";
-
-            cmd.Parameters.Add("@name", SqlDbType.VarChar, 10).Value = name.Text.ToString();
-           
-            cmd.Parameters.Add("@type", SqlDbType.VarChar, 10).Value = type.Text.ToString();
-
-            int i = cmd.ExecuteNonQuery();
-            if (i != 0 )
+            
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                MessageBox.Show("Data saved");
-            }
-            else
-            {
-                MessageBox.Show("Query didn't work you fuckin' IDIOT!!!");
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "Execute spSaveDetails @name,@type";
+
+                cmd.Parameters.Add("@name", SqlDbType.VarChar, 10).Value = name.Text.ToString();
+
+                cmd.Parameters.Add("@type", SqlDbType.VarChar, 10).Value = type.Text.ToString();
+
+                int i = cmd.ExecuteNonQuery();
+                if (i != 0)
+                {
+                    MessageBox.Show("Data saved");
+                }
+                else
+                {
+                    MessageBox.Show("Query didn't work you fuckin' IDIOT!!!");
+                }
             }
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void clientsButton_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd2 = conn.CreateCommand();
+                var x = cmd2.CommandText = "Execute spGetAllClients";
+                SqlDataAdapter da = new SqlDataAdapter(x, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgv1.DataSource = dt;
+            }
+             
+        }
+
+        private void adminsButton_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd3 = conn.CreateCommand();
+                var y = cmd3.CommandText = "Execute spGetAllAdmins";
+                SqlDataAdapter da2 = new SqlDataAdapter(y, conn);
+                DataTable dt1 = new DataTable();
+                da2.Fill(dt1);
+
+                dgv1.DataSource = dt1;
+            }
         }
     }
 }

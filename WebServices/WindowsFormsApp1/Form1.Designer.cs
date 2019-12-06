@@ -41,6 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.type = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.clientsButton = new System.Windows.Forms.Button();
+            this.adminsButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -171,11 +175,42 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Type";
             // 
+            // dgv1
+            // 
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(192, 549);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(362, 150);
+            this.dgv1.TabIndex = 13;
+            // 
+            // clientsButton
+            // 
+            this.clientsButton.Location = new System.Drawing.Point(560, 597);
+            this.clientsButton.Name = "clientsButton";
+            this.clientsButton.Size = new System.Drawing.Size(75, 23);
+            this.clientsButton.TabIndex = 14;
+            this.clientsButton.Text = "Clients";
+            this.clientsButton.UseVisualStyleBackColor = true;
+            this.clientsButton.Click += new System.EventHandler(this.clientsButton_Click);
+            // 
+            // adminsButton
+            // 
+            this.adminsButton.Location = new System.Drawing.Point(560, 626);
+            this.adminsButton.Name = "adminsButton";
+            this.adminsButton.Size = new System.Drawing.Size(75, 23);
+            this.adminsButton.TabIndex = 15;
+            this.adminsButton.Text = "Admins";
+            this.adminsButton.UseVisualStyleBackColor = true;
+            this.adminsButton.Click += new System.EventHandler(this.adminsButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 508);
+            this.ClientSize = new System.Drawing.Size(800, 749);
+            this.Controls.Add(this.adminsButton);
+            this.Controls.Add(this.clientsButton);
+            this.Controls.Add(this.dgv1);
             this.Controls.Add(this.type);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.name);
@@ -192,6 +227,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,6 +248,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox type;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.Button clientsButton;
+        private System.Windows.Forms.Button adminsButton;
     }
 }
 
