@@ -1,5 +1,5 @@
 ﻿using Library.Models.Catalog;
-using Library.Models.Checkout;
+using Library.Models.CheckoutModels;
 using LibraryData;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -66,8 +66,7 @@ namespace Library.Controllers
                 ISBN = _assets.GetIsbn(id),
                 LatestCheckOut = _checkouts.GetLatestCheckout(id),
                 PatronName = _checkouts.GetCurrentCheckoutPatron(id),
-                Cur
-rentHolds = currentHolds
+                CurrentHolds = currentHolds
             };
 
             return View(model);
@@ -119,7 +118,7 @@ rentHolds = currentHolds
         [HttpPost]
         public IActionResult PlaceCheckout(int assetId, int libraryCardId)
         {
-            _checkouts.CheckInItem(assetId, libraryCardId);
+            _checkouts.CheckOutItem(assetId, libraryCardId);
             return RedirectToAction("Detail", new { id = assetId });
         }
 
