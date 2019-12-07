@@ -23,24 +23,51 @@ namespace WebApplication1
             return "Hello World";
         }
 
+        /// <summary>
+        /// Adds two numbers
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         [WebMethod]
         public int add(int x, int y)
         {
             return (x + y);
         }
 
+
+        /// <summary>
+        /// Subtracts two numbers
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         [WebMethod]
         public int subtract(int x, int y)
         {
             return (x - y);
         }
 
+
+        /// <summary>
+        /// Multiplies two numbers
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         [WebMethod]
         public int multiply(int x, int y)
         {
             return (x * y);
         }
 
+
+        /// <summary>
+        /// Divides to numbers, in case result is a fraction ,returns zero
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         [WebMethod]
         public int divide(int x, int y)
         {
