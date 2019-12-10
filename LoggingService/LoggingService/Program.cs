@@ -24,7 +24,7 @@ namespace LoggingService
 
                 x.SetServiceName("LoggingService");
                 x.SetDisplayName("Logging Service");
-                x.SetDescription("This is the sample service that logs events every second.");
+                x.SetDescription("This is the sample service that logs events every 5 seconds.");
 
                
             });
