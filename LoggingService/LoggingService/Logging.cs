@@ -26,21 +26,19 @@ namespace LoggingService
             string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial" +
                 " Catalog=sp;Integrated Security=True"; //string of database source we are connecting to
 
-            //string[] lines = new string[] { DateTime.Now.ToString() };
+            
             string lines = DateTime.Now.ToString()  ;
-            // File.AppendAllLines(@"C:\Demos\Logs.txt", lines);
-            using (SqlConnection conn = new SqlConnection(connectionString))//usng directive helps close 
+            
+            using (SqlConnection conn = new SqlConnection(connectionString))//using directive helps close 
             //the connection in case an error occurs 
             {
                 conn.Open(); //open connection
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "Execute spLogs @date"; //stored procedure to save details
-                //cmd.CommandText = "INSERT INTO logs(date) values('29/4/2018')";
-                 cmd.Parameters.Add("@date", SqlDbType.VarChar, 50).Value =  lines;
+                
+                cmd.Parameters.Add("@date", SqlDbType.VarChar, 50).Value =  lines;
                 cmd.ExecuteNonQuery();
-
-
-                // int i = cmd.ExecuteNonQuery();
+                
             }
         }
 
