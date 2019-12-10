@@ -1,6 +1,7 @@
 ﻿using LoggingAPI.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,23 +13,52 @@ namespace LoggingAPI.Controllers
     {
         List<Logging> logs = new List<Logging>();
 
-        public LoggingController()
-        {
-            logs.Add(new Logging { Date = "2/3/19" ,Id = 1 });
-            logs.Add(new Logging { Date = "12/3/19", Id = 2 });
-            logs.Add(new Logging { Date = "23/2/19", Id = 3 });
-        }
+      //  public LoggingController()
+        //{
+          //  logs.Add(new Logging { Date = "2/3/19" ,Id = 1 });
+            //logs.Add(new Logging { Date = "12/3/19", Id = 2 });
+            //logs.Add(new Logging { Date = "23/2/19", Id = 3 });
+        //}
 
         // GET: api/Logging
         public List<Logging> Get()
         {
+            SqlConnection conn = WebApiConfig.conn();
+
+            conn.Open(); //open connection
+            SqlCommand query = conn.CreateCommand();
+            query.CommandText = "SELECT * FROM logs";
+
+            SqlDataReader fetch = query.ExecuteReader();
+
+            while (fetch.Read())
+            {
+                logs.Add(new Logging(Convert.ToInt32(fetch["id"]), fetch["date"].ToString()));
+
+            }
+
             return logs;
         }
 
         // GET: api/Logging/5
-        public string Get(int id)
+        public List<Logging> Get(int id)
         {
-            return "value";
+            SqlConnection conn = WebApiConfig.conn();
+
+            conn.Open(); //open connection
+            SqlCommand query = conn.CreateCommand();
+            query.CommandText = "SELECT * FROM logs";//select * from tbl_name order by id desc limit N;
+
+            SqlDataReader fetch = query.ExecuteReader();
+
+            while (fetch.Read())
+            {
+                logs.Add(new Logging(Convert.ToInt32(fetch["id"]), fetch["date"].ToString()));
+               
+            }
+
+            return logs;
+            // return logs.Where(x => x.Id == id).FirstOrDefault();
         }
 
         // POST: api/Logging

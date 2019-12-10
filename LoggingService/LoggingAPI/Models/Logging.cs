@@ -7,7 +7,13 @@ namespace LoggingAPI.Models
 {
     public class Logging
     {
-        public int Id { get; set; } = 0;
-        public string Date { get; set; } = "";
+        public int id { get; set; } 
+        public string date { get; set; }
+
+        public Logging(int id, string date)
+        {
+            this.id = id;
+            this.date = date;
+        }
     }
 }
