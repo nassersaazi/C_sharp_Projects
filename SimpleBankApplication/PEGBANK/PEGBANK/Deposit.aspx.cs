@@ -14,7 +14,10 @@ namespace PEGBANK
         pegbankApi.pegbank pegpay = new pegbankApi.pegbank();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Clear();
+            }
         }
 
 
@@ -26,8 +29,9 @@ namespace PEGBANK
                 string Amount = txtAmount.Text.ToString();
                 if (String.IsNullOrEmpty(AccountNumber) | String.IsNullOrEmpty(Amount))
                 {
-                    Response.Write("Please fill in all fields");
-                 
+                   
+                    depositError.Text = "Please fill in all fields!";
+                    depositError.Style.Add("color", "red");
                 }
                 else
                 {
@@ -35,7 +39,8 @@ namespace PEGBANK
                     req.AccountNumber = AccountNumber;
                     req.Amount = Int32.Parse(Amount);
                     RequestFloatsToQueue(req);
-                   
+                    Clear();
+
                     depositError.Text = "Deposited successfully!";
                     depositError.Style.Add("color", "green");
                        
@@ -44,11 +49,16 @@ namespace PEGBANK
             }
             catch (Exception)
             {
-
-               // Response.Write("An error occurred!");
+                
                 depositError.Text = "An error occurred!";
                 depositError.Style.Add("color", "red");
             }
+        }
+
+        protected void Clear()
+        {
+            TextBox1.Text = txtAmount.Text = "";
+            depositError.Text = "";
         }
 
         private void RequestFloatsToQueue(Transaction fr)

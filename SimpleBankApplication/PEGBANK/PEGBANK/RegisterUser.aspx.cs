@@ -15,7 +15,10 @@ namespace PEGBANK
         PostTransactionRequest req = new PostTransactionRequest();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Clear();
+            }
         }
 
         
@@ -46,6 +49,7 @@ namespace PEGBANK
                 {
                     registerError.Text = "";
                     string result = pegpay.RegisterClient(req);
+                    Clear();
                     registerError.Text = "Registration " + result; 
                     registerError.Style.Add("color", "green");
                 }
@@ -56,6 +60,13 @@ namespace PEGBANK
                 registerError.Style.Add("color", "red");
             }
 
+        }
+
+
+        protected void Clear()
+        {
+            txtName.Text = TextBox1.Text = TextBox2.Text = txtEmail.Text = "";
+            registerError.Text = "";
         }
     }
 }

@@ -2,14 +2,13 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    <h2>DEPOSITS</h2>
 
     <div class="row ">
 
 
         <div class="col-xl-3 col-sm-6 mb-3">
-             <asp:Label Text="" Visible="true" Font-Bold="true"
-                    class="col-sm-12 control-label" ID="depositError"  runat="server" />
+             
             <div>
                 <asp:Label Text="ACCOUNT NUMBER" Visible="true" Font-Bold="true" class="col-sm-12 control-label" ID="Label1" runat="server" />
                 <asp:TextBox ID="TextBox1" runat="server" Style="padding: 3px; max-height: 30px;" CssClass="form-control"></asp:TextBox>
@@ -30,6 +29,7 @@
 
            
         </div>
+        <asp:Label Text="" Visible="true" Font-Bold="true" class="col-sm-12 control-label" ID="depositError"  runat="server" />
 
         
     </div>

@@ -1,13 +1,12 @@
 ﻿<%@ Page Title="Withdraw" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Withdraw.aspx.cs" Inherits="PEGBANK.Withdraw" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Withdraw funds here</h2>
+    <h2>WITHDRAWS</h2>
 
     <div class="row">
          
          <div class="col-xl-3 col-sm-6 mb-3">  
-              <asp:Label Text="" Visible="true" Font-Bold="true"
-                    class="col-sm-12 control-label" ID="withrawError"  runat="server" />        
+                     
             <div >
              <asp:Label Text="ACCOUNT NUMBER" Visible="true" Font-Bold="true" class="col-sm-12 control-label"  ID="Label1"  runat="server" />
                
@@ -31,12 +30,8 @@
              </div>    
                       
         </div>
+        <asp:Label Text="" Visible="true" Font-Bold="true" class="col-sm-12 control-label" ID="withrawError"  runat="server" /> 
        
-         
-    
-         <div class="col-xl-3 col-sm-6 mb-3">        
-                 
-        </div>
      </div> 
   
     

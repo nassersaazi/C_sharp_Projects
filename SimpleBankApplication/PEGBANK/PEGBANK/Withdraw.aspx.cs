@@ -14,7 +14,10 @@ namespace PEGBANK
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Clear();
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -24,9 +27,10 @@ namespace PEGBANK
                 string AccountNumber = TextBox1.Text.ToString();
                 string Amount = txtAmount.Text.ToString();
 
-                if (String.IsNullOrEmpty(Amount))
+                if (String.IsNullOrEmpty(AccountNumber) || String.IsNullOrEmpty(Amount))
                 {
-                    Response.Write("Please fill in all fields!!"); ;
+                    withrawError.Text = "Please fill in all fields!!";
+                    withrawError.Style.Add("color", "red");
                 }
                 else
                 {
@@ -34,18 +38,25 @@ namespace PEGBANK
                     trans.AccountNumber = AccountNumber;
                     trans.Amount = Int32.Parse(Amount);
                     RequestFloatsToQueue(trans);
-                    
+                    Clear();
+
                     withrawError.Text = "Withdraw successful!";
                     withrawError.Style.Add("color", "green");
                        
                 }
 
                 }catch(Exception){
-                //Response.Write("An error occuredd");
+                
                 withrawError.Text = "An error occuredd!";
                 withrawError.Style.Add("color", "red");
             }
-            }
+        }
+
+        protected void Clear()
+        {
+            TextBox1.Text = txtAmount.Text = "";
+            withrawError.Text = "";
+        }
 
         private void RequestFloatsToQueue(Transaction fr)
         {
