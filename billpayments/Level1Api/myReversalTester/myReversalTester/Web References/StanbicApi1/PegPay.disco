@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="https://196.8.207.117/TestLeveloneApi/PegPay.asmx?wsdl" docRef="https://196.8.207.117/TestLeveloneApi/PegPay.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="https://196.8.207.117/TestLeveloneApi/PegPay.asmx" xmlns:q1="http://TestPegPayPaymentsApi/" binding="q1:PegPaySoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="https://196.8.207.117/TestLeveloneApi/PegPay.asmx" xmlns:q2="http://TestPegPayPaymentsApi/" binding="q2:PegPaySoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-</discovery>

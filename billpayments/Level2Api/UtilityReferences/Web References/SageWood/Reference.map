@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///E:/Joyce Euzebia/Joyce Euzebia/LocalWsdl/xmlvend/xmlvend-revenue-2.1.xsd" filename="xmlvend-revenue-2.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///E:/Joyce Euzebia/Joyce Euzebia/LocalWsdl/xmlvend/xmlvend.wsdl" filename="xmlvend.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///E:/Joyce Euzebia/Joyce Euzebia/LocalWsdl/xmlvend/xmlvend-base-2.1.xsd" filename="xmlvend-base-2.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///E:/Joyce Euzebia/Joyce Euzebia/LocalWsdl/xmlvend/xmlvend-meter-2.1.xsd" filename="xmlvend-meter-2.xsd" />
-  </Results>
-</DiscoveryClientResultsFile>
