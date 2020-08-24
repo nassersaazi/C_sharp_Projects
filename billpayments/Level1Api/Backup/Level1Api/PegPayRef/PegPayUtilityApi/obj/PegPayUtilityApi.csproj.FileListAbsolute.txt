@@ -1,0 +1,36 @@
+D:\My Projects\BankProjects\Pegasus Technologies Projects\OrangeGenericApi\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll.config
+D:\My Projects\BankProjects\Pegasus Technologies Projects\OrangeGenericApi\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll
+D:\My Projects\BankProjects\Pegasus Technologies Projects\OrangeGenericApi\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.pdb
+D:\My Projects\BankProjects\Pegasus Technologies Projects\OrangeGenericApi\PegPayRef\PegPayUtilityApi\obj\Debug\ResolveAssemblyReference.cache
+D:\My Projects\BankProjects\Pegasus Technologies Projects\OrangeGenericApi\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.dll
+D:\My Projects\BankProjects\Pegasus Technologies Projects\OrangeGenericApi\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.pdb
+F:\PePay\PegPayGenericApi\Api\application\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll.config
+F:\PePay\PegPayGenericApi\Api\application\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll
+F:\PePay\PegPayGenericApi\Api\application\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.pdb
+F:\PePay\PegPayGenericApi\Api\application\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\ResolveAssemblyReference.cache
+F:\PePay\PegPayGenericApi\Api\application\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.dll
+F:\PePay\PegPayGenericApi\Api\application\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.pdb
+F:\PePay\PegPayGenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll.config
+F:\PePay\PegPayGenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll
+F:\PePay\PegPayGenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.pdb
+F:\PePay\PegPayGenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\ResolveAssemblyReference.cache
+F:\PePay\PegPayGenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.dll
+F:\PePay\PegPayGenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.pdb
+E:\PePay\GenericApi\Api\GenericApi_6\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll.config
+E:\PePay\GenericApi\Api\GenericApi_6\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll
+E:\PePay\GenericApi\Api\GenericApi_6\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.pdb
+E:\PePay\GenericApi\Api\GenericApi_6\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\Api\GenericApi_6\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.dll
+E:\PePay\GenericApi\Api\GenericApi_6\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.pdb
+E:\PePay\GenericApi\Api\GenericApi\RollBack\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll.config
+E:\PePay\GenericApi\Api\GenericApi\RollBack\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll
+E:\PePay\GenericApi\Api\GenericApi\RollBack\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.pdb
+E:\PePay\GenericApi\Api\GenericApi\RollBack\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\Api\GenericApi\RollBack\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.dll
+E:\PePay\GenericApi\Api\GenericApi\RollBack\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.pdb
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll.config
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.pdb
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.dll
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.pdb

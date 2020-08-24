@@ -1,0 +1,55 @@
+﻿Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe
+Installing service LiveKCBVasUtilitySender...
+Service LiveKCBVasUtilitySender has been successfully installed.
+Creating EventLog source LiveKCBVasUtilitySender in log Application...
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe
+Uninstalling assembly 'E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe
+Removing EventLog source LiveKCBVasUtilitySender.
+Service LiveKCBVasUtilitySender is being removed from the system...
+Service LiveKCBVasUtilitySender was successfully removed from the system.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe
+Installing service LiveKCBVasUtilitySender...
+Service LiveKCBVasUtilitySender has been successfully installed.
+Creating EventLog source LiveKCBVasUtilitySender in log Application...
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe
+Uninstalling assembly 'E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe
+Removing EventLog source LiveKCBVasUtilitySender.
+Service LiveKCBVasUtilitySender is being removed from the system...
+Service LiveKCBVasUtilitySender was successfully removed from the system.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe
+Installing service LiveKCBVasUtilitySender...
+Service LiveKCBVasUtilitySender has been successfully installed.
+Creating EventLog source LiveKCBVasUtilitySender in log Application...
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilitySender\LiveKCBVasUtilitySender\bin\Debug\LiveKCBVasUtilitySender.exe

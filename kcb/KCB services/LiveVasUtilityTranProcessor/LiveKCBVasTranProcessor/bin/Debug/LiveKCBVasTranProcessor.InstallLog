@@ -1,0 +1,225 @@
+﻿Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe assembly.
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe assembly.
+Remove InstallState file because there are no installers.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe assembly.
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe assembly.
+Remove InstallState file because there are no installers.
+Uninstalling assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Removing EventLog source LiveKCBVasTranProcessor.
+Warning: The source LiveKCBVasTranProcessor is not registered on the local machine.
+Service LiveKCBVasTranProcessor is being removed from the system...
+An exception occurred during the uninstallation of the System.ServiceProcess.ServiceInstaller installer.
+System.ComponentModel.Win32Exception: The specified service does not exist as an installed service
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Rolling back assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Rolling back assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Rolling back assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Rolling back assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing service LiveKCBVasTranProcessor...
+Service LiveKCBVasTranProcessor has been successfully installed.
+Creating EventLog source LiveKCBVasTranProcessor in log Application...
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Uninstalling assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Removing EventLog source LiveKCBVasTranProcessor.
+Service LiveKCBVasTranProcessor is being removed from the system...
+Service LiveKCBVasTranProcessor was successfully removed from the system.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing service LiveKCBVasTranProcessor...
+Service LiveKCBVasTranProcessor has been successfully installed.
+Creating EventLog source LiveKCBVasTranProcessor in log Application...
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Uninstalling assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Removing EventLog source LiveKCBVasTranProcessor.
+Service LiveKCBVasTranProcessor is being removed from the system...
+Service LiveKCBVasTranProcessor was successfully removed from the system.
+Attempt to stop service LiveKCBVasTranProcessor.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing service LiveKCBVasTranProcessor...
+Creating EventLog source LiveKCBVasTranProcessor in log Application...
+Rolling back assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Restoring event log to previous state for source LiveKCBVasTranProcessor.
+Uninstalling assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Removing EventLog source LiveKCBVasTranProcessor.
+Warning: The source LiveKCBVasTranProcessor is not registered on the local machine.
+Service LiveKCBVasTranProcessor is being removed from the system...
+Service LiveKCBVasTranProcessor was successfully removed from the system.
+Attempt to stop service LiveKCBVasTranProcessor.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing service LiveKCBVasTranProcessor...
+Creating EventLog source LiveKCBVasTranProcessor in log Application...
+Rolling back assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Restoring event log to previous state for source LiveKCBVasTranProcessor.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing service LiveKCBVasTranProcessor...
+Creating EventLog source LiveKCBVasTranProcessor in log Application...
+Rolling back assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Restoring event log to previous state for source LiveKCBVasTranProcessor.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing service LiveKCBVasTranProcessor...
+Service LiveKCBVasTranProcessor has been successfully installed.
+Creating EventLog source LiveKCBVasTranProcessor in log Application...
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Uninstalling assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Removing EventLog source LiveKCBVasTranProcessor.
+Service LiveKCBVasTranProcessor is being removed from the system...
+Service LiveKCBVasTranProcessor was successfully removed from the system.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing service LiveKCBVasUtilityTranProcessor...
+Service LiveKCBVasUtilityTranProcessor has been successfully installed.
+Creating EventLog source LiveKCBVasUtilityTranProcessor in log Application...
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Uninstalling assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Removing EventLog source LiveKCBVasUtilityTranProcessor.
+Service LiveKCBVasUtilityTranProcessor is being removed from the system...
+Service LiveKCBVasUtilityTranProcessor was successfully removed from the system.
+Attempt to stop service LiveKCBVasUtilityTranProcessor.
+Installing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe
+Installing service LiveKCBVasUtilityTranProcessor...
+Service LiveKCBVasUtilityTranProcessor has been successfully installed.
+Creating EventLog source LiveKCBVasUtilityTranProcessor in log Application...
+Committing assembly 'E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.InstallLog
+   assemblypath = E:\nasser\kcb\KCB services\LiveVasUtilityTranProcessor\LiveKCBVasTranProcessor\bin\Debug\LiveKCBVasTranProcessor.exe

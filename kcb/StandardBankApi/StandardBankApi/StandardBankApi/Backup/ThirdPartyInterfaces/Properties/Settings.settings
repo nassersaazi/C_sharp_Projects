@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ThirdPartyInterfaces.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ThirdPartyInterfaces_PegPay_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:8896/LivePegPayApi/PegPay.asmx</Value>
+    </Setting>
+    <Setting Name="ThirdPartyInterfaces_PegPayTelecomsApi_PegPayTelecomsApi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://192.168.55.20:8002/LivePegPayTelecomsApi/PegPayTelecomsApi.asmx</Value>
+    </Setting>
+    <Setting Name="ThirdPartyInterfaces_MerchantApi_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.55.21:5099/LiveCoreMerchantApi/Service.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

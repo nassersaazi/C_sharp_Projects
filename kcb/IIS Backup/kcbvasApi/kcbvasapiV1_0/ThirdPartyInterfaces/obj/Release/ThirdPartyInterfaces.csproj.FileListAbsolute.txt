@@ -1,0 +1,7 @@
+E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\bin\Release\ThirdPartyInterfaces.dll.config
+E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\bin\Release\ThirdPartyInterfaces.dll
+E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\bin\Release\ThirdPartyInterfaces.XmlSerializers.dll
+E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\bin\Release\ThirdPartyInterfaces.pdb
+E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\obj\Release\ThirdPartyInterfaces.dll
+E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\obj\Release\ThirdPartyInterfaces.pdb
+E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\obj\Release\ThirdPartyInterfaces.XmlSerializers.dll

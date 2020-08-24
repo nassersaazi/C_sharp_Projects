@@ -1,0 +1,6 @@
+E:\nasser\kcb\kcbTester\kcbTester\bin\Debug\kcbTester.exe.config
+E:\nasser\kcb\kcbTester\kcbTester\bin\Debug\kcbTester.exe
+E:\nasser\kcb\kcbTester\kcbTester\bin\Debug\kcbTester.pdb
+E:\nasser\kcb\kcbTester\kcbTester\obj\Debug\kcbTester.csprojResolveAssemblyReference.cache
+E:\nasser\kcb\kcbTester\kcbTester\obj\Debug\kcbTester.exe
+E:\nasser\kcb\kcbTester\kcbTester\obj\Debug\kcbTester.pdb

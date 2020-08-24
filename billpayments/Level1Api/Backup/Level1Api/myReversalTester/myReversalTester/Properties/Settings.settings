@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="myReversalTester.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="myReversalTester_UmemeApi_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://41.84.196.234:4044/umemebillinterface/EPayment.asmx</Value>
+    </Setting>
+    <Setting Name="myReversalTester_InterSwitchApi_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:11718/Level2Api/PegPay.asmx</Value>
+    </Setting>
+    <Setting Name="myReversalTester_StanbicApi1_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://196.8.207.117/TestLeveloneApi/PegPay.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

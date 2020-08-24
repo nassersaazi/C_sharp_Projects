@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://mail.nwsc.co.ug/nwscbillinginterface/nwscbillinginterface.asmx?wsdl" docRef="https://mail.nwsc.co.ug/nwscbillinginterface/nwscbillinginterface.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://mail.nwsc.co.ug/nwscbillinginterface/nwscbillinginterface.asmx" xmlns:q1="http://NWSCBillingInterface/" binding="q1:NWSCBillingInterfaceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://mail.nwsc.co.ug/nwscbillinginterface/nwscbillinginterface.asmx" xmlns:q2="http://NWSCBillingInterface/" binding="q2:NWSCBillingInterfaceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="8" virtualPath="/StandardBankApi/global.asax" hash="ffffffff8f5a280a" filehash="3f3b9cdff8b" flags="150000" assembly="App_global.asax" type="ASP.global_asax">
+    <filedeps>
+        <filedep name="/StandardBankApi/global.asax" />
+    </filedeps>
+</preserve>

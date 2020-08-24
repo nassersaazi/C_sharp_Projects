@@ -1,0 +1,15 @@
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\bin\Debug\myReversalTester.exe.config
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\bin\Debug\myReversalTester.exe
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\bin\Debug\myReversalTester.pdb
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\obj\Debug\myReversalTester.exe
+C:\Users\fkiranda\Documents\Visual Studio 2005\Projects\myReversalTester\myReversalTester\obj\Debug\myReversalTester.pdb
+C:\Users\Aluganga\Documents\Visual Studio 2005\myReversalTester\myReversalTester\bin\Debug\myReversalTester.exe.config
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\myReversalTester\myReversalTester\bin\Debug\myReversalTester.exe.config
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\myReversalTester\myReversalTester\obj\Debug\myReversalTester.exe
+E:\PePay\GenericApi\Api\GenericApi\Level1Api\myReversalTester\myReversalTester\obj\Debug\myReversalTester.pdb
