@@ -1,0 +1,69 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Level2Api(3)", "Level2Api\", "{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}|UtilityReferences.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Level2Api"
+		Debug.AspNetCompiler.PhysicalPath = "Level2Api\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Level2Api\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Level2Api"
+		Release.AspNetCompiler.PhysicalPath = "Level2Api\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Level2Api\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "27831"
+		SlnRelativePath = "Level2Api\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityReferences", "UtilityReferences\UtilityReferences.csproj", "{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Debug|.NET.Build.0 = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Release|.NET.ActiveCfg = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Release|.NET.Build.0 = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7BBB0EB5-491A-4E5B-A727-49B09F37CDBB}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Release|.NET.ActiveCfg = Release|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3DFF9758-CCDA-462D-9834-C2F141B4ACA3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B685AFC-D733-428F-A074-6A1228EC17C3}
+	EndGlobalSection
+EndGlobal

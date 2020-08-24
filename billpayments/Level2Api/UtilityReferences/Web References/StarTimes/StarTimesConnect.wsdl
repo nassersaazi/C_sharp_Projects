@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://haiwai.model.sms.star.com" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://model.service.sms.star.com" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://haiwai.model.sms.star.com" />
+      <s:import namespace="http://model.service.sms.star.com" />
+      <s:element name="GetStarTimesCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStarTimesCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStarTimesCustomerDetailsResult" type="s1:SubscriberQueryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queryNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerDetailsResult" type="s2:BalanceInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessRechargePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transaction" type="tns:StarTimesTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StarTimesTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Bouquet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FeeSpecified" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reversal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranIdToReverse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorTransactionRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProcessRechargePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessRechargePaymentResult" type="s1:ThirdPartnerRes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessStarTimesPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transaction" type="tns:StarTimesTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessStarTimesPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessStarTimesPaymentResult" type="tns:PaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaymentResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://haiwai.model.sms.star.com">
+      <s:complexType name="SubscriberQueryResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="balance" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="canOrderProductInfos" nillable="true" type="s1:ArrayOfProductInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="customerName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderedProductsDesc" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="returnCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="returnMsg" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="smartCardCode" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subscriberStatus" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="transactionlNo" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductInfo" nillable="true" type="s1:ProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="productDesc" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="productNo" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ThirdPartnerRes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="returnCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="returnMsg" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="transactionlNo" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://model.service.sms.star.com">
+      <s:complexType name="BalanceInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TELDealID" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="balance" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="billAmount" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="customerCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="customerName" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="payType" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="returnCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="returnMsg" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="smartCardCode" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStarTimesCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStarTimesCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetStarTimesCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStarTimesCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessRechargePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessRechargePayment" />
+  </wsdl:message>
+  <wsdl:message name="ProcessRechargePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessRechargePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessStarTimesPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessStarTimesPayment" />
+  </wsdl:message>
+  <wsdl:message name="ProcessStarTimesPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessStarTimesPaymentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StarTimesConnectSoap">
+    <wsdl:operation name="GetStarTimesCustomerDetails">
+      <wsdl:input message="tns:GetStarTimesCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:GetStarTimesCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <wsdl:input message="tns:GetCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:GetCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRechargePayment">
+      <wsdl:input message="tns:ProcessRechargePaymentSoapIn" />
+      <wsdl:output message="tns:ProcessRechargePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessStarTimesPayment">
+      <wsdl:input message="tns:ProcessStarTimesPaymentSoapIn" />
+      <wsdl:output message="tns:ProcessStarTimesPaymentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StarTimesConnectSoap" type="tns:StarTimesConnectSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStarTimesCustomerDetails">
+      <soap:operation soapAction="http://tempuri.org/GetStarTimesCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <soap:operation soapAction="http://tempuri.org/GetCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRechargePayment">
+      <soap:operation soapAction="http://tempuri.org/ProcessRechargePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessStarTimesPayment">
+      <soap:operation soapAction="http://tempuri.org/ProcessStarTimesPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StarTimesConnectSoap12" type="tns:StarTimesConnectSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStarTimesCustomerDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetStarTimesCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRechargePayment">
+      <soap12:operation soapAction="http://tempuri.org/ProcessRechargePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessStarTimesPayment">
+      <soap12:operation soapAction="http://tempuri.org/ProcessStarTimesPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StarTimesConnect">
+    <wsdl:port name="StarTimesConnectSoap" binding="tns:StarTimesConnectSoap">
+      <soap:address location="http://localhost:8020/StartimesConnect/StarTimesConnect.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StarTimesConnectSoap12" binding="tns:StarTimesConnectSoap12">
+      <soap12:address location="http://localhost:8020/StartimesConnect/StarTimesConnect.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://kyupay.kyu.ac.ug/epay?wsdl" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://kyupay.kyu.ac.ug/epay?wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://kyupay.kyu.ac.ug/epay?wsdl">
+      <xsd:element name="ValidateRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="RequestReferenceNo" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="RequestState" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="RequestSignature" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="RequestSourceId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ValidateRequestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="ValidateRequestResult" type="tns:ValidateResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ValidateResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="RequestReferenceNo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="AuthToken" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EntityTitle" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SerialNo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Amount" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="Status" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="Message" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CommitRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="RequestReferenceNo" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="RequestState" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="RequestTransactionId" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="AuthToken" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="Amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="Branch" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="PaymentType" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="ChequeNo" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="ValueDate" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="Date" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CommitRequestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="CommitRequestResponseResult" type="tns:CommitResp" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CommitResp">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="RequestReferenceNo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="RequestTransactionId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Message" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateRequest" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitRequest" />
+  </wsdl:message>
+  <wsdl:message name="CommitRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="KyuPay">
+    <wsdl:operation name="ValidateRequest">
+      <wsdl:input message="tns:ValidateRequestSoapIn" />
+      <wsdl:output message="tns:ValidateRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitRequest">
+      <wsdl:input message="tns:CommitRequestSoapIn" />
+      <wsdl:output message="tns:CommitRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KyuPay" type="tns:KyuPay">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateRequest">
+      <soap:operation soapAction="https://kyupay.kyu.ac.ug/epay/ValidateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitRequest">
+      <soap:operation soapAction="https://kyupay.kyu.ac.ug/epay/CommitRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EPayment">
+    <wsdl:port name="KyuPay" binding="tns:KyuPay">
+      <soap:address location="https://kyupay.kyu.ac.ug/epay" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

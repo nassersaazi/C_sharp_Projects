@@ -1,0 +1,1752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:i0="http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema" xmlns="http://www.w3.org/2001/XMLSchema">
+  <annotation>
+    <documentation> Hand coded XML Schema for NRS Prepaid Utility Vending Service defining base
+			(common) library for the Vending Markup Language (XMLVend) for SOAP request and response
+			messages [*** WS-I Compliant *** see http://www.ws-i.org] 
+			
+			Version Number Date Namespace
+			2.0 October 2005 http://www.nrs.eskom.co.za/xmlvend/base/2.0/schema
+			2.1 February 2006 http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema
+		</documentation>
+  </annotation>
+  <element name="adviceReq" type="i0:AdviceReq">
+    <annotation>
+      <documentation> System generated client request message to advise the server of the
+				outcome of a use case on the client. </documentation>
+    </annotation>
+  </element>
+  <element name="getOrderStatusReq" type="i0:GetOrderStatusReq">
+    <annotation>
+      <documentation> System generated client request message to advise the server of the
+				outcome of a use case on the client. </documentation>
+    </annotation>
+  </element>
+  <element name="sendTokenReq" type="i0:AdviceReq">
+    <annotation>
+      <documentation> System generated client request message to advise the server of the
+				outcome of a use case on the client. </documentation>
+    </annotation>
+  </element>
+  <complexType name="AdviceReq" abstract="true">
+    <annotation>
+      <documentation> Request must be extended to advise the server to take an appropriate
+				action based on the outcome of previous use case on the client. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BaseReq">
+        <sequence>
+          <element name="adviceReqMsgID" type="i0:MsgID">
+            <annotation>
+              <documentation> The original request MsgID that is being advised.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="adviceResp" type="i0:AdviceResp">
+    <annotation>
+      <documentation> Server response message to a advice request message. </documentation>
+    </annotation>
+  </element>
+  <complexType name="AdviceResp" abstract="true">
+    <annotation>
+      <documentation> Response to advice request. Confirming that the advice has been
+				processed by the server. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BaseResp">
+        <sequence>
+          <element name="adviceReqMsgID" type="i0:MsgID">
+            <annotation>
+              <documentation> The original request MsgID that has been advised.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="sendTokenResp" type="i0:SendTokenResp">
+    <annotation>
+      <documentation> Server response message to a advice request message. </documentation>
+    </annotation>
+  </element>
+  <complexType name="SendTokenResp" abstract="true">
+    <sequence>
+      <element name="SendTokenReqMsgID" type="i0:MsgID" />
+      <element name="Status" type="string" />
+      <element name="Msg" type="string" />
+    </sequence>
+  </complexType>
+  <element name="getOrderStatusResp" type="i0:GetOrderStatusResp">
+    <annotation>
+      <documentation> Server response message to a advice request message. </documentation>
+    </annotation>
+  </element>
+  <complexType name="GetOrderStatusResp">
+    <sequence>
+      <element name="Orderid" type="string" />
+      <element name="Status" type="string" />
+      <element name="Msg" type="string" />
+    </sequence>
+  </complexType>
+  <element name="xmlvendFaultResp" type="i0:XMLVendFaultResp">
+    <annotation>
+      <documentation> Response to a XMLVend exception, business rule exception or a system
+				exception that occurs on the server when processing any other request.
+			</documentation>
+    </annotation>
+  </element>
+  <complexType name="XMLVendFaultResp">
+    <annotation>
+      <documentation> Response to a XMLVend exception or business rule exception that occurs
+				on the server when processing any other request. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BaseResp">
+        <sequence>
+          <element name="fault" type="i0:Fault" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ConfirmationAdviceReq">
+    <annotation>
+      <documentation> Advice specialisation, used to by the client to confirm that a previous
+				used case has been completed successfully. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:AdviceReq">
+        <sequence>
+          <element minOccurs="0" name="payType" type="i0:PayType">
+            <annotation>
+              <documentation> Used to advise the server of the pay type that was used
+								in the transaction. That is, the pay type may not have been
+								available in the original request. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ReversalAdviceReq">
+    <annotation>
+      <documentation> Advise specialisation, used to advise the server that the previous
+				transaction was not successfully completed on the client and the server should
+				reverse the transaction. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:AdviceReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="GetOrderStatusReq">
+    <annotation>
+      <documentation> Advise specialisation, used to advise the server the server to resend
+				the last response to the last client request, as the transaction was not
+				successfully completed on the client. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:AdviceReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="LastRespAdviceReq">
+    <annotation>
+      <documentation> Advise specialisation, used to advise the server the server to resend
+				the last response to the last client request, as the transaction was not
+				successfully completed on the client. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:AdviceReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="ConfirmationAdviceResp">
+    <annotation>
+      <documentation> Response to confirmation advice. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:AdviceResp">
+        <attribute name="txConfirmed" type="boolean" use="required">
+          <annotation>
+            <documentation> true - transaction confirmed, false - transaction could not
+							be confirmed. </documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ReversalAdviceResp">
+    <complexContent mixed="false">
+      <extension base="i0:AdviceResp">
+        <attribute name="txReversed" type="boolean" use="required">
+          <annotation>
+            <documentation> true - transaction reverse on server, false - transaction
+							could not be reversed on server. </documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LastRespAdviceResp">
+    <annotation>
+      <documentation> Response to lastResponse advice request, contains the complete last
+				response message sent by the server to this client. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:AdviceResp">
+        <sequence>
+          <element name="lastResponse" type="i0:BaseResp">
+            <annotation>
+              <documentation> The complete last response message that was requested.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AuthCred">
+    <annotation>
+      <documentation> Provides operator authentication data to the server from the client.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="opName" type="i0:OpName" />
+      <element minOccurs="0" name="password" type="i0:Password" />
+      <element minOccurs="0" name="newPassword" type="i0:Password">
+        <annotation>
+          <documentation> A new pass phrase that will replace the one specified in the
+						"password" field. </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="BaseResp">
+    <annotation>
+      <documentation> Returned in every response and defines the response message context.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="clientID" type="i0:DeviceID">
+        <annotation>
+          <documentation> This identifier is used to uniquely identify the vending client
+						that initiated a use case. If client side X509 certificates are used, then
+						the identifier must match the subject field specified in the certificate.
+						This identifier is usually mapped to a specific vendor account registered on
+						the vending server. The clientID may also be mapped to CDU ID for legacy
+						purposes. </documentation>
+        </annotation>
+      </element>
+      <element name="serverID" type="i0:DeviceID">
+        <annotation>
+          <documentation> This identifier is used to uniquely identify the vending server.
+						If server side X509 certificates are used, then the identifier must match
+						the subject field specified in the certificate. </documentation>
+        </annotation>
+      </element>
+      <element name="terminalID" type="i0:DeviceID">
+        <annotation>
+          <documentation> This identifier is used to identify the vending terminal that
+						initiated the use case. If the vending client also is a terminal then the
+						terminalID must default to "1". </documentation>
+        </annotation>
+      </element>
+      <element name="reqMsgID" type="i0:MsgID">
+        <annotation>
+          <documentation> This field contains the "msgID" that was created in the
+						corresponding request message. </documentation>
+        </annotation>
+      </element>
+      <element name="respDateTime" type="dateTime">
+        <annotation>
+          <documentation> The date time stamp of when the response was
+					created.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="dispHeader" type="i0:Msg">
+        <annotation>
+          <documentation> A message targeted at the operator e.g. "Vendor credit limit is
+						about to be reached". </documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="operatorMsg" type="i0:Msg">
+        <annotation>
+          <documentation> A message targeted at the operator e.g. "Vendor credit limit is
+						about to be reached". </documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="custMsg" type="i0:Msg">
+        <annotation>
+          <documentation> A message targeted at the customer e.g. "Your FBE token for
+						the current month has not been claimed." </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="BaseReq">
+    <annotation>
+      <documentation> Present in all requests, defines the request message context.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="clientID" type="i0:DeviceID" />
+      <element name="terminalID" type="i0:DeviceID" />
+      <element name="msgID" type="i0:MsgID">
+        <annotation>
+          <documentation> This is a identify for the request message. It is should be
+						unique across the system, when combined with the clientID. </documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="authCred" type="i0:AuthCred" />
+    </sequence>
+  </complexType>
+  <complexType name="BaseVendReq">
+    <complexContent mixed="false">
+      <extension base="i0:BaseReq">
+        <sequence>
+          <element name="resource" type="i0:Resource" />
+          <element name="idMethod" type="i0:VendIDMethod" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BaseVendResp">
+    <complexContent mixed="false">
+      <extension base="i0:BaseResp">
+        <sequence>
+          <element name="clientStatus" type="i0:ClientStatus" />
+          <element name="utility" type="i0:UtilityDetail" />
+          <element minOccurs="0" name="vendor" type="i0:VendorDetail" />
+          <element minOccurs="0" name="custVendDetail" type="i0:CustVendDetail">
+            <annotation>
+              <documentation> Details about the customer that "owns" the meter.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BatchStatus">
+    <annotation>
+      <documentation> Reports the status (open / closed) of the all the batches.
+			</documentation>
+    </annotation>
+    <attribute name="banking" type="i0:BatchStatusType" use="required" />
+    <attribute name="sales" type="i0:BatchStatusType" use="required" />
+    <attribute name="shift" type="i0:BatchStatusType" use="required" />
+  </complexType>
+  <complexType name="ClientStatus">
+    <annotation>
+      <documentation> The server state in terms of the client's credit and batch statuses.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="availCredit" type="i0:Currency">
+        <annotation>
+          <documentation> The current vendor credit that is available for further
+						transactions. </documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="batchStatus" type="i0:BatchStatus" />
+    </sequence>
+  </complexType>
+  <complexType name="CustIdentifier" abstract="true" />
+  <complexType name="CustName">
+    <annotation>
+      <documentation> Contains the name of the customer - used as a search string.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CustIdentifier">
+        <sequence>
+          <element name="name" type="i0:PersonName" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CustAddress">
+    <annotation>
+      <documentation> Contains the address of the customer - used as a search string.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CustIdentifier">
+        <sequence>
+          <element name="address" type="i0:Address" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CustAccountNo">
+    <annotation>
+      <documentation> Contains the account number of the customer with a specific
+				organisation, usually the Utility - used as a search string. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CustIdentifier">
+        <sequence>
+          <element minOccurs="0" name="organisation" type="i0:OrganisationName" />
+        </sequence>
+        <attribute name="accNo" type="i0:AccountNo" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CustIDNumber">
+    <annotation>
+      <documentation> Contains the government issued identity number of the customer - used as
+				a search string. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CustIdentifier">
+        <attribute name="idNo" type="i0:IDNo" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CustDetail">
+    <annotation>
+      <documentation> Contains the details of customer. </documentation>
+    </annotation>
+    <attribute name="name" type="i0:PersonName" use="required" />
+    <attribute name="address" type="i0:Address" use="required" />
+    <attribute name="contactNo" type="i0:ContactNo" use="optional" />
+    <attribute name="accNo" type="i0:AccountNo" use="optional" />
+    <attribute name="locRef" type="i0:LocRef" use="optional">
+      <annotation>
+        <documentation> Contains an alternative reference to the customer location, such
+						as a Erf number. </documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="CustVendDetail">
+    <complexContent mixed="false">
+      <extension base="i0:CustDetail">
+        <attribute name="daysLastPurchase" type="integer" use="optional">
+          <annotation>
+            <documentation> The number of days since the customer last purchased a
+								token. Typically used to calculate the service charge applicable.
+							</documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Currency">
+    <annotation>
+      <documentation> Contains the amount and currency symbol. </documentation>
+    </annotation>
+    <attribute name="value" type="decimal" use="required" />
+    <attribute name="symbol" type="i0:CurrencySymbol" use="required">
+      <annotation>
+        <documentation> The symbol of the currency used, as per ISO 4217. </documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="DeviceID" abstract="true">
+    <annotation>
+      <documentation> Abstract identifier for the client, server or terminal. </documentation>
+    </annotation>
+  </complexType>
+  <complexType name="EANDeviceID">
+    <annotation>
+      <documentation> The EAN is simply a 13-digit number used to uniquely identify the
+				client, server or terminal. Its basic components are: An EAN.UCC Company Prefix, a
+				Location Reference and a Check Digit. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:DeviceID">
+        <attribute name="ean" type="i0:EAN" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GenericDeviceID">
+    <annotation>
+      <documentation> This is a generic identifier, that may be used to identifier a client,
+				server or terminal. It is however recommended that it be used for terminals only and
+				EAN's used for clients and servers. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:DeviceID">
+        <attribute name="id" type="i0:Msg" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MeterSpecificTokenIssue" abstract="true">
+    <annotation>
+      <documentation>Token information for a specific meter. </documentation>
+    </annotation>
+    <sequence>
+      <element name="desc" type="i0:Msg">
+        <annotation>
+          <documentation>
+						Description of the meter specific token issue, eg. Prepayment Sale, Key Change 
+					</documentation>
+        </annotation>
+      </element>
+      <element name="meterDetail" type="i0:MeterDetail">
+        <annotation>
+          <documentation> Details about the meter where the token will be entered. In the
+						case of KCTokenIssue, it will be contain the updated (To) meter key data.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="token" type="i0:Token">
+        <annotation>
+          <documentation> The cipher that will be entered into the meter as per the AT of
+						the meter. </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="CreditTokenIssue">
+    <annotation>
+      <documentation> Information that is returned with all credit tokens that are vended by
+				the server. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificTokenIssue">
+        <sequence>
+          <element name="units" type="i0:Units" />
+          <element name="resource" type="i0:Resource">
+            <annotation>
+              <documentation> The type of resource being vended, e.g. Electricity,
+								water... </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SaleCredTokenIssue">
+    <annotation>
+      <documentation>
+				Credit Token issue returned for a normal prepayment sale token. Maps to transaction type, 000 - Prepayment Sale, NRS009-3.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CreditTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="FBECredTokenIssue">
+    <annotation>
+      <documentation>
+				Credit Token issue returned for a free basic electricity token. Maps to transaction type, 010 - FBE token, NRS009-3.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CreditTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="FreeCredTokenIssue">
+    <annotation>
+      <documentation>
+				Credit Token issue returned for a free token. Maps to transaction type, 005 - Free Issue, NRS009-3.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CreditTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="MCTCredTokenIssue">
+    <annotation>
+      <documentation>
+				Credit Token issue returned for a meter credit transfer token. Maps to transaction type, 003 - Replacement, NRS009-3.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CreditTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="MeterSpecificEngTokenIssue" abstract="true">
+    <annotation>
+      <documentation> Generic Meter specific engineering token issue. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="KCTokenIssue">
+    <annotation>
+      <documentation> Information returned with all Key Change Token issues. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngTokenIssue">
+        <sequence>
+          <element name="kctData" type="i0:KCTData">
+            <annotation>
+              <documentation> The FROM and TO meter key data. </documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="pwrLmtToken" type="i0:PwrLmtTokenIssue">
+            <annotation>
+              <documentation> A power limit token that matches the specific tariff
+								index that is being updated. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PwrLmtTokenIssue">
+    <annotation>
+      <documentation> Details of the power limit token being issued. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngTokenIssue">
+        <sequence>
+          <element name="pwrLmt" type="i0:PwrLmt">
+            <annotation>
+              <documentation> The power limit value that the meter will be set to.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PhUnbalTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngTokenIssue">
+        <sequence>
+          <element name="pwrLmt" type="i0:PwrLmt" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ClearCreditTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="ClearTamperTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="WaterFactorTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngTokenIssue">
+        <sequence>
+          <element name="waterFactor" type="i0:WaterFactor" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="IDMethod" abstract="true" />
+  <complexType name="CustIDMethod">
+    <annotation>
+      <documentation> Identifier used to identify the customer. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:IDMethod">
+        <sequence>
+          <element name="custIdentifier" type="i0:CustIdentifier" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VendIDMethod">
+    <annotation>
+      <documentation> This identifier is typically used to identify the meter where the
+				requested token will be entered. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:IDMethod">
+        <sequence>
+          <element name="meterIdentifier" type="i0:MeterIdentifier">
+            <annotation>
+              <documentation> Identifier that identify the specific meter where the
+								token will be entered. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KCTData">
+    <annotation>
+      <documentation> The FROM and TO meter key data. </documentation>
+    </annotation>
+    <attribute name="fromSGC" type="i0:STSSupplyGroupCode" use="required">
+      <annotation>
+        <documentation> The current meter supply group code(SGC). </documentation>
+      </annotation>
+    </attribute>
+    <attribute name="fromKRN" type="i0:STSKeyRevNo" use="required">
+      <annotation>
+        <documentation> The current meter key revision number (KRN) for the SGC.
+					</documentation>
+      </annotation>
+    </attribute>
+    <attribute name="fromTI" type="i0:STSTariffIndex" use="required">
+      <annotation>
+        <documentation> The current meter tariff index (TI). </documentation>
+      </annotation>
+    </attribute>
+    <attribute name="toSGC" type="i0:STSSupplyGroupCode" use="required">
+      <annotation>
+        <documentation> The new SGC. </documentation>
+      </annotation>
+    </attribute>
+    <attribute name="toKRN" type="i0:STSKeyRevNo" use="required">
+      <annotation>
+        <documentation> The new KRN. </documentation>
+      </annotation>
+    </attribute>
+    <attribute name="toTI" type="i0:STSTariffIndex" use="required">
+      <annotation>
+        <documentation> The new TI. </documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="MeterType">
+    <attribute name="at" type="i0:STSAT" use="required" />
+    <attribute name="tt" type="i0:STSTT" use="required" />
+  </complexType>
+  <complexType name="MeterIdentifier" abstract="true" />
+  <complexType name="MeterNumber">
+    <complexContent mixed="false">
+      <extension base="i0:MeterIdentifier">
+        <attribute name="msno" type="i0:MSNO" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MeterConfig" abstract="true">
+    <annotation>
+      <documentation> Contains all information that describes the configuration of the meter.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterIdentifier" />
+    </complexContent>
+  </complexType>
+  <complexType name="MeterCard">
+    <annotation>
+      <documentation> The meter configuration information as obtained from the meter card, as
+				per NRS009-4-1. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterConfig">
+        <sequence>
+          <element name="track2Data" type="i0:NRSTrack2Data" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MeterDetail">
+    <annotation>
+      <documentation> The meter configuration information as obtained from a meter card or old
+				token or some other source where all the meter configuration data is available.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterConfig">
+        <sequence>
+          <element name="meterType" type="i0:MeterType" />
+        </sequence>
+        <attribute name="msno" type="i0:MSNO" use="required" />
+        <attribute name="sgc" type="i0:STSSupplyGroupCode" use="required" />
+        <attribute name="krn" type="i0:STSKeyRevNo" use="required" />
+        <attribute name="ti" type="i0:STSTariffIndex" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MeterBalance">
+    <sequence>
+      <element name="meterNo" type="string" />
+      <element name="balanceTime" type="string" />
+      <element name="balance" type="decimal" />
+      <element name="symbol" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="ExtMeterDetail">
+    <annotation>
+      <documentation> Extension of the meter detail, to include further information about the
+				meter. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterDetail">
+        <attribute name="useSTT" type="boolean" use="optional">
+          <annotation>
+            <documentation> Token generated with a Standard Token Translator (STT).
+							</documentation>
+          </annotation>
+        </attribute>
+        <attribute name="track2Data" type="i0:NRSTrack2Data" use="required">
+          <annotation>
+            <documentation> Containing the meter cards track 2 data, as per
+								NRS009-4-1. </documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MsgID">
+    <annotation>
+      <documentation> Sequential identifier that allows each client request message to be
+				uniquely identified. </documentation>
+    </annotation>
+    <attribute name="dateTime" type="i0:MsgIDDateTime" use="required" />
+    <attribute name="uniqueNumber" type="i0:MsgIDUniqueNumber" use="required" />
+  </complexType>
+  <complexType name="PayType" abstract="true">
+    <annotation>
+      <documentation> Indicates the mechanism used to pay. It is extended to allow for
+				different types of payment mechanisms. </documentation>
+    </annotation>
+  </complexType>
+  <complexType name="Cash">
+    <complexContent mixed="false">
+      <extension base="i0:PayType">
+        <sequence>
+          <element name="tenderAmt" type="i0:Currency">
+            <annotation>
+              <documentation> The cash amount tendered. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Cheque">
+    <complexContent mixed="false">
+      <extension base="i0:PayType">
+        <sequence>
+          <element name="cheqAmt" type="i0:Currency" />
+          <element name="accHolderName" type="i0:PersonName" />
+          <element name="accHolderIDNo" type="i0:IDNo" />
+          <element name="accNo" type="i0:AccountNo" />
+          <element name="bankName" type="i0:OrganisationName" />
+          <element name="branchCode" type="i0:BranchCode" />
+          <element name="cheqNo" type="i0:ChequeNo" />
+          <element name="cheqType" type="i0:ChequeType" />
+          <element minOccurs="0" name="micr" type="i0:MICR" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Card" abstract="true">
+    <complexContent mixed="false">
+      <extension base="i0:PayType">
+        <sequence>
+          <element name="cardAmt" type="i0:Currency" />
+          <element name="accHolderName" type="i0:PersonName" />
+          <element name="pan" type="i0:AccountNo">
+            <annotation>
+              <documentation> The primary account number. </documentation>
+            </annotation>
+          </element>
+          <element name="expDate" type="i0:BankCardExpiry" />
+          <element name="cvNum" type="i0:BankCardCVNum" />
+          <element name="clearingHouse" type="i0:OrganisationName">
+            <annotation>
+              <documentation> The name of the card association, e.g. VISA, MasterCard,
+								etc </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CreditCard">
+    <complexContent mixed="false">
+      <extension base="i0:Card" />
+    </complexContent>
+  </complexType>
+  <complexType name="DebitCard">
+    <complexContent mixed="false">
+      <extension base="i0:Card" />
+    </complexContent>
+  </complexType>
+  <complexType name="Unknown">
+    <annotation>
+      <documentation> Refers to a payment type that may not be known at the time of the
+				request. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:PayType" />
+    </complexContent>
+  </complexType>
+  <complexType name="Resource" abstract="true">
+    <annotation>
+      <documentation> The type of prepaid resource being requested. </documentation>
+    </annotation>
+  </complexType>
+  <complexType name="Electricity">
+    <complexContent mixed="false">
+      <extension base="i0:Resource" />
+    </complexContent>
+  </complexType>
+  <complexType name="Water">
+    <complexContent mixed="false">
+      <extension base="i0:Resource" />
+    </complexContent>
+  </complexType>
+  <complexType name="Gas">
+    <complexContent mixed="false">
+      <extension base="i0:Resource" />
+    </complexContent>
+  </complexType>
+  <complexType name="ConnectionTime">
+    <complexContent mixed="false">
+      <extension base="i0:Resource" />
+    </complexContent>
+  </complexType>
+  <complexType name="CurrencyResource">
+    <complexContent mixed="false">
+      <extension base="i0:Resource" />
+    </complexContent>
+  </complexType>
+  <complexType name="Tariff">
+    <annotation>
+      <documentation> Contains information about the tariff that was used to process the
+				transaction. </documentation>
+    </annotation>
+    <sequence>
+      <element name="name" type="i0:Msg">
+        <annotation>
+          <documentation> Name of the tariff. e.g. Home Light 1 </documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="desc" type="i0:Msg">
+        <annotation>
+          <documentation>Optional description of the tariff. </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="Tax" abstract="true">
+    <annotation>
+      <documentation> TAX that is applicable to a transaction. </documentation>
+    </annotation>
+    <sequence>
+      <element name="amt" type="i0:Currency">
+        <annotation>
+          <documentation> The TAX amount of a transaction. </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="VAT">
+    <annotation>
+      <documentation> A instance of TAX, referred to Value Added Tax and expressed as a
+				percentage. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Tax">
+        <attribute name="rate" type="i0:Percentage" use="required">
+          <annotation>
+            <documentation> The percentage rate of VAT, as applied to the transaction
+							value. </documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Token" abstract="true">
+    <annotation>
+      <documentation> Generic prepaid token that is generated by the server. </documentation>
+    </annotation>
+  </complexType>
+  <complexType name="KCToken">
+    <annotation>
+      <documentation> A key change token, that consists of two STS tokens. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Token">
+        <sequence>
+          <element name="set1stMeterKey" type="i0:STS1Token">
+            <annotation>
+              <documentation> First 20 digit STS token. </documentation>
+            </annotation>
+          </element>
+          <element name="set2ndMeterKey" type="i0:STS1Token">
+            <annotation>
+              <documentation> Second 20 digit STS token. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="STS1Token">
+    <annotation>
+      <documentation> The 20 digit STS 1 token as defined in the STS 1 specifications. For the
+				TrialCredit Vend request the STS1Token value will default to "0000000000000000".
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Token">
+        <sequence>
+          <element name="stsCipher" type="i0:STSCipherText" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TokenInfo" abstract="true">
+    <annotation>
+      <documentation> Information about the prepaid token generated. </documentation>
+    </annotation>
+  </complexType>
+  <complexType name="STS1TokenInfo">
+    <annotation>
+      <documentation> Token information for STS1 tokens. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:TokenInfo">
+        <sequence>
+          <element name="tokenID" type="decimal">
+            <annotation>
+              <documentation> As defined by STS. </documentation>
+            </annotation>
+          </element>
+          <element name="transferAmt" type="decimal">
+            <annotation>
+              <documentation> As defined by STS. </documentation>
+            </annotation>
+          </element>
+          <element name="tokenClass" type="i0:TokenSubClassType">
+            <annotation>
+              <documentation> As defined by STS. </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TokenSubClassType">
+    <annotation>
+      <documentation> Potential token sub class types, as per STS. </documentation>
+    </annotation>
+    <sequence>
+      <choice>
+        <element name="credit" type="i0:CreditTokenSubClassType" />
+        <element name="nonMeterManagement" type="i0:NonMeterSpecificEng" />
+        <element name="meterManagement" type="i0:MeterSpecificEng" />
+      </choice>
+    </sequence>
+  </complexType>
+  <complexType name="VendorDetail">
+    <annotation>
+      <documentation> Organisation who is contracted with the utility to provide prepaid
+				token's to it customers. </documentation>
+    </annotation>
+    <attribute name="name" type="i0:OrganisationName" use="required">
+      <annotation>
+        <documentation> Name of the vendor, e.g. Foo Bank </documentation>
+      </annotation>
+    </attribute>
+    <attribute name="address" type="i0:Address" use="required">
+      <annotation>
+        <documentation> Address of the vendor. </documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="UtilityDetail">
+    <annotation>
+      <documentation> Details of the utility that is supply authority for the prepaid
+				resource. </documentation>
+    </annotation>
+    <attribute name="name" type="i0:OrganisationName" use="required" />
+    <attribute name="address" type="i0:Address" use="required" />
+    <attribute name="taxRef" type="i0:TaxRef" use="required">
+      <annotation>
+        <documentation> Tax reference number of the utility. </documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="Fault" abstract="true">
+    <annotation>
+      <documentation> A generic fault returned by the server to an exception scenario.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="desc" type="i0:Msg">
+        <annotation>
+          <documentation>
+						Description of the fault scenario.
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="faultCode" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="SystemEx">
+    <annotation>
+      <documentation> A system error has occurred while processing the request and therefore
+				the normal response message cannot be returned. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Fault" />
+    </complexContent>
+  </complexType>
+  <complexType name="BusinessRuleEx">
+    <annotation>
+      <documentation> A business rule exception has occurred while processing the request
+				message, the server is therefore unable to continue with the happy path.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Fault" />
+    </complexContent>
+  </complexType>
+  <complexType name="RequestAuthorisationEx">
+    <annotation>
+      <documentation> The vendor is not authorised to perform the requested operation.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="MSNOCheckDigitEx">
+    <annotation>
+      <documentation> The check digit of the supplied MSNO can not be verified.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="SGCAuthorisationEx">
+    <annotation>
+      <documentation> The vendor is not authorised to produce tokens for meters on the
+				supplied SGC. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="LatestKRNEx">
+    <annotation>
+      <documentation> The supplied KRN for the supplied SGC has expired. An update meter key
+				operation is required. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="FBEEx">
+    <annotation>
+      <documentation> The customer is not registered for FBE. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="BlockedMeterEx">
+    <annotation>
+      <documentation> The meter has been blocked, no transactions are possible, the reason for
+				blocking will vary.. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="STSDataEx">
+    <annotation>
+      <documentation> The supplied data for MSNO, SGC, KRN, TI, AT, TT are not valid.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="VendorCreditEx">
+    <annotation>
+      <documentation> Insufficient vendor credit to compete the requested operation.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ClientIDAuthorisationEx">
+    <annotation>
+      <documentation>Client ID, X, has been blocked.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ConfirmCustomerEx">
+    <annotation>
+      <documentation>Customer not found. 
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="CancelEx">
+    <annotation>
+      <documentation>The token and transaction cannot be cancelled. 
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="CheckBatchTotalEx">
+    <annotation>
+      <documentation>The batch total can not be checked. 
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="DebtEx">
+    <annotation>
+      <documentation>No outstanding debt for collection.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="EndBatchEx">
+    <annotation>
+      <documentation>The requested batch can not be closed / ended.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="InsufficientMeterDataEx">
+    <annotation>
+      <documentation>Insufficient meter data or meter not registered. Additional info required to process request.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ReprintDepositSlipEx">
+    <annotation>
+      <documentation>No deposit slips available to reprint for this Vendor.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ReprintEndBatchEx">
+    <annotation>
+      <documentation>No closed batches available to reprint for the requested batch.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ReprintEx">
+    <annotation>
+      <documentation>No transactions found for Reprint
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="RequireMeterCardEx">
+    <annotation>
+      <documentation>Request must contain meter data from a valid meter card.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="StartBatchEx">
+    <annotation>
+      <documentation>The requested batch cannot be opened.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ServiceChrgEx">
+    <annotation>
+      <documentation>No outstanding service charge for payment. 
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="UnknownMeterEx">
+    <annotation>
+      <documentation>Meter information not found on server.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="UnknownMeterUpdateMtrKeyEx">
+    <annotation>
+      <documentation>Cannot Update Meter Key, meter information not found on server.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="UpdateMtrKeySameEx">
+    <annotation>
+      <documentation>“From” meter key data same as “To” meter key data.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="VerifyTokenEx">
+    <annotation>
+      <documentation>Unable to verify token.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:BusinessRuleEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="XMLVendFaultEx" abstract="true">
+    <annotation>
+      <documentation> A XMLVend protocol related fault has occurred. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Fault" />
+    </complexContent>
+  </complexType>
+  <complexType name="UseCaseSupportEx">
+    <annotation>
+      <documentation> Specialisation of XMLVend protocol exception, indicating that the
+				requested use case is not supported by this XMLVend implementation. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:XMLVendFaultEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ClientIDSSLEx">
+    <annotation>
+      <documentation> Specialisation of XMLVend protocol exception, indicating that the
+				clientID supplied in the request does not match the X509 certificate clientID.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:XMLVendFaultEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="XMLVendSchemaEx">
+    <annotation>
+      <documentation> Specialisation of XMLVend protocol exception, indicating that the
+				request message does not conform to the XMLVend schema. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:XMLVendFaultEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="LastResponseEx">
+    <annotation>
+      <documentation> Specialisation of XMLVend protocol exception, indicating that the
+				requested response message can not be returned as there is not a transaction
+				associated with the requested MsgID. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:XMLVendFaultEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ConfirmationEx">
+    <annotation>
+      <documentation> Specialisation of XMLVend protocol exception, indicating that the
+				message can not be confirmed as there is not a server transaction
+				associated with the requested MsgID. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:XMLVendFaultEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ReversalEx">
+    <annotation>
+      <documentation> Specialisation of XMLVend protocol exception, indicating that the
+				message can not be reversed as there is not a server transaction
+				associated with the requested MsgID. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:XMLVendFaultEx" />
+    </complexContent>
+  </complexType>
+  <complexType name="PwrLmt">
+    <annotation>
+      <documentation>
+				Power limit of the meter in kilowatts. The siUnit is kW.
+			</documentation>
+    </annotation>
+    <attribute name="value" type="i0:PwrLmtValue" use="required" />
+    <attribute name="siUnit" type="i0:ResourceSIUnit" use="required">
+      <annotation>
+        <documentation>
+					The SI Unit of power(kW). Must default to kW. 
+				</documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="Units">
+    <annotation>
+      <documentation>
+				Amount of a specific resource, in terms of its siUnit.
+			</documentation>
+    </annotation>
+    <attribute name="value" type="decimal" use="required" />
+    <attribute name="siUnit" type="i0:ResourceSIUnit" use="required">
+      <annotation>
+        <documentation>
+					The SI Unit of measurement of the resource be vended,
+					eg. "kWh" for electricity.
+				</documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <simpleType name="AccountNo">
+    <annotation>
+      <documentation> Generic account number, used in several contexts. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){0,20}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="Address">
+    <restriction base="string">
+      <maxLength value="80" />
+    </restriction>
+  </simpleType>
+  <simpleType name="BranchCode">
+    <annotation>
+      <documentation> Contains the branch code of the bank. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){1,10}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="BankCardExpiry">
+    <annotation>
+      <documentation> Expiry date of the bank card, in the format YYYYMM. [6] only digits no
+				whitespace. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){6}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="BankCardCVNum">
+    <annotation>
+      <documentation> Contains the Card verification number (typically printed on the back of
+				the card, but not embossed on the front). [1..10] digits only, no whitespace.
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){1,10}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="ChequeNo">
+    <annotation>
+      <documentation> Account Holder’s next unused cheque number. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){1,20}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="RefNo">
+    <annotation>
+      <documentation> Generic reference number, used in several contexts. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){1,20}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="ContactNo">
+    <annotation>
+      <documentation> A telephone number. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){7,12}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="CurrencySymbol">
+    <annotation>
+      <documentation> The currency symbol of the currency being used in a transaction, as per
+				ISO 4217. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){1,3}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="CustRef">
+    <restriction base="string">
+      <pattern value="(\S){1,20}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="EAN">
+    <annotation>
+      <documentation> Generic logical identifier, used for a client, server or terminal.
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){13}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="IDNo">
+    <annotation>
+      <documentation> Government issued number for a citizen. Government Identity Number Type
+				[20] digits, chars, no white space. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){0,20}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="LocRef">
+    <restriction base="string">
+      <pattern value="(\S){0,20}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="MICR">
+    <annotation>
+      <documentation> The Magnetic Ink Cheque Reader (MICR) is the entire line of numbers at
+				the bottom of the cheque. Includes the transit number, account number, and cheque
+				number. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){1,40}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="MsgIDUniqueNumber">
+    <annotation>
+      <documentation> 6 digit sequential number forms part of the request message identifier.
+			</documentation>
+    </annotation>
+    <restriction base="positiveInteger">
+      <totalDigits value="6" />
+    </restriction>
+  </simpleType>
+  <simpleType name="MsgIDDateTime">
+    <annotation>
+      <documentation> Date Time stamp in the following format, yyyymmddHHMMSS. Forms part of
+				the request message identifier. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){14}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="Msg">
+    <restriction base="string">
+      <maxLength value="160" />
+    </restriction>
+  </simpleType>
+  <simpleType name="MSNO">
+    <annotation>
+      <documentation> Meter serial number of the meter where the token will be entered.
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){3,13}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="CustomerRef">
+    <restriction base="string">
+      <pattern value="(\d){3,13}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="VendorTranId">
+    <restriction base="string">
+      <pattern value="(\S){2,30}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="VendorCode">
+    <restriction base="string">
+      <pattern value="(\S){1,10}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="NRSTrack2Data">
+    <annotation>
+      <documentation> Magnetic Meter ID Card Track 2 Type (see NRS 009-4:1993) 
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="600727(\d){12}=(=|(([8-9][0-9]|[0-6][0-9]|7[0-8])(0[1-9]|1[0-2])))=(([0-9][1-9]|[1-9][0-9]))(([0-9][1-9]|[1-9][0-9]))(\d){6}(([0-9][1-9]|[1-9][0-9]))([0-9])" />
+    </restriction>
+  </simpleType>
+  <simpleType name="OrganisationName">
+    <restriction base="string">
+      <maxLength value="80" />
+    </restriction>
+  </simpleType>
+  <simpleType name="OpName">
+    <annotation>
+      <documentation> Name of the operator initiating the use case. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){1,10}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="Password">
+    <restriction base="string">
+      <pattern value="(\S){6,15}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="PersonName">
+    <restriction base="string" />
+  </simpleType>
+  <simpleType name="Percentage">
+    <restriction base="decimal">
+      <minInclusive value="0" />
+      <maxInclusive value="100" />
+    </restriction>
+  </simpleType>
+  <simpleType name="PwrLmtValue">
+    <annotation>
+      <documentation> Power limit value. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){1,3}\.(\d){1}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="ResourceSIUnit">
+    <annotation>
+      <documentation> SI unit of the resource being vended. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){1,4}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="STSKeyRevNo">
+    <annotation>
+      <documentation> Key Revision number of a supply group, as specified by STS.
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){1}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="STSTT">
+    <annotation>
+      <documentation> Token technology see NRS009-4-1:1994, for STS, MagCard(01) or
+				Numeric(02). </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){2}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="STSAT">
+    <annotation>
+      <documentation> Algorithm Technology see NRS009-4-1:1994, for STS 1, (07).
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){2}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="STSSupplyGroupCode">
+    <annotation>
+      <documentation> Supply Group Code (SGC) as defined by STS, generally refers to which
+				utility will receive the revenue. Group coded SGC must be avoided in Online Vending
+				systems as these can be abused for fraudulent purposes.</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){6}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="STSTariffIndex">
+    <annotation>
+      <documentation> Refers to the tariff index (TI) as defined by STS. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){2}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="STSCipherText">
+    <annotation>
+      <documentation> Encrypted text as specified by STS. </documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){20}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="TaxRef">
+    <restriction base="string">
+      <pattern value="(\d){10}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="WaterFactor">
+    <restriction base="string">
+      <pattern value="(\d){1,6}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="ChequeType">
+    <restriction base="string">
+      <enumeration value="Personal" />
+      <enumeration value="Company" />
+      <enumeration value="Government" />
+    </restriction>
+  </simpleType>
+  <simpleType name="BatchStatusType">
+    <annotation>
+      <documentation> Enumeration that is used to indicate a status of a batch, "open" or
+				"closed". </documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="open" />
+      <enumeration value="closed" />
+    </restriction>
+  </simpleType>
+  <simpleType name="CreditTokenSubClassType">
+    <annotation>
+      <documentation> Token sub-class types as specified by STS. </documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="Electricity Token" />
+      <enumeration value="Water Token" />
+      <enumeration value="Gas Token" />
+      <enumeration value="Connection time Token" />
+      <enumeration value="Currency Token" />
+    </restriction>
+  </simpleType>
+  <simpleType name="NonMeterSpecificEng">
+    <annotation>
+      <documentation> Shortened names for non-Meter specific engineering tokens as defined by
+				STS. </documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="TestAll" />
+      <enumeration value="TestBreaker" />
+      <enumeration value="TestDisp" />
+      <enumeration value="DispPwrLmt" />
+      <enumeration value="DispTI" />
+      <enumeration value="DispKRN" />
+      <enumeration value="DispTamper" />
+      <enumeration value="DispInstPwr" />
+      <enumeration value="DispConsTot" />
+      <enumeration value="DispUnbalance" />
+      <enumeration value="DispVer" />
+    </restriction>
+  </simpleType>
+  <simpleType name="MeterSpecificEng">
+    <annotation>
+      <documentation> Shortened names for Meter specific engineering tokens as defined by STS.
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="SetPwrLmt" />
+      <enumeration value="SetPhUnbalance" />
+      <enumeration value="AddDefaultCred" />
+      <enumeration value="ClearCred" />
+      <enumeration value="ClearTamper" />
+      <enumeration value="EngKCT" />
+      <enumeration value="SetWaterFact" />
+    </restriction>
+  </simpleType>
+</schema>
