@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:b0="http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema" xmlns:i0="http://www.nrs.eskom.co.za/xmlvend/meter/2.1/schema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nrs.eskom.co.za/xmlvend/meter/2.1/schema" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="xmlvend-base-2.1.xsd" namespace="http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema" />
+  <annotation>
+    <documentation>
+Hand coded XML Schema for NRS Prepaid Utility Vending Service
+defining meter domain Vending Markup Language (XMLVend) 
+for SOAP request and response messages 
+
+[*** WS-I Compliant *** see http://www.ws-i.org]
+
+Version Number Date Namespace
+
+2.0 October 2005 http://www.nrs.eskom.co.za/xmlvend/meter/2.0/schema
+2.1 February 2006 http://www.nrs.eskom.co.za/xmlvend/meter/2.1/schema			
+ 
+</documentation>
+  </annotation>
+  <element name="confirmMeterReq" type="i0:ConfirmMeterReq" />
+  <element name="getMeterBalanceReq" type="i0:ConfirmMeterReq" />
+  <complexType name="ConfirmMeterReq">
+    <annotation>
+      <documentation>
+			A request to obtain meter details.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="idMethod" type="b0:VendIDMethod">
+            <annotation>
+              <documentation>
+							The identification method used to search for a meter.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="getMeterBalanceResponse" type="i0:GetMeterBalanceResponse" />
+  <complexType name="GetMeterBalanceResponse">
+    <sequence>
+      <element name="getMeterBalanceResult" type="i0:GetMeterBalanceResult" />
+    </sequence>
+  </complexType>
+  <element name="confirmMeterResp" type="i0:ConfirmMeterResp" />
+  <complexType name="ConfirmMeterResp">
+    <annotation>
+      <documentation>
+		A response containing meter details.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="confirmMeterResult" type="i0:ConfirmMeterResult" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="custReportFaultReq" type="i0:CustReportFaultReq" />
+  <complexType name="CustReportFaultReq">
+    <annotation>
+      <documentation>
+		Customer request to log a fault with the utility.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="custDetail" type="b0:CustDetail" />
+          <element minOccurs="1" maxOccurs="1" name="custFaultReport" type="i0:CustFaultReport" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="custReportFaultResp" type="i0:CustReportFaultResp" />
+  <complexType name="CustReportFaultResp">
+    <annotation>
+      <documentation>
+		Response to a Customer Fault Report request. Contains customer and fault details, and a reference number.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="custFaultLog" type="i0:CustFaultLog" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="updateMeterKeyReq" type="i0:UpdateMeterKeyReq" />
+  <complexType name="UpdateMeterKeyReq">
+    <annotation>
+      <documentation>
+		Request to update a meters key data, from the current field data, to the data on the server. This request is a specialisation of BaseReq and not BaseVendReq, since only the "MeterConfig" identifiers are allowed.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="idMethod" type="b0:MeterConfig">
+            <annotation>
+              <documentation>
+							Meter configuration, containing the current(from/field) meter configuration parameters. 
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="updateMeterKeyResp" type="i0:UpdateMeterKeyResp" />
+  <complexType name="UpdateMeterKeyResp">
+    <annotation>
+      <documentation>
+		Response to update meter key request. Contains the key change token set and meter update details and an optional power limit token. 	
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="updateMeterKey" type="b0:KCTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="nonMeterSpecificEngReq" type="i0:NonMeterSpecificEngReq" />
+  <complexType name="NonMeterSpecificEngReq" abstract="true">
+    <annotation>
+      <documentation>
+		Request for a non-Meter specific STS engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="meterType" type="b0:MeterType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="nonMeterSpecificEngResp" type="i0:NonMeterSpecificEngResp" />
+  <complexType name="NonMeterSpecificEngResp" abstract="true">
+    <annotation>
+      <documentation>
+		Response to non-Meter specific engineering token request. Contains the token cipher for the request non-Meter specific engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp" />
+    </complexContent>
+  </complexType>
+  <element name="meterSpecificEngReq" type="i0:MeterSpecificEngReq" />
+  <complexType name="MeterSpecificEngReq" abstract="true">
+    <annotation>
+      <documentation>
+		Request for a meter specific STS engineering token. Contains parameters for the specific engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendReq" />
+    </complexContent>
+  </complexType>
+  <element name="meterSpecificEngResp" type="i0:MeterSpecificEngResp" />
+  <complexType name="MeterSpecificEngResp" abstract="true">
+    <annotation>
+      <documentation>
+		Response to Meter-specific request. Contains token cipher for the requested engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendResp" />
+    </complexContent>
+  </complexType>
+  <complexType name="ConfirmMeterResult">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="meterDetail" type="b0:MeterDetail" />
+    </sequence>
+  </complexType>
+  <complexType name="GetMeterBalanceResult">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="meterBalance" type="b0:MeterBalance" />
+    </sequence>
+  </complexType>
+  <complexType name="CustFaultReport">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="desc" type="b0:Msg">
+        <annotation>
+          <documentation>
+				Description of the customer fault being reported.
+				</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="NetworkFaultReport">
+    <annotation>
+      <documentation>
+				Network fault, which must be extended into specific network faults. 
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CustFaultReport" />
+    </complexContent>
+  </complexType>
+  <complexType name="MeterFaultReport">
+    <annotation>
+      <documentation>
+		A generic meter fault report, must be extended.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CustFaultReport">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="meterInfo" type="b0:VendIDMethod">
+            <annotation>
+              <documentation>
+							Information about the meter that is reported as faulty.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CustFaultLog">
+    <annotation>
+      <documentation>
+		Information about the customer fault logged on the sever.
+		</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="custDetail" type="b0:CustDetail">
+        <annotation>
+          <documentation>
+				Details about the customer logging the fault.
+				</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="faultReport" type="i0:CustFaultReport">
+        <annotation>
+          <documentation>
+				Details about the fault being logged.
+				</documentation>
+        </annotation>
+      </element>
+    </sequence>
+    <attribute name="refNo" type="b0:RefNo" use="required">
+      <annotation>
+        <documentation>
+					Server generated reference number for the fault being logged, so that the fault can be tracked.
+				</documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="PwrLmtResp">
+    <annotation>
+      <documentation>
+		Response to a request for power limit engineering token, contains the STS cipher to the power limit of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="pwrLmtToken" type="b0:PwrLmtTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PhUnbalResp">
+    <annotation>
+      <documentation>
+		Response to a request for phase unbalance engineering token, contains the STS cipher to set the phase unbalance of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="phUnbalance" type="b0:PhUnbalTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DefCreditResp">
+    <annotation>
+      <documentation>
+		Response to a request for default credit engineering token, contains the STS cipher to load the meter with default credit. 
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="defCredit" type="b0:CreditTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ClearCreditResp">
+    <annotation>
+      <documentation>
+		Response to a request for clear credit engineering token, contains the STS cipher to clear the meters credit.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="clearCredit" type="b0:ClearCreditTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ClearTamperResp">
+    <annotation>
+      <documentation>
+		Response to a request for a clear tamper engineering token, contains the STS cipher to clear the tamper state of a meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="clearTamper" type="b0:ClearTamperTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="EngKCTResp">
+    <annotation>
+      <documentation>
+		Response to a request for a clear tamper engineering token, contains the STS ciphers to set update the SGC, KRN, TI of the meter. A power limit token may also be included. 
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="engKCToken" type="b0:KCTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SetWaterFactorResp">
+    <annotation>
+      <documentation>
+		Response to a request for a water factor engineering token, contains the STS cipher to set the water factor of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="waterFactor" type="b0:WaterFactorTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PwrLmtReq">
+    <annotation>
+      <documentation>
+		Request to obtain a engineering power limit token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngReq">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="pwrLmt" type="b0:PwrLmt">
+            <annotation>
+              <documentation>
+							The value of requested power limit. 
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PhUnbalReq">
+    <annotation>
+      <documentation>
+		Request to obtain a phase unbalance engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngReq">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="pwrLmt" type="b0:PwrLmt" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DefCreditReq">
+    <annotation>
+      <documentation>
+		Request to obtain a default credit token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="ClearCreditReq">
+    <annotation>
+      <documentation>
+		Request to obtain a clear credit engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="ClearTamperReq">
+    <annotation>
+      <documentation>
+		Request to obtain a phase unbalance engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="EngKCTReq">
+    <annotation>
+      <documentation>
+		Request to obtain a key change engineering token. Allows the FROM and TO meter key data to be specified.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngReq">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="kctData" type="b0:KCTData">
+            <annotation>
+              <documentation>
+							Specifies the FROM and TO meter key data (SGC, KRN, TI).
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SetWaterFactorReq">
+    <annotation>
+      <documentation>
+		Request to obtain a water factor engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:MeterSpecificEngReq">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="waterFactor" type="b0:WaterFactor">
+            <annotation>
+              <documentation>
+							The water factor value.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TestAllReq">
+    <annotation>
+      <documentation>
+		Request for the test all non-Meter specific engineering token.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="TestBreakerReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to trip the meter's breaker.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="TestDisplayReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to test the display of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispPwrLmtReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to display current power limit setting of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispTIReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to display current tariff index of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispKRNReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to display current key revision of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispTamperReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to display current tamper status of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispInstPwrReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to display current instantaneous power of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispConsTotReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to display meter's total consumption.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispPhUnbalanceReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to display current phase unbalance setting of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispVerReq">
+    <annotation>
+      <documentation>
+		Request for non-Meter specific engineering token to display current version of the meter.
+		</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="NonMeterSpecificTokenIssue" abstract="true">
+    <annotation>
+      <documentation>
+		Generic information that is returned with all non-Meter specific tokens that are issued.
+		</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="desc" type="b0:Msg">
+        <annotation>
+          <documentation>
+						Description of the non-meter specific token issue, eg. Test Display, Display Tamper, etc
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="meterType" type="b0:MeterType" />
+      <element minOccurs="1" maxOccurs="1" name="token" type="b0:Token" />
+    </sequence>
+  </complexType>
+  <complexType name="NonMeterSpecificEngTokenIssue" abstract="true">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="TestAllTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="TestBreakerTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="TestDisplayTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispPwrLmtTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispTITokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispKRNTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispTamperTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispInstPwrTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispConsTotTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispPhUnbalanceTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="DispVerTokenIssue">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngTokenIssue" />
+    </complexContent>
+  </complexType>
+  <complexType name="TestAllResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="testAll" type="i0:TestAllTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TestBreakerResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="testBreaker" type="i0:TestBreakerTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TestDisplayResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="testDisp" type="i0:TestDisplayTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DispPwrLmtResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="dispPwrLmt" type="i0:DispPwrLmtTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DispTIResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="dispTI" type="i0:DispTITokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DispKRNResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="dispKRN" type="i0:DispKRNTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DispTamperResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="dispTamper" type="i0:DispTamperTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DispInstPwrResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="dispInstPwr" type="i0:DispInstPwrTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DispConsTotResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="dispConsTot" type="i0:DispConsTotTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DispPhUnbalanceResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="dispPhUnbalance" type="i0:DispPhUnbalanceTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DispVerResp">
+    <complexContent mixed="false">
+      <extension base="i0:NonMeterSpecificEngResp">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="dispVer" type="i0:DispVerTokenIssue" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+</schema>
