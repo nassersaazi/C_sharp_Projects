@@ -1,6 +1,0 @@
-E:\PePay\GenericApi\Api\GenericApi\Level1Api\Backup\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll.config
-E:\PePay\GenericApi\Api\GenericApi\Level1Api\Backup\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.dll
-E:\PePay\GenericApi\Api\GenericApi\Level1Api\Backup\PegPayRef\PegPayUtilityApi\bin\Debug\PegPayUtilityApi.pdb
-E:\PePay\GenericApi\Api\GenericApi\Level1Api\Backup\PegPayRef\PegPayUtilityApi\obj\Debug\ResolveAssemblyReference.cache
-E:\PePay\GenericApi\Api\GenericApi\Level1Api\Backup\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.dll
-E:\PePay\GenericApi\Api\GenericApi\Level1Api\Backup\PegPayRef\PegPayUtilityApi\obj\Debug\PegPayUtilityApi.pdb

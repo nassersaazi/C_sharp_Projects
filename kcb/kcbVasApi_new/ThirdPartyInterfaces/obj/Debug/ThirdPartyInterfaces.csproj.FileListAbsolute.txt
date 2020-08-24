@@ -1,5 +1,0 @@
-E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\bin\Debug\ThirdPartyInterfaces.dll.config
-E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\bin\Debug\ThirdPartyInterfaces.dll
-E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\bin\Debug\ThirdPartyInterfaces.pdb
-E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\obj\Debug\ThirdPartyInterfaces.dll
-E:\nasser\StandardBankApi\StandardBankApi\ThirdPartyInterfaces\obj\Debug\ThirdPartyInterfaces.pdb
