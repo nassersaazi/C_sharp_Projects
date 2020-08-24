@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webserviceserver.billerengine.kcb/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="BillerEngineWebService" targetNamespace="http://webserviceserver.billerengine.kcb/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:ns1="http://kcbbankgroup.com/KCBBillersInterface" elementFormDefault="unqualified" targetNamespace="http://webserviceserver.billerengine.kcb/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://kcbbankgroup.com/KCBBillersInterface" />
+      <xs:element name="KCBBillerGetTransactionStatus" type="tns:KCBBillerGetTransactionStatus" />
+      <xs:element name="KCBBillerGetTransactionStatusResponse" type="tns:KCBBillerGetTransactionStatusResponse" />
+      <xs:element name="KCBBillerQueryServices" type="tns:KCBBillerQueryServices" />
+      <xs:element name="KCBBillerQueryServicesResponse" type="tns:KCBBillerQueryServicesResponse" />
+      <xs:element name="KCBBillerTransactionCallBack" type="tns:KCBBillerTransactionCallBack" />
+      <xs:element name="KCBBillerTransactionCallBackResponse" type="tns:KCBBillerTransactionCallBackResponse" />
+      <xs:element name="KCBBillersPaybillnterface" type="tns:KCBBillersPaybillnterface" />
+      <xs:element name="KCBBillersPaybillnterfaceResponse" type="tns:KCBBillersPaybillnterfaceResponse" />
+      <xs:element name="KCBBillersWebserviceInterface" type="tns:KCBBillersWebserviceInterface" />
+      <xs:element name="KCBBillersWebserviceInterfaceResponse" type="tns:KCBBillersWebserviceInterfaceResponse" />
+      <xs:element name="PayLoad" type="tns:customMap" />
+      <xs:complexType name="KCBBillersWebserviceInterface">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserName" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelId" type="xs:string" />
+          <xs:element minOccurs="0" name="BillerId" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:string" />
+          <xs:element minOccurs="0" name="SessionId" type="xs:string" />
+          <xs:element minOccurs="0" name="MobileNo" type="xs:string" />
+          <xs:element minOccurs="0" name="TimeStamp" type="xs:string" />
+          <xs:element minOccurs="0" name="MessageTypeIndicator" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceParams" type="tns:params" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="params">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="paramName" type="xs:string" />
+          <xs:element minOccurs="0" name="paramValue" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillersWebserviceInterfaceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:BillerTransactionResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="billerTransactionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agentCommission" type="xs:string" />
+          <xs:element minOccurs="0" name="bankCommission" type="xs:string" />
+          <xs:element minOccurs="0" name="beneficiaryAccount" type="xs:string" />
+          <xs:element minOccurs="0" name="beneficiaryAccountName" type="xs:string" />
+          <xs:element minOccurs="0" name="billerEngineRefNo" type="xs:string" />
+          <xs:element name="billersInfo">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string" />
+                      <xs:element minOccurs="0" name="value" type="xs:anyType" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="billersInfo1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string" />
+                      <xs:element minOccurs="0" name="value" type="tns:hashMap" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="billreferenceNo" type="xs:string" />
+          <xs:element name="cbsResponseParamMapping">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string" />
+                      <xs:element minOccurs="0" name="value" type="xs:string" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="cmOutgoingString" type="xs:string" />
+          <xs:element minOccurs="0" name="cmResponseField" type="xs:string" />
+          <xs:element minOccurs="0" name="cmResponseString" type="xs:string" />
+          <xs:element minOccurs="0" name="commissionAndExciseDuty" type="xs:string" />
+          <xs:element minOccurs="0" name="courtCode" type="xs:string" />
+          <xs:element minOccurs="0" name="creditAccount" type="xs:string" />
+          <xs:element minOccurs="0" name="creditCurrency" type="xs:string" />
+          <xs:element minOccurs="0" name="DBillerId" type="xs:int" />
+          <xs:element minOccurs="0" name="DMainServiceId" type="xs:int" />
+          <xs:element minOccurs="0" name="debitAccount" type="xs:string" />
+          <xs:element minOccurs="0" name="debitCurrency" type="xs:string" />
+          <xs:element name="decisionParamMapping">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string" />
+                      <xs:element minOccurs="0" name="value" type="xs:string" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="decisionServiceId" type="xs:int" />
+          <xs:element minOccurs="0" name="exciseDuty" type="xs:string" />
+          <xs:element minOccurs="0" name="externalBillerRefNo" type="xs:string" />
+          <xs:element minOccurs="0" name="judiciaryAmount" type="xs:string" />
+          <xs:element minOccurs="0" name="lcyAmount" type="xs:string" />
+          <xs:element minOccurs="0" name="mobileNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="narration" type="xs:string" />
+          <xs:element minOccurs="0" name="ofs2T24" type="xs:string" />
+          <xs:element minOccurs="0" name="ofs4romT24" type="xs:string" />
+          <xs:element minOccurs="0" name="ofsResponseRef" type="xs:string" />
+          <xs:element minOccurs="0" name="ofsrefid" type="xs:string" />
+          <xs:element minOccurs="0" name="originalRefNo" type="xs:string" />
+          <xs:element minOccurs="0" name="processDate" type="xs:string" />
+          <xs:element minOccurs="0" name="rawExternalMappingResponse" type="xs:string" />
+          <xs:element minOccurs="0" name="rawExternalResponse" type="xs:string" />
+          <xs:element minOccurs="0" name="requestDate" type="xs:string" />
+          <xs:element minOccurs="0" name="requestRefId" type="xs:string" />
+          <xs:element minOccurs="0" name="responseDate" type="xs:string" />
+          <xs:element name="responseParamMapping">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string" />
+                      <xs:element minOccurs="0" name="value" type="xs:string" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="responsePayLoad" type="tns:customMap" />
+          <xs:element name="responsePayLoadd">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="key" type="xs:string" />
+                      <xs:element minOccurs="0" name="value" type="xs:string" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="reversalStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceId" type="xs:int" />
+          <xs:element minOccurs="0" name="serviceName" type="xs:string" />
+          <xs:element minOccurs="0" name="serviceParamaters" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element minOccurs="0" name="statusCode" type="xs:string" />
+          <xs:element minOccurs="0" name="statusDesc" type="xs:string" />
+          <xs:element minOccurs="0" name="totalCharge" type="xs:string" />
+          <xs:element minOccurs="0" name="totalCommission" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionRefId" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionReference" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionalAmount" type="xs:string" />
+          <xs:element minOccurs="0" name="treasuryRate" type="xs:string" />
+          <xs:element minOccurs="0" name="cmStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="cmStatusCode" type="xs:string" />
+          <xs:element minOccurs="0" name="cmStatusDesc" type="xs:string" />
+          <xs:element minOccurs="0" name="paramName" type="tns:params" />
+          <xs:element minOccurs="0" name="paramValue" type="tns:params" />
+          <xs:element minOccurs="0" name="revRef" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="hashMap">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractMap">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="abstractMap" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="customMap">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:mapWrapper">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="mapWrapper">
+        <xs:sequence>
+          <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##other" processContents="skip" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillersPaybillnterface">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserName" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryId" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelId" type="xs:string" />
+          <xs:element minOccurs="0" name="BillerId" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:string" />
+          <xs:element minOccurs="0" name="ServicesStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="Transactioncode" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionRef" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceParams" type="tns:params" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillersPaybillnterfaceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:BillerPaybillResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillerGetTransactionStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserName" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelId" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceName" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionReference" type="xs:string" />
+          <xs:element minOccurs="0" name="SessionId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillerGetTransactionStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:BillerTransactionResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillerQueryServices">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserName" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" type="xs:string" />
+          <xs:element minOccurs="0" name="KcbCompanyID" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelId" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceName" type="xs:string" />
+          <xs:element minOccurs="0" name="SessionId" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillerQueryServicesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:BillerTransactionResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillerTransactionCallBack">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserName" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceID" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceName" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionReference" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionStatusDescription" type="xs:string" />
+          <xs:element minOccurs="0" name="ReversalStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="SessionId" type="xs:string" />
+          <xs:element minOccurs="0" name="Payload" type="tns:customMap" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KCBBillerTransactionCallBackResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ns1:BillerTransactionResponse" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ns1="http://webserviceserver.billerengine.kcb/" targetNamespace="http://kcbbankgroup.com/KCBBillersInterface" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://webserviceserver.billerengine.kcb/" />
+      <xs:element name="BillerPaybillResponse" type="ns1:billerTransactionResponse" />
+      <xs:element name="BillerTransactionResponse" type="ns1:billerTransactionResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="KCBBillerGetTransactionStatus">
+    <wsdl:part name="parameters" element="tns:KCBBillerGetTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillersWebserviceInterfaceResponse">
+    <wsdl:part name="parameters" element="tns:KCBBillersWebserviceInterfaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillerTransactionCallBack">
+    <wsdl:part name="parameters" element="tns:KCBBillerTransactionCallBack" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillersWebserviceInterface">
+    <wsdl:part name="parameters" element="tns:KCBBillersWebserviceInterface" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillersPaybillnterface">
+    <wsdl:part name="parameters" element="tns:KCBBillersPaybillnterface" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillerQueryServicesResponse">
+    <wsdl:part name="parameters" element="tns:KCBBillerQueryServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillersPaybillnterfaceResponse">
+    <wsdl:part name="parameters" element="tns:KCBBillersPaybillnterfaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillerQueryServices">
+    <wsdl:part name="parameters" element="tns:KCBBillerQueryServices" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillerTransactionCallBackResponse">
+    <wsdl:part name="parameters" element="tns:KCBBillerTransactionCallBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="KCBBillerGetTransactionStatusResponse">
+    <wsdl:part name="parameters" element="tns:KCBBillerGetTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BillerEngineWebService">
+    <wsdl:operation name="KCBBillersWebserviceInterface">
+      <wsdl:input name="KCBBillersWebserviceInterface" message="tns:KCBBillersWebserviceInterface" />
+      <wsdl:output name="KCBBillersWebserviceInterfaceResponse" message="tns:KCBBillersWebserviceInterfaceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="KCBBillersPaybillnterface">
+      <wsdl:input name="KCBBillersPaybillnterface" message="tns:KCBBillersPaybillnterface" />
+      <wsdl:output name="KCBBillersPaybillnterfaceResponse" message="tns:KCBBillersPaybillnterfaceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="KCBBillerGetTransactionStatus">
+      <wsdl:input name="KCBBillerGetTransactionStatus" message="tns:KCBBillerGetTransactionStatus" />
+      <wsdl:output name="KCBBillerGetTransactionStatusResponse" message="tns:KCBBillerGetTransactionStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="KCBBillerQueryServices">
+      <wsdl:input name="KCBBillerQueryServices" message="tns:KCBBillerQueryServices" />
+      <wsdl:output name="KCBBillerQueryServicesResponse" message="tns:KCBBillerQueryServicesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="KCBBillerTransactionCallBack">
+      <wsdl:input name="KCBBillerTransactionCallBack" message="tns:KCBBillerTransactionCallBack" />
+      <wsdl:output name="KCBBillerTransactionCallBackResponse" message="tns:KCBBillerTransactionCallBackResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BillerEngineWebServiceSoapBinding" type="tns:BillerEngineWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="KCBBillersWebserviceInterface">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="KCBBillersWebserviceInterface">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="KCBBillersWebserviceInterfaceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KCBBillersPaybillnterface">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="KCBBillersPaybillnterface">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="KCBBillersPaybillnterfaceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KCBBillerGetTransactionStatus">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="KCBBillerGetTransactionStatus">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="KCBBillerGetTransactionStatusResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KCBBillerQueryServices">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="KCBBillerQueryServices">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="KCBBillerQueryServicesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KCBBillerTransactionCallBack">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="KCBBillerTransactionCallBack">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="KCBBillerTransactionCallBackResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillerEngineWebService">
+    <wsdl:port name="BillerEngineWebServicePort" binding="tns:BillerEngineWebServiceSoapBinding">
+      <soap:address location="http://localhost:8085/BillerEngineNew/BillerEngineWebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

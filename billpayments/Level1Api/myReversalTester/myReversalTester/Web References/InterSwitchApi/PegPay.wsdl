@@ -1,0 +1,1797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://PegPayPaymentsApi/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://PegPayPaymentsApi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://PegPayPaymentsApi/">
+      <s:element name="ReactivateSmartCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smartCardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReactivateSmartCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReactivateSmartCardResult" type="tns:QueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QueryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PegPayQueryId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerReference" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadEODReconciliationReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstOftrans" type="tns:ArrayOfEODTransaction" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEODTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EODTransaction" nillable="true" type="tns:EODTransaction" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EODTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VendorTranId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadEODReconciliationReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadEODReconciliationReportResult" type="tns:PostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PegPayPostId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MakeUtilityPaymentPrepaidVendor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:NWSCTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NWSCTransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Transaction">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="utilityCompany" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Transaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="chargeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Offline" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reversal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranIdToReverse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChequeNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorTransactionRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PegpayCharge" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChargeType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MakeUtilityPaymentPrepaidVendorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeUtilityPaymentPrepaidVendorResult" type="tns:PostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCustomerDetailsPrepaidVendor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utility" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCustomerDetailsPrepaidVendorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCustomerDetailsPrepaidVendorResult" type="tns:NWSCQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NWSCQueryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:QueryResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OutstandingBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="queryCustomerAtPostBank">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utility" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="queryCustomerAtPostBankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="queryCustomerAtPostBankResult" type="tns:NWSCQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReversePrepaidInterswitchTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:InterswitchTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InterswitchTransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NWSCTransaction">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TranIdToReverse1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Vendorcode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature1" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ReversePrepaidInterswitchTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReversePrepaidInterswitchTransactionResult" type="tns:InterswitchReversePostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InterswitchReversePostResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReceiptNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NoOfUnits" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PegPayPostId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetServerStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryURACustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeOfPayment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryURACustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryURACustomerDetailsResult" type="tns:URAQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="URAQueryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:QueryResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="paymentRegistrationDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="prnStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OutstandingBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TIN" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentRegistrationDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrnStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="QueryUmemeCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryUmemeCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryUmemeCustomerDetailsResult" type="tns:UmemeQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UmemeQueryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:QueryResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OutstandingBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="QueryDSTVCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smartCardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayTvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bouquetCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDSTVCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryDSTVCustomerDetailsResult" type="tns:DSTVQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DSTVQueryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NWSCQueryResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="bouquetDetails" type="tns:BouquetDetails" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrentBouquet" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DstvCustomerNo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BouquetDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BouquetCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BouquetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BouquetPrice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BouquetDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayTvCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBouquetDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BouquetCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayTvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBouquetDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBouquetDetailsResult" type="tns:ArrayOfBouquetDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBouquetDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BouquetDetails" nillable="true" type="tns:BouquetDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryKCCACustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryKCCACustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryKCCACustomerDetailsResult" type="tns:KCCAQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KCCAQueryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemeQueryResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SecretKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrackingID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrnDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Coin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentCurrency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentGroup" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentReference" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefCheck" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Success" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ValidateSolarCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utilityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="meternumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSolarCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateSolarCustomerResult" type="tns:SolarCustomer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SolarCustomer">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Customer">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TokenLimit" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Usergroup" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsRegistered" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BouquetPrice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Balance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateStudentDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utilityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateStudentDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateStudentDetailsResult" type="tns:SchoolsQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SchoolsQueryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemeQueryResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="School" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Level" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ValidateSchoolCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="schoolcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSchoolCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateSchoolCodeResult" type="tns:SchoolsQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuerySchoolStudentDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utilityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuerySchoolStudentDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuerySchoolStudentDetailsResult" type="tns:SchoolsQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeDSTVPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:DSTVTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DSTVTransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Transaction">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MakeDSTVPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeDSTVPaymentResult" type="tns:PostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeBETWAYPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:BETWAYTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BETWAYTransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemeTransaction">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Coin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SessonKey" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UmemeTransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Transaction" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MakeBETWAYPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeBETWAYPaymentResult" type="tns:BETWAYPostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BETWAYPostResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemePostResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SecretKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Error_code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentCurrency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentGroup" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentReference" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrackingID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="backRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="hash" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Coin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Offline" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Reversal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReversedTrans" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Course" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="YearSem" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TellerAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollectionArea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollectionBranch" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Sent" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FileGenerated" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Bank" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCompany" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChequeNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VendorTransactionRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TransactionAmount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TransactionCharge" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="BillAmount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecordId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="RecordedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UmemePostResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:PostResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReceiptNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="QueryNWSCCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryNWSCCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryNWSCCustomerDetailsResult" type="tns:NWSCQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryNSSFCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utilityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryNSSFCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryNSSFCustomerDetailsResult" type="tns:NSSFQueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NSSFQueryResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemeQueryResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="customerReference" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="employerNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="employer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="period" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="paymentMethod" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmployerNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Employer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Period" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentMethod" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MakeURAPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:URATransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="URATransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Transaction">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TIN" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MakeURAPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeURAPaymentResult" type="tns:PostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeUmemePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:UmemeTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeUmemePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeUmemePaymentResult" type="tns:UmemePostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeYakaPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:UmemeTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeYakaPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeYakaPaymentResult" type="tns:Token" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Token">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PegPayPostId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DebtRecovery" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Units" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inflation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fx" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fuel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrepaidToken" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MakeNWSCPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:NWSCTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeNWSCPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeNWSCPaymentResult" type="tns:PostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeKCCAPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:KCCATransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KCCATransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemeTransaction">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Coin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SessonKey" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MakeKCCAPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeKCCAPaymentResult" type="tns:KCCAPostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KCCAPostResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemePostResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SecretKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Error_code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentCurrency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentGroup" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentReference" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrackingID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="backRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="hash" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Coin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Offline" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Reversal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReversedTrans" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Course" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="YearSem" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TellerAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollectionArea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollectionBranch" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Sent" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FileGenerated" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Bank" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCompany" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChequeNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VendorTransactionRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TransactionAmount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TransactionCharge" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="BillAmount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecordId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="RecordedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MakeSolarPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:Transaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeSolarPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeSolarPaymentResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransactionResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewMakeKCCAPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:KCCATransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewMakeKCCAPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewMakeKCCAPaymentResult" type="tns:KCCAPostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeSchoolFeesPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:schoolsTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="schoolsTransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemeTransaction">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MakeSchoolFeesPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeSchoolFeesPaymentResult" type="tns:SchoolsPostResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SchoolsPostResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UmemePostResponse" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorTranID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionDetailsResult" type="tns:QueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorTranID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionStatusResult" type="tns:QueryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReactivateSmartCardSoapIn">
+    <wsdl:part name="parameters" element="tns:ReactivateSmartCard" />
+  </wsdl:message>
+  <wsdl:message name="ReactivateSmartCardSoapOut">
+    <wsdl:part name="parameters" element="tns:ReactivateSmartCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadEODReconciliationReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadEODReconciliationReport" />
+  </wsdl:message>
+  <wsdl:message name="UploadEODReconciliationReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadEODReconciliationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeUtilityPaymentPrepaidVendorSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeUtilityPaymentPrepaidVendor" />
+  </wsdl:message>
+  <wsdl:message name="MakeUtilityPaymentPrepaidVendorSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeUtilityPaymentPrepaidVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCustomerDetailsPrepaidVendorSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCustomerDetailsPrepaidVendor" />
+  </wsdl:message>
+  <wsdl:message name="QueryCustomerDetailsPrepaidVendorSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCustomerDetailsPrepaidVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryCustomerAtPostBankSoapIn">
+    <wsdl:part name="parameters" element="tns:queryCustomerAtPostBank" />
+  </wsdl:message>
+  <wsdl:message name="queryCustomerAtPostBankSoapOut">
+    <wsdl:part name="parameters" element="tns:queryCustomerAtPostBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReversePrepaidInterswitchTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ReversePrepaidInterswitchTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ReversePrepaidInterswitchTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ReversePrepaidInterswitchTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryURACustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryURACustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="QueryURACustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryURACustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryUmemeCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryUmemeCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="QueryUmemeCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryUmemeCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryDSTVCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryDSTVCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="QueryDSTVCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryDSTVCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBouquetDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBouquetDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetBouquetDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBouquetDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryKCCACustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryKCCACustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="QueryKCCACustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryKCCACustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSolarCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateSolarCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSolarCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateSolarCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateStudentDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateStudentDetails" />
+  </wsdl:message>
+  <wsdl:message name="ValidateStudentDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateStudentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSchoolCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateSchoolCode" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSchoolCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateSchoolCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuerySchoolStudentDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QuerySchoolStudentDetails" />
+  </wsdl:message>
+  <wsdl:message name="QuerySchoolStudentDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QuerySchoolStudentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeDSTVPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeDSTVPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeDSTVPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeDSTVPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeBETWAYPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeBETWAYPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeBETWAYPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeBETWAYPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryNWSCCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryNWSCCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="QueryNWSCCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryNWSCCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryNSSFCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryNSSFCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="QueryNSSFCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryNSSFCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeURAPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeURAPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeURAPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeURAPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeUmemePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeUmemePayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeUmemePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeUmemePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeYakaPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeYakaPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeYakaPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeYakaPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeNWSCPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeNWSCPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeNWSCPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeNWSCPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeKCCAPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeKCCAPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeKCCAPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeKCCAPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeSolarPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeSolarPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeSolarPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeSolarPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewMakeKCCAPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:NewMakeKCCAPayment" />
+  </wsdl:message>
+  <wsdl:message name="NewMakeKCCAPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:NewMakeKCCAPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeSchoolFeesPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeSchoolFeesPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeSchoolFeesPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeSchoolFeesPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PegPaySoap">
+    <wsdl:operation name="ReactivateSmartCard">
+      <wsdl:input message="tns:ReactivateSmartCardSoapIn" />
+      <wsdl:output message="tns:ReactivateSmartCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadEODReconciliationReport">
+      <wsdl:input message="tns:UploadEODReconciliationReportSoapIn" />
+      <wsdl:output message="tns:UploadEODReconciliationReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeUtilityPaymentPrepaidVendor">
+      <wsdl:input message="tns:MakeUtilityPaymentPrepaidVendorSoapIn" />
+      <wsdl:output message="tns:MakeUtilityPaymentPrepaidVendorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCustomerDetailsPrepaidVendor">
+      <wsdl:input message="tns:QueryCustomerDetailsPrepaidVendorSoapIn" />
+      <wsdl:output message="tns:QueryCustomerDetailsPrepaidVendorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="queryCustomerAtPostBank">
+      <wsdl:input message="tns:queryCustomerAtPostBankSoapIn" />
+      <wsdl:output message="tns:queryCustomerAtPostBankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReversePrepaidInterswitchTransaction">
+      <wsdl:input message="tns:ReversePrepaidInterswitchTransactionSoapIn" />
+      <wsdl:output message="tns:ReversePrepaidInterswitchTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <wsdl:input message="tns:GetServerStatusSoapIn" />
+      <wsdl:output message="tns:GetServerStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryURACustomerDetails">
+      <wsdl:input message="tns:QueryURACustomerDetailsSoapIn" />
+      <wsdl:output message="tns:QueryURACustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryUmemeCustomerDetails">
+      <wsdl:input message="tns:QueryUmemeCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:QueryUmemeCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDSTVCustomerDetails">
+      <wsdl:input message="tns:QueryDSTVCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:QueryDSTVCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBouquetDetails">
+      <wsdl:input message="tns:GetBouquetDetailsSoapIn" />
+      <wsdl:output message="tns:GetBouquetDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryKCCACustomerDetails">
+      <wsdl:input message="tns:QueryKCCACustomerDetailsSoapIn" />
+      <wsdl:output message="tns:QueryKCCACustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSolarCustomer">
+      <wsdl:input message="tns:ValidateSolarCustomerSoapIn" />
+      <wsdl:output message="tns:ValidateSolarCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateStudentDetails">
+      <wsdl:input message="tns:ValidateStudentDetailsSoapIn" />
+      <wsdl:output message="tns:ValidateStudentDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSchoolCode">
+      <wsdl:input message="tns:ValidateSchoolCodeSoapIn" />
+      <wsdl:output message="tns:ValidateSchoolCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuerySchoolStudentDetails">
+      <wsdl:input message="tns:QuerySchoolStudentDetailsSoapIn" />
+      <wsdl:output message="tns:QuerySchoolStudentDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeDSTVPayment">
+      <wsdl:input message="tns:MakeDSTVPaymentSoapIn" />
+      <wsdl:output message="tns:MakeDSTVPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeBETWAYPayment">
+      <wsdl:input message="tns:MakeBETWAYPaymentSoapIn" />
+      <wsdl:output message="tns:MakeBETWAYPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryNWSCCustomerDetails">
+      <wsdl:input message="tns:QueryNWSCCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:QueryNWSCCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryNSSFCustomerDetails">
+      <wsdl:input message="tns:QueryNSSFCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:QueryNSSFCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeURAPayment">
+      <wsdl:input message="tns:MakeURAPaymentSoapIn" />
+      <wsdl:output message="tns:MakeURAPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeUmemePayment">
+      <wsdl:input message="tns:MakeUmemePaymentSoapIn" />
+      <wsdl:output message="tns:MakeUmemePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeYakaPayment">
+      <wsdl:input message="tns:MakeYakaPaymentSoapIn" />
+      <wsdl:output message="tns:MakeYakaPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeNWSCPayment">
+      <wsdl:input message="tns:MakeNWSCPaymentSoapIn" />
+      <wsdl:output message="tns:MakeNWSCPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeKCCAPayment">
+      <wsdl:input message="tns:MakeKCCAPaymentSoapIn" />
+      <wsdl:output message="tns:MakeKCCAPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeSolarPayment">
+      <wsdl:input message="tns:MakeSolarPaymentSoapIn" />
+      <wsdl:output message="tns:MakeSolarPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewMakeKCCAPayment">
+      <wsdl:input message="tns:NewMakeKCCAPaymentSoapIn" />
+      <wsdl:output message="tns:NewMakeKCCAPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeSchoolFeesPayment">
+      <wsdl:input message="tns:MakeSchoolFeesPaymentSoapIn" />
+      <wsdl:output message="tns:MakeSchoolFeesPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:input message="tns:GetTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:GetTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionStatus">
+      <wsdl:input message="tns:GetTransactionStatusSoapIn" />
+      <wsdl:output message="tns:GetTransactionStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PegPaySoap" type="tns:PegPaySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReactivateSmartCard">
+      <soap:operation soapAction="http://PegPayPaymentsApi/ReactivateSmartCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadEODReconciliationReport">
+      <soap:operation soapAction="http://PegPayPaymentsApi/UploadEODReconciliationReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeUtilityPaymentPrepaidVendor">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeUtilityPaymentPrepaidVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCustomerDetailsPrepaidVendor">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QueryCustomerDetailsPrepaidVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryCustomerAtPostBank">
+      <soap:operation soapAction="http://PegPayPaymentsApi/queryCustomerAtPostBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePrepaidInterswitchTransaction">
+      <soap:operation soapAction="http://PegPayPaymentsApi/ReversePrepaidInterswitchTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetServerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryURACustomerDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QueryURACustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryUmemeCustomerDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QueryUmemeCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDSTVCustomerDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QueryDSTVCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBouquetDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetBouquetDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryKCCACustomerDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QueryKCCACustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSolarCustomer">
+      <soap:operation soapAction="http://PegPayPaymentsApi/ValidateSolarCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateStudentDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/ValidateStudentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSchoolCode">
+      <soap:operation soapAction="http://PegPayPaymentsApi/ValidateSchoolCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuerySchoolStudentDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QuerySchoolStudentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeDSTVPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeDSTVPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeBETWAYPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeBETWAYPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryNWSCCustomerDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QueryNWSCCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryNSSFCustomerDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QueryNSSFCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeURAPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeURAPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeUmemePayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeUmemePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeYakaPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeYakaPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeNWSCPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeNWSCPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeKCCAPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeKCCAPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeSolarPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeSolarPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMakeKCCAPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/NewMakeKCCAPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeSchoolFeesPayment">
+      <soap:operation soapAction="http://PegPayPaymentsApi/MakeSchoolFeesPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionStatus">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PegPaySoap12" type="tns:PegPaySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReactivateSmartCard">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/ReactivateSmartCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadEODReconciliationReport">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/UploadEODReconciliationReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeUtilityPaymentPrepaidVendor">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeUtilityPaymentPrepaidVendor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCustomerDetailsPrepaidVendor">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QueryCustomerDetailsPrepaidVendor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryCustomerAtPostBank">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/queryCustomerAtPostBank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePrepaidInterswitchTransaction">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/ReversePrepaidInterswitchTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetServerStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryURACustomerDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QueryURACustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryUmemeCustomerDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QueryUmemeCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDSTVCustomerDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QueryDSTVCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBouquetDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetBouquetDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryKCCACustomerDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QueryKCCACustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSolarCustomer">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/ValidateSolarCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateStudentDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/ValidateStudentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSchoolCode">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/ValidateSchoolCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuerySchoolStudentDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QuerySchoolStudentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeDSTVPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeDSTVPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeBETWAYPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeBETWAYPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryNWSCCustomerDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QueryNWSCCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryNSSFCustomerDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QueryNSSFCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeURAPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeURAPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeUmemePayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeUmemePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeYakaPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeYakaPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeNWSCPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeNWSCPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeKCCAPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeKCCAPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeSolarPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeSolarPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMakeKCCAPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/NewMakeKCCAPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeSchoolFeesPayment">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/MakeSchoolFeesPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionStatus">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PegPay">
+    <wsdl:port name="PegPaySoap" binding="tns:PegPaySoap">
+      <soap:address location="http://localhost:11718/Level2Api/PegPay.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PegPaySoap12" binding="tns:PegPaySoap12">
+      <soap12:address location="http://localhost:11718/Level2Api/PegPay.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

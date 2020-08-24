@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost:11718/Level2Api/PegPay.asmx?wsdl" docRef="http://localhost:11718/Level2Api/PegPay.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost:11718/Level2Api/PegPay.asmx" xmlns:q1="http://PegPayPaymentsApi/" binding="q1:PegPaySoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost:11718/Level2Api/PegPay.asmx" xmlns:q2="http://PegPayPaymentsApi/" binding="q2:PegPaySoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
