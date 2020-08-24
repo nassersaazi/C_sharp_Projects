@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:b0="http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema" xmlns:i0="http://www.nrs.eskom.co.za/xmlvend/revenue/2.1/schema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nrs.eskom.co.za/xmlvend/revenue/2.1/schema" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="xmlvend-base-2.1.xsd" namespace="http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema" />
+  <annotation>
+    <documentation> Hand coded XML Schema for NRS Prepaid Utility Vending
+			Service defining the
+			revenue domain Vending Markup Language (XMLVend)
+			for SOAP request and response messages
+			[*** WS-I Compliant *** see
+			http://www.ws-i.org]
+
+			Version Number Date Namespace
+
+			2.0 October 2005 http://www.nrs.eskom.co.za/XMLVend/revenue/2.0/schema
+			2.1 February 2006
+			http://www.nrs.eskom.co.za/XMLVend/revenue/2.1/schema
+		</documentation>
+  </annotation>
+  <element name="confirmCustomerReq" type="i0:ConfirmCustomerReq" />
+  <complexType name="ConfirmCustomerReq">
+    <annotation>
+      <documentation> A request to obtain customer details. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element name="idMethod" type="b0:IDMethod">
+            <annotation>
+              <documentation> The identification method used to search for a
+								customer.</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="confirmCustomerResp" type="i0:ConfirmCustomerResp" />
+  <complexType name="ConfirmCustomerResp">
+    <annotation>
+      <documentation> A response containing customer details.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element maxOccurs="unbounded" name="confirmCustResult" type="i0:ConfirmCustResult" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="creditVendReq" type="i0:CreditVendReq" />
+  <complexType name="AbstractCreditVendReq" abstract="true">
+    <annotation>
+      <documentation> Abstract request to obtain a credit token. Must be
+				specialised.</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendReq">
+        <sequence>
+          <element name="purchaseValue" type="i0:PurchaseValue" />
+          <element minOccurs="0" name="payType" type="b0:PayType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CreditVendReq">
+    <annotation>
+      <documentation> Credit Vend request to obtain a credit token (normal
+				sale).</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:AbstractCreditVendReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="TrialCreditVendReq">
+    <annotation>
+      <documentation> Trial Credit Vend requests a credit token (normal
+				sale) from the server, without the server actually generating a
+				valid token.</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:AbstractCreditVendReq" />
+    </complexContent>
+  </complexType>
+  <element name="creditVendResp" type="i0:CreditVendResp" />
+  <complexType name="CreditVendResp">
+    <annotation>
+      <documentation> A response to a creditVend request, containing the
+				prepaid transaction
+				and token cipher(possibly other transactions may
+				be present such as, debt recovery).
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendResp">
+        <sequence>
+          <element name="creditVendReceipt" type="i0:CreditVendReceipt" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="fbeReq" type="i0:FBEReq" />
+  <complexType name="FBEReq">
+    <annotation>
+      <documentation> A request for the free basic electricity token.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendReq" />
+    </complexContent>
+  </complexType>
+  <element name="fbeResp" type="i0:FBEResp" />
+  <complexType name="FBEResp">
+    <annotation>
+      <documentation> The response to a FBE request, containing the FBE
+				token cipher.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CreditVendResp" />
+    </complexContent>
+  </complexType>
+  <element name="reprintReq" type="i0:ReprintReq" />
+  <complexType name="ReprintReq">
+    <annotation>
+      <documentation> A request to obtain the reprint of transaction/s.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element name="idMethod" type="b0:IDMethod">
+            <annotation>
+              <documentation>
+								Identification information used to search for the
+								transactions on the server.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="reprintResp" type="i0:ReprintResp" />
+  <complexType name="ReprintResp">
+    <annotation>
+      <documentation> The response to a reprint request, containing one or
+				more previous
+				transactions for a specific meter.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element maxOccurs="unbounded" name="reprint" type="b0:BaseVendResp" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="cancelVendReq" type="i0:CancelVendReq" />
+  <complexType name="CancelVendReq">
+    <annotation>
+      <documentation> A request to cancel a previously processed credit
+				vend transaction -
+				only applicable to mag card meters and reprint use
+				case disabled.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendReq">
+        <sequence>
+          <element name="token" type="b0:Token" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="cancelVendResp" type="i0:CancelVendResp" />
+  <complexType name="CancelVendResp">
+    <annotation>
+      <documentation> The response to cancel request, confirming that the
+				transaction has been
+				canceled and the original transaction.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendResp">
+        <sequence>
+          <element name="origTx" type="i0:CreditVendTx">
+            <annotation>
+              <documentation> The details of the transaction that was canceled.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+        <attribute name="cancelRefNo" type="i0:ReceiptNo" use="optional">
+          <annotation>
+            <documentation> Identifier to the cancel vend transaction.
+						</documentation>
+          </annotation>
+        </attribute>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="validateCustomer" type="i0:ValidateCustomer" />
+  <element name="postYakaPayment" type="i0:PostYakaPayment" />
+  <element name="getTransactionDetails" type="i0:GetTransactionDetails" />
+  <complexType name="ValidateCustomer">
+    <sequence>
+      <element name="customerRef" type="b0:CustomerRef" />
+      <element name="vendorCode" type="b0:VendorCode" />
+      <element name="password" type="b0:Password" />
+    </sequence>
+  </complexType>
+  <complexType name="PostYakaPayment">
+    <sequence>
+      <element name="trans" type="i0:Trans" />
+    </sequence>
+  </complexType>
+  <complexType name="Trans">
+    <sequence>
+      <element minOccurs="0" name="statusDescription" type="string" />
+      <element minOccurs="0" name="statusCode" type="string" />
+      <element minOccurs="0" name="digitalSignature" type="string" />
+      <element minOccurs="0" name="paymentDate" type="string" />
+      <element minOccurs="0" name="teller" type="string" />
+      <element minOccurs="0" name="tranNarration" type="string" />
+      <element minOccurs="0" name="tranIdToReverse" type="decimal" />
+      <element minOccurs="0" name="paymentType" type="string" />
+      <element minOccurs="0" name="tranType" type="string" />
+      <element minOccurs="0" name="customerName" type="string" />
+      <element minOccurs="0" name="customerType" type="string" />
+      <element minOccurs="0" name="customerTel" type="string" />
+      <element name="customerRef" type="b0:CustomerRef" />
+      <element name="vendorTranId" type="b0:VendorTranId" />
+      <element name="password" type="b0:Password" />
+      <element name="vendorCode" type="b0:VendorCode" />
+      <element name="tranAmount" type="decimal" />
+    </sequence>
+  </complexType>
+  <complexType name="GetTransactionDetails">
+    <sequence>
+      <element name="vendorTranId" type="b0:VendorTranId" />
+      <element name="vendorCode" type="b0:VendorCode" />
+      <element name="password" type="b0:Password" />
+    </sequence>
+  </complexType>
+  <element name="validateCustomerResponse" type="i0:ValidateCustomerResponse" />
+  <element name="postYakaPaymentResponse" type="i0:PostYakaPaymentResponse" />
+  <complexType name="ValidateCustomerResponse">
+    <sequence>
+      <element name="validateCustomerResult" type="i0:ValidateCustomerResult" />
+    </sequence>
+  </complexType>
+  <complexType name="ValidateCustomerResult">
+    <sequence>
+      <element name="statusDescription" type="string" />
+      <element name="statusCode" type="string" />
+      <element name="customerRef" type="string" />
+      <element name="customerName" type="string" />
+      <element name="CustomerType" type="string" />
+      <element name="balance" type="decimal" />
+      <element name="custAddress" type="string" />
+      <element name="custLocRef" type="string" />
+      <element name="mobile" type="string" />
+      <element name="vendorMaxVendAmt " type="decimal" />
+      <element name="vendorMinVendAmt " type="decimal" />
+    </sequence>
+  </complexType>
+  <complexType name="PostYakaPaymentResponse">
+    <sequence>
+      <element name="postYakaPaymentResult" type="i0:PostYakaPaymentResult" />
+    </sequence>
+  </complexType>
+  <complexType name="PostYakaPaymentResult">
+    <sequence>
+      <element name="lifeLine" type="string" />
+      <element name="payAccount" type="decimal" />
+      <element name="remainingCredit" type="decimal" />
+      <element name="debtRecovery" type="decimal" />
+      <element name="arrearsBalance" type="decimal" />
+      <element name="arrears" type="decimal" />
+      <element name="receiptNumber" type="string" />
+      <element name="statusCode" type="string" />
+      <element name="statusDescription" type="string" />
+      <element name="meterNumber" type="string" />
+      <element name="units" type="decimal" />
+      <element name="tokenValue" type="decimal" />
+      <element name="tariffCodeNumber" type="string" />
+      <element name="taxBase" type="decimal" />
+      <element name="tax" type="decimal" />
+      <element name="SSF" type="decimal" />
+      <element name="maxDemandValue" type="decimal" />
+      <element name="maxDemandCharge" type="decimal" />
+      <element name="penalty" type="decimal" />
+      <element name="reward" type="decimal" />
+      <element name="prepaidToken" type="string" />
+      <element name="accountPayAmount" type="decimal" />
+      <element name="accountSaveAmount" type="decimal" />
+      <element name="vendorTranId" type="string" />
+      <element name="vendorMinVendAmt" type="decimal" />
+      <element name="change" type="decimal" />
+    </sequence>
+  </complexType>
+  <element name="trialCreditVendReq" type="i0:TrialCreditVendReq" />
+  <element name="trialCreditVendResp" type="i0:TrialCreditVendResp" />
+  <complexType name="TrialCreditVendResp">
+    <annotation>
+      <documentation>Response to trial vend request, same as a credit vend
+				response, except
+				that token returned has no monetary value and is set
+				to "0000 0000 0000 0000".
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CreditVendResp" />
+    </complexContent>
+  </complexType>
+  <element name="meterCreditTransferReq" type="i0:MeterCreditTransferReq" />
+  <complexType name="MeterCreditTransferReq">
+    <annotation>
+      <documentation> Request for a credit token in units, for credit left
+				in a changed out
+				meter.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendReq">
+        <sequence>
+          <element name="chgOutUnits" type="i0:PurchaseValueUnits">
+            <annotation>
+              <documentation> The requested value of the token, in terms of
+								units.
+							</documentation>
+            </annotation>
+          </element>
+          <element name="creditTransferDetail" type="i0:CreditTransferDetail" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="meterCreditTransferResp" type="i0:MeterCreditTransferResp" />
+  <complexType name="MeterCreditTransferResp">
+    <annotation>
+      <documentation> Response to a changeOutVend Request, contains the
+				credit token, and the
+				change out details.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendResp">
+        <sequence>
+          <element name="creditTransferDetail" type="i0:CreditTransferDetail" />
+          <element name="creditTransferTx" type="i0:CreditVendTx" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="payAccReq" type="i0:PayAccReq" />
+  <complexType name="PayAccReq">
+    <annotation>
+      <documentation> Request to pay an account. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element name="reqAmt" type="b0:Currency">
+            <annotation>
+              <documentation> The amount being paid. </documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="payType" type="b0:PayType" />
+          <element name="payAccount" type="i0:PayAccount" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="payAccResp" type="i0:PayAccResp" />
+  <complexType name="PayAccResp">
+    <annotation>
+      <documentation> Response, to a pay account request. Containing a
+				receipt, confirming
+				that the account has been paid.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendResp">
+        <sequence>
+          <element name="payAccReceipt" type="i0:PayAccReceipt" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="verifyReq" type="i0:VerifyReq" />
+  <complexType name="VerifyReq">
+    <annotation>
+      <documentation> Request to verify an already issued credit token.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element name="token" type="b0:Token" />
+          <element name="idMethod" type="b0:VendIDMethod">
+            <annotation>
+              <documentation> The meter identifier, for the meter whose token
+								is being
+								verified.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="verifyResp" type="i0:VerifyResp" />
+  <complexType name="VerifyResp">
+    <annotation>
+      <documentation> Response, to a verify token request. Contains details
+				of the token being
+				verified.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendResp">
+        <sequence>
+          <element name="creditVendTx" type="i0:CreditVendTx" />
+          <element name="tokenInfo" type="b0:TokenInfo" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="freeIssueReq" type="i0:FreeIssueReq" />
+  <complexType name="FreeIssueReq">
+    <annotation>
+      <documentation> Request for a credit token, that does not require
+				payment and is issued
+				for a specific purpose eg. marketing, etc.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseVendReq" />
+    </complexContent>
+  </complexType>
+  <element name="freeIssueResp" type="i0:FreeIssueResp" />
+  <complexType name="FreeIssueResp">
+    <annotation>
+      <documentation> Response to free issue request. Same as the credit
+				vend response.
+				Contains the credit token cipher and transaction
+				details.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:CreditVendResp" />
+    </complexContent>
+  </complexType>
+  <element name="startBatchReq" type="i0:StartBatchReq" />
+  <complexType name="StartBatchReq" abstract="true">
+    <annotation>
+      <documentation> Request to explicitly start a banking, sales, shift
+				or "all" on the
+				server, before starting to vend.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq" />
+    </complexContent>
+  </complexType>
+  <element name="startBatchResp" type="i0:StartBatchResp" />
+  <complexType name="StartBatchResp">
+    <annotation>
+      <documentation> Response to start batch request. Confirms the batch
+				or batches were
+				started.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element name="startedBatch" type="i0:StartBatch" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="endBatchReq" type="i0:EndBatchReq" />
+  <complexType name="EndBatchReq" abstract="true">
+    <annotation>
+      <documentation> Request to end a batch or batches on the server.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq" />
+    </complexContent>
+  </complexType>
+  <element name="endBatchResp" type="i0:EndBatchResp" />
+  <complexType name="EndBatchResp">
+    <annotation>
+      <documentation> Response to and end batch request. The batch or
+				batches are closed and
+				the summaries returned.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element name="endBatch" type="i0:Batch" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="totalBatchReq" type="i0:TotalBatchReq" />
+  <complexType name="TotalBatchReq" abstract="true">
+    <annotation>
+      <documentation> Request to totalise the request batch or batches.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq" />
+    </complexContent>
+  </complexType>
+  <element name="totalBatchResp" type="i0:TotalBatchResp" />
+  <complexType name="TotalBatchResp">
+    <annotation>
+      <documentation> Response to totalise batch request. The batch
+				summaries to date are
+				returned. Batch status remains unchanged.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element maxOccurs="unbounded" name="totalBatch" type="i0:Batch" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="vendorStatementReq" type="i0:VendorStatementReq" />
+  <complexType name="VendorStatementReq">
+    <annotation>
+      <documentation> Request to obtain last X number of vendor statement
+				transactions of the
+				vendors credit statement.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq" />
+    </complexContent>
+  </complexType>
+  <element name="vendorStatementResp" type="i0:VendorStatementResp" />
+  <complexType name="VendorStatementResp">
+    <annotation>
+      <documentation> Response to vendor statement request. Details last X
+				vendor statement
+				transactions on the vendors credit.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element name="statement" type="i0:VendorStatement" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="depositReq" type="i0:DepositReq" />
+  <complexType name="DepositReq">
+    <annotation>
+      <documentation> Request to create a deposit slip for the vendor to
+				bank his sales.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq" />
+    </complexContent>
+  </complexType>
+  <element name="depositResp" type="i0:DepositResp" />
+  <complexType name="DepositResp">
+    <annotation>
+      <documentation> Response to deposit request. Provides total sales
+				since last deposit
+				request and details to create a deposit slip.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element name="depSlip" type="i0:DepositSlip" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="reprintDepReq" type="i0:ReprintDepositReq" />
+  <complexType name="ReprintDepositReq">
+    <annotation>
+      <documentation> Request to reprint an already requested deposit slip.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq" />
+    </complexContent>
+  </complexType>
+  <element name="reprintDepResp" type="i0:ReprintDepositResp" />
+  <complexType name="ReprintDepositResp">
+    <annotation>
+      <documentation> Response to reprint deposit slip request. Contains
+				the last X created
+				deposit slips.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element maxOccurs="unbounded" name="reprint" type="i0:DepositResp" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="reprintEndBatchReq" type="i0:ReprintEndBatchReq" />
+  <complexType name="ReprintEndBatchReq" abstract="true">
+    <annotation>
+      <documentation> Abstract request to reprint an already closed batch
+				or batches.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="ReprintEndShiftBatchReq">
+    <annotation>
+      <documentation> Request to reprint an already closed shift batch, if
+				the shift batch
+				seqno is not supplied then the client's last closed
+				shift batch is returned.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:ReprintEndBatchReq">
+        <sequence>
+          <element minOccurs="0" name="seqNo" type="i0:ShiftSalesBatchSeqNo" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ReprintEndSalesBatchReq">
+    <annotation>
+      <documentation> Request to reprint an already closed sales batch and
+				optionally any
+				children shift batch / batches. If the sales batch
+				seqno is not supplied then the
+				client's last closed sales batch is
+				returned.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:ReprintEndBatchReq">
+        <sequence>
+          <element minOccurs="0" name="seqNo" type="i0:ShiftSalesBatchSeqNo" />
+          <element minOccurs="0" default="true" name="all" type="boolean" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ReprintEndBankingBatchReq">
+    <annotation>
+      <documentation> Request to reprint an already closed banking batch
+				and optionally any
+				children sales and shift batch / batches. If the
+				bank batch seqno is not supplied
+				then the client's last closed sales
+				batch is returned.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:ReprintEndBatchReq">
+        <sequence>
+          <element minOccurs="0" name="seqNo" type="i0:BankBatchSeqNo" />
+          <element minOccurs="0" default="true" name="all" type="boolean" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="reprintEndBatchResp" type="i0:ReprintEndBatchResp" />
+  <complexType name="ReprintEndBatchResp">
+    <annotation>
+      <documentation> Response to batch reprint request. Contains the
+				requested batch.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element name="endBatchReprint" type="i0:EndBatchResp" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Batch" abstract="true">
+    <sequence>
+      <element name="started" type="dateTime">
+        <annotation>
+          <documentation> Date time stamped of when the batch was started.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="ended" type="dateTime">
+        <annotation>
+          <documentation> Date time stamped of when the batch was closed.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="batchTot" type="b0:Currency" />
+      <element minOccurs="0" name="totTax" type="b0:Tax" />
+      <element minOccurs="0" name="batchReport" type="i0:BatchReport">
+        <annotation>
+          <documentation> The total monetary value of transactions within the
+						batch.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ShiftBatch">
+    <annotation>
+      <documentation> Batch specialisation, used when a shift batch is
+				closed.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Batch">
+        <attribute name="seqNo" type="i0:ShiftSalesBatchSeqNo" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SalesBatch">
+    <annotation>
+      <documentation> Batch specialisation, used when sales batch is
+				closed. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Batch">
+        <sequence>
+          <element minOccurs="0" name="firstTxSeqNo" type="i0:TxSeqNo" />
+          <element minOccurs="0" name="lastTxSeqNo" type="i0:TxSeqNo" />
+          <element minOccurs="0" maxOccurs="unbounded" name="shiftBatch" type="i0:ShiftBatch" />
+        </sequence>
+        <attribute name="seqNo" type="i0:ShiftSalesBatchSeqNo" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BankBatch">
+    <annotation>
+      <documentation> Batch specialisation, used when the bank batch is
+				closed.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Batch">
+        <sequence>
+          <element minOccurs="0" name="firstSalesSeqNo" type="i0:ShiftSalesBatchSeqNo" />
+          <element minOccurs="0" name="lastSalesSeqNo" type="i0:ShiftSalesBatchSeqNo" />
+          <element minOccurs="0" name="depSlip" type="i0:DepositSlip" />
+          <element minOccurs="0" maxOccurs="unbounded" name="salesBatch" type="i0:SalesBatch" />
+        </sequence>
+        <attribute name="seqNo" type="i0:BankBatchSeqNo" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Beneficiary">
+    <annotation>
+      <documentation> Contains the details of the beneficiary details for a
+				bank deposit.
+			</documentation>
+    </annotation>
+    <attribute name="accName" type="b0:PersonName" use="required">
+      <annotation>
+        <documentation> The beneficiary bank account name. </documentation>
+      </annotation>
+    </attribute>
+    <attribute name="accNo" type="b0:AccountNo" use="required">
+      <annotation>
+        <documentation> The beneficiary bank account number where money will
+					be deposit.
+				</documentation>
+      </annotation>
+    </attribute>
+    <attribute name="branchCode" type="b0:BranchCode" use="required" />
+    <attribute name="bankName" type="b0:OrganisationName" use="required" />
+    <attribute name="bankRegNo" type="i0:BankRegNo" use="required">
+      <annotation>
+        <documentation> The bank registration number. </documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="CreditTransferDetail">
+    <annotation>
+      <documentation> Contains the details form the change out.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="oldMSNO" type="b0:MSNO">
+        <annotation>
+          <documentation> The meter serial number of the meter that has been
+						changed out.
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="refNo" type="b0:RefNo">
+        <annotation>
+          <documentation> The reference number that is usually printed on the
+						meter change
+						out form.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ConfirmCustResult">
+    <sequence>
+      <element name="custVendDetail" type="b0:CustVendDetail" />
+      <element name="custVendConfig" type="i0:CustVendConfig" />
+      <element minOccurs="0" name="meterDetail" type="b0:MeterDetail" />
+    </sequence>
+  </complexType>
+  <complexType name="CustVendConfig">
+    <annotation>
+      <documentation> Vending information for a customer. </documentation>
+    </annotation>
+    <sequence>
+      <element name="canVend" type="boolean">
+        <annotation>
+          <documentation> true-customer is allowed to purchase credit tokens,
+						false-customer not allowed to purchase tokens / blocked.
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="fbeDue" type="boolean">
+        <annotation>
+          <documentation> true-customer has not collected the monthly FBE
+						token. false -
+						customer has collected the monthly FBE token.
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="maxVendAmt" type="b0:Currency">
+        <annotation>
+          <documentation> The maximum value of token the customer can
+						purchase.
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="minVendAmt" type="b0:Currency">
+        <annotation>
+          <documentation> The minimum value of token the customer can
+						request.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="DepositSlip">
+    <annotation>
+      <documentation> Information that is returned by the server that can
+				be used to create a
+				deposit on the client.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" name="header" type="b0:Msg">
+        <annotation>
+          <documentation> An optional string stating "Deposit Slip"
+					</documentation>
+        </annotation>
+      </element>
+      <element name="amt" type="b0:Currency">
+        <annotation>
+          <documentation> Recommended amount to be deposited. </documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="beneficiary" type="i0:Beneficiary">
+        <annotation>
+          <documentation> Details of the account into which the deposit will
+						be made.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+    <attribute name="bankingRefNo" type="b0:RefNo" use="required">
+      <annotation>
+        <documentation> Reference number to used with the deposit.
+				</documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="EndAllBatchesReq">
+    <annotation>
+      <documentation> Request to end or close all open batches.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:EndBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="EndShiftBatchReq">
+    <annotation>
+      <documentation> Request to end / close a shift batch. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:EndBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="EndSalesBatchReq">
+    <annotation>
+      <documentation> Request to end / close a sales batch. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:EndBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="EndBankBatchReq">
+    <annotation>
+      <documentation> Request to end / close a bank batch. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:EndBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="PayAccount">
+    <annotation>
+      <documentation> Generic information that is required when paying an
+				account. It may be
+				extended to accommodate implementation specific
+				account payments.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" name="desc" type="b0:Msg" />
+      <element name="idMethod" type="b0:IDMethod" />
+    </sequence>
+  </complexType>
+  <complexType name="DebtRecovery">
+    <annotation>
+      <documentation> Extends pay account to allow for debt recovery or
+				arrears payments.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:PayAccount" />
+    </complexContent>
+  </complexType>
+  <complexType name="ServiceChrg">
+    <annotation>
+      <documentation> Extends pay account to allow for service charge
+				payments.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:PayAccount" />
+    </complexContent>
+  </complexType>
+  <complexType name="PurchaseValue" abstract="true" />
+  <complexType name="PurchaseValueCurrency">
+    <annotation>
+      <documentation> The requested transaction value, expressed as
+				currency. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:PurchaseValue">
+        <sequence>
+          <element name="amt" type="b0:Currency" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PurchaseValueUnits">
+    <annotation>
+      <documentation> The requested transaction value, expressed as number
+				of resource units.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:PurchaseValue">
+        <sequence>
+          <element name="units" type="b0:Units" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Receipt" abstract="true">
+    <annotation>
+      <documentation> Generic information that is contained in receipts
+				that are returned by
+				the server.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="transactions" type="i0:Transactions" />
+    </sequence>
+    <attribute name="receiptNo" type="i0:ReceiptNo" use="required" />
+  </complexType>
+  <complexType name="PayAccReceipt">
+    <annotation>
+      <documentation> Receipt returned as part of Pay Account response.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Receipt">
+        <sequence>
+          <element minOccurs="0" name="meterDetail" type="b0:MeterDetail" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CreditVendReceipt">
+    <annotation>
+      <documentation> Receipt returned as part of a transaction that
+				includes a credit vend
+				token.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Receipt" />
+    </complexContent>
+  </complexType>
+  <complexType name="StartAllBatchesReq">
+    <complexContent mixed="false">
+      <extension base="i0:StartBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="StartShiftBatchReq">
+    <complexContent mixed="false">
+      <extension base="i0:StartBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="StartSalesBatchReq">
+    <complexContent mixed="false">
+      <extension base="i0:StartBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="StartBankBatchReq">
+    <complexContent mixed="false">
+      <extension base="i0:StartBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="StartBatch" abstract="true">
+    <sequence>
+      <element name="started" type="dateTime">
+        <annotation>
+          <documentation> The date time stamp of when the batch was started.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ShiftStartBatch">
+    <complexContent mixed="false">
+      <extension base="i0:StartBatch">
+        <attribute name="seqNo" type="i0:ShiftSalesBatchSeqNo" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SalesStartBatch">
+    <complexContent mixed="false">
+      <extension base="i0:StartBatch">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="shiftStartBatch" type="i0:ShiftStartBatch" />
+        </sequence>
+        <attribute name="seqNo" type="i0:ShiftSalesBatchSeqNo" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BankStartBatch">
+    <complexContent mixed="false">
+      <extension base="i0:StartBatch">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="salesStartBatch" type="i0:SalesStartBatch" />
+        </sequence>
+        <attribute name="seqNo" type="i0:BankBatchSeqNo" use="required" />
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Transactions">
+    <annotation>
+      <documentation> Contains one or more transactions. </documentation>
+    </annotation>
+    <sequence>
+      <element maxOccurs="unbounded" name="tx" type="i0:Tx" />
+      <element minOccurs="0" name="lessRound" type="b0:Currency">
+        <annotation>
+          <documentation> Amount by which the transaction value is reduced,
+						to achieve its
+						rounding rule.
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="tenderAmt" type="b0:Currency">
+        <annotation>
+          <documentation> The amount tendered by the customer.
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="change" type="b0:Currency">
+        <annotation>
+          <documentation> The difference between the final transaction value
+						(after
+						rounding) and the amount tendered.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="Tx" abstract="true">
+    <sequence>
+      <element name="amt" type="b0:Currency">
+        <annotation>
+          <documentation>
+						The value of the transaction (before rounding).
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="unbounded" name="tax" type="b0:Tax">
+        <annotation>
+          <documentation>
+						The tax or taxes applicable to the transaction.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+    <attribute name="receiptNo" type="i0:ReceiptNo" use="optional">
+      <annotation>
+        <documentation> Receipt number that may be required for each
+					individual transaction.
+				</documentation>
+      </annotation>
+    </attribute>
+  </complexType>
+  <complexType name="CreditVendTx">
+    <annotation>
+      <documentation> Transaction that has a credit token associated with
+				it. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Tx">
+        <sequence>
+          <element name="creditTokenIssue" type="b0:CreditTokenIssue" />
+          <element minOccurs="0" name="kcTokenIssue" type="b0:KCTokenIssue" />
+          <element minOccurs="0" name="tariff" type="b0:Tariff" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PayAccTx">
+    <annotation>
+      <documentation> A pay account transaction </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:Tx">
+        <sequence>
+          <element name="accDesc" type="b0:Msg">
+            <annotation>
+              <documentation> A short description of the account being paid.
+							</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="accNo" type="b0:AccountNo">
+            <annotation>
+              <documentation> The account number associated with the account.
+							</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="tariff" type="b0:Tariff">
+            <annotation>
+              <documentation> The tariff associated with the account payment.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DebtRecoveryTx">
+    <annotation>
+      <documentation>Specialised account payment, used to collect debt
+				recovery payments.</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:PayAccTx">
+        <sequence>
+          <element minOccurs="0" name="balance" type="b0:Currency">
+            <annotation>
+              <documentation> Balance still outstanding on the account.
+							</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ServiceChrgTx">
+    <annotation>
+      <documentation>
+				Specialised account payment transaction, used to
+				collect service charges.
+			</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:PayAccTx" />
+    </complexContent>
+  </complexType>
+  <complexType name="ResourceTotal">
+    <annotation>
+      <documentation> Total value of resource/s sold in a batch.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="desc" type="b0:Msg">
+        <annotation>
+          <documentation>
+						Description of the resource total specialisation,
+						eg, Electricity, Water, etc.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="units" type="b0:Units" />
+    </sequence>
+  </complexType>
+  <complexType name="ElectricityTotal">
+    <annotation>
+      <documentation> Total Electricity units sold. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:ResourceTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="GasTotal">
+    <annotation>
+      <documentation> Total Gas units sold. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:ResourceTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="WaterTotal">
+    <annotation>
+      <documentation> Total Water units sold. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:ResourceTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="ConnectionTimeTotal">
+    <annotation>
+      <documentation> Total ConnectionTime units sold. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:ResourceTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="CurrencyTotal">
+    <annotation>
+      <documentation> Total currency units sold. </documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="i0:ResourceTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="BatchReport">
+    <annotation>
+      <documentation>The Sales total
+				can be broken down into sales per
+				paytype, sales per operator, sales per transaction
+				type.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="txTotal" type="i0:TxTotal" />
+      <element minOccurs="0" maxOccurs="unbounded" name="operatorTotal" type="i0:OperatorTotal" />
+      <element minOccurs="0" maxOccurs="unbounded" name="payTypeTotal" type="i0:PayTypeTotal" />
+      <element minOccurs="0" maxOccurs="unbounded" name="resTot" type="i0:ResourceTotal">
+        <annotation>
+          <documentation> The total value in units for each resource sold in
+						the batch.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PayTypeTotal" abstract="true">
+    <annotation>
+      <documentation> Total sales per paytype. </documentation>
+    </annotation>
+    <sequence>
+      <element name="desc" type="b0:Msg">
+        <annotation>
+          <documentation>
+						Description of the pay type total specialisation,
+						eg, Cash, Cheque, etc.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="amt" type="b0:Currency" />
+    </sequence>
+  </complexType>
+  <complexType name="CashTotal">
+    <complexContent mixed="false">
+      <extension base="i0:PayTypeTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="ChequeTotal">
+    <complexContent mixed="false">
+      <extension base="i0:PayTypeTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="CreditCardTotal">
+    <complexContent mixed="false">
+      <extension base="i0:PayTypeTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="DebitCardTotal">
+    <complexContent mixed="false">
+      <extension base="i0:PayTypeTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="OtherTotal">
+    <complexContent mixed="false">
+      <extension base="i0:PayTypeTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="OperatorTotal">
+    <annotation>
+      <documentation> Total sales for an operator. </documentation>
+    </annotation>
+    <sequence>
+      <element name="opName" type="b0:OpName" />
+      <element name="amt" type="b0:Currency" />
+    </sequence>
+  </complexType>
+  <complexType name="TxTotal" abstract="true">
+    <sequence>
+      <element name="desc" type="b0:Msg">
+        <annotation>
+          <documentation>
+						Description of the transaction total specialisation,
+						eg, Normal Sale, Meter Credit Transfer, etc.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="amt" type="b0:Currency" />
+    </sequence>
+  </complexType>
+  <complexType name="NormalSaleTotal">
+    <complexContent mixed="false">
+      <extension base="i0:TxTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="CancellationTotal">
+    <complexContent mixed="false">
+      <extension base="i0:TxTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="FreeIssueTotal">
+    <complexContent mixed="false">
+      <extension base="i0:TxTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="MeterCreditTransferTotal">
+    <complexContent mixed="false">
+      <extension base="i0:TxTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="AccPaymentTotal">
+    <complexContent mixed="false">
+      <extension base="i0:TxTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="DebtRecoveryTotal">
+    <complexContent mixed="false">
+      <extension base="i0:AccPaymentTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="ServiceChrgTotal">
+    <complexContent mixed="false">
+      <extension base="i0:AccPaymentTotal" />
+    </complexContent>
+  </complexType>
+  <complexType name="TotalAllBatchesReq">
+    <complexContent mixed="false">
+      <extension base="i0:TotalBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="TotalShiftBatchReq">
+    <complexContent mixed="false">
+      <extension base="i0:TotalBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="TotalSalesBatchReq">
+    <complexContent mixed="false">
+      <extension base="i0:TotalBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="TotalBankBatchReq">
+    <complexContent mixed="false">
+      <extension base="i0:TotalBatchReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="VendorStatement">
+    <annotation>
+      <documentation> A list of transactions that update the vendor's
+				credit. </documentation>
+    </annotation>
+    <sequence>
+      <element name="accNo" type="b0:AccountNo">
+        <annotation>
+          <documentation> Account number that the vendor has with the
+						utility.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="accBal" type="b0:Currency">
+        <annotation>
+          <documentation> Balance in the vendor's account. </documentation>
+        </annotation>
+      </element>
+      <element name="availCredit" type="b0:Currency">
+        <annotation>
+          <documentation> Credit available for new transactions.
+					</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="unbounded" name="lineItem" type="i0:VendorStatementLineItem" />
+    </sequence>
+  </complexType>
+  <complexType name="VendorStatementLineItem">
+    <annotation>
+      <documentation> Generic transaction that can occur on the vendor's
+				account. Must be
+				extended.
+			</documentation>
+    </annotation>
+    <sequence>
+      <element name="desc" type="b0:Msg">
+        <annotation>
+          <documentation> Description of the vendor statement transaction.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="amt" type="b0:Currency">
+        <annotation>
+          <documentation> Amount by which the vendor's account is adjusted.
+					</documentation>
+        </annotation>
+      </element>
+      <element name="appliedDate" type="dateTime">
+        <annotation>
+          <documentation> Date time stamp when the transaction was applied to
+						the vendors
+						account.
+					</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <simpleType name="BankRegNo">
+    <annotation>
+      <documentation> This is the official regulatory registration number
+				of the bank.
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){1,15}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="BankBatchSeqNo">
+    <annotation>
+      <documentation> The sequence number of a bank batch. [3] digits only,
+				no whitespace, as
+				per NRS009-6-3.
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){3}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="ReceiptNo">
+    <annotation>
+      <documentation> Receipt number associated with the transaction.
+				[1..15] chars and digits
+				only, no whitespace. For the TrialCreditVend
+				request the receipt value will default
+				"0".
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\S){1,15}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="ShiftSalesBatchSeqNo">
+    <annotation>
+      <documentation> Sequence number of a sales or shift batch. [4] digits
+				only, no
+				whitespace
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){4}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="TxSeqNo">
+    <annotation>
+      <documentation> Transaction sequence number. [5] digits only, no
+				whitespace
+			</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern value="(\d){5}" />
+    </restriction>
+  </simpleType>
+  <element name="loginReq" type="i0:LoginReq" />
+  <element name="user" type="i0:LoginUser" />
+  <complexType name="LoginReq">
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq" />
+    </complexContent>
+  </complexType>
+  <complexType name="LoginUser">
+    <sequence>
+      <element name="ID" type="int" />
+      <element name="TID" type="int" />
+      <element name="CDUID" type="int" />
+      <element minOccurs="0" name="CDUName" type="string" />
+      <element name="CDUBalance" type="decimal" />
+      <element name="MinVendAmt" type="decimal" />
+      <element name="MaxVendAmt" type="decimal" />
+      <element name="LoginTime" type="dateTime" />
+    </sequence>
+  </complexType>
+  <element name="confirmNodeReq" type="i0:ConfirmNodeReq" />
+  <complexType name="ConfirmNodeReq">
+    <complexContent mixed="false">
+      <extension base="b0:BaseReq">
+        <sequence>
+          <element name="parentNode" type="i0:ParentNode" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="confirmNodeResp" type="i0:ConfirmNodeResp" />
+  <complexType name="ConfirmNodeResp">
+    <complexContent mixed="false">
+      <extension base="b0:BaseResp">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="nodes" type="i0:Node" />
+          <element name="nodesJson" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ParentNode">
+    <sequence>
+      <element name="parentNodeId" type="string" />
+      <element name="nodeType" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="Node">
+    <sequence>
+      <element name="nodeId" type="string" />
+      <element name="nodeName" type="string" />
+      <element name="nodeType" type="string" />
+      <element name="parentNodeId" type="string" />
+      <element name="parentNodeName" type="string" />
+    </sequence>
+  </complexType>
+</schema>

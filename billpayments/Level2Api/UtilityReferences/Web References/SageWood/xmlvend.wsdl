@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:base="http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema" xmlns:revenue="http://www.nrs.eskom.co.za/xmlvend/revenue/2.1/schema" xmlns:meter="http://www.nrs.eskom.co.za/xmlvend/meter/2.1/schema" xmlns:tns="http://www.nrs.eskom.co.za/xmlvend/service/2.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://www.nrs.eskom.co.za/xmlvend/service/2.1" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.nrs.eskom.co.za/xmlvend/service/2.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="xmlvend-revenue-2.1.xsd" namespace="http://www.nrs.eskom.co.za/xmlvend/revenue/2.1/schema" />
+      <xsd:import schemaLocation="xmlvend-base-2.1.xsd" namespace="http://www.nrs.eskom.co.za/xmlvend/base/2.1/schema" />
+      <xsd:import schemaLocation="xmlvend-meter-2.1.xsd" namespace="http://www.nrs.eskom.co.za/xmlvend/meter/2.1/schema" />
+    </xsd:schema>
+  </types>
+  <message name="LoginRequestSoapIn">
+    <part name="messagePart" element="revenue:loginReq" />
+  </message>
+  <message name="LoginRequestSoapOut">
+    <part name="messagePart" element="revenue:user" />
+  </message>
+  <message name="ConfirmCustomerRequestSoapIn">
+    <part name="messagePart" element="revenue:confirmCustomerReq" />
+  </message>
+  <message name="ConfirmCustomerRequestSoapOut">
+    <part name="messagePart" element="revenue:confirmCustomerResp" />
+  </message>
+  <message name="CreditVendRequestSoapIn">
+    <part name="messagePart" element="revenue:creditVendReq" />
+  </message>
+  <message name="CreditVendRequestSoapOut">
+    <part name="messagePart" element="revenue:creditVendResp" />
+  </message>
+  <message name="TrialCreditVendRequestSoapIn">
+    <part name="messagePart" element="revenue:trialCreditVendReq" />
+  </message>
+  <message name="TrialCreditVendRequestSoapOut">
+    <part name="messagePart" element="revenue:trialCreditVendResp" />
+  </message>
+  <message name="AdviceRequestSoapIn">
+    <part name="messagePart" element="base:adviceReq" />
+  </message>
+  <message name="AdviceRequestSoapOut">
+    <part name="messagePart" element="base:adviceResp" />
+  </message>
+  <message name="ReprintRequestSoapIn">
+    <part name="messagePart" element="revenue:reprintReq" />
+  </message>
+  <message name="ReprintRequestSoapOut">
+    <part name="messagePart" element="revenue:reprintResp" />
+  </message>
+  <message name="GetMeterBalanceSoapIn">
+    <part name="messagePart" element="meter:getMeterBalanceReq" />
+  </message>
+  <message name="GetMeterBalanceSoapOut">
+    <part name="messagePart" element="meter:getMeterBalanceResponse" />
+  </message>
+  <message name="GetOrderStatusSoapIn">
+    <part name="messagePart" element="base:getOrderStatusReq" />
+  </message>
+  <message name="GetOrderStatusSoapOut">
+    <part name="messagePart" element="base:getOrderStatusResp" />
+  </message>
+  <message name="NRSFaultResponseSoapOut">
+    <part name="messagePart" element="base:xmlvendFaultResp" />
+  </message>
+  <message name="FBERequestSoapIn">
+    <part name="messagPart" element="revenue:fbeReq" />
+  </message>
+  <message name="FBERequestSoapOut">
+    <part name="messagePart" element="revenue:fbeResp" />
+  </message>
+  <portType name="XMLVendServiceSoap">
+    <operation name="CreditVendRequest">
+      <documentation>Vend a credit token, any other tokens required and return all information</documentation>
+      <input message="tns:CreditVendRequestSoapIn" />
+      <output message="tns:CreditVendRequestSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+    <operation name="ConfirmCustomerRequest">
+      <documentation>Confirm customer details from the information supplied.</documentation>
+      <input message="tns:ConfirmCustomerRequestSoapIn" />
+      <output message="tns:ConfirmCustomerRequestSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+    <operation name="TrialCreditVendRequest">
+      <documentation>Trial Vend a credit token and return cost of such a token.</documentation>
+      <input message="tns:TrialCreditVendRequestSoapIn" />
+      <output message="tns:TrialCreditVendRequestSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+    <operation name="AdviceRequest">
+      <documentation>Advice on the preceding Vend Request of type, confirm, reverse or AutoReprint.</documentation>
+      <input message="tns:AdviceRequestSoapIn" />
+      <output message="tns:AdviceRequestSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+    <operation name="LoginRequest">
+      <documentation>Confirm login details from the information supplied</documentation>
+      <input message="tns:LoginRequestSoapIn" />
+      <output message="tns:LoginRequestSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+    <operation name="ReprintRequest">
+      <documentation>Reprint X number transactions token and return all information</documentation>
+      <input message="tns:ReprintRequestSoapIn" />
+      <output message="tns:ReprintRequestSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+    <operation name="GetMeterBalance">
+      <documentation>Get meter balance</documentation>
+      <input message="tns:GetMeterBalanceSoapIn" />
+      <output message="tns:GetMeterBalanceSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+    <operation name="GetOrderStatus">
+      <documentation>Get order status</documentation>
+      <input message="tns:GetOrderStatusSoapIn" />
+      <output message="tns:GetOrderStatusSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+    <operation name="FBERequest">
+      <documentation>Vend a FBE credit token, any other tokens required and return all information</documentation>
+      <input message="tns:FBERequestSoapIn" />
+      <output message="tns:FBERequestSoapOut" />
+      <fault name="genFault" message="tns:NRSFaultResponseSoapOut" />
+    </operation>
+  </portType>
+  <binding name="XMLVendServiceBinding" type="tns:XMLVendServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CreditVendRequest">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="ConfirmCustomerRequest">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="TrialCreditVendRequest">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="AdviceRequest">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="LoginRequest">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="ReprintRequest">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="GetMeterBalance">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="GetOrderStatus">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="FBERequest">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="genFault">
+        <soap:fault use="literal" name="genFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="XMLVendService2.1">
+    <documentation>NRS Compliant Online Vending Service.</documentation>
+    <port name="XMLVendServicePort" binding="tns:XMLVendServiceBinding">
+      <soap:address location="http://115.238.36.166:10015/xmlvend/xmlvend.wsdl" />
+    </port>
+  </service>
+</definitions>

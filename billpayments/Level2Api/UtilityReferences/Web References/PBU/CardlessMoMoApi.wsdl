@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://CardlessMoMoApi/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://CardlessMoMoApi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://CardlessMoMoApi/">
+      <s:element name="MoMoTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:Transaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Transaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecipientTelNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="collectionArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="collectionBranch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Channel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromTelephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToTelephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MoMoTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MoMoTransferResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PegPayPostId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostTransactionToUtility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:UtilityTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtilityTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Channel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorTransactionRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reversal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CollectionArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CollectionBranch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostTransactionToUtilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostTransactionToUtilityResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquireUtilityCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utilityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquireUtilityCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InquireUtilityCustomerResult" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutStandingBal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MoMoTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:MoMoTransfer" />
+  </wsdl:message>
+  <wsdl:message name="MoMoTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:MoMoTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostTransactionToUtilitySoapIn">
+    <wsdl:part name="parameters" element="tns:PostTransactionToUtility" />
+  </wsdl:message>
+  <wsdl:message name="PostTransactionToUtilitySoapOut">
+    <wsdl:part name="parameters" element="tns:PostTransactionToUtilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquireUtilityCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:InquireUtilityCustomer" />
+  </wsdl:message>
+  <wsdl:message name="InquireUtilityCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:InquireUtilityCustomerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CardlessMoMoApiSoap">
+    <wsdl:operation name="MoMoTransfer">
+      <wsdl:input message="tns:MoMoTransferSoapIn" />
+      <wsdl:output message="tns:MoMoTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostTransactionToUtility">
+      <wsdl:input message="tns:PostTransactionToUtilitySoapIn" />
+      <wsdl:output message="tns:PostTransactionToUtilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InquireUtilityCustomer">
+      <wsdl:input message="tns:InquireUtilityCustomerSoapIn" />
+      <wsdl:output message="tns:InquireUtilityCustomerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CardlessMoMoApiSoap" type="tns:CardlessMoMoApiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MoMoTransfer">
+      <soap:operation soapAction="http://CardlessMoMoApi/MoMoTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTransactionToUtility">
+      <soap:operation soapAction="http://CardlessMoMoApi/PostTransactionToUtility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireUtilityCustomer">
+      <soap:operation soapAction="http://CardlessMoMoApi/InquireUtilityCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CardlessMoMoApiSoap12" type="tns:CardlessMoMoApiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MoMoTransfer">
+      <soap12:operation soapAction="http://CardlessMoMoApi/MoMoTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTransactionToUtility">
+      <soap12:operation soapAction="http://CardlessMoMoApi/PostTransactionToUtility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquireUtilityCustomer">
+      <soap12:operation soapAction="http://CardlessMoMoApi/InquireUtilityCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CardlessMoMoApi">
+    <wsdl:port name="CardlessMoMoApiSoap" binding="tns:CardlessMoMoApiSoap">
+      <soap:address location="https://196.0.25.194:8007/TestCardlessApi/CardlessMoMoApi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CardlessMoMoApiSoap12" binding="tns:CardlessMoMoApiSoap12">
+      <soap12:address location="https://196.0.25.194:8007/TestCardlessApi/CardlessMoMoApi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

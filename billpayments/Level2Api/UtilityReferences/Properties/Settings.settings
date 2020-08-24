@@ -1,0 +1,81 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UtilityReferences.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UtilityReferences_NWSC_NWSCBillingInterface" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://mail.nwsc.co.ug/nwscbillinginterface/nwscbillinginterface.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_URA_UraPmtService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://196.10.228.48/urabnkpmtservice/urapayment.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_UMEME_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://41.84.196.234:4044/umemebillinterface/EPayment.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_KCCA1_TelecomPaymentService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://beta.tamsonline.co.za/kcca-pts/api/telecom-paymentv1.php</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_StarTimes_IHaiWaiElectronicPaymentService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8020/StartimesConnect/StarTimesConnect.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_Makerere_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://196.43.133.113:8001/EpaymentInterface/EPayment.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_DSTVApi_SelfCareService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://uat.mcadigitalmedia.com/VendorSelfCare/SelfCareService.svc</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_PBU_CardlessMoMoApi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://196.0.25.194:8007/TestCardlessApi/CardlessMoMoApi.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_KCCA_TelecomPaymentService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://193.108.252.222/ecitie/api/telecom-paymentv1.php</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_KYU_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://kyupay.kyu.ac.ug/epay</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_TestDbApi_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.3:6048/TestDatabaseApi/Service.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_SchoolsApi_SchoolApi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8020/SchoolFeesApi/SchoolApi.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_NkumbaPayInterface_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://zee-pay.com/zeepay_v2/bankservice</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_Tucksee_PaymentNotificationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://tpg.tamsonline.co.za/api/exec/PaymentNotificationService/</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_WenrecoApi_XMLVendService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://197.221.149.74:17300/GatewayServiceASP.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_KCCA2_BankPaymentService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://193.108.252.222/ecitie/api/bank-paymentv1.php</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_StanbicCemasApi_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://196.8.208.145/testleveloneapi/pegpay.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_DataApi_DataAccess" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.3:5099/LiveDataAccess/DataAccess.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_StanbicBankApi_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://196.8.208.145/pegpay.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_MoweApi_MowePaymentApi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8020/MowePaymentsTestApi/MowePaymentApi.asmx</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_NDAValidation_MobileMoneyInvoiceServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1:8080/broker/mobilemoney/invoice/validation/v1.0</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_NDAPayment_MobileMoneyPaymentServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1:8080/broker/mobilemoney/invoice/payment/v1.0</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_NSSF_NSSFWSDL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://192.168.192.124:443/eColSOAPServertest/index.php</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_SageWood_XMLVendService2_1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://115.238.36.166:10015/xmlvend/xmlvend.wsdl</Value>
+    </Setting>
+    <Setting Name="UtilityReferences_MailApi_Messenger" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8020/mailerapi/Messenger.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
