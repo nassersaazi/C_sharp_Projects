@@ -43,8 +43,7 @@ public class PegPay : System.Web.Services.WebService
     public string otherNwscQueue = @".\private$\OthersUmemeQueue";
     public string EodReconciliationQueue = @".\private$\EodReconciliationQueue";
     BusinessLogic bll = new BusinessLogic();
-    //hello
-    //sample REA meter
+   
     string meter = 45700054534.ToString();
     public void SaveVendor(Vendor vendor)
     {
@@ -108,12 +107,11 @@ public class PegPay : System.Web.Services.WebService
 
                         if (resp.returnCode.Equals("0"))
                         {
-                            //double bal = GetTotalBalance(cust);
                             cust.CustomerReference = resp.smartCardCode;
                             cust.CustomerName = resp.customerName;
                             cust.CustomerBalance = resp.balance + "";
                             cust.CustomerType = resp.orderedProductsDesc;
-                            cust.Area = resp.subscriberStatus + "";//.ToString();
+                            cust.Area = resp.subscriberStatus + "";
                             cust.CustType = resp.canOrderProductInfos.Length.Equals(4) ? "DTT" : "DTH";
                             cust.StatusCode = "0";
                             cust.StatusDescription = "SUCCESS";
@@ -197,8 +195,6 @@ public class PegPay : System.Web.Services.WebService
                 cust.StatusCode = "100";
                 cust.StatusDescription = "INVALID CUSTOMER REFERENCE";
             }
-            //resp.StatusCode = "32";
-            //resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             dp.LogError(ex.Message, vendorCode, DateTime.Now, "STARTIMES");
         }
         return cust;
@@ -212,10 +208,8 @@ public class PegPay : System.Web.Services.WebService
         try
         {
             System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
-            //if it passes validation
             if (req.IsValid())
             {
-                //log and return success
                 string PegPayId = dh.LogReversalRequest(req);
                 resp.StatusCode = "0";
                 resp.StatusDescription = "SUCCESS";
@@ -223,7 +217,6 @@ public class PegPay : System.Web.Services.WebService
             }
             else
             {
-                //return error message
                 resp.StatusCode = "100";
                 resp.StatusDescription = req.StatusDesc;
                 resp.ReversalID = "";
@@ -231,7 +224,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (Exception ex)
         {
-            //log error 
             dh.LogError(ex.Message, req.VendorCode, DateTime.Now, req.OriginalTransactionId + "-REVERSAL");
             resp.StatusCode = "101";
             resp.StatusDescription = "GENERAL ERROR AT PEGASUS";
@@ -281,7 +273,7 @@ public class PegPay : System.Web.Services.WebService
                                 resp.StatusDescription = "UNKNOWN URA PAYMENT TYPE";
                             }
                         }
-                        else if (vendorCode.ToUpper().Equals("CELL")) //|| vendorCode.ToUpper().Equals("STANBIC_VAS"))
+                        else if (vendorCode.ToUpper().Equals("CELL")) 
                         {
                             Customer cust = dp.GetCustomerDetails(CustomerReference, "", "URA");
                             if (cust.StatusCode.Equals("0"))
@@ -356,7 +348,6 @@ public class PegPay : System.Web.Services.WebService
                             resp = dh.QueryURAcustomerDetails(CustomerReference);
 
                         }
-                        //for other people without credentials at URA
                         else
                         {
 
@@ -368,9 +359,8 @@ public class PegPay : System.Web.Services.WebService
                             stanbicbankuraqueryrequest.QueryField4 = "URA";
                             stanbicbankuraqueryrequest.QueryField5 = vendorCode;
                             stanbicbankuraqueryrequest.QueryField6 = password;
-                            // pegpay.Url = "https://196.8.208.145:9444/pegpay.asmx?WSDL";
                             pegpay.Url = "https://196.8.207.124:8009/TestLevelONEApi/PegPay.asmx?WSDL";
-                            // pegpay.Timeout = 24000;
+                            
                             stanbicbankuraresponse = pegpay.QueryCustomerDetails(stanbicbankuraqueryrequest);
 
 
@@ -395,7 +385,6 @@ public class PegPay : System.Web.Services.WebService
                                 customer.Balance = stanbicbankuraresponse.ResponseField4;
                                 customer.Area = stanbicbankuraresponse.ResponseField3;
                                 saveKCCACustomerDetails(customer);
-                                //cust.CustomerRef, cust.CustomerName, cust.CustomerType, "" + balance, cust.AgentCode
                             }
                             else
                             {
@@ -453,7 +442,6 @@ public class PegPay : System.Web.Services.WebService
             {
                 resp.CustomerReference = "";
                 resp.CustomerName = "";
-                //resp.CustomerType = "";
                 resp.OutstandingBalance = "";
                 resp.StatusCode = "100";
                 resp.StatusDescription = "INVALID REFERENCE NUMBER";
@@ -513,7 +501,7 @@ public class PegPay : System.Web.Services.WebService
                                 resp.StatusDescription = "UNKNOWN URA PAYMENT TYPE";
                             }
                         }
-                        else if (vendorCode.ToUpper().Equals("CELL")) //|| vendorCode.ToUpper().Equals("STANBIC_VAS"))
+                        else if (vendorCode.ToUpper().Equals("CELL")) 
                         {
                             Customer cust = dp.GetCustomerDetails(CustomerReference, "", "URA");
                             if (cust.StatusCode.Equals("0"))
@@ -588,7 +576,6 @@ public class PegPay : System.Web.Services.WebService
                             resp = dh.QueryURAcustomerDetails(CustomerReference);
 
                         }
-                        //for other people without credentials at URA
                         else
                         {
 
@@ -600,9 +587,8 @@ public class PegPay : System.Web.Services.WebService
                             stanbicbankuraqueryrequest.QueryField4 = "URADTS";
                             stanbicbankuraqueryrequest.QueryField5 = vendorCode;
                             stanbicbankuraqueryrequest.QueryField6 = password;
-                            // pegpay.Url = "https://196.8.208.145:9444/pegpay.asmx?WSDL";
-                            pegpay.Url = "https://196.8.207.124:8009/TestLevelONEApi/PegPay.asmx?WSDL";
-                            // pegpay.Timeout = 24000;
+                           pegpay.Url = "https://196.8.207.124:8009/TestLevelONEApi/PegPay.asmx?WSDL";
+                            
                             stanbicbankuraresponse = pegpay.QueryCustomerDetails(stanbicbankuraqueryrequest);
 
 
@@ -627,8 +613,7 @@ public class PegPay : System.Web.Services.WebService
                                 customer.Balance = stanbicbankuraresponse.ResponseField4;
                                 customer.Area = stanbicbankuraresponse.ResponseField3;
                                 saveKCCACustomerDetails(customer);
-                                //cust.CustomerRef, cust.CustomerName, cust.CustomerType, "" + balance, cust.AgentCode
-                            }
+                               }
                             else
                             {
                                 resp.CustomerReference = stanbicbankuraresponse.ResponseField1;
@@ -685,7 +670,6 @@ public class PegPay : System.Web.Services.WebService
             {
                 resp.CustomerReference = "";
                 resp.CustomerName = "";
-                //resp.CustomerType = "";
                 resp.OutstandingBalance = "";
                 resp.StatusCode = "100";
                 resp.StatusDescription = "INVALID REFERENCE NUMBER";
@@ -740,8 +724,7 @@ public class PegPay : System.Web.Services.WebService
 
         string uraResp = process.StandardOutput.ReadToEnd();
         string[] details = Regex.Split(uraResp, "\r\n");
-
-        //success at URA
+        
         if (details[0] == "0")
         {
             resp.StatusCode = details[0];
@@ -752,8 +735,6 @@ public class PegPay : System.Web.Services.WebService
             resp.TIN = details[7];
             resp.PaymentRegistrationDate = details[3];
             resp.PrnStatus = details[5];
-
-            //save details
             string TypeOfPayment = "REGISTERED";
             Customer cust = new Customer();
             cust.CustomerName = resp.CustomerName;
@@ -787,7 +768,6 @@ public class PegPay : System.Web.Services.WebService
         UtilityCredentials creds;
         try
         {
-            //dp.SaveRequestlog(vendorCode, "UMEME", "VERIFICATION", customerReference, password);
             DataTable vendorData = dp.GetVendorDetails(vendorCode);
             if (isValidVendorCredentials(vendorCode, password, vendorData))
             {
@@ -829,16 +809,9 @@ public class PegPay : System.Web.Services.WebService
                         }
 
                         UtilityReferences.UMEME.Customer cust = umemeapi.ValidateCustomer(customerReference, creds.UtilityCode, creds.UtilityPassword);
-
-                        //cust.StatusCode = "0";
-                        //Customer cust = dp.GetCustomerDetails(customerReference, "", "UMEME");
-                        //cust.StatusCode = "0";
-
-
-
+                        
                         if (cust.StatusCode.Equals("0"))
                         {
-                            //  double bal = GetTotalBalance(cust);
                             resp.CustomerReference = cust.CustomerRef;
                             resp.CustomerName = cust.CustomerName;
                             resp.CustomerType = cust.CustomerType;
@@ -929,8 +902,6 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "100";
                 resp.StatusDescription = "INVALID CUSTOMER REFERENCE";
             }
-            //resp.StatusCode = "32";
-            //resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             dp.LogError(ex.Message, vendorCode, DateTime.Now, "UMEME");
         }
         return resp;
@@ -945,7 +916,6 @@ public class PegPay : System.Web.Services.WebService
         UtilityCredentials creds;
         try
         {
-            //dp.SaveRequestlog(vendorCode, "UMEME", "VERIFICATION", customerReference, password);
             DataTable vendorData = dp.GetVendorDetails(vendorCode);
             if (isValidVendorCredentials(vendorCode, password, vendorData))
             {
@@ -958,27 +928,17 @@ public class PegPay : System.Web.Services.WebService
                     {
                         dp.UpdateVendorInvalidLoginCount(vendorCode, 0);
                     }
-                   // creds = dp.GetUtilityCreds("MOWE", vendorCode);
-                    //if (!creds.UtilityCode.Equals(""))
-                    //{
                         System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
                         UtilityReferences.MoweApi.MowePaymentApi moweApi = new UtilityReferences.MoweApi.MowePaymentApi();
-                        //EPayment umemeapi = new EPayment();
+                       
                         UtilityReferences.MoweApi.Query query = new UtilityReferences.MoweApi.Query();
                         query.RequestId = customerReference;
                         query.VendorCode = vendorCode;
-                        query.Password = PegPay.MowePassword;//password;
+                        query.Password = PegPay.MowePassword;
                         UtilityReferences.MoweApi.ApiResult cust = moweApi.QueryCustomer(query);
-
-                        //cust.StatusCode = "0";
-                        //Customer cust = dp.GetCustomerDetails(customerReference, "", "UMEME");
-                        //cust.StatusCode = "0";
-
-
-
+                    
                         if (cust.StatusCode.Equals("0"))
                         {
-                            //  double bal = GetTotalBalance(cust);
                             resp.CustomerReference = cust.ResultId;
                             resp.CustomerName = cust.CustomerName;
                             resp.CustomerType = cust.UmbrellaCode;
@@ -995,27 +955,8 @@ public class PegPay : System.Web.Services.WebService
                             customer.CustomerRef = resp.CustomerReference;
                             customer.CustomerType = resp.CustomerType;
                             customer.Balance = cust.Balance.ToString();
-
-
-
-                            //double bal = 19107.44;//GetTotalBalance(cust);
-                            //resp.CustomerReference ="203451218";// cust.CustomerRef;
-                            //resp.CustomerName = "TUMUSIIME SHARON";// cust.CustomerName;
-                            //resp.CustomerType = "POSTPAID";// cust.CustomerType;
-                            //resp.OutstandingBalance = bal.ToString();
-                            //resp.StatusCode = "0";// cust.StatusCode;
-                            //resp.StatusDescription = "POSTPAID UMEME PAYMENT";///cust.StatusDescription;
-                            //Customer customer = new Customer();
-                            //customer.AgentCode = "UMEME";
-                            //customer.CustomerName = resp.CustomerName;
-                            //customer.CustomerRef = resp.CustomerReference;
-                            //customer.CustomerType = resp.CustomerType;
-                            //customer.Balance = cust.Balance.ToString();
-
-
-
-
-                            saveUmemeCustomerDetails(customer);
+                        
+                        saveUmemeCustomerDetails(customer);
                         }
                         else
                         {
@@ -1026,12 +967,7 @@ public class PegPay : System.Web.Services.WebService
                             resp.StatusCode = "100";
                             resp.StatusDescription = cust.StatusDesc;
                         }
-                    //}
-                    //else
-                    //{
-                    //    resp.StatusCode = "29";
-                    //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                    //}
+                    
                 }
                 else
                 {
@@ -1086,8 +1022,6 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "100";
                 resp.StatusDescription = "INVALID CUSTOMER REFERENCE";
             }
-            //resp.StatusCode = "32";
-            //resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             dp.LogError(ex.Message, vendorCode, DateTime.Now, "MOWE");
         }
         return resp;
@@ -1123,24 +1057,20 @@ public class PegPay : System.Web.Services.WebService
                         else
                         {
                             resp = QueryMultichoiceDirectly(smartCardNumber, PayTvCode, bouquetCode, vendorCode, password, creds);
-                            //if multichoice query is a success
+                           
                             if (resp.StatusCode.Equals("0"))
                             {
-                                //save the customer details in the db
                                 Customer cust = GetDSTVCustomer(resp, bouquetCode);
                                 dp.SaveDstvCustomerDetails(cust);
                             }
                         }
-
-                        //resp = QueryDSTVCustomerLocally(smartCardNumber, PayTvCode, bouquetCode);
-                        //if DB search results indicate that we should go directly to multichoice 
+                        
                         if (resp.StatusCode.Equals("200"))
                         {
                             resp = QueryMultichoiceDirectly(smartCardNumber, PayTvCode, bouquetCode, vendorCode, password, creds);
-                            //if multichoice query is a success
+                           
                             if (resp.StatusCode.Equals("0"))
                             {
-                                //save the customer details in the db
                                 Customer cust = GetDSTVCustomer(resp, bouquetCode);
                                 dp.SaveDstvCustomerDetails(cust);
                             }
@@ -1246,8 +1176,6 @@ public class PegPay : System.Web.Services.WebService
                     return resp;
                 }
             }
-            //this is most likely a dstv guy
-            //we make sure he picked a dstv bouquet
             else if (cust.CustomerType.ToUpper().Equals("DSTV") && (bouquetCode != null))
             {
                 if (bouquetCode == "")
@@ -1263,8 +1191,6 @@ public class PegPay : System.Web.Services.WebService
                     return resp;
                 }
             }
-            //we dont know if this is dstv or gotv guy
-            //so to be safe we return error
             else
             {
                 resp.bouquetDetails = null;
@@ -1273,9 +1199,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusDescription = "INVALID CUSTOMER REFERENCE";
                 return resp;
             }
-
-            //this is valid customer of either dstv or gotv
-            //we build a success response object with the details
+            
             resp.Area = cust.Area;
             resp.CustomerType = cust.CustomerType;
             resp.bouquetDetails = dh.GetBouquetDetailsFromDB(bouquetCode, cust.CustomerType)[0];
@@ -1287,7 +1211,6 @@ public class PegPay : System.Web.Services.WebService
             resp.StatusCode = "0";
             resp.StatusDescription = "SUCCESS";
         }
-        //this guy doesnt exist in our database
         else
         {
             resp.Area = "";
@@ -1306,11 +1229,9 @@ public class PegPay : System.Web.Services.WebService
     {
 
         DSTVQueryResponse resp = new DSTVQueryResponse();
-        //we try querying using the smart card method first
         resp = QueryUsingSmartCardNumber(smartCardNumber, bouquetCode, vendorCode, PayTvCode, creds);
         if (resp.StatusCode.Equals("200"))
         {
-            //then we try querying using the customer number method next
             resp = QueryUsingCustomerNumber(smartCardNumber, bouquetCode, vendorCode, PayTvCode);
         }
         return resp;
@@ -1336,8 +1257,7 @@ public class PegPay : System.Web.Services.WebService
 
             
             dstvResp = dstv.GetCustomerDetailsByDeviceNumber(datasource, devicenumber, currencycode, bussinesUnit, VendorCode, language, IpAddress, "");
-
-            //resp.CustomerType = GetDSTVCustomerType(dstvResp.customerDetails.typeName);
+            
            UtilityReferences.DSTVApi.Customer customer = dstvResp.customerDetails;
             if (customer.typeName.Contains("GOTV"))
             {
@@ -1355,23 +1275,6 @@ public class PegPay : System.Web.Services.WebService
             {
                 resp.CustomerType = "DSTV";
             }
-            //Account[] account = dstvResp.accounts;
-            //if (account.Length == 0)
-            //{
-            //    resp.StatusCode = "100";
-            //    resp.StatusDescription = "INVALID CUSTOMER TYPE";
-            //    return resp;
-            //}
-            //else
-            //{
-            //    resp.CustomerType = dh.GetDSTVAccountType(account[0].type);
-
-            //}
-
-
-            //resp.CustomerType = GetDSTVCustomerType(account[0].type);
-
-            //make sure gotv guy has choosen gotv bouquet
             if (resp.CustomerType.ToUpper().Equals("GOTV") && (bouquetCode != null))
             {
                 if (bouquetCode == "")
@@ -1385,7 +1288,6 @@ public class PegPay : System.Web.Services.WebService
                     return resp;
                 }
             }
-            //make sure dstv customer has chosen dstv Tv Bouquet
             else if (resp.CustomerType.ToUpper().Equals("DSTV") && (bouquetCode != null))
             {
                 if (bouquetCode == "")
@@ -1401,7 +1303,6 @@ public class PegPay : System.Web.Services.WebService
                     return resp;
                 }
             }
-            //we fail this query here because we cant determine if he is gotv or dstv
             else
             {
                 resp.bouquetDetails = null;
@@ -1410,10 +1311,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusDescription = "INVALID SMART CARD NUMBER";
                 return resp;
             }
-
-            //if we reach here
-            //we are sure that this is a valid multichoice customer
-            //so we build a success response object
+            
             resp.CustomerName = dstvResp.customerDetails.salutation + " " + dstvResp.customerDetails.surname + " " + dstvResp.customerDetails.initials;
             resp.CustomerReference = smartCardNumber;
             resp.DstvCustomerNo = "" + dstvResp.customerDetails.number;
@@ -1424,7 +1322,6 @@ public class PegPay : System.Web.Services.WebService
             resp.StatusCode = "0";
             resp.StatusDescription = "SUCCESS";
         }
-        //this is how mutlichoice communicate errors
         catch (SoapException ex)
         {
             resp.CustomerReference = smartCardNumber;
@@ -1456,11 +1353,9 @@ public class PegPay : System.Web.Services.WebService
     {
 
         DSTVQueryResponse resp = new DSTVQueryResponse();
-        //we try querying using the smart card method first
         resp = QueryUsingSmartCardNumber(smartCardNumber, bouquetCode, vendorCode, PayTvCode);
         if (resp.StatusCode.Equals("100"))
         {
-            //then we try querying using the customer number method next
             resp = QueryUsingCustomerNumber(smartCardNumber, bouquetCode, vendorCode, PayTvCode);
         }
         return resp;
@@ -1468,14 +1363,6 @@ public class PegPay : System.Web.Services.WebService
 
     private DSTVQueryResponse CheckInDBForCustomer(string smartCardNumber, string PayTvCode, string bouquetCode)
     {
-        //so you have a smart card number
-        //and a paytvcode
-        //and bouquetcode
-        //we check in db for that smartcard
-        //if customer exists in db
-        //we get the customer type i.e(Gotv or dstv)
-        //then we make sure the bouquet he wants to pay for is for that customer type
-        //
         DSTVQueryResponse resp = new DSTVQueryResponse();
         DatabaseHandler dh = new DatabaseHandler();
         Customer cust = dh.GetCustomerDetails(smartCardNumber, "", "DSTV");
@@ -1523,8 +1410,6 @@ public class PegPay : System.Web.Services.WebService
                     return resp;
                 }
             }
-            //we dont know if this is dstv or gotv guy
-            //so to be safe we return error
             else
             {
                 resp.bouquetDetails = null;
@@ -1533,9 +1418,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusDescription = "INVALID CUSTOMER REFERENCE";
                 return resp;
             }
-
-            //this is valid customer of either dstv or gotv
-            //we build a success response object with the details
+            
             resp.Area = cust.Area;
             resp.CustomerType = cust.CustomerType;
             resp.bouquetDetails = dh.GetBouquetDetailsFromDB(bouquetCode, cust.CustomerType)[0];
@@ -1547,7 +1430,6 @@ public class PegPay : System.Web.Services.WebService
             resp.StatusCode = "0";
             resp.StatusDescription = "SUCCESS";
         }
-        //this guy doesnt exist in our database
         else
         {
             resp.Area = "";
@@ -1588,8 +1470,8 @@ public class PegPay : System.Web.Services.WebService
             UtilityCredentials creds = dp.GetUtilityCreds("DSTV", vendorCode);
             SelfCareService dstv = new SelfCareService();
             GetBalanceByCustomerNumberResponse dstvResp = new GetBalanceByCustomerNumberResponse();
-            string language = "English";//should be picked from DB
-            string datasource = "Uganda_UAT";//should be picked from DB
+            string language = "English";
+            string datasource = "Uganda_UAT";
             uint customerNumber = 0;
 
             try
@@ -1598,7 +1480,6 @@ public class PegPay : System.Web.Services.WebService
             }
             catch (Exception e)
             {
-                //we cant parse the number so this is definitely not a valid customer number
                 resp.CustomerReference = smartCardNumber;
                 resp.OutstandingBalance = "";
                 resp.StatusCode = "100";
@@ -1703,33 +1584,18 @@ public class PegPay : System.Web.Services.WebService
             GetBalanceByDeviceNumberResponse dstvResp = new GetBalanceByDeviceNumberResponse();
             GetBalanceByCustomerNumberResponse custRep = new GetBalanceByCustomerNumberResponse();
 
-//            <?xml version="1.0" encoding="utf-8"?>
-//<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-//  <soap:Body>
-//    <GetCustomerDetailsByDeviceNumber xmlns="http://services.multichoice.co.za/SelfCare">
-//      <dataSource>Uganda</dataSource>
-//      <deviceNumber>4622787291</deviceNumber>
-//      <currencyCode>UGS</currencyCode>
-//      <BusinessUnit>GOTV</BusinessUnit>
-//      <VendorCode>PegasusDstv</VendorCode>
-//      <language>English</language>
-//      <ipAddress>41.190.131.222</ipAddress>
-//    </GetCustomerDetailsByDeviceNumber>
-//  </soap:Body>
-//</soap:Envelope>
-
-            string datasource = "Uganda";//"Uganda_UAT";
-            string devicenumber = smartCardNumber;//"4261353579"; //"2017607397";//"2015897761";
+            string datasource = "Uganda";
+            string devicenumber = smartCardNumber;
             string currencycode = "UGS";
             string bussinesUnit = "GOTV";
             string VendorCode = "PegasusDstv";
             string language = "English";
-            string IpAddress = "41.190.131.222";// "41.190.130.222";
+            string IpAddress = "41.190.131.222";
 
             dstvResp = dstv.GetCustomerDetailsByDeviceNumber(datasource, devicenumber, currencycode, bussinesUnit, VendorCode, language, IpAddress,"1");
 
             resp.CustomerType = GetDSTVCustomerType(dstvResp.customerDetails.typeName);
-            //make sure gotv guy has choosen gotv bouquet
+           
             if (resp.CustomerType.ToUpper().Equals("GOTV") && (bouquetCode != null))
             {
                 if (bouquetCode == "")
@@ -1743,7 +1609,6 @@ public class PegPay : System.Web.Services.WebService
                     return resp;
                 }
             }
-            //make sure dstv customer has chosen dstv Tv Bouquet
             else if (resp.CustomerType.ToUpper().Equals("DSTV") && (bouquetCode != null))
             {
                 if (bouquetCode == "")
@@ -1759,7 +1624,6 @@ public class PegPay : System.Web.Services.WebService
                     return resp;
                 }
             }
-            //we fail this query here because we cant determine if he is gotv or dstv
             else
             {
                 resp.bouquetDetails = null;
@@ -1768,10 +1632,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusDescription = "INVALID SMART CARD NUMBER";
                 return resp;
             }
-
-            //if we reach here
-            //we are sure that this is a valid multichoice customer
-            //so we build a success response object
+            
             resp.CustomerName = dstvResp.customerDetails.salutation + " " + dstvResp.customerDetails.surname + " " + dstvResp.customerDetails.initials;
             resp.CustomerReference = smartCardNumber;
             resp.DstvCustomerNo = "" + dstvResp.customerDetails.number;
@@ -1782,7 +1643,6 @@ public class PegPay : System.Web.Services.WebService
             resp.StatusCode = "0";
             resp.StatusDescription = "SUCCESS";
         }
-        //this is how mutlichoice communicate errors
         catch (SoapException ex)
         {
             resp.CustomerReference = smartCardNumber;
@@ -1790,10 +1650,8 @@ public class PegPay : System.Web.Services.WebService
             resp.StatusCode = "100";
             resp.StatusDescription = "INVALID SMART CARD NUMBER";
         }
-        //something has gone wrong
         catch (Exception ex)
         {
-            //we cant reach dstv
             if (ex.Message.ToUpper().Contains("UNABLE TO CONNECT") || ex.Message.ToUpper().Contains("TIMED OUT"))
             {
                 resp.StatusCode = "100";
@@ -1820,7 +1678,7 @@ public class PegPay : System.Web.Services.WebService
             GetBalanceByDeviceNumberResponse dstvResp = new GetBalanceByDeviceNumberResponse();
             GetBalanceByCustomerNumberResponse custRep = new GetBalanceByCustomerNumberResponse();
             string datasource = "Uganda_UAT";
-            string devicenumber = smartCardNumber;//"4261353579"; //"2017607397";//"2015897761";
+            string devicenumber = smartCardNumber;
             string currencycode = "UGS";
             string bussinesUnit = "Gotv";
             string vendorCode = "PegasusGOtv";
@@ -1862,7 +1720,7 @@ public class PegPay : System.Web.Services.WebService
             GetBalanceByDeviceNumberResponse dstvResp = new GetBalanceByDeviceNumberResponse();
             GetBalanceByCustomerNumberResponse custRep = new GetBalanceByCustomerNumberResponse();
             string datasource = "Uganda_UAT";
-            string devicenumber = smartCardNumber;//"4261353579"; //"2017607397";//"2015897761";
+            string devicenumber = smartCardNumber;
             string currencycode = "UGS";
             string bussinesUnit = "dstv";
             string vendorCode = "PegasusDstv";
@@ -1905,27 +1763,13 @@ public class PegPay : System.Web.Services.WebService
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
                 SelfCareService dstv = new SelfCareService();
                 Hardware[] resp = { };
-                string datasource = "Uganda_UAT";
-                string currencycode = "UGS";
-                string bussinesUnit = "dstv";
-                vendorCode = "PegasusDStv";
-                string language = "English";
-                string IpAddress = "41.190.130.222";
-               // resp = dstv.GetProducts(datasource, customerNumber, true, vendorCode, language, IpAddress, bussinesUnit);
-                return resp[0].Services[0].ProductDescription;
+               return resp[0].Services[0].ProductDescription;
             }
             else
             {
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
                 SelfCareService dstv = new SelfCareService();
                 Hardware[] resp = { };
-                string datasource = "Uganda_UAT";
-                string currencycode = "UGS";
-                string bussinesUnit = "Gotv";
-                vendorCode = "PegasusGotv";
-                string language = "English";
-                string IpAddress = "41.190.130.222";
-               // resp = dstv.GetAccountDetails(datasource, customerNumber, true, vendorCode, language, IpAddress, bussinesUnit);
                 return resp[0].Services[0].ProductDescription;
             }
         }
@@ -1957,37 +1801,6 @@ public class PegPay : System.Web.Services.WebService
             }
         }
     }
-
-
-    //private string GetTotalBalance(Customer cust)
-    //{
-    //    try
-    //    {
-    //        string total = 0;
-    //        double PercentVAT = 18;
-    //        double Percentcredit = 50;
-    //        if (cust.Balance.Equals(0))
-    //        {
-    //            total = cust.Balance;
-    //        }
-    //        else
-    //        {
-    //            double calculatedcredit = (Percentcredit / 100) * cust.Credit;
-    //            double bal = cust.Balance + calculatedcredit;
-    //            double calculatedVAT = (PercentVAT / 100) * bal;
-    //            total = bal + calculatedVAT;
-    //        }
-    //        return total;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        throw ex;
-    //    }
-    //}
-
-
-
-
 
     private double GetTotalBalance(UtilityReferences.UMEME.Customer cust)
     {
@@ -2022,7 +1835,6 @@ public class PegPay : System.Web.Services.WebService
         BouquetDetails[] allBouquets = { };
         try
         {
-            //QueryBouquetsFromPayTv("", "GOTV", "", "");
             allBouquets = dh.GetBouquetDetailsFromDB(BouquetCode, PayTvCode);
         }
         catch (Exception e)
@@ -2049,10 +1861,7 @@ public class PegPay : System.Web.Services.WebService
                 allBouquets.Add(bouq);
                 return allBouquets.ToArray();
             }
-
-            //BouquetDetails[] bouquets = dh.GetBouquetDetailsFromDB(BouquetCode, PayTvCode);
-
-
+            
             System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
             SelfCareService dstv = new SelfCareService();
             ProductwithoutChannel[] resp = { };
@@ -2184,7 +1993,6 @@ public class PegPay : System.Web.Services.WebService
                 }
                 else
                 {
-                    //E,,The Student No 20000 Does not Exist
                     if (array.Length == 2)
                     {
                         string errorCode = array[0].ToString().Replace(",", "");
@@ -2233,17 +2041,10 @@ public class PegPay : System.Web.Services.WebService
             query.QueryField1 = customerReference;
             query.QueryField5 = "PEGASUS";
             query.QueryField6 = "PEGASUS";
-
-            //query.QueryField1 = "203016921";// "P170000000086";//"2142995";//"01454392760";// "04230081848";
-            //query.QueryField2 = "";///area //ACSSW4
-            //query.QueryField4 = "UMEME";// "UMEME";// "STB_SCHOOL";//utilitycode//"URA";
-            //query.QueryField5 = VendorCode;//vendorcode//"Micropay";//"STN";
-            //query.QueryField6 = Password;//passowrd//"41L12FF504";//"C1bn@t5#739";  na8wj0SGmEm3WsFCuC6MZA=
-
+            
             resp = pegpay.QueryCustomerDetails(query);
             if (resp.ResponseField6 == "0")
             {
-                //student.Amount = "";
                 student.CustomerBalance = resp.ResponseField4;
                 student.CustomerName = resp.ResponseField2;
                 student.CustomerReference = resp.ResponseField1;
@@ -2388,12 +2189,11 @@ public class PegPay : System.Web.Services.WebService
 
     [WebMethod]
     public QueryResponse QueryCustomerDetialsGeneric(string customerReference, string utilityCode, string vendorCode, string password)
-    {//amwine
+    {
         QueryResponse resp = new QueryResponse();
         DatabaseHandler dp = new DatabaseHandler();
         UtilityCredentials creds;
         BusinessLogic bll = new BusinessLogic();
-        //DatabaseHandler dh = new DatabaseHandler();
         dataAccess dha = new dataAccess();
 
         try
@@ -2425,13 +2225,10 @@ public class PegPay : System.Web.Services.WebService
                         {
                             resp = VerifyWenrecoCustomer(customerReference, creds.UtilityCode, creds.UtilityPassword);
                         }
-                        //resp = VerifyTuckSeePrn(customerReference, respresp.SessionKey, creds.Key);
                         if (resp.StatusCode != "0")
                         {
                             Customer cust = dp.GetCustomerDetails(customerReference, "", utilityCode);
-
-
-                            //resp.CustomerReference = customerReference;
+                            
                             resp.CustomerReference = customerReference;
                             resp.CustomerName = cust.CustomerName;
 
@@ -2477,7 +2274,7 @@ public class PegPay : System.Web.Services.WebService
 
     [WebMethod]
     public PostResponse MakeWenrecoPayment(Transaction trans)
-    {//amwine
+    {
         PostResponse resp = new PostResponse();
         DatabaseHandler dp = new DatabaseHandler();
         BusinessLogic bll = new BusinessLogic();
@@ -2491,8 +2288,6 @@ public class PegPay : System.Web.Services.WebService
             trans.Email = "";
         }
         string vendorCode = trans.VendorCode;
-        //log incoming Details
-        //dp.logKCCAPostHit(trans);
         try
         {
             if (string.IsNullOrEmpty(trans.UtilityCode))
@@ -2566,12 +2361,6 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "23";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (!IsValidCustType(trans))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "28";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
             else
             {
                 if (bll.IsNumeric(trans.TransactionAmount))
@@ -2601,7 +2390,6 @@ public class PegPay : System.Web.Services.WebService
                                                             UtilityCredentials creds = dp.GetUtilityCreds(trans.UtilityCode, trans.VendorCode);
                                                             if (!creds.UtilityCode.Equals(""))
                                                             {
-                                                                //Token token = ProcessWenrecoToken(trans);
                                                                 string receipt = dp.PostTransactionObject(trans, "WENRECO");
                                                                 resp.PegPayPostId = receipt;
                                                                 resp.StatusCode = "29";
@@ -2609,7 +2397,6 @@ public class PegPay : System.Web.Services.WebService
                                                             }
                                                             else
                                                             {
-                                                                //resp.ReceiptNumber = "";
                                                                 resp.PegPayPostId = "";
                                                                 resp.StatusCode = "29";
                                                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2617,7 +2404,6 @@ public class PegPay : System.Web.Services.WebService
                                                         }
                                                         else
                                                         {
-                                                            //resp.ReceiptNumber = "";
                                                             resp.PegPayPostId = "";
                                                             resp.StatusCode = "29";
                                                             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2625,7 +2411,6 @@ public class PegPay : System.Web.Services.WebService
                                                     }
                                                     else
                                                     {
-                                                        //     resp.ReceiptNumber = "";
                                                         resp.PegPayPostId = "";
                                                         resp.StatusCode = "26";
                                                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2633,7 +2418,6 @@ public class PegPay : System.Web.Services.WebService
                                                 }
                                                 else
                                                 {
-                                                    //      resp.ReceiptNumber = "";
                                                     resp.PegPayPostId = "";
                                                     resp.StatusCode = "24";
                                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2642,7 +2426,6 @@ public class PegPay : System.Web.Services.WebService
                                             }
                                             else
                                             {
-                                                //    resp.ReceiptNumber = "";
                                                 resp.PegPayPostId = "";
                                                 resp.StatusCode = "21";
                                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2650,7 +2433,6 @@ public class PegPay : System.Web.Services.WebService
                                         }
                                         else
                                         {
-                                            //  resp.ReceiptNumber = "";
                                             resp.PegPayPostId = "";
                                             resp.StatusCode = "20";
                                             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2666,7 +2448,6 @@ public class PegPay : System.Web.Services.WebService
                                 }
                                 else
                                 {
-                                    /// resp.ReceiptNumber = "";
                                     resp.PegPayPostId = "";
                                     resp.StatusCode = "18";
                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2674,7 +2455,6 @@ public class PegPay : System.Web.Services.WebService
                             }
                             else
                             {
-                                //resp.ReceiptNumber = "";
                                 resp.PegPayPostId = "";
                                 resp.StatusCode = "11";
                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2682,7 +2462,6 @@ public class PegPay : System.Web.Services.WebService
                         }
                         else
                         {
-                            //   resp.ReceiptNumber = "";
                             resp.PegPayPostId = "";
                             resp.StatusCode = "2";
                             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2690,7 +2469,6 @@ public class PegPay : System.Web.Services.WebService
                     }
                     else
                     {
-                        // resp.ReceiptNumber = "";
                         resp.PegPayPostId = "";
                         resp.StatusCode = "4";
                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -2698,38 +2476,19 @@ public class PegPay : System.Web.Services.WebService
                 }
                 else
                 {
-                    //resp.ReceiptNumber = "";
                     resp.PegPayPostId = "";
                     resp.StatusCode = "3";
                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                 }
             }
-            //if (resp.StatusCode.Equals("2"))
-            //{
-            //    DataTable dt = dp.GetVendorDetails(vendorCode);
-            //    if (dt.Rows.Count != 0)
-            //    {
-            //        string ipAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
-            //        string strLoginCount = dt.Rows[0]["InvalidLoginCount"].ToString();
-            //        int loginCount = int.Parse(strLoginCount);
-            //        loginCount = loginCount + 1;
-            //        if (loginCount == 3)
-            //        {
-            //            dp.UpdateVendorInvalidLoginCount(vendorCode, loginCount, ipAddress);
-            //            dp.DeactivateVendor(vendorCode, ipAddress);
-            //        }
-            //        {
-            //            dp.UpdateVendorInvalidLoginCount(vendorCode, loginCount, ipAddress);
-            //        }
-            //    }
-            //}
+           
         }
         catch (System.Net.WebException wex)
         {
             if (trans.CustomerType.ToUpper().Equals("PREPAID"))
             {
                 dp.deleteTransaction(resp.PegPayPostId, "UNABLE TO CONNECT TO UMEME");
-                ///resp.ReceiptNumber = "";
+               
                 resp.PegPayPostId = "";
                 resp.StatusCode = "30";
                 resp.StatusDescription = "UNABLE TO CONNECT TO UMEME";
@@ -2808,15 +2567,9 @@ public class PegPay : System.Web.Services.WebService
             cash.tenderAmt.symbol = "UGX";
             cash.tenderAmt.value = tranAmount;
             request.payType = cash;
-            //log request before vending
-            //dh.LogPrepaymentRequests(merchant, vendorCode, meterNo, amount, msgId, msgDateTime, currency,tranId);
-            // finally, perform the request, ensuring that possible exceptions are catered for
             token.DebtRecovery = "0";
             client.Timeout = 99999999;
             response = client.CreditVendRequest(request);
-            //token.MsgIdDate = response.reqMsgID.dateTime;
-            //token.MsgIdNumber = response.reqMsgID.uniqueNumber;
-            //token.RemainingCredit = response.clientStatus.availCredit.value;
             List<TranCharges> chargeList = new List<TranCharges>();
             foreach (Tx tx in response.creditVendReceipt.transactions.tx)
             {
@@ -2828,29 +2581,19 @@ public class PegPay : System.Web.Services.WebService
                     STS1Token sts1Token = (STS1Token)creditVendTx.creditTokenIssue.token;
 
                     token.PrepaidToken = sts1Token.stsCipher;
-                    /////////////////////////
                     StepTariffBreakdown tbreak = (StepTariffBreakdown)creditVendTx.tariffBreakdown;
                     string lifeMsg = "Purchased as";
-                    //string lifeMsg = "";
                     string otherLifeMsg = "";
-                    //foreach (Step chargeStep in tbreak.steps)
-                    //{
-                    //    otherLifeMsg = otherLifeMsg + " " + chargeStep.units.value + " " + chargeStep.units.siUnit + " at " + cash.tenderAmt.symbol + " " + chargeStep.rate.value + " per " + chargeStep.units.siUnit + ",";
-                    //}
                     token.LifeLine = lifeMsg + otherLifeMsg;
                     if (token.LifeLine.EndsWith(","))
                     {
                         token.LifeLine = token.LifeLine.Remove((token.LifeLine.Length - 1));
                     }
-                    /////////////////////////
                     if (token.PrepaidToken.Trim().Length == 20)
                     {
                         token.StatusCode = "SUCCESS";
                         token.MeterNumber = trans.CustRef;
-                        //token.TerminalId = "0000000000001";
-                        //token.VendorCode = vendorCode;
                         token.TotalAmount = tranAmount.ToString();
-                        //token.MeterNumber = meterNo;
 
                     }
                     token.Units = creditVendTx.creditTokenIssue.units.value.ToString();
@@ -2858,7 +2601,6 @@ public class PegPay : System.Web.Services.WebService
                 else if (tx.GetType() == typeof(DebtRecoveryTx))
                 {
                     DebtRecoveryTx debtRecoveryTx = (DebtRecoveryTx)tx;
-                    //token.DebtRecovery = token.DebtRecovery + debtRecoveryTx.amt.value;
                     token.DebtRecovery = token.DebtRecovery + debtRecoveryTx.amt.value;
                     TranCharges charge = new TranCharges();
                     charge.ChargeName = debtRecoveryTx.accDesc;
@@ -2893,41 +2635,19 @@ public class PegPay : System.Web.Services.WebService
                     {
                         token.Fx = serviceChrgTx.amt.value.ToString();
                     }
-                    //else if (serviceChrgTx.accDesc.Trim().ToUpper().Equals("FIXED FEE"))
-                    //{
-                    //    token.ServiceFee = serviceChrgTx.amt.value.ToString();
-                    //}
-                }
-                else
-                {
-                    //vendTransaction.TransactionType = VendTransactionType.Failure;
-                    //vendTransaction.Description = "Unexcpected transaction type - see log";
-                    //Console.WriteLine("Unexcpected transaction type - see log. Recieved " + tx.GetType().ToString());
-                }
+                    
             }
-            //Console.WriteLine("Token: " + token.Token);
-            //Console.WriteLine("Units: " + Convert.ToString(token.Units));
-            //Console.WriteLine("TokenValue: " + token.TokenValue);
-            //Console.WriteLine("Tax: " + token.Tax);
-            //Console.WriteLine("Inflation: " + token.Inflation);
-            //Console.WriteLine("Fuel: " + token.Fuel);
-            //Console.WriteLine("FX: " + token.Fx);
-            //Console.WriteLine("DebtRecovery: " + token.DebtRecovery);
-            //token.TransactionsCharges = chargeList;
 
         }
         catch (SoapException soapException)
         {
             token.StatusCode = "35";
             token.StatusDescription = soapException.InnerException.ToString();
-            //XMLVendFaultResp xmlVendFaultResp = XMLDeserialize.Deserialize(soapException.Detail);
-            //token.ErrorMessage = xmlVendFaultResp.fault.desc.ToUpper();
         }
         catch (Exception ex)
         {
             token.StatusCode = "100";
             token.StatusDescription = ex.Message;
-            //token.ErrorMessage = "A SERIOUS ERROR OCCURED WHILE TRYING TO VEND A TOKEN";
         }
 
         return token;
@@ -2994,40 +2714,12 @@ public class PegPay : System.Web.Services.WebService
                         string msgDateTime = request.msgID.dateTime;
                         // set the meter identifier
                         MeterNumber meterNumber = new MeterNumber();
-                        meterNumber.msno = custRef;// "04040406672";
+                        meterNumber.msno = custRef;
                         VendIDMethod meth = new VendIDMethod();
                         meth.meterIdentifier = meterNumber;
                         request.idMethod = meth;
                         resps = service.ConfirmCustomerRequest(request);
-
-                        //UtilityReferences.WenrecoApi.XMLVendService service = new UtilityReferences.WenrecoApi.XMLVendService();
-                        //UtilityReferences.WenrecoApi.ConfirmCustomerReq request = new UtilityReferences.WenrecoApi.ConfirmCustomerReq();
-                        //UtilityReferences.WenrecoApi.ConfirmCustomerResp resps = new UtilityReferences.WenrecoApi.ConfirmCustomerResp();
-                        //request.authCred = new UtilityReferences.WenrecoApi.AuthCred();
-                        //request.authCred.opName = "PPAY";
-                        //request.authCred.password = creds.UtilityPassword;
-                        //request.authCred.newPassword = creds.UtilityPassword;
-                        //// set the client ID
-                        //UtilityReferences.WenrecoApi.EANDeviceID clientID = new UtilityReferences.WenrecoApi.EANDeviceID();
-                        //clientID.ean = "PPAY";
-                        //request.clientID = clientID;
-                        //// set the terminal ID
-                        //UtilityReferences.WenrecoApi.EANDeviceID terminalID = new UtilityReferences.WenrecoApi.EANDeviceID();
-                        //terminalID.ean = "0000000000001";
-                        //request.terminalID = terminalID;
-                        //// set the msg ID
-                        //request.msgID = Generate();
-                        //string msgId = request.msgID.uniqueNumber;
-                        //string msgDateTime = request.msgID.dateTime;
-                        //// set the meter identifier
-                        //UtilityReferences.WenrecoApi.MeterNumber meterNumber = new UtilityReferences.WenrecoApi.MeterNumber();
-                        //meterNumber.msno = custRef;
-                        //UtilityReferences.WenrecoApi.VendIDMethod meth = new UtilityReferences.WenrecoApi.VendIDMethod();
-                        //meth.meterIdentifier = meterNumber;
-                        //request.idMethod = meth;
-                        //service.Timeout = 24000000;
-                        //resps = service.ConfirmCustomerRequest(request);
-                        //if (resps.confirmCustResult.Length > 0)
+                        
 
                         if (false)
                         {
@@ -3055,7 +2747,6 @@ public class PegPay : System.Web.Services.WebService
                             Customer cust = dp.GetCustomerDetails(custRef, "", "WENRECO");
                             if (cust.StatusCode == "0")
                             {
-                                //  double bal = GetTotalBalance(cust);
                                 resp.CustomerReference = cust.CustomerRef;
                                 resp.CustomerName = cust.CustomerName;
                                 resp.CustomerBalance = cust.Balance.ToString();
@@ -3102,8 +2793,7 @@ public class PegPay : System.Web.Services.WebService
             {
                 resp.StatusCode = "100";
                 resp.StatusDescription = "Unexpected XMLVend Fault Response    received: (" + xmlVendFaultResp.fault.GetType().ToString() + ")" + xmlVendFaultResp.fault.desc;
-                //Console.WriteLine("Unexpected XMLVend Fault Response    received: (" + xmlVendFaultResp.fault.GetType().ToString() + ")" + xmlVendFaultResp.fault.desc);
-            }
+                }
         }
         catch (Exception ex)
         {
@@ -3128,12 +2818,11 @@ public class PegPay : System.Web.Services.WebService
     }
     [WebMethod]
     public KCCAResponse QueryTuckSeeCustomerDetails(string customerReference, string vendorCode, string password)
-    {//amwine
+    {
         KCCAResponse resp = new KCCAResponse();
         DatabaseHandler dp = new DatabaseHandler();
         UtilityCredentials creds;
         BusinessLogic bll = new BusinessLogic();
-        //DatabaseHandler dh = new DatabaseHandler();
         dataAccess dha = new dataAccess();
 
         try
@@ -3167,7 +2856,6 @@ public class PegPay : System.Web.Services.WebService
                             resp.Success = "0";
                             resp.ErrorCode = "0";
                             resp.Status = "0";
-                            //string message = resp.ErrorDescription.ToLower();
 
                             resp.ErrorDescription = "SUCCESS";
 
@@ -3182,12 +2870,7 @@ public class PegPay : System.Web.Services.WebService
                             customer.TIN = resp.SystemName;
                             customer.SessionKey = resp.AllowPartialPayment;
                             dp.SaveTuckseeCustomerDetails(customer);
-                            //saveCustomerDetails(customer);
                         }
-                        //else if (message.Contains("expired") || message.Contains("already") || message.Contains("cancelled "))
-                        //{
-
-                        //}
                         else
                         {
                             resp.Success = "100";
@@ -3197,35 +2880,6 @@ public class PegPay : System.Web.Services.WebService
                             resp.ErrorCode = "100";
                             resp.ErrorDescription = resp.ErrorDescription;
 
-                            //Customer cust = dp.GetCustomerDetails(customerReference, "", "TUCKSEE");
-                            //if (cust.CustomerType.ToUpper().Equals("ACTIVEPRN"))
-                            //{
-                            //    resp.Success = "1";
-                            //    //resp.CustomerReference = customerReference;
-                            //    resp.PaymentReference = customerReference;
-                            //    resp.CustomerName = cust.CustomerName;
-                            //    resp.SystemName = cust.AgentCode;
-                            //    //resp.CustomerType = cust.CustomerType;
-                            //    //resp.OutstandingBalance = cust.Balance.Split('.')[0];
-                            //    resp.PaymentAmount = cust.Balance.Split('.')[0];
-                            //    resp.ErrorCode = "0";
-                            //    resp.ErrorDescription = "SUCCESS";
-
-
-
-
-                            //}
-                            //else
-                            //{
-                            //    resp.Success = "100";
-                            //    resp.PaymentReference = "";
-                            //    resp.CustomerName = "";
-                            //    resp.PaymentType = "";
-                            //    //resp.OutstandingBalance = "";
-                            //    resp.ErrorCode = "100";
-                            //    resp.ErrorDescription = "NOT FOUND";
-
-                            //}
 
                         }
 
@@ -3262,12 +2916,6 @@ public class PegPay : System.Web.Services.WebService
                     resp.ErrorCode = "30";
                     resp.ErrorDescription = "UNABLE TO CONNECT TO TUCKSEE";
                 }
-                //resp.CustomerReference = "";
-                //resp.CustomerName = "";
-                //resp.CustomerType = "";
-                //resp.OutstandingBalance = "";
-                //resp.StatusCode = "100";
-                //resp.StatusDescription = "INVALID REFERENCE NUMBER";
             }
         }
         catch (SqlException sqlex)
@@ -3287,12 +2935,6 @@ public class PegPay : System.Web.Services.WebService
 
     private KCCAResponse TuckSeeAuthenticate(UtilityCredentials creds)
     {
-        //, string sessionKey
-        //string api_key = "DCF70D06664503BB44890EDDE279A506";
-        //string api_username = "UIDMTNBETAACCOUNT";
-        //string api_password = "$w%CvvBbxIyuniJn7*%+7j1o4YKRxT1q";
-        //string backref = "";
-        //string key = "5C91E23DA785D78F8C2804D2680AC220";
         KCCAResponse resp = new KCCAResponse();
         string datastring = creds.SecretKey + creds.UtilityCode + creds.UtilityPassword + creds.Key;
         string hash = MD5Hash(datastring);
@@ -3412,9 +3054,6 @@ public class PegPay : System.Web.Services.WebService
                     authresp.RefCheck = message.Attributes["refcheck"].Value;
                     authresp.TransactionID = message.Attributes["transactionID"].Value;
                     authresp.PaymentReference = message.Attributes["PRN"].Value;
-                    //authresp.PaymentReference = message.Attributes["paymentReference"].Value;
-                    //authresp.PaymentDate = message.Attributes["paymentDate"].Value;
-                    //authresp.TrackingID = message.Attributes["trackingID"].Value;
                 }
                 else
                 {
@@ -3460,32 +3099,7 @@ public class PegPay : System.Web.Services.WebService
         }
         return hash.ToString();
     }
-    //private TuckSeeResponse TuckSeeAuthenticate(UtilityCredentials creds)
-    //{
-    //    string api_key = "DCF70D06664503BB44890EDDE279A506";
-    //    string api_username = "UIDMTNBETAACCOUNT";
-    //    string api_password = "$w%CvvBbxIyuniJn7*%+7j1o4YKRxT1q";
-    //    string backref = "";
-    //    string key = "5C91E23DA785D78F8C2804D2680AC220";
-    //    TuckSeeResponse resp = new TuckSeeResponse();
-    //    string datastring = api_key + api_username + api_password + key;
-    //    string hash = MD5Hash(datastring);
-    //    try
-    //    {
-    //        System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
-    //        Tusksee.PaymentNotificationService serv = new Tester.Tusksee.PaymentNotificationService();
-    //        object obj = serv.authenticate(creds.Key, creds.UtilityCode, creds.UtilityPassword, hash, "");
 
-    //        resp = ParseTuskseeXmlResponse(obj.ToString(), "AUTH");
-
-    //    }
-    //    catch (Exception ee)
-    //    {
-    //        resp.Status = "100";
-    //        resp.Success = ee.Message;
-    //    }
-    //    return resp;
-    //}
 
     private KCCAResponse VerifyTuckSeePrn(string prnReference, string sessionKey, string apiKey)
     {
@@ -3515,12 +3129,11 @@ public class PegPay : System.Web.Services.WebService
     }
     [WebMethod]
     public KCCAQueryResponse QueryKCCACustomerDetails(string customerReference, string vendorCode, string password)
-    {//amwine
+    {
         KCCAQueryResponse resp = new KCCAQueryResponse();
         DatabaseHandler dp = new DatabaseHandler();
         UtilityCredentials creds;
-        BusinessLogic bll = new BusinessLogic();
-        //DatabaseHandler dh = new DatabaseHandler();
+        BusinessLogic bll = new BusinessLogic();;
         dataAccess dha = new dataAccess();
 
         try
@@ -3540,7 +3153,6 @@ public class PegPay : System.Web.Services.WebService
                     creds = dp.GetUtilityCreds("KCCA", vendorCode);
                     if (!creds.UtilityCode.Equals(""))
                     {
-                        //Query TEST KCCA
                         resp = GetKCCADetails(customerReference, vendorCode, creds);
 
                         if (resp.StatusDescription.ToUpper() == "PRN TRANSACTION ALREADY COMPLETED")
@@ -3552,7 +3164,6 @@ public class PegPay : System.Web.Services.WebService
                         }
                         else if (resp.StatusCode.Equals("100"))
                         {
-                            //Query Customers' Table
                             Customer cust = dp.GetCustomerDetails(customerReference, "", "KCCA");
                             if (cust.CustomerType.ToUpper().Equals("ACTIVEPRN"))
                             {
@@ -3710,7 +3321,6 @@ public class PegPay : System.Web.Services.WebService
     {
         KCCAQueryResponse Queryresp = new KCCAQueryResponse();
         KCCAResponse resp = new KCCAResponse();
-        //get Authentication details
         string ap_backCheck = "";
         string ap_hash = "";
 
@@ -3735,8 +3345,6 @@ public class PegPay : System.Web.Services.WebService
             Queryresp.StatusCode = "0";
             Queryresp.StatusDescription = "SUCCESS";
             Queryresp.Success = "SUCCESS";
-
-            //Save Customer in the Customer Table
             Customer cust = new Customer();
             cust.CustomerName = resp.CustomerName;
             cust.CustomerRef = resp.PaymentReference;
@@ -3761,7 +3369,6 @@ public class PegPay : System.Web.Services.WebService
     {
         KCCAQueryResponse Queryresp = new KCCAQueryResponse();
         KCCAResponse resp = new KCCAResponse();
-        //get Authentication details
         string ap_backCheck = "";
         string ap_hash = "";
 
@@ -3786,13 +3393,12 @@ public class PegPay : System.Web.Services.WebService
             Queryresp.StatusCode = "0";
             Queryresp.StatusDescription = "SUCCESS";
             Queryresp.Success = "SUCCESS";
-
-            //Save Customer in the Customer Table
+            
             Customer cust = new Customer();
             cust.CustomerName = resp.CustomerName;
             cust.CustomerRef = resp.PaymentReference;
             cust.CustomerType = resp.Status == "A" ? "ActivePRN" : "TransactedPRN";
-            cust.Balance = resp.PaymentAmount;        //resp.PaymentAmount;
+            cust.Balance = resp.PaymentAmount;        
             cust.AgentCode = "KCCA";
 
             saveKCCACustomerDetails(cust);
@@ -3820,16 +3426,13 @@ public class PegPay : System.Web.Services.WebService
         try
         {
             KCCAResponse resp = new KCCAResponse();
-            //get Authentication details
             string ap_backCheck = "";
             string ap_hash = "";
 
             DatabaseHandler dh = new DatabaseHandler();
 
             string SessionKey = dh.GetSystemSettings2("8", "4");
-
-            //string respons = bll.GetKccaAuthentication(creds.Key, creds.UtilityCode, creds.UtilityPassword, ap_hash, ap_backCheck);
-            //KCCAQueryResponse resp1 = bll.ParseXmlResponse(respons, "AUTH");
+            
 
             string ap_key = "C9773BB7F8D0AD7F94609B3A5A0A15C1";
             string ap_username = "UIDDiamondTrustBank";
@@ -3852,13 +3455,12 @@ public class PegPay : System.Web.Services.WebService
                 Queryresp.StatusCode = "0";
                 Queryresp.StatusDescription = "SUCCESS";
                 Queryresp.Success = "SUCCESS";
-
-                //Save Customer in the Customer Table
+                
                 Customer cust = new Customer();
                 cust.CustomerName = resp.CustomerName;
                 cust.CustomerRef = resp.PaymentReference;
                 cust.CustomerType = resp.Status == "A" ? "ActivePRN" : "TransactedPRN";
-                cust.Balance = resp.PaymentAmount;        //resp.PaymentAmount;
+                cust.Balance = resp.PaymentAmount;     
                 cust.AgentCode = "KCCA";
 
                 saveKCCACustomerDetails(cust);
@@ -3887,7 +3489,6 @@ public class PegPay : System.Web.Services.WebService
     {
         try
         {
-            // KCCA.BankPaymentService payment = new KCCA.BankPaymentService();
             UtilityReferences.KCCA.TelecomPaymentService payment = new UtilityReferences.KCCA.TelecomPaymentService();
             System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertValidation;
             string resp = payment.authenticate(ap_key, ap_username, ap_passord, hash, backref);
@@ -3919,7 +3520,6 @@ public class PegPay : System.Web.Services.WebService
     {
         try
         {
-            //KCCA.BankPaymentService payment = new KCCA.BankPaymentService();
             UtilityReferences.KCCA.TelecomPaymentService payment = new UtilityReferences.KCCA.TelecomPaymentService();
             System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertValidation;
             string resp = payment.verifyReference(SessionKey, custRef, Hash, ap_backCheck);
@@ -3988,8 +3588,6 @@ public class PegPay : System.Web.Services.WebService
                     authresp.Coin = message.Attributes["COIN"].Value;
                     authresp.PrnDate = message.Attributes["prnDate"].Value;
                     authresp.ExpiryDate = message.Attributes["expiryDate"].Value;
-                    // authresp.PaymentReference = message.Attributes["paymentReference"].Value;
-                    //authresp.PaymentType = message.Attributes["paymentType"].Value;
                 }
                 else
                 {
@@ -4008,9 +3606,6 @@ public class PegPay : System.Web.Services.WebService
                     authresp.RefCheck = message.Attributes["refcheck"].Value;
                     authresp.TransactionID = message.Attributes["transactionID"].Value;
                     authresp.PaymentReference = message.Attributes["PRN"].Value;
-                    //authresp.PaymentReference = message.Attributes["paymentReference"].Value;
-                    //authresp.PaymentDate = message.Attributes["paymentDate"].Value;
-                    //authresp.TrackingID = message.Attributes["trackingID"].Value;
                 }
                 else
                 {
@@ -4045,238 +3640,9 @@ public class PegPay : System.Web.Services.WebService
         }
     }
 
-    //[WebMethod]
-    //public KCCAQueryResponse QueryStarTimesCustomerDetails(string customerReference, string vendorCode, string password)
-    //{//amwine
-    //    KCCAQueryResponse resp = new KCCAQueryResponse();
-    //    DatabaseHandler dp = new DatabaseHandler();
-    //    UtilityCredentials creds;
-    //    try
-    //    {
-    //        dp.SaveRequestlog(vendorCode, "STARTIMES", "VERIFICATION", customerReference, password);
-    //        DataTable vendorData = dp.GetVendorDetails(vendorCode);
-    //        if (isValidVendorCredentials(vendorCode, password, vendorData))
-    //        {
-    //            if (isActiveVendor(vendorCode, vendorData))
-    //            {
-    //                string strLoginCount = vendorData.Rows[0]["InvalidLoginCount"].ToString();
-    //                int loginCount = int.Parse(strLoginCount);
-    //                if (loginCount > 0)
-    //                {
-    //                    dp.UpdateVendorInvalidLoginCount(vendorCode, 0);
-    //                }
-    //                creds = dp.GetUtilityCreds("KCCA", vendorCode);
-    //                if (!creds.UtilityCode.Equals(""))
-    //                {
-    //                    System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
-    //                    UtilityReferences.KCCA.EPayment kccaapi = new UtilityReferences.KCCA.EPayment();
-    //                    UtilityReferences.KCCA.Customer cust = kccaapi.QueryKccaCustomer(customerReference, creds.UtilityCode, creds.UtilityPassword);
-    //                    if (cust.StatusCode.Equals("0"))
-    //                    {
-    //                        resp.CustomerReference = cust.CustomerRef;
-    //                        resp.CustomerName = cust.CustomerName;
-    //                        resp.CustomerType = cust.CustomerType;
-    //                        resp.OutstandingBalance = cust.Balance.ToString();
-    //                        resp.StatusCode = cust.StatusCode;
-    //                        resp.StatusDescription = cust.StatusDescription;
-    //                        Customer customer = new Customer();
-    //                        customer.AgentCode = "KCCA";
-    //                        customer.CustomerName = resp.CustomerName;
-    //                        customer.CustomerRef = resp.CustomerReference;
-    //                        customer.CustomerType = resp.CustomerType;
-    //                        saveCustomerDetails(customer);
-    //                    }
-    //                    else
-    //                    {
-    //                        resp.CustomerReference = "";
-    //                        resp.CustomerName = "";
-    //                        resp.CustomerType = "";
-    //                        resp.OutstandingBalance = "";
-    //                        resp.StatusCode = "100";
-    //                        resp.StatusDescription = cust.StatusDescription;
-    //                    }
-    //                }
-    //                else
-    //                {
-    //                    resp.StatusCode = "29";
-    //                    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-    //                }
-    //            }
-    //            else
-    //            {
-    //                resp.StatusCode = "11";
-    //                resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-    //            }
-    //        }
-    //        else
-    //        {
-    //            resp.StatusCode = "2";
-    //            resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-    //        }
-    //    }
-    //    catch (System.Net.WebException wex)
-    //    {
-    //        Customer cust = dp.GetCustomerDetails(customerReference, "", "KCCA");
-    //        if (cust.StatusCode.Equals("0"))
-    //        {
-    //            resp.CustomerType = cust.CustomerType;
-    //            resp.CustomerName = cust.CustomerName;
-    //            resp.CustomerReference = cust.CustomerRef;
-    //            resp.OutstandingBalance = "0";
-    //            resp.StatusCode = "0";
-    //            resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-    //        }
-    //        else
-    //        {
-    //            resp.StatusCode = "30";
-    //            resp.StatusDescription = "UNABLE TO CONNECT TO KCCA";
-    //        }
-    //        dp.LogError(wex.Message, vendorCode, DateTime.Now, "KCCA");
-    //    }
-    //    catch (SqlException sqlex)
-    //    {
-    //        resp.StatusCode = "31";
-    //        resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        resp.StatusCode = "32";
-    //        resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-    //        dp.LogError(ex.Message, vendorCode, DateTime.Now, "KCCA");
-    //    }
-    //    return resp;
-    //}
+   
 
-    // [WebMethod]
-    //public KCCAQueryResponse NewQueryKCCACustomerDetails(string CustomerRef, string vendorCode, string password)
-    //{
-    //    DataTable dt = new DataTable();
-    //    BusinessLogic bll = new BusinessLogic();
-    //    DatabaseHandler dh = new DatabaseHandler();
-    //    PhoneValidator pv = new PhoneValidator();
-    //    KCCAQueryResponse resp = new KCCAQueryResponse();
-    //    UtilityCredentials creds;
-    //    try
-    //    {
-    //        dh.SaveRequestlog(vendorCode, "KCCA", "VERIFICATION", CustomerRef, password);
-    //        DataTable vendorData = dh.GetVendorDetails(vendorCode);
-    //        if (isValidVendorCredentials(vendorCode, password, vendorData))
-    //        {
-    //            if (isActiveVendor(vendorCode, vendorData))
-    //            {
-    //                string strLoginCount = vendorData.Rows[0]["InvalidLoginCount"].ToString();
-    //                int loginCount = int.Parse(strLoginCount);
-    //                if (loginCount > 0)
-    //                {
-    //                    dh.UpdateVendorInvalidLoginCount(vendorCode, 0);
-    //                }
-    //                creds = dh.GetUtilityCreds("KCCA", vendorCode);
-    //                if (!creds.UtilityCode.Equals(""))
-    //                {
-    //                    dt = dh.GetSystemSettings("7", "5");
-    //                    string api_key = dt.Rows[0]["ValueVarriable"].ToString();//"GGSAIUHJUY5GFFDFFGWES5436MTN678";
-    //                    dt = dh.GetSystemSettings("8", "5");
-    //                    string backRef = dt.Rows[0]["ValueVarriable"].ToString();
-    //                    dt = dh.GetSystemSettings("9", "5");
-    //                    string hash = dt.Rows[0]["ValueVarriable"].ToString();
-    //                    if (CustomerRef != null)
-    //                    {
-    //                        UtilityReferences.KCCA1.TelecomPaymentService service = new UtilityReferences.KCCA1.TelecomPaymentService();
-    //                        string authentication = service.authenticate(api_key, creds.UtilityCode, creds.UtilityPassword, "", backRef);
-    //                        resp = bll.ParserXML(authentication);
-
-    //                        if (resp.status.Equals("1"))
-    //                        {
-    //                            System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
-    //                            string verification = service.verifyReference(resp.sessionKey, CustomerRef, "", "");
-    //                            resp = bll.verifyXml(verification);
-    //                            Customer customer = new Customer();
-    //                            if (resp.status.Equals("1"))
-    //                            {
-    //                                resp.StatusCode = "0";
-    //                                resp.StatusDescription = dh.GetStatusDescr(resp.StatusCode);
-    //                                customer.CustomerRef = resp.PaymentReference;
-    //                                customer.CustomerName = resp.CustomerName;
-    //                                customer.Balance = resp.PaymentAmount;
-    //                                customer.SessionKey = resp.sessionKey;
-    //                                customer.Area = "";
-    //                                customer.AgentCode = "KCCA";
-    //                                customer.StatusCode = resp.StatusCode;
-    //                                customer.StatusDescription = resp.StatusDescription;
-    //                                dh.SaveCustomerDetails(customer);
-    //                            }
-    //                            else
-    //                            {
-    //                                resp.CustomerReference = "";
-    //                                resp.CustomerName = "";
-    //                                resp.CustomerType = "";
-    //                                resp.OutstandingBalance = "";
-    //                                resp.StatusCode = resp.StatusCode;
-    //                                resp.StatusDescription = resp.StatusDescription;
-    //                            }
-
-    //                        }
-    //                        else
-    //                        {
-
-    //                            resp.StatusDescription = "ERROR OCCURED DURING THE VERIFICATION OF CUSTOMER";
-    //                        }
-
-
-    //                    }
-    //                    else
-    //                    {
-    //                        resp.StatusCode = "1";
-    //                        resp.StatusDescription = dh.GetStatusDescr(resp.StatusCode);
-    //                    }
-
-    //                }
-    //            }
-    //            else
-    //            {
-    //                resp.StatusCode = "11";
-    //                resp.StatusDescription = dh.GetStatusDescr(resp.StatusCode);
-    //            }
-    //        }
-    //        else
-    //        {
-    //            resp.StatusCode = "2";
-    //            resp.StatusDescription = dh.GetStatusDescr(resp.StatusCode);
-    //        }
-    //    }
-    //    catch (System.Net.WebException wex)
-    //    {
-    //        Customer cust = dh.GetCustomerDetails(CustomerRef, "", "KCCA");
-    //        if (cust.StatusCode.Equals("0"))
-    //        {
-    //            resp.CustomerName = cust.CustomerName;
-    //            resp.CustomerReference = cust.CustomerRef;
-    //            resp.OutstandingBalance = "0";
-    //            resp.StatusCode = "0";
-    //            resp.StatusDescription = dh.GetStatusDescr(resp.StatusCode);
-    //        }
-    //        else
-    //        {
-    //            resp.StatusCode = "30";
-    //            resp.StatusDescription = "UNABLE TO CONNECT TO KCCA";
-    //        }
-
-    //        dh.LogError(wex.Message, vendorCode, DateTime.Now, "KCCA");
-    //    }
-    //    catch (SqlException sqlex)
-    //    {
-    //        resp.StatusCode = "31";
-    //        resp.StatusDescription = dh.GetStatusDescr(resp.StatusCode);
-    //    }
-    //    catch (Exception ex)
-    //    {
-
-    //        resp.StatusCode = "32";
-    //        resp.StatusDescription = dh.GetStatusDescr(resp.StatusCode);
-    //        dh.LogError(ex.Message, vendorCode, DateTime.Now, "KCCA");
-    //    }
-    //    return resp;
-    //}
+   
     [WebMethod]
     public SolarCustomer ValidateSolarCustomer(string utilityCode, string meternumber, string vendorCode, string password)
     {
@@ -4294,7 +3660,6 @@ public class PegPay : System.Web.Services.WebService
                 }
                 else
                 {
-                    //86X61RS004
                     customer.StatusCode = "99";
                     customer.StatusDescription = "Deactivated vendor. Access denied".ToUpper();
                 }
@@ -4367,21 +3732,10 @@ public class PegPay : System.Web.Services.WebService
                     schresp.BankCode = student.BankCode;
                     schresp.TranCharge = resp.Charge;
                     schresp.StatusCode = "0";
-                    //schresp.Bank = student.Bank;
                     schresp.StatusDescription = "SUCCESS";
                     schresp.AllowPartialPayment = "1";
                     
-                    //Customer customer = new Customer();
-                    //customer.AgentCode = "FLEXIPAY";
-                    //customer.CustomerName = schresp.CustomerName;
-                    //customer.CustomerRef = schresp.CustomerReference;
-                    //customer.CustomerType = "";
-                    //customer.TIN = student.BankCode;
-                    //customer.Area = utilityCode;
-                    //customer.Balance = student.MinimumPayment;
-                    //customer.SessionKey = schresp.AllowPartialPayment;
-
-                    //saveFlexipayCustomerDetails(customer);
+                   
 
                 }
                 else
@@ -4390,8 +3744,7 @@ public class PegPay : System.Web.Services.WebService
                     schresp.StatusDescription = resp.ErrorDescription;
 
                 }
-                //schresp.StatusCode = resp.ErrorCode;
-                //schresp.StatusDescription = resp.ErrorDescription;
+               
             }
             else
             {
@@ -4439,7 +3792,7 @@ public class PegPay : System.Web.Services.WebService
 
     [WebMethod]
     public SchoolsQueryResponse QuerySchoolStudentDetails(string utilityCode, string customerReference, string vendorCode, string password)
-    {//method1
+    {
         SchoolsQueryResponse resp = new SchoolsQueryResponse();
         DatabaseHandler dp = new DatabaseHandler();
         UtilityCredentials creds;
@@ -4557,7 +3910,7 @@ public class PegPay : System.Web.Services.WebService
 
     [WebMethod]
      public SchoolsQueryResponse QueryNDAInvoiceDetails(string utilityCode, string invoiceNumber, string vendorCode, string password)
-    {//method1
+    {
         SchoolsQueryResponse resp = new SchoolsQueryResponse();
         DatabaseHandler dp = new DatabaseHandler();
         UtilityCredentials creds;
@@ -4625,12 +3978,11 @@ public class PegPay : System.Web.Services.WebService
                         {
                             resp.StatusCode = response.@return.statusCode.ToString();
                             resp.StatusDescription = response.@return.statusMessage.ToString();
-                            resp.CustomerReference = "";//response.@return.invoice.invoiceNo.ToUpper();
-                            resp.OutstandingBalance = "";//response.@return.invoice.amount.ToString();
-                            resp.CustomerName = "";//response.@return.invoice.customerName.ToString();
-                            resp.Forex = "";//response.@return.invoice.currencyCode.ToString();
-                            resp.Level = "";//response.@return.invoice.dueDate.ToString();
-
+                            resp.CustomerReference = "";
+                            resp.OutstandingBalance = "";
+                            resp.CustomerName = "";
+                            resp.Forex = "";
+                            resp.Level = "";
                         }
 
                     }
@@ -4776,7 +4128,6 @@ public class PegPay : System.Web.Services.WebService
 
             string State = "1";
             string password = "126e8ad746c7a0f1e325589974696263303751349081f49673";
-            //string dataToSign = "ref=" +studentNo;
             string dataToSign = "ref=" + studentNo;
             string Signature = GetKyuDigitalSignature(password, dataToSign); ;
 
@@ -4819,7 +4170,6 @@ public class PegPay : System.Web.Services.WebService
     }
     public static string GetKyuDigitalSignature(string sign, string contentTosgin)
     {
-        //current
         byte[] key = new Byte[64];
         byte[] content = new Byte[100];
         key = Encoding.ASCII.GetBytes(sign);
@@ -4827,9 +4177,8 @@ public class PegPay : System.Web.Services.WebService
 
         using (HMACSHA256 hmc = new HMACSHA256(key))
         {
-            //byte[] hashvalue = hmc.ComputeHash(content);
             byte[] hashvalue = hmc.ComputeHash(content);
-            //return hashvalue;
+           
             StringBuilder hexValue = new StringBuilder(hashvalue.Length * 2);
             foreach (byte b in hashvalue)
             {
@@ -4964,7 +4313,6 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "23";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //check for a bouquetCode
             else if (string.IsNullOrEmpty(trans.Area))
             {
                 resp.PegPayPostId = "";
@@ -5123,8 +4471,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (System.Net.WebException wex)
         {
-            //dp.deleteTransaction(resp.PegPayPostId, "UNABLE TO CONNECT TO URA");
-            //resp.PegPayPostId = "";
             resp.StatusCode = "0";
             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             dp.LogError(wex.Message, trans.VendorCode, DateTime.Now, "URA");
@@ -5162,8 +4508,7 @@ public class PegPay : System.Web.Services.WebService
             trans.Email = "";
         }
         string vendorCode = trans.VendorCode;
-        //log incoming Details
-        //dp.logKCCAPostHit(trans);
+        
         try
         {
             dp.SaveRequestlog(trans.VendorCode, "BETWAY", "POSTING", trans.CustRef, trans.Password);
@@ -5282,7 +4627,6 @@ public class PegPay : System.Web.Services.WebService
                                                             UtilityCredentials creds = dp.GetUtilityCreds("BETWAY", trans.VendorCode);
                                                             if (!creds.UtilityCode.Equals(""))
                                                             {
-                                                                //post in pegpay
                                                                 if (trans.PaymentType == null)
                                                                 {
                                                                     trans.PaymentType = "";
@@ -5620,11 +4964,6 @@ public class PegPay : System.Web.Services.WebService
                                 resp.StatusCode = "100";
                                 resp.StatusDescription = cust.CustomerError;
                             }
-                            //resp.Area = "";
-                            //resp.CustomerName = "";
-                            //resp.CustomerReference = "";
-                            //resp.StatusCode = "100";
-                            //resp.StatusDescription = cust.CustomerError;
                         }
                     }
                     else
@@ -5677,8 +5016,7 @@ public class PegPay : System.Web.Services.WebService
         }
         return resp;
     }
-    
-    /***************************************** REA INFO BEGINS ****************************************************************************************/
+
     [WebMethod]
     public Meter QueryREACustomerDetails(string customerReference, string utilityCode, string vendorCode, string password)
     {
@@ -5950,8 +5288,7 @@ public class PegPay : System.Web.Services.WebService
         }
         return meterDetails;
     }
-
-    //Make REA payments
+    
     [WebMethod]
     public PostResponse MakeREAPayment(REATransaction trans)
     {
@@ -5983,18 +5320,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "13";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (trans.Area == null)
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "35";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
-            //else if (trans.Area.Trim().Equals(""))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "35";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
+           
             else if (trans.TransactionType == null)
             {
                 resp.PegPayPostId = "";
@@ -6277,8 +5603,6 @@ public class PegPay : System.Web.Services.WebService
         }
         
     }
-    //get KRECS vending token
-      //////////////Send Transaction Details to REA////////////////////////////////////////////////
         public Meter NotifyKRECS(string token, string orderno,string transactionId, string meterNo, float amount)
         {
             string response = "";
@@ -6320,7 +5644,7 @@ public class PegPay : System.Web.Services.WebService
                         string getErrorCode = (string)JObject.Parse(reaApiResponse).GetValue("errorCode");
                         var getToken = JObject.Parse(reaApiResponse).GetValue("vendingResponse");
                         string message = (string)JObject.Parse(reaApiResponse).GetValue("errorMsg");
-                    //log request and response
+                  
                     dh.LogRequestAndResponse("KRECS", transactionId, url, reaApiResponse);
                     if (getErrorCode.Equals("0"))
                     {
@@ -6353,16 +5677,14 @@ public class PegPay : System.Web.Services.WebService
                 }
             return  meterDetails;
         }
-
-    /////////////////////////Query Order Number ////////////////////////////////////////////////////
+    
     public static Meter QueryGetOrderNumber(string token)
     {
         Meter OrderNo = new Meter();
-        //Customer cust = new Customer();
         try
         {
             string url = @"https://vending.rea.or.ug:8447/epower/prepayservice/getorderno?token=" + token;
-            //Check certificate validity
+           
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback
                 (delegate { return true; });
@@ -6393,8 +5715,7 @@ public class PegPay : System.Web.Services.WebService
                 var getOrderNo = JObject.Parse(reaApiResponse).GetValue("ordno");
                 Meter apiMeterDetails = JsonConvert.DeserializeObject<Meter>(reaApiResponse);
                 OrderNo.OrderNo = getOrderNo.ToString();
-                // Console.WriteLine("Your order Number is "+getOrderNo);
-
+               
             }
         }
         catch (WebException err)
@@ -6416,8 +5737,7 @@ public class PegPay : System.Web.Services.WebService
         Meter reaInfo = new Meter();
         Meter orderNo = QueryGetOrderNumber(accessToken.SessionID);
         try
-        {
-            //do vending here 
+        { 
             Meter vendingResponse = NotifyKRECS(accessToken.SessionID,orderNo.OrderNo, vendorTranId, meterNo, float.Parse(amount));
             if (vendingResponse.ErrorCode.Equals("0"))
             {
@@ -6453,7 +5773,7 @@ public class PegPay : System.Web.Services.WebService
                 using (XmlWriter writer = XmlWriter.Create(sww))
                 {
                     xsSubmit.Serialize(writer, subReq);
-                    xml = sww.ToString(); // Your XML
+                    xml = sww.ToString();
                 }
             }
 
@@ -6480,7 +5800,7 @@ public class PegPay : System.Web.Services.WebService
                 using (XmlWriter writer = XmlWriter.Create(sww))
                 {
                     xsSubmit.Serialize(writer, subReq);
-                    xml = sww.ToString(); // Your XML
+                    xml = sww.ToString();
                 }
             }
 
@@ -6491,9 +5811,7 @@ public class PegPay : System.Web.Services.WebService
             throw ert;
         }
     }
-    /***************************************** REA INFO ENDS ****************************************************************************************/
 
-    /***************************************** BRIGHTLIFE BEGINS *************************************************************************************/
     [WebMethod]
     public BrightLifeResponse QueryBrightLifeCustomerDetails(string customerReference, string area, string vendorCode, string password)
     {
@@ -6619,7 +5937,7 @@ public class PegPay : System.Web.Services.WebService
                 string utilityCode = row["UtilitiesName"].ToString();
                 string url = row["Url"].ToString();
                 string token = row["Apikey"].ToString();
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11;//+256759629081
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11;
 
                 string fullURL = url + "/clients/simple?phone_number=" + phoneNumber;
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(fullURL);
@@ -6630,7 +5948,7 @@ public class PegPay : System.Web.Services.WebService
                 request.ContentType = "application/json";
                 request.Headers["Authorization"] = "Bearer " + token;
 
-                //Get response from api
+               
                 string apiResponse;
                 using (HttpWebResponse webresponse = (HttpWebResponse)request.GetResponse())
                 {
@@ -6640,7 +5958,7 @@ public class PegPay : System.Web.Services.WebService
                     StreamReader responseReader = new StreamReader(webresponse.GetResponseStream(), Encoding.UTF8);
                     apiResponse = responseReader.ReadToEnd().Trim();
 
-                    //check if json string is not empty
+                   
                     JObject jsonObj = (JObject)JsonConvert.DeserializeObject(apiResponse);
                     int count = jsonObj.Count;
                     if (count.Equals(0))
@@ -6813,7 +6131,7 @@ public class PegPay : System.Web.Services.WebService
                                 {
                                     if (pv.PhoneNumbersOk(trans.CustomerTel))
                                     {
-                                        if (!IsduplicateVendorRef(trans))//jjj
+                                        if (!IsduplicateVendorRef(trans))
                                         {
                                             if (!IsduplicateCustPayment(trans))
                                             {
@@ -6977,8 +6295,6 @@ public class PegPay : System.Web.Services.WebService
         return resp;
     }
 
-    /***************************************** BRIGHTLIFE ENDS ****************************************************************************************/
-    /***************************************** SAGEWOOD BEGINS ****************************************************************************************/
     [WebMethod]
     public SageWoodResponse QuerySAGEWOODCustomerDetails(string customerReference, string area, string vendorCode, string password)
     {
@@ -7059,7 +6375,7 @@ public class PegPay : System.Web.Services.WebService
         }
         return resp;
     }
-    //Make SAGEWOOD payments
+   
     [WebMethod]
     public PostResponse MakeSAGEWOODPayment(NWSCTransaction trans)
     {
@@ -7649,8 +6965,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (System.Net.WebException wex)
         {
-            //dp.deleteTransaction(resp.PegPayPostId, "UNABLE TO CONNECT TO URA");
-            //resp.PegPayPostId = "";
             resp.StatusCode = "0";
             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             dp.LogError(wex.Message, trans.VendorCode, DateTime.Now, "NSSF");
@@ -7760,7 +7074,6 @@ public class PegPay : System.Web.Services.WebService
             Customer cust = dp.GetCustomerDetails(customerReference, "", "NSSF");
             if (cust.StatusCode.Equals("0"))
             {
-                //nssfqueryresponse.Area = cust.Area;
                 nssfqueryresponse.CustomerName = cust.CustomerName;
                 nssfqueryresponse.CustomerReference = cust.CustomerRef;
                 nssfqueryresponse.OutstandingBalance = "0";
@@ -7848,7 +7161,6 @@ public class PegPay : System.Web.Services.WebService
             Customer cust = dp.GetCustomerDetails(customerReference, "", "TOTAL");
             if (cust.StatusCode.Equals("0"))
             {
-                //nssfqueryresponse.Area = cust.Area;
                 totalresponse.HolderName = cust.CustomerName;
                 totalresponse.StatusCode = "00";
                 totalresponse.StatusDescription = "SUCCESS";
@@ -8060,50 +7372,7 @@ public class PegPay : System.Web.Services.WebService
                                                                             resp.StatusCode = "100";
                                                                             resp.StatusDescription = resp1.StatusDescription;
                                                                         }
-                                                                        //resp.PegPayPostId = dp.PostURATransaction(trans, "URA");
-                                                                        //UraPmtService ura = new UraPmtService();
-                                                                        //TransactionEntity uraTrans = GetUraTrans(trans, creds);
-                                                                        //TransactionEntity[] arr = { uraTrans };
-                                                                        //string[] RetStr = ura.NotifyUraPayment(creds.UtilityCode, creds.UtilityPassword, arr);
-                                                                        //URA uraSender = new URA();
-                                                                        //string[] RetStr = uraSender.makePaymentUraNewImplementation(trans, creds);
-                                                                        //string uraResp = RetStr[0];
-
-                                                                        //if (uraResp.Equals("<ResponseCode>" + trans.CustRef + "||T</ResponseCode>"))
-                                                                        //{
-                                                                        //    resp.StatusCode = "0";
-                                                                        //    resp.StatusDescription = "SUCCESS";
-                                                                        //}
-                                                                        //else if (uraResp.Equals("<ResponseCode>" + trans.CustRef + "|DBG004|T</ResponseCode>"))
-                                                                        //{
-                                                                        //    resp.StatusCode = "0";
-                                                                        //    resp.StatusDescription = "SUCCESS";
-                                                                        //}
-                                                                        //else if (uraResp.Equals("<ResponseCode>" + trans.CustRef + "|E001|SUCCESS</ResponseCode>"))
-                                                                        //{
-                                                                        //    resp.StatusCode = "0";
-                                                                        //    resp.StatusDescription = "SUCCESS";
-                                                                        //}
-                                                                        //else if (uraResp.Equals("<ResponseCode>" + trans.CustRef + "|E000|SUCCESS</ResponseCode>"))
-                                                                        //{
-                                                                        //    resp.StatusCode = "0";
-                                                                        //    resp.StatusDescription = "SUCCESS";
-                                                                        //}
-                                                                        //else if (uraResp.Trim().Contains("SUCCESS".ToUpper()))
-                                                                        //{
-                                                                        //    resp.StatusCode = "0";
-                                                                        //    resp.StatusDescription = "SUCCESS";
-
-                                                                        //}
-                                                                        //else
-                                                                        //{
-                                                                        //    string msg1 = uraResp;
-                                                                        //    msg1 = msg1.Replace("<ResponseCode>", "");
-                                                                        //    msg1 = msg1.Replace("</ResponseCode>", "");
-                                                                        //    dp.deleteTransaction(resp.PegPayPostId, msg1 + " AT URA");
-                                                                        //    resp.StatusCode = "100";
-                                                                        //    resp.StatusDescription = msg1;
-                                                                        //}
+                                                                   
                                                                     }
                                                                     else
                                                                     {
@@ -8226,8 +7495,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (System.Net.WebException wex)
         {
-            //dp.deleteTransaction(resp.PegPayPostId, "UNABLE TO CONNECT TO URA");
-            //resp.PegPayPostId = "";
             resp.StatusCode = "0";
             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             dp.LogError(wex.Message, trans.VendorCode, DateTime.Now, "URA");
@@ -8260,11 +7527,11 @@ public class PegPay : System.Web.Services.WebService
             tran.PostField3 = "";
             tran.PostField4 = "MBURA";//for Financle Mpbile Banking URA code is MBURA
             tran.PostField5 = trans.PaymentDate;
-            tran.PostField6 = "";//CustomerType;
+            tran.PostField6 = "";
             tran.PostField7 = trans.TransactionAmount;
             tran.PostField8 = "CASH";
-            tran.PostField9 = "";//VendorCode
-            tran.PostField10 = "";//Password
+            tran.PostField9 = "";
+            tran.PostField10 = "";
             tran.PostField11 = trans.CustomerTel;
             tran.PostField12 = "0";
             tran.PostField13 = "";
@@ -8272,9 +7539,9 @@ public class PegPay : System.Web.Services.WebService
             tran.PostField15 = "0";
             tran.PostField18 = "";
             tran.PostField20 = trans.VendorTransactionRef;
-            tran.PostField21 = "CASH"; //Payment Type;
+            tran.PostField21 = "CASH"; 
             string dataToSign = tran.PostField1 + tran.PostField2 + tran.PostField11 + tran.PostField20 + tran.PostField9 + tran.PostField10 + tran.PostField5 + tran.PostField14 + tran.PostField7 + tran.PostField18 + tran.PostField8;
-            tran.PostField16 = dataToSign;// SignCertificate(dataToSign);
+            tran.PostField16 = dataToSign;
             return tran;
         }
         catch (Exception ex)
@@ -8298,7 +7565,6 @@ public class PegPay : System.Web.Services.WebService
             tran = GetStanbicFmbURATranDetails(trans);
             resp = pegpay.PostTransaction(tran);
 
-            //success
             if (resp.ResponseField6.Equals("0") || resp.ResponseField6.Equals("21"))
             {
                 bankResp.StatusCode = resp.ResponseField6;
@@ -8328,24 +7594,7 @@ public class PegPay : System.Web.Services.WebService
     }
 
 
-    //[WebMethod]
-    //public UmemePostResponse MakeUmemePayment(UmemeTransaction trans)
-    //{
-    //    UmemePostResponse postResp = new UmemePostResponse();
-    //    //Log Transaction as is in MSMQ
-    //    if (!trans.VendorCode.Equals("MTN"))
-    //    {
-    //        bool success= SendTransactionToQueue(othersUmemeQueue, trans);
-    //        postResp.
-    //    }
-    //    else
-    //    {
-    //        postResp = MakeUmemePaymentOld(trans);
-    //    }
-
-
-    //}
-
+  
 
     private static void WriteToErrorLog(Transaction trans, string Message)
     {
@@ -8369,11 +7618,8 @@ public class PegPay : System.Web.Services.WebService
             trans.Email = "";
         }
         string vendorCode = trans.VendorCode;
-        //DateTime timeIn = DateTime.Now;
         try
         {
-            //dp.SaveRequestlog(trans.VendorCode, "UMEME", "POSTING", trans.CustRef, trans.Password);
-
             if (trans.CustName == null)
             {
                 resp.PegPayPostId = "";
@@ -8524,14 +7770,13 @@ public class PegPay : System.Web.Services.WebService
                                                                     {
                                                                         if (trans.VendorCode.ToUpper().Equals("AFRICELL") || (trans.VendorCode.ToUpper().Equals("MTN") && trans.Narration.Contains("POS PAYMENT")))
                                                                         {
-                                                                            //check balance
                                                                             Customer cust = new Customer();
                                                                             cust = dp.GetCustomerDetails(trans.CustRef, "", creds.Utility);
                                                                             double balance = Convert.ToDouble(cust.Balance.Trim());
                                                                             double amt = Convert.ToDouble(trans.TransactionAmount.Trim());
                                                                             if (amt > balance)
                                                                             {
-                                                                                resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");//post in pegpay db
+                                                                                resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");
                                                                                 System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
                                                                                 EPayment umemeapi = new EPayment();
                                                                                 umemeapi.Timeout = 39000;
@@ -8568,12 +7813,12 @@ public class PegPay : System.Web.Services.WebService
                                                                             }
 
                                                                         }
-                                                                        //if its an MTN UMEME transaction
+                                                                       
                                                                         else if (trans.VendorCode.Equals("MTN"))
                                                                         {
                                                                             //MTN expect pending in the response 
                                                                             //and status code 1000
-                                                                            resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");//post in pegpay db
+                                                                            resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");
                                                                             resp.ReceiptNumber = resp.PegPayPostId;
                                                                             resp.StatusCode = "0";
                                                                             resp.StatusDescription = "SUCCESS";//dp.GetStatusDescr(resp.StatusCode);
@@ -8603,7 +7848,7 @@ public class PegPay : System.Web.Services.WebService
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");//post in pegpay db
+                                                                                    resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");
                                                                                     resp.ReceiptNumber = resp.PegPayPostId;
                                                                                     resp.StatusCode = "0";
                                                                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -8611,7 +7856,6 @@ public class PegPay : System.Web.Services.WebService
                                                                             }
                                                                             else
                                                                             {
-                                                                                //insufficent amount to cover basic charges
                                                                                 resp.ReceiptNumber = "";
                                                                                 resp.PegPayPostId = "";
                                                                                 resp.StatusCode = "36";
@@ -8621,26 +7865,26 @@ public class PegPay : System.Web.Services.WebService
 
                                                                         }
                                                                     }
-                                                                    //This is a post paid customer
+                                                                    
                                                                     else
                                                                     {
                                                                         if (trans.VendorCode.Equals("MTN") && !trans.Narration.Equals("POS PAYMENT"))
                                                                         {
-                                                                            resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");//post in pegpay db
+                                                                            resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");
                                                                             resp.ReceiptNumber = resp.PegPayPostId;
                                                                             resp.StatusCode = "0";
                                                                             resp.StatusDescription = "SUCCESS";//dp.GetStatusDescr(resp.StatusCode);
                                                                         }
                                                                         else
                                                                         {
-                                                                            resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");//post in pegpay db
+                                                                            resp.PegPayPostId = dp.PostUmemeTransaction(trans, "UMEME");
                                                                             resp.ReceiptNumber = resp.PegPayPostId;
                                                                             resp.StatusCode = "0";
                                                                             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                                                         }
                                                                     }
                                                                 }
-                                                                //This is a PrePaid Vendor
+                                                               
                                                                 else
                                                                 {
                                                                     resp.PegPayPostId = "";
@@ -8706,7 +7950,7 @@ public class PegPay : System.Web.Services.WebService
                                         resp.StatusCode = "12";
                                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                     }
-                                }//Uncomment Me including else below
+                                }
                                 else
                                 {
                                     resp.ReceiptNumber = "";
@@ -8836,8 +8080,7 @@ public class PegPay : System.Web.Services.WebService
             resp.PegPayPostId = "";
             dp.LogError(ex.Message, trans.VendorCode, DateTime.Now, "UMEME");
         }
-        //DateTime timeOut = DateTime.Now;
-        //CSVFile.WriteToLogFile(timeIn, timeOut, trans);
+        
         return resp;
     }
 
@@ -9429,7 +8672,7 @@ public class PegPay : System.Web.Services.WebService
 
     public bool DebtIsGreaterThanZero(DataTable table)
     {
-        //this should loop once
+        
         foreach (DataRow row in table.Rows)
         {
             string debt = row["Debt"].ToString();
@@ -9442,7 +8685,7 @@ public class PegPay : System.Web.Services.WebService
         return false;
     }
     [WebMethod]
-    public PostResponse MakeDataAirtimePayment(NWSCTransaction trans)//(string receipient, string receipientName, string message,string transactionId, string, string digitalSignature, string vendorCode, string password)
+    public PostResponse MakeDataAirtimePayment(NWSCTransaction trans)
     {
 
         PostResponse resp = new PostResponse();
@@ -9551,16 +8794,10 @@ public class PegPay : System.Web.Services.WebService
                 else
                 {
                     trans.CustRef = trans.CustomerTel;
-                    //trans.CustomerType = "";
-                    //trans.TransactionType = "";
-                   // trans.CustomerType = "";
-                   // trans.CustName = "";
-                    //trans.Tin = "";
                     trans.PaymentType = "CASH";
                     trans.Reversal = "0";
                     trans.TransactionType = "2";
                     trans.CustomerType = "";
-                    //trans.Area = "";
                     if (trans.utilityCompany.ToUpper() == "DATA")
                     {
                         string networkCode = pv.NetworkCode;
@@ -9816,7 +9053,7 @@ public class PegPay : System.Web.Services.WebService
                                         resp.StatusCode = "12";
                                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                     }
-                                }//Uncomment me including the else below
+                                }
                                 else
                                 {
                                     resp.ResponseId = "";
@@ -9874,8 +9111,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (System.Net.WebException wex)
         {
-            //dp.deleteTransaction(resp.PegPayPostId, "UNABLE TO CONNECT TO NWSC");
-            //resp.PegPayPostId = "";
             resp.StatusCode = "0";
             resp.StatusDescription = "SUCCESS";
             dp.LogError(wex.Message, trans.VendorCode, DateTime.Now, "NWSC");
@@ -9915,7 +9150,7 @@ public class PegPay : System.Web.Services.WebService
             trans.Email = "";
         }
         List<string> payCategories = new List<string>();
-        payCategories.Add("RECHARGE");//RECHAR
+        payCategories.Add("RECHARGE");
         payCategories.Add("PAYMENT");
         string vendorCode = trans.VendorCode;
         try
@@ -9949,6 +9184,7 @@ public class PegPay : System.Web.Services.WebService
             {
                 resp.PegPayPostId = "";
                 resp.StatusCode = "17";
+
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
             else if (string.IsNullOrEmpty(trans.DigitalSignature))
@@ -10024,7 +9260,6 @@ public class PegPay : System.Web.Services.WebService
                                         {
                                             if (!IsduplicateCustPayment(trans))
                                             {
-                                                //assuming recharges are never reversed
                                                 trans.Reversal = trans.Tin.Equals("RECHARGE") ? "0" : GetReversalState(trans);
                                                 if (HasOriginalEntry(trans))
                                                 {
@@ -10104,7 +9339,7 @@ public class PegPay : System.Web.Services.WebService
                                         resp.StatusCode = "12";
                                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                     }
-                                }//Uncomment me including the else below
+                                }
                                 else
                                 {
                                     resp.PegPayPostId = "";
@@ -10162,8 +9397,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (System.Net.WebException wex)
         {
-            //dp.deleteTransaction(resp.PegPayPostId, "UNABLE TO CONNECT TO STARTIMES");
-            //resp.PegPayPostId = "";
             resp.StatusCode = "0";
             resp.StatusDescription = "SUCCESS";
             dp.LogError(wex.Message, trans.VendorCode, DateTime.Now, "STARTIMES");
@@ -10348,34 +9581,7 @@ public class PegPay : System.Web.Services.WebService
                                                                     resp.PegPayPostId = dp.PostTransaction(trans, "NWSC");
                                                                     resp.StatusCode = "0";
                                                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-
-                                                                    //SMS sms = new SMS();
-                                                                    //sms.Phone = trans.CustomerTel;
-                                                                    //sms.Message = "Dear " + trans.CustName + ", " +
-                                                                    //              "payment of " + trans.TransactionAmount + " for a/c " + trans.CustRef + " recieved by NWSC. Your account will be credited within 24 hours. Thank you for paying.";
-                                                                    //sms.Reference = trans.VendorTransactionRef;
-                                                                    //sms.Sender = "GENERIC API";
-                                                                    //sms.VendorTranId = trans.VendorTransactionRef;
-                                                                    //sms.Mask = "NWSC";
-                                                                    //bll.SendToSmsMSQ(sms);
-                                                                    //System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
-                                                                    //NWSCBillingInterface nwscapi = new NWSCBillingInterface();
-                                                                    //string format = "dd/MM/yyyy";
-                                                                    //DateTime payDate = DateTime.ParseExact(trans.PaymentDate, format, CultureInfo.InvariantCulture);
-                                                                    //UtilityReferences.NWSC.PostResponse waterResp = nwscapi.postCustomerTransactionsWithArea(trans.CustRef, trans.CustName, trans.Area, trans.CustomerTel, payDate, int.Parse(trans.TransactionAmount), trans.VendorTransactionRef, trans.TransactionType, creds.UtilityCode, creds.UtilityPassword);
-                                                                    //if (waterResp.PostError.Equals("NONE"))
-                                                                    //{
-                                                                    //    dp.UpdateSentTransaction(resp.PegPayPostId, "", "1");
-                                                                    //    resp.StatusCode = "0";
-                                                                    //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                                                                    //}
-                                                                    //else
-                                                                    //{
-                                                                    //    dp.deleteTransaction(resp.PegPayPostId, waterResp.PostError);
-                                                                    //    resp.PegPayPostId = "";
-                                                                    //    resp.StatusCode = "100";
-                                                                    //    resp.StatusDescription = waterResp.PostError + " AT NWSC";
-                                                                    //}
+                                                                    
                                                                 }
                                                                 else
                                                                 {
@@ -10433,7 +9639,7 @@ public class PegPay : System.Web.Services.WebService
                                         resp.StatusCode = "12";
                                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                     }
-                                }//Uncomment me including the else below
+                                }
                                 else
                                 {
                                     resp.PegPayPostId = "";
@@ -10491,8 +9697,7 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (System.Net.WebException wex)
         {
-            //dp.deleteTransaction(resp.PegPayPostId, "UNABLE TO CONNECT TO NWSC");
-            //resp.PegPayPostId = "";
+           
             resp.StatusCode = "0";
             resp.StatusDescription = "SUCCESS";
             dp.LogError(wex.Message, trans.VendorCode, DateTime.Now, "NWSC");
@@ -10516,31 +9721,7 @@ public class PegPay : System.Web.Services.WebService
     }
 
    
-    //[WebMethod]
-    //public KCCAPostResponse MakeKCCAPayment(KCCATransaction trans)
-    //{
-    //    KCCAPostResponse resp = new KCCAPostResponse();
-    //    System.Collections.ArrayList a = new System.Collections.ArrayList();
-    //    a.Add("2150000000015");
-    //    a.Add("2140000000163");
-    //    a.Add("2140000000164");
-    //    a.Add("2140000000165");
-    //    if (a.Contains(trans.CustRef))
-    //    {
-    //        Random rnd = new Random();
-    //        int receiptNumber = rnd.Next(100000, 1000000);
-    //        resp.StatusCode = "0";
-    //        resp.StatusDescription = "SUCESS";
-    //        resp.VendorTransactionRef = receiptNumber.ToString();
-    //    }
-    //    else
-    //    {
-    //        resp.StatusCode = "1";
-    //        resp.StatusDescription = "INVALID CUSTOMER REFERENCE";
-    //        resp.VendorTransactionRef = "";
-    //    }
-    //    return resp;
-    //}
+
 
     [WebMethod]
     public KCCAPostResponse MakeKCCAPayment(KCCATransaction trans)
@@ -10558,8 +9739,7 @@ public class PegPay : System.Web.Services.WebService
             trans.Email = "";
         }
         string vendorCode = trans.VendorCode;
-        //log incoming Details
-        //dp.logKCCAPostHit(trans);
+       
         try
         {
             dp.SaveRequestlog(trans.VendorCode, "KCCA", "POSTING", trans.CustRef, trans.Password);
@@ -10569,30 +9749,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "13";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (trans.CustName.Trim().Equals(""))
-            //{
-            //    DatabaseHandler dh = new DatabaseHandler();
-            //    if (trans.VendorCode.ToUpper().Contains("MTN"))
-            //    {
-            //        Customer cust = dh.GetCustomerDetails(trans.CustRef, "", "KCCA");
-            //        if (cust.StatusCode.Equals("0"))
-            //        {
-            //            trans.CustName = cust.CustomerName;
-            //        }
-            //        else
-            //        {
-            //            resp.PegPayPostId = "";
-            //            resp.StatusCode = "13";
-            //            resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        resp.PegPayPostId = "";
-            //        resp.StatusCode = "13";
-            //        resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //    }
-            //}
+         
             else if (trans.TransactionType == null)
             {
                 resp.PegPayPostId = "";
@@ -10672,12 +9829,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "23";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (!IsValidCustType(trans))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "28";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
+            
             else
             {
                 if (bll.IsNumeric(trans.TransactionAmount))
@@ -10707,7 +9859,7 @@ public class PegPay : System.Web.Services.WebService
                                                             UtilityCredentials creds = dp.GetUtilityCreds("KCCA", trans.VendorCode);
                                                             if (!creds.UtilityCode.Equals(""))
                                                             {
-                                                                //post in pegpay
+                                                            
                                                                 if (trans.PaymentType == null)
                                                                 {
                                                                     trans.PaymentType = "";
@@ -10750,36 +9902,7 @@ public class PegPay : System.Web.Services.WebService
                                                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                                                 }
 
-                                                                // do posting to kcca
-
-                                                                //KCCAQueryResponse kccaResp = bll.MakeKccaPayment(trans);
-
-
-                                                                //if (kccaResp.Success.Equals("1"))
-                                                                //{
-                                                                //    dp.UpdateSentTransaction(resp.PegPayPostId, kccaResp.PaymentReference, "SUCCESS");
-                                                                //    resp.ReceiptNumber = kccaResp.PaymentReference;
-                                                                //    resp.StatusCode = "0";
-                                                                //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                                                                //}
-                                                                //else
-                                                                //{
-                                                                //    if (kccaResp.ErrorCode.Equals("2111"))
-                                                                //    {
-                                                                //        dp.UpdateSentTransaction(resp.PegPayPostId, kccaResp.PaymentReference, "SUCCESS");
-                                                                //        resp.ReceiptNumber = kccaResp.PaymentReference;
-                                                                //        resp.StatusCode = "0";
-                                                                //        resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                                                                //    }
-                                                                //    else
-                                                                //    {
-                                                                //        dp.deleteTransaction(resp.PegPayPostId, kccaResp.ErrorDescription + " AT KCCA");
-                                                                //        resp.ReceiptNumber = "";
-                                                                //        resp.PegPayPostId = "";
-                                                                //        resp.StatusCode = "100";
-                                                                //        resp.StatusDescription = kccaResp.ErrorDescription + " AT KCCA";
-                                                                //    }
-                                                                //}
+                                                                
                                                             }
                                                             else
                                                             {
@@ -10952,8 +10075,7 @@ public class PegPay : System.Web.Services.WebService
             trans.Email = "";
         }
         string vendorCode = trans.VendorCode;
-        //log incoming Details
-        //dp.logKCCAPostHit(trans);
+       
         try
         {
             dp.SaveRequestlog(trans.VendorCode, "TUCKSEE", "POSTING", trans.CustRef, trans.Password);
@@ -11043,12 +10165,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.ErrorCode = "23";
                 resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
             }
-            //else if (!IsValidCustType(trans))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "28";
-            //    resp.ErrorDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
+           
             else
             {
                 if (bll.IsNumeric(trans.TransactionAmount))
@@ -11078,7 +10195,6 @@ public class PegPay : System.Web.Services.WebService
                                                             UtilityCredentials creds = dp.GetUtilityCreds("TUCKSEE", trans.VendorCode);
                                                             if (!creds.UtilityCode.Equals(""))
                                                             {
-                                                                //post in pegpay
                                                                 if (trans.PaymentType == null)
                                                                 {
                                                                     trans.PaymentType = "";
@@ -11098,7 +10214,6 @@ public class PegPay : System.Web.Services.WebService
                                                             }
                                                             else
                                                             {
-                                                                //resp.ReceiptNumber = "";
                                                                 resp.TransactionID = "";
                                                                 resp.ErrorCode = "29";
                                                                 resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11106,7 +10221,6 @@ public class PegPay : System.Web.Services.WebService
                                                         }
                                                         else
                                                         {
-                                                            //resp.ReceiptNumber = "";
                                                             resp.TransactionID = "";
                                                             resp.ErrorCode = "29";
                                                             resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11114,7 +10228,6 @@ public class PegPay : System.Web.Services.WebService
                                                     }
                                                     else
                                                     {
-                                                        //     resp.ReceiptNumber = "";
                                                         resp.TransactionID = "";
                                                         resp.ErrorCode = "26";
                                                         resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11122,7 +10235,6 @@ public class PegPay : System.Web.Services.WebService
                                                 }
                                                 else
                                                 {
-                                                    //      resp.ReceiptNumber = "";
                                                     resp.TransactionID = "";
                                                     resp.ErrorCode = "24";
                                                     resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11131,7 +10243,6 @@ public class PegPay : System.Web.Services.WebService
                                             }
                                             else
                                             {
-                                                //    resp.ReceiptNumber = "";
                                                 resp.TransactionID = "";
                                                 resp.ErrorCode = "21";
                                                 resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11139,7 +10250,6 @@ public class PegPay : System.Web.Services.WebService
                                         }
                                         else
                                         {
-                                            //  resp.ReceiptNumber = "";
                                             resp.TransactionID = "";
                                             resp.ErrorCode = "20";
                                             resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11147,7 +10257,6 @@ public class PegPay : System.Web.Services.WebService
                                     }
                                     else
                                     {
-                                        //resp.ReceiptNumber = "";
                                         resp.TransactionID = "";
                                         resp.ErrorCode = "12";
                                         resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11155,7 +10264,6 @@ public class PegPay : System.Web.Services.WebService
                                 }
                                 else
                                 {
-                                    /// resp.ReceiptNumber = "";
                                     resp.TransactionID = "";
                                     resp.ErrorCode = "18";
                                     resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11163,7 +10271,6 @@ public class PegPay : System.Web.Services.WebService
                             }
                             else
                             {
-                                //resp.ReceiptNumber = "";
                                 resp.TransactionID = "";
                                 resp.ErrorCode = "11";
                                 resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11171,7 +10278,6 @@ public class PegPay : System.Web.Services.WebService
                         }
                         else
                         {
-                            //   resp.ReceiptNumber = "";
                             resp.TransactionID = "";
                             resp.ErrorCode = "2";
                             resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11179,7 +10285,6 @@ public class PegPay : System.Web.Services.WebService
                     }
                     else
                     {
-                        // resp.ReceiptNumber = "";
                         resp.TransactionID = "";
                         resp.ErrorCode = "4";
                         resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11187,7 +10292,6 @@ public class PegPay : System.Web.Services.WebService
                 }
                 else
                 {
-                    //resp.ReceiptNumber = "";
                     resp.TransactionID = "";
                     resp.ErrorCode = "3";
                     resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
@@ -11218,7 +10322,7 @@ public class PegPay : System.Web.Services.WebService
             if (trans.CustomerType.ToUpper().Equals("PREPAID"))
             {
                 dp.deleteTransaction(resp.TransactionID, "UNABLE TO CONNECT TO UMEME");
-                ///resp.ReceiptNumber = "";
+               
                 resp.TransactionID = "";
                 resp.ErrorCode = "30";
                 resp.ErrorDescription = "UNABLE TO CONNECT TO UMEME";
@@ -11232,7 +10336,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (SqlException sqlex)
         {
-            //resp.ReceiptNumber = "";
             resp.ErrorCode = "31";
             resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
             dp.deleteTransaction(resp.TransactionID, resp.ErrorDescription);
@@ -11242,7 +10345,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (Exception ex)
         {
-            //resp.ReceiptNumber = "";
             resp.ErrorCode = "32";
             resp.ErrorDescription = dp.GetStatusDescr(resp.ErrorCode);
             dp.deleteTransaction(resp.TransactionID, resp.ErrorDescription);
@@ -11268,8 +10370,7 @@ public class PegPay : System.Web.Services.WebService
             trans.Email = "";
         }
         string vendorCode = trans.VendorCode;
-        //log incoming Details
-        //dp.logKCCAPostHit(trans);
+      
         try
         {
             if (string.IsNullOrEmpty(trans.UtilityCode))
@@ -11343,12 +10444,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "23";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (!IsValidCustType(trans))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "28";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
+           
             else
             {
                 if (bll.IsNumeric(trans.TransactionAmount))
@@ -11378,7 +10474,6 @@ public class PegPay : System.Web.Services.WebService
                                                             UtilityCredentials creds = dp.GetUtilityCreds(trans.UtilityCode, trans.VendorCode);
                                                             if (!creds.UtilityCode.Equals(""))
                                                             {
-                                                                //post in pegpay
                                                                 if (trans.PaymentType == null)
                                                                 {
                                                                     trans.PaymentType = "";
@@ -11398,7 +10493,6 @@ public class PegPay : System.Web.Services.WebService
                                                             }
                                                             else
                                                             {
-                                                                //resp.ReceiptNumber = "";
                                                                 resp.PegPayPostId = "";
                                                                 resp.StatusCode = "29";
                                                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11406,7 +10500,6 @@ public class PegPay : System.Web.Services.WebService
                                                         }
                                                         else
                                                         {
-                                                            //resp.ReceiptNumber = "";
                                                             resp.PegPayPostId = "";
                                                             resp.StatusCode = "29";
                                                             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11414,7 +10507,6 @@ public class PegPay : System.Web.Services.WebService
                                                     }
                                                     else
                                                     {
-                                                        //     resp.ReceiptNumber = "";
                                                         resp.PegPayPostId = "";
                                                         resp.StatusCode = "26";
                                                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11422,7 +10514,6 @@ public class PegPay : System.Web.Services.WebService
                                                 }
                                                 else
                                                 {
-                                                    //      resp.ReceiptNumber = "";
                                                     resp.PegPayPostId = "";
                                                     resp.StatusCode = "24";
                                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11431,7 +10522,6 @@ public class PegPay : System.Web.Services.WebService
                                             }
                                             else
                                             {
-                                                //    resp.ReceiptNumber = "";
                                                 resp.PegPayPostId = "";
                                                 resp.StatusCode = "21";
                                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11439,7 +10529,6 @@ public class PegPay : System.Web.Services.WebService
                                         }
                                         else
                                         {
-                                            //  resp.ReceiptNumber = "";
                                             resp.PegPayPostId = "";
                                             resp.StatusCode = "20";
                                             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11447,7 +10536,6 @@ public class PegPay : System.Web.Services.WebService
                                     }
                                     else
                                     {
-                                        //resp.ReceiptNumber = "";
                                         resp.PegPayPostId = "";
                                         resp.StatusCode = "12";
                                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11455,7 +10543,6 @@ public class PegPay : System.Web.Services.WebService
                                 }
                                 else
                                 {
-                                    /// resp.ReceiptNumber = "";
                                     resp.PegPayPostId = "";
                                     resp.StatusCode = "18";
                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11463,7 +10550,6 @@ public class PegPay : System.Web.Services.WebService
                             }
                             else
                             {
-                                //resp.ReceiptNumber = "";
                                 resp.PegPayPostId = "";
                                 resp.StatusCode = "11";
                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11471,7 +10557,6 @@ public class PegPay : System.Web.Services.WebService
                         }
                         else
                         {
-                            //   resp.ReceiptNumber = "";
                             resp.PegPayPostId = "";
                             resp.StatusCode = "2";
                             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11479,7 +10564,6 @@ public class PegPay : System.Web.Services.WebService
                     }
                     else
                     {
-                        // resp.ReceiptNumber = "";
                         resp.PegPayPostId = "";
                         resp.StatusCode = "4";
                         resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11487,7 +10571,6 @@ public class PegPay : System.Web.Services.WebService
                 }
                 else
                 {
-                    //resp.ReceiptNumber = "";
                     resp.PegPayPostId = "";
                     resp.StatusCode = "3";
                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -11518,7 +10601,7 @@ public class PegPay : System.Web.Services.WebService
             if (trans.CustomerType.ToUpper().Equals("PREPAID"))
             {
                 dp.deleteTransaction(resp.PegPayPostId, "UNABLE TO CONNECT TO UMEME");
-                ///resp.ReceiptNumber = "";
+              
                 resp.PegPayPostId = "";
                 resp.StatusCode = "30";
                 resp.StatusDescription = "UNABLE TO CONNECT TO UMEME";
@@ -11532,7 +10615,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (SqlException sqlex)
         {
-            //resp.ReceiptNumber = "";
             resp.StatusCode = "31";
             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             dp.deleteTransaction(resp.PegPayPostId, resp.StatusDescription);
@@ -11542,7 +10624,6 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (Exception ex)
         {
-            //resp.ReceiptNumber = "";
             resp.StatusCode = "32";
             resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             dp.deleteTransaction(resp.PegPayPostId, resp.StatusDescription);
@@ -11578,7 +10659,7 @@ public class PegPay : System.Web.Services.WebService
         {
             resp.ErrorCode = "101";
             resp.ErrorDescription = "Transaction Timeout";
-            // get transactio id
+          
         }
         catch (Exception ee)
         {
@@ -11604,8 +10685,7 @@ public class PegPay : System.Web.Services.WebService
             trans.Email = "";
         }
         string vendorCode = trans.VendorCode;
-        //log incoming Details
-        //dp.logKCCAPostHit(trans);
+        
         try
         {
             dp.SaveRequestlog(trans.VendorCode, "MAK", "POSTING", trans.CustRef, trans.Password);
@@ -11615,12 +10695,6 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "13";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (trans.CustName.Trim().Equals(""))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "13";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
             else if (trans.TransactionType == null)
             {
                 resp.PegPayPostId = "";
@@ -11639,12 +10713,6 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "15";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (trans.PaymentType.Trim().Equals(""))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "15";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
             else if (trans.VendorTransactionRef == null)
             {
                 resp.PegPayPostId = "";
@@ -11711,18 +10779,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "23";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (!IsValidPayCode(trans))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "27";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
-            //else if (!IsValidCustType(trans))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "28";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
+           
             else
             {
                 if (bll.IsNumeric(trans.TransactionAmount))
@@ -11756,26 +10813,7 @@ public class PegPay : System.Web.Services.WebService
                                                                 resp.ReceiptNumber = resp.PegPayPostId;
                                                                 resp.StatusCode = "0";
                                                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                                                                //System.Net.ServicePointManager.ServerCertificateValidationCallback = RemoteCertificateValidation;
-                                                                //UtilityReferences.KCCA.EPayment kccaapi = new UtilityReferences.KCCA.EPayment();
-                                                                //UtilityReferences.KCCA.Transaction kccaTrans = GetKCCATrans(trans, creds);
-                                                                //UtilityReferences.KCCA.Response kccaResp = kccaapi.PostKccaPayment(kccaTrans);
-
-                                                                //    if (!resp.PegPayPostId.Equals("0"))
-                                                                //    {
-                                                                //        //dp.UpdateSentTransaction(resp.PegPayPostId, kccaResp.ReceiptNumber);
-                                                                //        resp.ReceiptNumber = resp.PegPayPostId;
-                                                                //        resp.StatusCode = "0";
-                                                                //        resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                                                                //    }
-                                                                //    else
-                                                                //    {
-                                                                //        //dp.deleteTransaction(resp.PegPayPostId, kccaResp.StatusDescription + " AT KCCA");
-                                                                //        resp.ReceiptNumber = "";
-                                                                //        resp.PegPayPostId = "";
-                                                                //        resp.StatusCode = "32";
-                                                                //        resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode); //kccaResp.StatusDescription + " AT KCCA";
-                                                                //    }
+                                                            
                                                             }
                                                             else
                                                             {
@@ -12067,18 +11105,7 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "23";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }
-            //else if (!IsValidPayCode(trans))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "27";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
-            //else if (!IsValidCustType(trans))
-            //{
-            //    resp.PegPayPostId = "";
-            //    resp.StatusCode = "28";
-            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //}
+           
             else
             {
                 if (bll.IsNumeric(trans.TransactionAmount))
@@ -12090,8 +11117,7 @@ public class PegPay : System.Web.Services.WebService
                         {
                             if (isActiveVendor(trans.VendorCode, vendaData))
                             {
-                                //if (isSignatureValid(trans))
-                                //{
+                                
                                 if (pv.PhoneNumbersOk(trans.CustomerTel))
                                 {
                                     if (!IsduplicateVendorRef(trans))
@@ -12113,8 +11139,7 @@ public class PegPay : System.Web.Services.WebService
                                                             {
 
 
-                                                                //dp.UpdateSentTransaction(resp.PegPayPostId, resp.PegPayPostId, "SUCCESS");
-                                                                resp.ReceiptNumber = resp.PegPayPostId;
+                                                               resp.ReceiptNumber = resp.PegPayPostId;
                                                                 resp.StatusCode = "0";
                                                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                                             }
@@ -12132,7 +11157,7 @@ public class PegPay : System.Web.Services.WebService
                                                             resp.ReceiptNumber = "";
                                                             resp.PegPayPostId = "";
                                                             resp.StatusCode = "29";
-                                                            resp.StatusDescription = "ERROR FROM HERE 1"; //dp.GetStatusDescr(resp.StatusCode);
+                                                            resp.StatusDescription = "ERROR FROM HERE 1"; 
                                                         }
                                                     }
                                                     else
@@ -12140,7 +11165,7 @@ public class PegPay : System.Web.Services.WebService
                                                         resp.ReceiptNumber = "";
                                                         resp.PegPayPostId = "";
                                                         resp.StatusCode = "29";
-                                                        resp.StatusDescription = "ERROR FROM HERE 2";// dp.GetStatusDescr(resp.StatusCode);
+                                                        resp.StatusDescription = "ERROR FROM HERE 2";
                                                     }
                                                 }
                                                 else
@@ -12184,14 +11209,7 @@ public class PegPay : System.Web.Services.WebService
                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                 }
                             }
-                            //else
-                            //{
-                            //    resp.ReceiptNumber = "";
-                            //    resp.PegPayPostId = "";
-                            //    resp.StatusCode = "18";
-                            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                            //}
-                            // }
+                           
                             else
                             {
                                 resp.ReceiptNumber = "";
@@ -12430,8 +11448,7 @@ public class PegPay : System.Web.Services.WebService
                         {
                             if (isActiveVendor(trans.VendorCode, vendaData))
                             {
-                                //if (isSignatureValid(trans))
-                                //{
+                              
                                 if (pv.PhoneNumbersOk(trans.CustomerTel))
                                 {
                                     if (!IsduplicateVendorRef(trans))
@@ -12452,8 +11469,6 @@ public class PegPay : System.Web.Services.WebService
                                                             if (bll.IsNumeric(resp.PegPayPostId))
                                                             {
 
-
-                                                                //dp.UpdateSentTransaction(resp.PegPayPostId, resp.PegPayPostId, "SUCCESS");
                                                                 resp.ReceiptNumber = resp.PegPayPostId;
                                                                 resp.StatusCode = "0";
                                                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -12472,7 +11487,7 @@ public class PegPay : System.Web.Services.WebService
                                                             resp.ReceiptNumber = "";
                                                             resp.PegPayPostId = "";
                                                             resp.StatusCode = "29";
-                                                            resp.StatusDescription = "ERROR FROM HERE 1"; //dp.GetStatusDescr(resp.StatusCode);
+                                                            resp.StatusDescription = "ERROR FROM HERE 1"; 
                                                         }
                                                     }
                                                     else
@@ -12480,7 +11495,7 @@ public class PegPay : System.Web.Services.WebService
                                                         resp.ReceiptNumber = "";
                                                         resp.PegPayPostId = "";
                                                         resp.StatusCode = "29";
-                                                        resp.StatusDescription = "ERROR FROM HERE 2";// dp.GetStatusDescr(resp.StatusCode);
+                                                        resp.StatusDescription = "ERROR FROM HERE 2";
                                                     }
                                                 }
                                                 else
@@ -12524,14 +11539,7 @@ public class PegPay : System.Web.Services.WebService
                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                 }
                             }
-                            //else
-                            //{
-                            //    resp.ReceiptNumber = "";
-                            //    resp.PegPayPostId = "";
-                            //    resp.StatusCode = "18";
-                            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                            //}
-                            // }
+                           
                             else
                             {
                                 resp.ReceiptNumber = "";
@@ -12769,8 +11777,7 @@ public class PegPay : System.Web.Services.WebService
                         {
                             if (isActiveVendor(trans.VendorCode, vendaData))
                             {
-                                //if (isSignatureValid(trans))
-                                //{
+                              
                                 if (pv.PhoneNumbersOk(trans.CustomerTel))
                                 {
                                     if (!IsduplicateVendorRef(trans))
@@ -12791,8 +11798,6 @@ public class PegPay : System.Web.Services.WebService
                                                             if (bll.IsNumeric(resp.PegPayPostId))
                                                             {
 
-
-                                                                //dp.UpdateSentTransaction(resp.PegPayPostId, resp.PegPayPostId, "SUCCESS");
                                                                 resp.ReceiptNumber = resp.PegPayPostId;
                                                                 resp.StatusCode = "0";
                                                                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
@@ -12811,7 +11816,7 @@ public class PegPay : System.Web.Services.WebService
                                                             resp.ReceiptNumber = "";
                                                             resp.PegPayPostId = "";
                                                             resp.StatusCode = "29";
-                                                            resp.StatusDescription = "ERROR FROM HERE 1"; //dp.GetStatusDescr(resp.StatusCode);
+                                                            resp.StatusDescription = "ERROR FROM HERE 1"; 
                                                         }
                                                     }
                                                     else
@@ -12819,7 +11824,7 @@ public class PegPay : System.Web.Services.WebService
                                                         resp.ReceiptNumber = "";
                                                         resp.PegPayPostId = "";
                                                         resp.StatusCode = "29";
-                                                        resp.StatusDescription = "ERROR FROM HERE 2";// dp.GetStatusDescr(resp.StatusCode);
+                                                        resp.StatusDescription = "ERROR FROM HERE 2";
                                                     }
                                                 }
                                                 else
@@ -12863,14 +11868,7 @@ public class PegPay : System.Web.Services.WebService
                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                 }
                             }
-                            //else
-                            //{
-                            //    resp.ReceiptNumber = "";
-                            //    resp.PegPayPostId = "";
-                            //    resp.StatusCode = "18";
-                            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                            //}
-                            // }
+                           
                             else
                             {
                                 resp.ReceiptNumber = "";
@@ -12966,7 +11964,7 @@ public class PegPay : System.Web.Services.WebService
             creds = dp.GetUtilityCreds(trans.UtilityCode, trans.VendorCode);
             if (!creds.UtilityCode.Equals(""))
             {
-                //code to post transaction 
+                
                 System.Net.ServicePointManager.Expect100Continue = false;
                 string myUrl2 = "http://eis.umu.ac.ug:84/test/ebank?";
                 string urlParams2 = "act = POST & cur = UGX & acc = " + trans.Teller + "& dt =" + trans.PaymentDate + "& stno =" + trans.CustRef + "& chqno =" + trans.ChequeNumber + " &dr =" + trans.Reversal + " &cr =" + trans.PaymentType + " & bank =" + creds.BankCode + " & username =" + creds.Utility + "& password =" + creds.UtilityPassword + "& phone =" + trans.Telephone + " & yrofstudy =" + "" + "& sem =" + "" + "& bankRef =" + trans.VendorTransactionRef + " & naration =" + trans.Narration;
@@ -12993,7 +11991,7 @@ public class PegPay : System.Web.Services.WebService
                     string errorCode = array[0].ToString().Replace(",", "");
                     string Ref = GetDetail(array[1].ToString());
                     resp.StatusCode = errorCode.Replace("\n", "");
-                    //resp.Serial = Ref;
+                    
                     resp.ReceiptNumber = Ref;
                 }
                 else
@@ -13028,7 +12026,6 @@ public class PegPay : System.Web.Services.WebService
             creds = dp.GetUtilityCreds(trans.UtilityCode, trans.VendorCode);
             if (!creds.UtilityCode.Equals(""))
             {
-                //code to post transaction 
                 System.Net.ServicePointManager.Expect100Continue = false;
                 string myUrl2 = "http://eis.mubs.ac.ug:84/test/ebank?";
                 string urlParams2 = "act = POST & cur = UGX & acc = " + trans.Teller + "& dt =" + trans.PaymentDate + "& stno =" + trans.CustRef + "& chqno =" + trans.ChequeNumber + " &dr =" + trans.Reversal + " &cr =" + trans.PaymentType + " & bank =" + creds.BankCode + " & username =" + creds.Utility + "& password =" + creds.UtilityPassword + "& phone =" + trans.Telephone + " & yrofstudy =" + "" + "& sem =" + "" + "& bankRef =" + trans.VendorTransactionRef + " & naration =" + trans.Narration;
@@ -13114,7 +12111,6 @@ public class PegPay : System.Web.Services.WebService
                         }
                         if (vendor.Trim().Equals(vendorCode.Trim()) && vendorPassword.Trim().Equals(password.Trim()))
                         {
-                            //if (!(VendoType.Equals("PREPAID")))
                                 if ((VendoType.Equals("PREPAID")))
                                 {
                                 DataTable dt = dp.GetTransactionDetails(vendorTranID, vendorCode);
@@ -13149,20 +12145,20 @@ public class PegPay : System.Web.Services.WebService
                                 if (dt.Rows.Count != 0)
                                 {
                                     string status = dt.Rows[0]["Status"].ToString().ToUpper().Trim();
-                                    //its pending
+                                    
                                     if (status.Equals("PENDING"))
                                     {
                                         resp.StatusCode = "1000";
                                         resp.StatusDescription = status;
                                     }
-                                    //its successfull
+                                    
                                     else if (status.Equals("SUCCESS"))
                                         {
                                         string customerTel= dt.Rows[0]["CustomerTel"].ToString();
                                         string prepaidextras = dt.Rows[0]["ReceiptNo"].ToString();
                                         if (!String.IsNullOrEmpty(prepaidextras))
                                         {
-                                            //string prepaidextras = dt.Rows[0]["ReceiptNo"].ToString();
+                                            
                                             string[] array = prepaidextras.Split(';');
                                             if (array.Length >= 10)
                                             {
@@ -13177,8 +12173,7 @@ public class PegPay : System.Web.Services.WebService
                                                 resp.VAT = array[8].ToString();
                                                 resp.Fuel = array[9].ToString();
                                                 resp.NoOfUnits = dt.Rows[0]["Reason"].ToString();
-                                                //resp.NoOfUnits = array[10].ToString().Replace("\r\n", "");
-
+                                               
                                             }
                                           }
                                        
@@ -13196,7 +12191,7 @@ public class PegPay : System.Web.Services.WebService
                                         resp.PegPayQueryId = dt.Rows[0]["VendorToken"].ToString();
                                         resp.CustomerReference = dt.Rows[0]["BankReversalRef"].ToString();
                                     }
-                                    //it has failed
+                                   
                                     else if (status.Equals("FAILED"))
                                     {
                                         resp.StatusCode = "100";
@@ -13204,7 +12199,7 @@ public class PegPay : System.Web.Services.WebService
                                         resp.PegPayQueryId = "";
                                         resp.CustomerReference = "";
                                     }
-                                    //unknown status
+                                   
                                     else
                                     {
                                         resp.StatusCode = "1000";
@@ -13267,11 +12262,11 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "10";
                 resp.StatusDescription = "GENERAL ERROR AT PEGPAY";
                 resp.PegPayQueryId = "";
-                //LogGeneralError(ex.Message, vendorCode);
+               
             }
             catch (Exception exx)
             {
-                //LogGeneralError(exx.Message, vendorCode);
+              
             }
         }
         return resp;
@@ -13281,12 +12276,7 @@ public class PegPay : System.Web.Services.WebService
     {
         DatabaseHandler dh = new DatabaseHandler();
         QueryResponse resp = new QueryResponse();
-        /*
-         * DAILY = Require daily subscription
-         * Weekly = Require weekly subcription
-         * MONTHLY = Require monthly subscription
-         * YEARLY = Require yearly subscription
-         */
+        
         try
         {
             DataTable vendaData = dh.GetVendorDetails(VendorCode);
@@ -13342,18 +12332,18 @@ public class PegPay : System.Web.Services.WebService
         try
         {
             resp = ValidateParameters(vendorTranID, vendorCode, password);
-            //validation is ok
+           
             if (resp.StatusCode.Equals("0"))
             {
                 resp = GetTheStatusOfTheTransaction(vendorTranID, vendorCode);
             }
-            //error in validationg
+           
             else
             {
                 return resp;
             }
         }
-        //let vendor another get status request because something has gone wrong
+        
         catch (Exception ex)
         {
             resp.StatusCode = "1000";
@@ -13376,14 +12366,14 @@ public class PegPay : System.Web.Services.WebService
                 resp.StatusCode = "0";
                 resp.StatusDescription = status;
             }
-            //it failed
+            
             else
             {
                 resp.StatusCode = "42";
                 resp.StatusDescription = status;
             }
         }
-        //transaction not found
+       
         else
         {
             resp.StatusCode = "33";
@@ -13478,7 +12468,7 @@ public class PegPay : System.Web.Services.WebService
         uraTrans.Bank_cd = creds.UtilityCode;
         uraTrans.Bank_tr_no = trans.VendorTransactionRef;
         uraTrans.Chq_no = trans.ChequeNumber;
-        uraTrans.Paid_dt = DateTime.Now.ToString("dd/MM/yyyy"); //DateTime.Parse(trans.PaymentDate).ToString("dd/MM/yyyy");
+        uraTrans.Paid_dt = DateTime.Now.ToString("dd/MM/yyyy"); 
         uraTrans.Reason = trans.Narration;
         uraTrans.Status = trans.Status;
         uraTrans.Value_dt = DateTime.Now.ToString("dd/MM/yyyy");
@@ -13486,10 +12476,7 @@ public class PegPay : System.Web.Services.WebService
                            + uraTrans.Value_dt + uraTrans.Status + uraTrans.Bank_branch_cd + uraTrans.Bank_tr_no + uraTrans.Chq_no
                            + uraTrans.Reason;
         uraTrans.Signature = GetSignature(dataToSign, trans.VendorCode);
-        //-- the other properties don't require encryption but should be filled and the order below maintained
-
-        //string digitalSignature = GetDigitalSignature(dataToSign, trans.VendorCode);
-        //uraTrans.Signature = Convert.FromBase64String(digitalSignature);
+       
         return uraTrans;
     }
 
@@ -13508,7 +12495,7 @@ public class PegPay : System.Web.Services.WebService
         byte[] data = new UnicodeEncoding().GetBytes(Tosign);
         byte[] hash = new SHA1Managed().ComputeHash(data);
 
-        // Sign the hash
+        
         return RSAcp.SignHash(hash, CryptoConfig.MapNameToOID("SHA1"));
     }
 
@@ -13521,7 +12508,7 @@ public class PegPay : System.Web.Services.WebService
             string username = creds.UtilityCode;
             string Passwd = bll.DecryptString(creds.UtilityPassword);
             string CryptPass = bll.EncryptUraParameter(Passwd);
-            //-- one single payment transaction entity
+            
             string Amount = Convert.ToString(int.Parse(transaction.TransactionAmount));
             av.Amount = bll.EncryptUraParameter(Amount);
             av.Prn = bll.EncryptUraParameter(transaction.CustRef);
@@ -13532,7 +12519,7 @@ public class PegPay : System.Web.Services.WebService
             av.Bank_tr_no = transaction.VendorTransactionRef;
             av.Chq_no = transaction.ChequeNumber;
             av.Paid_dt = DateTime.Now.ToString("dd/MM/yyyy");
-            av.Status = transaction.Status;  // c
+            av.Status = transaction.Status;  
 
             av.Value_dt = DateTime.Now.ToString("dd/MM/yyyy");
             string dataToSign = av.Bank_cd + av.Prn + av.Tin + av.Amount + av.Paid_dt + av.Value_dt + av.Status +
@@ -13586,35 +12573,11 @@ public class PegPay : System.Web.Services.WebService
         return umemeTrans;
     }
 
-    //private Transaction GetKCCATrans(KCCATransaction trans, UtilityCredentials creds)
-    //{
-    //    UtilityReferences.KCCA.Transaction kccaTrans = new UtilityReferences.KCCA.Transaction();
-    //    kccaTrans.CustomerName = trans.CustName;
-    //    kccaTrans.CustomerRef = trans.CustRef;
-    //    kccaTrans.CustomerTel = trans.CustomerTel;
-    //    kccaTrans.CustomerType = trans.CustomerType;
-    //    kccaTrans.Offline = trans.Offline;
-    //    kccaTrans.Password = creds.UtilityPassword;
-    //    kccaTrans.PaymentDate = trans.PaymentDate;
-    //    kccaTrans.PaymentType = trans.PaymentType;
-    //    kccaTrans.Reversal = trans.Reversal;
-    //    kccaTrans.StatusCode = "0";
-    //    kccaTrans.StatusDescription = "SUCCESS";
-    //    kccaTrans.Teller = trans.Teller;
-    //    kccaTrans.TranAmount = trans.TransactionAmount;
-    //    kccaTrans.TranIdToReverse = trans.TranIdToReverse;
-    //    kccaTrans.TranNarration = trans.Narration;
-    //    kccaTrans.TranType = trans.TransactionType;
-    //    kccaTrans.VendorCode = creds.UtilityCode;
-    //    kccaTrans.VendorTranId = trans.VendorTransactionRef;
-    //    string dataToSign = kccaTrans.CustomerRef + kccaTrans.CustomerName + kccaTrans.CustomerTel + kccaTrans.CustomerType + kccaTrans.VendorTranId + kccaTrans.VendorCode + kccaTrans.Password + kccaTrans.PaymentDate + kccaTrans.PaymentType + kccaTrans.Teller + kccaTrans.TranAmount + kccaTrans.TranNarration + kccaTrans.TranType;
-    //    kccaTrans.DigitalSignature = GetDigitalSignature(dataToSign, trans.VendorCode);
-    //    return kccaTrans;
-    //}
+  
 
     private string GetDigitalSignature(string text, string vendorCode)
     {
-        // retrieve private key||@"C:\PegPayCertificates1\Orange\41.202.229.3.cer"
+       
         string certificate = "";
         if (vendorCode.ToUpper().Equals("EZEEMONEY"))
         {
@@ -13628,18 +12591,14 @@ public class PegPay : System.Web.Services.WebService
         {
             certificate = @"E:\\Certificates\\" + vendorCode + "\\" + vendorCode + ".pfx";
         }
-
-        //string certificate = @"C:\PegPayCertificates1\Ezee-Money\ezeemoney-ug_com.crt";
         X509Certificate2 cert = new X509Certificate2(certificate, "Tingate710", X509KeyStorageFlags.UserKeySet);
         RSACryptoServiceProvider rsa = (RSACryptoServiceProvider)cert.PrivateKey;
-
-        // Hash the data
+        
         SHA1Managed sha1 = new SHA1Managed();
         ASCIIEncoding encoding = new ASCIIEncoding();
         byte[] data = encoding.GetBytes(text);
         byte[] hash = sha1.ComputeHash(data);
-
-        // Sign the hash
+        
         byte[] digitalCert = rsa.SignHash(hash, CryptoConfig.MapNameToOID("SHA1"));
         string strDigCert = Convert.ToBase64String(digitalCert);
         return strDigCert;
@@ -13649,19 +12608,14 @@ public class PegPay : System.Web.Services.WebService
     {
         try
         {
-            // Open certificate store of current user
-            //X509Store my = new X509Store(StoreName.My, StoreLocation.CurrentUser);
             X509Store my = new X509Store(vendorCode, StoreLocation.LocalMachine);
             my.Open(OpenFlags.ReadOnly);
-
-            // Look for the certificate with specific subject 
+            
             RSACryptoServiceProvider csp = null;
             foreach (X509Certificate2 cert in my.Certificates)
             {
-                //if (cert.Subject.Contains("CN=WINGROUP\\micwein"))
                 if (cert.Subject.Contains(vendorCode))
                 {
-                    // retrieve private key
                     csp = (RSACryptoServiceProvider)cert.PrivateKey;
                 }
             }
@@ -13669,15 +12623,12 @@ public class PegPay : System.Web.Services.WebService
             {
                 throw new Exception("Valid certificate was not found");
             }
-
-            // Hash the data
+            
             SHA1Managed sha1 = new SHA1Managed();
             ASCIIEncoding encoding = new ASCIIEncoding();
             byte[] data = encoding.GetBytes(text);
             byte[] hash = sha1.ComputeHash(data);
-
-            // Sign the hash
-
+            
             return Convert.ToBase64String(csp.SignHash(hash, CryptoConfig.MapNameToOID("SHA1")));
         }
         catch (Exception ex)
@@ -13700,8 +12651,7 @@ public class PegPay : System.Web.Services.WebService
 
         byte[] data = new UnicodeEncoding().GetBytes(Tosign);
         byte[] hash = new SHA1Managed().ComputeHash(data);
-
-        // Sign the hash
+        
         return RSAcp.SignHash(hash, CryptoConfig.MapNameToOID("SHA1"));
     }
 
@@ -13965,26 +12915,15 @@ public class PegPay : System.Web.Services.WebService
                 string text = trans.CustRef + trans.CustName + trans.CustomerTel + trans.VendorTransactionRef + trans.VendorCode + trans.Password + trans.PaymentDate + trans.Teller + trans.TransactionAmount + trans.Narration + trans.TransactionType;
 
                 string certPath = "C:\\PegPayCertificates1\\";
-                // string certPath = dp.GetSystemParameter(GlobalCode, ValueCode);
+               
                 string vendorCode = trans.VendorCode;
                         certPath = certPath + "\\" + vendorCode + "\\";
                         string[] fileEntries = Directory.GetFiles(certPath);
                         string filePath = "";
                         if (fileEntries.Length == 1)
                         {
-                    //filePath = fileEntries[0].ToString();
-                    //X509Certificate2 cert = new X509Certificate2(filePath);
-                    //RSACryptoServiceProvider csp = (RSACryptoServiceProvider)cert.PublicKey.Key;
-                    //SHA1Managed sha1 = new SHA1Managed();
-                    ////UnicodeEncoding encoding = new UnicodeEncoding();
-                    //ASCIIEncoding encoding = new ASCIIEncoding();
-                    //byte[] data = encoding.GetBytes(text);
-                    //byte[] hash = sha1.ComputeHash(data);
-                    //byte[] sig = Convert.FromBase64String(trans.DigitalSignature);
-                    //return csp.VerifyHash(hash, CryptoConfig.MapNameToOID("SHA1"), sig);
-                    //return valid;
-
-                    valid = true; //temporary
+                    
+                    valid = true; 
                         }
                         else
                         {
@@ -14002,7 +12941,6 @@ public class PegPay : System.Web.Services.WebService
                 string text = trans.CustRef + trans.CustName + trans.CustomerTel + trans.VendorTransactionRef + trans.VendorCode + trans.Password + trans.PaymentDate + trans.Teller + trans.TransactionAmount + trans.Narration + trans.TransactionType;
 
                 string certPath = "C:\\PegPayCertificates1\\";
-                // string certPath = dp.GetSystemParameter(GlobalCode, ValueCode);
                 string vendorCode = trans.VendorCode;
                 certPath = certPath + "\\" + vendorCode + "\\";
                 string[] fileEntries = Directory.GetFiles(certPath);
@@ -14013,7 +12951,6 @@ public class PegPay : System.Web.Services.WebService
                     X509Certificate2 cert = new X509Certificate2(filePath);
                     RSACryptoServiceProvider csp = (RSACryptoServiceProvider)cert.PublicKey.Key;
                     SHA1Managed sha1 = new SHA1Managed();
-                    //UnicodeEncoding encoding = new UnicodeEncoding();
                     ASCIIEncoding encoding = new ASCIIEncoding();
                     byte[] data = encoding.GetBytes(text);
                     byte[] hash = sha1.ComputeHash(data);
@@ -14053,19 +12990,17 @@ public class PegPay : System.Web.Services.WebService
                     X509Certificate2 cert = new X509Certificate2(filePath);
                     RSACryptoServiceProvider csp = (RSACryptoServiceProvider)cert.PublicKey.Key;
                     SHA1Managed sha1 = new SHA1Managed();
-                    //UnicodeEncoding encoding = new UnicodeEncoding();
                     ASCIIEncoding encoding = new ASCIIEncoding();
                     byte[] data = encoding.GetBytes(text);
                     byte[] hash = sha1.ComputeHash(data);
                     byte[] sig = Convert.FromBase64String(trans.DigitalSignature);
                     valid = csp.VerifyHash(hash, CryptoConfig.MapNameToOID("SHA1"), sig);
                     return valid;
-                    //return true;
+                   
                 }
                 else
                 {
                     dp.LogError(" more than 1 certificate in folder", trans.VendorCode, DateTime.Now, "NONE");
-                    //LogGeneralError(" more than 1 certificate in folder", trans.VendorCode);
                     return false;
                 }
             }
@@ -14090,8 +13025,6 @@ public class PegPay : System.Web.Services.WebService
                 string filePath = "C:\\PegPayMOMOCertificates\\AONEPublic.pem";
                 if (fileEntries.Length == 1)
                 {
-                    //string privateKeyPath = "C:\\PegPayMOMOCertificates\\privateKey.pem";
-                    
                    string newSignedData = SignData(message, RsaProviderFromPrivateKeyInPemFile());
                     Boolean validRequest = Verify(message, signedData);
                     return valid=validRequest;
@@ -14099,7 +13032,6 @@ public class PegPay : System.Web.Services.WebService
                 else
                 {
                     dp.LogError(" more than 1 certificate in folder", trans.VendorCode, DateTime.Now, "NONE");
-                    //LogGeneralError(" more than 1 certificate in folder", trans.VendorCode);
                     return false;
                 }
             }
@@ -14118,23 +13050,13 @@ public class PegPay : System.Web.Services.WebService
                 {
                     filePath = fileEntries[0].ToString();
                     X509Certificate2 cert = new X509Certificate2(filePath);
-                    //RSACryptoServiceProvider csp = (RSACryptoServiceProvider)cert.PublicKey.Key;
-                    //SHA1Managed sha1 = new SHA1Managed();
-                    ////UnicodeEncoding encoding = new UnicodeEncoding();
-                    //ASCIIEncoding encoding = new ASCIIEncoding();
-                    //byte[] data = encoding.GetBytes(text);
-                    //byte[] hash = sha1.ComputeHash(data);
-                    //byte[] sig = Convert.FromBase64String(trans.DigitalSignature);
-                    //valid = csp.VerifyHash(hash, CryptoConfig.MapNameToOID("SHA1"), sig);
-
+                   
                     valid = true;
                     return valid;
-                    //return true;
                 }
                 else
                 {
                     dp.LogError(" more than 1 certificate in folder", trans.VendorCode, DateTime.Now, "NONE");
-                    //LogGeneralError(" more than 1 certificate in folder", trans.VendorCode);
                     return false;
                 }
             }
@@ -14190,23 +13112,19 @@ public class PegPay : System.Web.Services.WebService
 
     public static string SignData(string message, RSAParameters privateKey)
     {
-        //// The array to store the signed message in bytes
         byte[] signedBytes = null;
         try
         {
 
             using (var rsa = new RSACryptoServiceProvider())
             {
-                //// Write the message to a byte array using UTF8 as the encoding.
                 var encoder = new UTF8Encoding();
                 byte[] originalData = encoder.GetBytes(message);
 
                 try
                 {
-                    //// Import the private key used for signing the message
                     rsa.ImportParameters(privateKey);
-
-                    //// Sign the data, using MD5 as the hashing algorithm 
+                    
                     signedBytes = rsa.SignData(originalData, CryptoConfig.MapNameToOID("SHA1"));
                 }
                 catch (CryptographicException e)
@@ -14216,7 +13134,6 @@ public class PegPay : System.Web.Services.WebService
                 }
                 finally
                 {
-                    //// Set the keycontainer to be cleared when rsa is garbage collected.
                     rsa.PersistKeyInCsp = false;
                 }
             }
@@ -14226,23 +13143,11 @@ public class PegPay : System.Web.Services.WebService
             throw ex;
         }
 
-        //// Convert the a base64 string before returning
         return Convert.ToBase64String(signedBytes);
     }
     public static RSAParameters RsaProviderFromPrivateKeyInPemFile()
     {
-        /* string privateKeyPath = "C:\\PegPayMOMOCertificates\\privateKey.pem";
-         //string privateKeyPath = "C:\\PegPayMOMOCertificates\\privateKey.pem";
-         using (TextReader privateKeyTextReader = new StringReader(File.ReadAllText(privateKeyPath)))
-         {
-             AsymmetricCipherKeyPair keyPair;
-             using(var reader = File.OpenText(privateKeyPath)) // file containing RSA PKCS1 private key
-             keyPair = (AsymmetricCipherKeyPair)new PemReader(reader).ReadObject();
-             //PemReader pr = new PemReader(privateKeyTextReader);
-             //AsymmetricCipherKeyPair keyPair =(AsymmetricCipherKeyPair)pr.ReadObject();
-             RSAParameters rsaParams = DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters)keyPair.Private);
-             return rsaParams;
-         }*/
+       
         string privateKeyPath = "C:\\PegPayMOMOCertificates\\NewAonePublickey.pem";
         using (TextReader privateKeyTextReader = new StringReader(File.ReadAllText(privateKeyPath)))
         {
@@ -14269,32 +13174,7 @@ public class PegPay : System.Web.Services.WebService
     private bool isValidVendorCredentials2(string vendorCode, string password, DataTable vendorData)
     {
         bool valid = true;
-        //try
-        //{
-        //    BusinessLogic bll = new BusinessLogic();
-        //    if (vendorData.Rows.Count != 0)
-        //    {
-        //        string vendor = vendorData.Rows[0]["VendorCode"].ToString();
-        //        string encVendorPassword = vendorData.Rows[0]["VendorPassword"].ToString();
-        //        string vendorPassword = bll.DecryptString(encVendorPassword);
-        //        if (vendor.Trim().Equals(vendorCode.Trim()) && vendorPassword.Trim().Equals(password.Trim()))
-        //        {
-        //            valid = true;
-        //        }
-        //        else
-        //        {
-        //            valid = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        valid = false;
-        //    }
-        //}
-        //catch (Exception ex)
-        //{
-        //    throw ex;
-        //}
+       
         return valid;
     }
 
@@ -14303,7 +13183,6 @@ public class PegPay : System.Web.Services.WebService
         bool valid = false;
         try
         {
-            //password = "";
             BusinessLogic bll = new BusinessLogic();
             if (vendorData.Rows.Count != 0)
 
@@ -14311,8 +13190,7 @@ public class PegPay : System.Web.Services.WebService
                 string vendor = vendorData.Rows[0]["VendorCode"].ToString();
                 string vendorPassword = vendorData.Rows[0]["VendorPassword"].ToString();
                 string Hpassword = bll.HashPassword(password);
-                //string Hashpassword = Hpassword.Substring(0,50);
-                //string vendorPassword1 = bll.DecryptString(encVendorPassword);
+               
                 MowePassword = vendorPassword;
                 if (vendor.Trim().Equals(vendorCode.Trim()) && vendorPassword.Trim().Equals(Hpassword.Trim()) || vendorCode.Contains("STANBIC") || vendorCode.Equals("Airtel") || vendorCode.Equals("ISYS") || vendorCode.ToUpper().Equals("PEGPAY"))
                 {
@@ -14333,69 +13211,12 @@ public class PegPay : System.Web.Services.WebService
         {
             throw ex;
         }
-        //return valid;
+       
     }
 
 
     public static string MowePassword = "";
-    //private bool isValidVendorCredentials(string vendorCode, string password, DataTable vendorData)
-    //{
-    //    bool valid = false;
-    //    try
-    //    {
-    //        //password = "";
-    //        BusinessLogic bll = new BusinessLogic();
-    //        if (vendorData.Rows.Count != 0)
-                
-    //        {
-    //            string vendor = vendorData.Rows[0]["VendorCode"].ToString();
-    //            string vendorPassword = vendorData.Rows[0]["VendorPassword"].ToString();
-    //             string Hpassword= bll.HashPassword(password);
-    //             //string Hashpassword = Hpassword.Substring(0,50);
-    //            //string vendorPassword1 = bll.DecryptString(encVendorPassword);
-    //            MowePassword = vendorPassword;
-    //            if (vendor.Trim().Equals(vendorCode.Trim()) && vendorPassword.Trim().Equals(password.Trim())|| vendorCode.Contains("STANBIC") || vendorCode.Equals("Airtel") || vendorCode.Equals("ISYS") || vendorCode.ToUpper().Equals("PEGPAY"))
-    //            {
-    //                valid = true;
-    //            }
-    //            else
-    //            {
-    //                valid = false;
-    //            }
-    //        }
-    //        else
-    //        {
-    //            valid = false;
-    //        }
-    //        return valid;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        throw ex;
-    //    }
-    //    //return valid;
-    //}
 
-    //private void LogGeneralError(string error, string vendor_code)
-    //{
-    //    DateTime now = DateTime.Now;
-    //    try
-    //    {
-    //        DatabaseHandler dp = new DatabaseHandler();
-    //        string res = dp.LogError(error, vendor_code, now);
-    //        if (!res.Equals("YES"))
-    //        {
-    //            /// Now Write to Log File
-    //            string str = vendor_code + "'s Error " + error + " at " + now.ToString("dd-MM-yyyy:HH:MM:ss");
-    //            file_log(str);
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        string str = vendor_code + "'s Error " + error + " at " + now.ToString("dd-MM-yyyy:HH:MM:ss");
-    //        file_log(str);
-    //    }
-    //}
     internal void file_log(string log_string)
     {
         string header = "---------------------------- NEW ERROR LINE ----------------------------";
@@ -14412,13 +13233,11 @@ public class PegPay : System.Web.Services.WebService
             log = File.AppendText(filename);
         }
 
-        // Write to the file:
+       
         log.WriteLine(header);
         log.WriteLine(DateTime.Now);
         log.WriteLine(log_string);
         log.WriteLine();
-
-        // Close the stream:
         log.Close();
     }
     private void CheckPath(string Path)
@@ -14502,8 +13321,7 @@ public class PegPay : System.Web.Services.WebService
         {
             DatabaseHandler dp = new DatabaseHandler();
             dp.SaveUmemeCustomerDetails(cust);
-            //dp.SaveKCCACustomerDetails(cust);
-        }
+             }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
@@ -14607,7 +13425,7 @@ public class PegPay : System.Web.Services.WebService
         queue.Send(msg);
     }
     [WebMethod]
-    public PostResponse SendSms(NWSCTransaction trans)//(string receipient, string receipientName, string message,string transactionId, string, string digitalSignature, string vendorCode, string password)
+    public PostResponse SendSms(NWSCTransaction trans)
     {
 
         PostResponse resp = new PostResponse();
@@ -14900,13 +13718,10 @@ public class PegPay : System.Web.Services.WebService
                                                 {
                                                     if (!IsChequeBlacklisted(trans))
                                                     {
-                                                        //UtilityCredentials creds = dh.GetUtilityCreds("SCHOOLFEES", "STB_SCHOOLS");
-                                                        //UtilityCredentials creds = dp.GetUtilityCreds("STB_SCHOOL", trans.VendorCode);
-                                                        UtilityCredentials creds = dp.GetUtilityCreds("FLEXIPAY", trans.VendorCode);
+                                                      UtilityCredentials creds = dp.GetUtilityCreds("FLEXIPAY", trans.VendorCode);
                                                         if (!creds.UtilityCode.Equals(""))
                                                         {
-                                                           // trans.Narration = trans.UtilityCode;
-
+                                                          
                                                             resp.PegPayPostId = dp.PostSchoolTransaction(trans, "FLEXIPAY");
                                                             if (bll.IsNumeric(resp.PegPayPostId))
                                                             {
@@ -14980,14 +13795,7 @@ public class PegPay : System.Web.Services.WebService
                                     resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
                                 }
                             }
-                            //else
-                            //{
-                            //    resp.ReceiptNumber = "";
-                            //    resp.PegPayPostId = "";
-                            //    resp.StatusCode = "18";
-                            //    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                            //}
-                            // }
+                           
                             else
                             {
                                 resp.ReceiptNumber = "";
@@ -15105,10 +13913,7 @@ public class PegPay : System.Web.Services.WebService
             trans.Area = "";
 
         }
-        //if (trans.UtilityCode == "DATA" || trans.utilityCompany == "DATA")
-        //{
-        //    trans.TransactionAmount = "3000";
-        //}
+       
 
         if (string.IsNullOrEmpty(trans.CustRef))
         {
@@ -15352,18 +14157,11 @@ public class PegPay : System.Web.Services.WebService
         }
         catch (SqlException sqlex)
         {
-            //resp.StatusCode = "31";
-            //resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //dp.deleteTransaction(resp.PegPayPostId, resp.StatusDescription);
-            //resp.PegPayPostId = "";
+           
         }
         catch (Exception ex)
         {
-            //resp.StatusCode = "32";
-            //resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-            //dp.deleteTransaction(resp.PegPayPostId, resp.StatusDescription);
-            //resp.PegPayPostId = "";
-            //dp.LogError(ex.Message, trans.VendorCode, DateTime.Now, trans.utilityCompany.ToUpper());
+
         }
         return resp;
     }
@@ -15532,9 +14330,6 @@ public class PegPay : System.Web.Services.WebService
                         resp.OutstandingBalance = "";
                         resp.CustType = "";
                     }
-
-                    //   resp = queryCustomerAtPostBank(utility, customerReference, area, "PEGPAY", "543210iPegPay012345");
-
 
                 }
                 else
