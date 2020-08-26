@@ -2635,7 +2635,7 @@ public class PegPay : System.Web.Services.WebService
                     {
                         token.Fx = serviceChrgTx.amt.value.ToString();
                     }
-                    
+                }    
             }
 
         }

@@ -19,7 +19,10 @@ namespace kcbTester
             tran.Area = "MSPTA1";
             tran.ServiceCode = "69";
             tran.CustomerRef = "05-01778";
-            bs.ValidateCustomer(tran);
+           // bs.ValidateCustomer(tran);
+
+            PhoneValidator pv = new PhoneValidator();
+            pv.PhoneNumbersOk("0774784672");
         }
     }
 }
