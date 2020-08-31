@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiveVasUtilityTranProcessorLibrary
+namespace sampleTDDAppLibrary
 {
-    public class Class1
+    public class Payment
     {
     }
 }

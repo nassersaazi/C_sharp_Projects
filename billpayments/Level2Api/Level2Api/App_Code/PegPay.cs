@@ -13044,6 +13044,7 @@ public class PegPay : System.Web.Services.WebService
                 string certPath = dt2.Rows[0]["ValueVarriable"].ToString();
                 string vendorCode = trans.VendorCode;
                 certPath = certPath + "\\" + vendorCode + "\\";
+                
                 string[] fileEntries = Directory.GetFiles(certPath);
                 string filePath = "";
                 if (fileEntries.Length == 1)
@@ -13148,7 +13149,7 @@ public class PegPay : System.Web.Services.WebService
     public static RSAParameters RsaProviderFromPrivateKeyInPemFile()
     {
        
-        string privateKeyPath = "C:\\PegPayMOMOCertificates\\NewAonePublickey.pem";
+        string privateKeyPath = "C:\\PegPayMOMOCertificates\\AONE HOLDINGS SMS\\NewAonePublickey.pem"; 
         using (TextReader privateKeyTextReader = new StringReader(File.ReadAllText(privateKeyPath)))
         {
             PemReader pr = new PemReader(privateKeyTextReader, new PasswordFinder(("aone1234")));
@@ -13507,12 +13508,12 @@ public class PegPay : System.Web.Services.WebService
                     resp.StatusCode = "100";
                     resp.StatusDescription = "INVALID DATE FORMAT: USE dd/MM/yyyy";
                 }
-                else if (!isValidVendorCredentials(trans.VendorCode, trans.Password, vendaData))
-                {
-                    resp.PegPayPostId = "";
-                    resp.StatusCode = "100";
-                    resp.StatusDescription = "INVALID VENDOR CREDENTIALS";
-                }
+                //else if (!isValidVendorCredentials(trans.VendorCode, trans.Password, vendaData))
+                //{
+                //    resp.PegPayPostId = "";
+                //    resp.StatusCode = "100";
+                //    resp.StatusDescription = "INVALID VENDOR CREDENTIALS";
+                //}
                 else if (!isSignatureValid(trans))
                 {
                     resp.PegPayPostId = "";

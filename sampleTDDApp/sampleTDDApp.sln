@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sampleTDDApp", "sampleTDDApp\sampleTDDApp.csproj", "{095E75CE-E46D-4BF7-B3E4-1D33E72C2E7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sampleTDDAppLibrary", "sampleTDDAppLibrary\sampleTDDAppLibrary.csproj", "{4000493C-05FF-4D85-9693-7BC1D4763CA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{095E75CE-E46D-4BF7-B3E4-1D33E72C2E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{095E75CE-E46D-4BF7-B3E4-1D33E72C2E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{095E75CE-E46D-4BF7-B3E4-1D33E72C2E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{095E75CE-E46D-4BF7-B3E4-1D33E72C2E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4000493C-05FF-4D85-9693-7BC1D4763CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4000493C-05FF-4D85-9693-7BC1D4763CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4000493C-05FF-4D85-9693-7BC1D4763CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4000493C-05FF-4D85-9693-7BC1D4763CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

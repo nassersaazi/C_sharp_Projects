@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kcbTester.ControlObjects
+namespace sampleTDDApp.Logic
 {
     public class PhoneValidator
     {
@@ -221,10 +221,9 @@ namespace kcbTester.ControlObjects
         }
         public DataTable CalculateNetworkCost(DataTable dt)
         {
-            DatabaseHandler dp = new DatabaseHandler();
             try
             {
-                
+                DatabaseHandler dp = new DatabaseHandler();
                 Hashtable networkRates = dp.GetNetworkRates();
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -236,7 +235,7 @@ namespace kcbTester.ControlObjects
                     dr["TotalCost"] = totalCost.ToString("0,0");
                     dr["Network"] = network;
                     dr["TotalSms"] = networkCount.ToString("0,0");
-                    
+                   
                 }
             }
             catch (Exception ex)
