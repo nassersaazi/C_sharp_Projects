@@ -1,0 +1,500 @@
+﻿
+body
+{
+	margin: 0 0 0 0;
+    background-color: #FFFFFF;
+}
+
+.buttons
+{
+	background-color: #EEEEEE;
+	border-color: #6A62B8;
+	border-width: 1px;
+	font-family: Calibri;
+	font-size: 8pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	height: 19px;
+}
+.InterfaceHeaderLabel3a
+{
+	border: 1px solid #ebf3ff; 
+	background-color: #ebf3ff; 
+	color: #000066; 
+	font-size: 17px; 
+	font-family: Cambria;
+}
+  	 
+.gridgeneralstyle
+{
+    /* border-style: ridge; */
+    
+    /*text-align: left; */
+    border-color: White;
+    border-width: 0px;
+    padding: 0;
+    background-color: White;
+}
+.gridHeaderStyle
+{
+    /*background-color: #5695DA; */
+    /*font-weight: bold*/
+    /*font-family: Cambria;*/
+    /*font-size: 12pt;*/
+    /*color: #808080;*/
+    
+    background-color: #F2F2F2;
+    FONT-FAMILY: tahoma,sans-serif; 
+    COLOR: #949494; 
+    FONT-SIZE: 8.5pt;
+    height: 28px;
+    text-align: left;
+    text-transform: uppercase;
+}
+.gridRowStyle
+{
+    /*font-family: Verdana;
+    font-size: 10pt;*/
+    
+    FONT-FAMILY: tahoma,sans-serif; 
+    FONT-SIZE: 8.5pt;
+    COLOR: #000066; 
+    height: 25px;
+    text-align: left;
+}
+.gridAlternatingRowStyle
+{
+   /* background-color: #E9E9E9; */
+    /*font-family: Verdana;
+    font-size: 10pt;*/
+    
+    background-color: #F4F3EF;
+    FONT-FAMILY: tahoma,sans-serif; 
+    FONT-SIZE: 8.5pt;
+    COLOR: #000066; 
+    height: 25px;
+    text-align: left;
+}
+
+.gridEditField
+{
+    font-family: Cambria;
+    font-size: 11pt;
+    width: 65px;
+}   
+
+.gridtable
+{
+    padding: 0px;
+    margin: 0px;
+    background-color: #e0f2e6;
+    border: 1px solid #A4A2CA;
+}  
+.gridSubtable 
+{
+    background-color: whitesmoke;
+    padding: 0px;
+    margin: 3px;
+    border: 1px solid #A4A2CA;
+    }
+
+
+
+
+
+
+
+
+    
+.codeTextbox 
+{
+    width: 60px;
+    background-color: #E9E9E9;
+    border-color: #A4A2CA;
+    border-width: 1px;
+    border-style: solid;                             
+    }
+    
+.gridTableLabels
+{
+    font-family: Cambria;
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #006633;
+}
+.loginlabels 
+{
+    font-family: Cambria;
+    font-size: 8pt;
+    font-weight: bold;
+    color: #006633;
+}
+
+.TableStyles
+{
+    font-weight: bolder;
+    FONT-SIZE: 12px;
+    CURSOR: default;
+    COLOR: #ffffff;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: #5695DA;
+    TEXT-ALIGN: left;
+    TEXT-DECORATION: none
+    
+}
+
+.CommonImageTextButtonDropDown {
+	BORDER-RIGHT: #a7bad5 2px solid;
+	BORDER-TOP: #dce4f9 2px solid;
+	FONT-SIZE: 12px; BACKGROUND: #20479d;
+	BORDER-LEFT: #dce4f9 2px solid; 
+	COLOR: #fff; BORDER-BOTTOM: #a7bad5 2px solid; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	WHITE-SPACE: nowrap
+}
+
+
+/************ ajax calendar ***********************/
+
+.MyCalendar .ajax__calendar_container {
+    border:1px solid #646464;
+    background-color: White;
+    color: blue;
+    border: solid 1px;   
+}
+.MyCalendar .ajax__calendar_other .ajax__calendar_day,
+.MyCalendar .ajax__calendar_other .ajax__calendar_year {
+    color: black;
+}
+.MyCalendar .ajax__calendar_hover .ajax__calendar_day,
+.MyCalendar .ajax__calendar_hover .ajax__calendar_month,
+.MyCalendar .ajax__calendar_hover .ajax__calendar_year {
+    color: black;
+}
+.MyCalendar .ajax__calendar_active .ajax__calendar_day,
+.MyCalendar .ajax__calendar_active .ajax__calendar_month,
+.MyCalendar .ajax__calendar_active .ajax__calendar_year {
+    color: black;
+    font-weight:bold;
+}
+
+/************ MaskedEdit Related Styles ***********************/
+.MaskedEditFocus
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+.MaskedEditMessage
+{
+	color: #ff0000;
+	font-weight: bold;
+}
+.MaskedEditError
+{
+    background-color: #ffcccc;
+}
+.MaskedEditFocusNegative
+{
+    background-color: #ffffcc;
+    color: #ff0000;
+}
+.MaskedEditBlurNegative
+{
+    color: #ff0000;
+}
+
+/************ Validator Callout Related Styles ***********************/
+
+.validatorCalloutHighlight
+{
+    background-color: lemonchiffon;
+}
+
+/*AutoComplete flyout */
+
+.autocomplete_completionListElement 
+{  
+	visibility : hidden;
+	margin : 0px!important;
+	background-color : inherit;
+	color : windowtext;
+	border : buttonshadow;
+	border-width : 1px;
+	border-style : solid;
+	cursor : 'default';
+	overflow : auto;
+	height : 200px;
+    text-align : left; 
+    list-style-type : none;
+}
+
+/* AutoComplete highlighted item */
+
+.autocomplete_highlightedListItem
+{
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+
+.autocomplete_listItem 
+{
+	background-color : window;
+	color : windowtext;
+	padding : 1px;
+}
+
+
+
+
+
+
+
+/************ NEW STYLES FOR TASK MANAGER PROJECT ***********************/
+
+
+    .InterFaceTableLeftRow
+{
+    border-bottom: 2px solid #eae8e3;
+	margin-bottom: 2px; 
+    	text-align: left; 
+    	vertical-align: middle; 
+    	font-size: 12px; 
+    	font-weight: bold; 
+    	font-family:  Tahoma;
+    	height: 30px;
+}
+
+.InterFaceTableMiddleRow 
+{
+	border-bottom-style: solid; 
+	border-bottom-width: 2px; 
+	border-bottom-color: #eae8e3; 
+	margin-bottom: 2px; 
+	width: 2%; 
+	background-color: #ffffff; 
+	text-align: left; 
+	vertical-align: middle; 
+	height: 30px;
+}
+
+.InterFaceTableRightRow 
+{
+	border-top: 1px solid #eae8e3;
+	border-bottom-style: solid; 
+	border-bottom-width: 1px; 
+	border-bottom-color: #eae8e3; 
+	margin-bottom: 1px; 
+	width: 66%; 
+	background-color: #ffffff; 
+	text-align: left; 
+	vertical-align: middle; 
+	height: 20px;
+}
+.InterFaceTableRightLogin 
+{
+	border-top: 1px #eae8e3;
+	border-bottom-style: solid; 
+	border-bottom-width: 1px; 
+	border-bottom-color: #eae8e3; 
+	margin-bottom: 1px; 
+	width: 66%; 
+	background-color: #ffffff; 
+	text-align: left; 
+	vertical-align: middle; 
+	height: 20px;
+}
+    .InterFaceTableLeftRowUp
+{
+    border-top: 1px solid #eae8e3;
+	border-bottom: 1px solid #eae8e3;
+	margin-bottom: 1px; 
+    	margin-top: 1px; 
+    	text-align: left; 
+    	vertical-align: middle; 
+    	font-size: 15px; 
+    	font-weight: bold; 
+    	font-family: Cambria;
+    	height: 20px;
+}
+    .InterFaceReciept
+{
+    border-top: 1px solid #eae8e3;
+	border-bottom: 1px solid #eae8e3;
+	margin-bottom: 1px; 
+    	margin-top: 1px; 
+    	text-align: left; 
+    	vertical-align: middle; 
+    	font-size: 15px; 
+    	font-weight: bold; 
+    	font-family: Courier New;
+    	height: 20px;
+}
+    .InterFaceTableLeftLight
+{
+    border-top: 1px  #eae8e3;
+	border-bottom: 1px  #eae8e3;
+	margin-bottom: 1px; 
+    	margin-top: 1px; 
+    	text-align: left; 
+    	vertical-align: middle; 
+    	font-size: 15px; 
+    	font-weight: bold; 
+    	font-family: Arial Narrow;
+    	height: 20px;
+}
+.InterFaceTableMiddleRowUp
+{
+	border-bottom-style: solid; 
+	border-bottom-width: 1px; 
+	border-bottom-color: #eae8e3; 
+	margin-bottom: 1px; 
+	border-top-style: solid; 
+    border-top-width: 1px; 
+    border-top-color: #eae8e3; 
+    margin-top: 1px; 
+	width: 2%; 
+	background-color: #ffffff; 
+	text-align: left; 
+	vertical-align: middle; 
+	height: 20px;
+}
+
+.InterFaceTableRightRowUp
+{
+	border-bottom-style: solid; 
+	border-bottom-width: 1px; 
+	border-bottom-color: #eae8e3; 
+	margin-bottom: 1px;
+	border-top-style: solid; 
+    border-top-width: 1px; 
+    border-top-color: #eae8e3; 
+    margin-top: 1px;  
+	width: 66%; 
+	background-color: #ebf3ff; 
+	text-align: left; 
+	vertical-align: middle; 
+	height: 20px;
+}
+
+.InterfaceTextboxLong
+{
+	border-color: #617DA6;
+	border-style: Solid;
+	border-width: 1px;
+	font-family: Verdana;
+	font-size: 9pt;
+	height: 15px;
+	width: 90%;
+}
+
+.InterfaceTextboxLongReadOnly
+{
+	border-color: #617DA6;
+	border-style: Solid;
+	border-width: 1px;
+	font-family: Verdana;
+	font-size: 8pt;
+	height: 17px;
+	width: 90%;
+}
+
+.InterfaceTextboxMultiline
+{
+	border-color: #617DA6;
+	border-style: Solid;
+	border-width: 1px;
+	font-family: Verdana;
+	font-size: 9pt;
+	height: 60px;
+	width: 90%;
+}
+
+.InterfaceRadioButtonlist
+{
+	font-family: Verdana;
+	font-size: 10pt;
+}
+
+.InterfaceDropdownList
+{
+	font-family: Verdana;
+	font-size: 10pt;
+}
+
+.InterfaceHeaderLabel 
+{
+	border: 1px solid #617da6; 
+	background-color: #5DACF1; 
+	color: #ffffff; 
+	font-size: 16px; 
+	font-family: Cambria;	
+	font-weight:bold;
+	height: 20px;
+	text-transform: uppercase;
+}
+.InterfaceHeaderLine 
+{
+	border: 1px solid #ebf3ff; 
+	background-color: #5D7B9D; 
+	color: #000066; 
+	font-size: 16px; 
+	font-family: Cambria;
+	height: 20px;
+	text-transform: uppercase;
+}
+.InterfaceHeaderLabel2
+{
+	border: 1px solid #ebf3ff; 
+	background-color: #58ACF1; 
+	color: #ffffff; 
+	font-size: 12px; 
+	font-family: Cambria;
+	text-transform: uppercase;
+	font-weight:bold;
+}
+.InterfaceHeaderLabelSmall
+{
+	border: 1px solid #ebf3ff; 
+	background-color: #ebf3ff; 
+	color: #000000; 
+	font-size: 14px; 
+	font-family: Cambria;
+	text-transform: uppercase;
+}
+.InterfaceHeaderLabel3
+{
+	border: 1px solid #ebf3ff; 
+	background-color: #ffffff; 
+	color: #000066; 
+	font-size: 14px; 
+	font-family: Cambria;
+	font-weight:bold;
+	text-transform: capitalize;
+}
+
+.InterfaceItemSeparator{
+clear: both;
+padding: 0;
+width: 100%;
+height: 1px;
+line-height: 10px;
+}
+
+.InterfaceItemSeparator2{
+clear: both;
+padding: 0;
+width: 100%;
+height: 2px;
+line-height: 10px;
+}
+
+
+    
+	
+	
+
+

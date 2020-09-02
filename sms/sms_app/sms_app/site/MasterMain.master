@@ -1,0 +1,306 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterMain.master.cs" Inherits="MasterMain" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+   <head id="Head1" runat="server">
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<meta name="description" content="Pegasus sms portal"/>
+    <meta name="author" content=""/>
+    <title>SMS PORTAL</title>
+   <link rel="icon" href="Images/favicon.png"/>
+	
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-ui.css" type="text/css" rel="stylesheet"/> 
+  </head>
+<body class="fixed-nav sticky-footer " id="page-top">
+<form id="form1" runat="server">
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="margin-bottom: 0; background:#4380B8;">
+      <!--<a class="navbar-brand" href="#">Start Bootstrap</a>-->
+      <img src="Images/logouser.png" width='200' height='40' alt="logo"/>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarResponsive"  >
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion" >
+          <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <a class="nav-link" href="Admin.aspx">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text"> Dashboard</span>
+            </a>
+          </li>
+             <% if ( Session["RoleCode"].ToString() == "002" || Session["RoleCode"].ToString() == "003")
+                { %>         
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Outbound SMS">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
+              <i class="fa fa-fw fa-envelope-open"></i>
+              <span class="nav-link-text">Outbound SMS</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseComponents1">
+              
+                <li>
+                    <a href="SmsSending.aspx"><i class="fa fa-caret-right"></i> Send SMS </a>
+                </li>
+                
+             <li>
+                <a href="MultipleContactListsSend.aspx"><i class="fa fa-caret-right"></i> Send To Multiple Lists</a>
+              </li>
+             <%-- <li>
+                <a href="ViewMessageTemplates.aspx"><i class="fa fa-caret-right"></i> View SMS Template</a>
+              </li>--%>
+             <%-- <li>
+                <a href="SmsSendingWithSchedule.aspx"><i class="fa fa-caret-right"></i> Schedule SMS</a>
+              </li>--%>
+              <li>
+                <a href="SmsList.aspx"><i class="fa fa-caret-right"></i> Add Contact Group</a>
+              </li>
+              <li>
+                <a href="PhoneNumber.aspx"><i class="fa fa-caret-right"></i> Add Phone to Group</a>
+              </li>
+              <li>
+                <a href="ViewListDetails.aspx"><i class="fa fa-caret-right"></i> View Contact in Group</a>
+              </li>
+            
+              
+             </ul>
+          </li>
+          <%}%>
+          <% if (Session["RoleCode"].ToString() == "002" || Session["RoleCode"].ToString() == "003")
+            {%>
+          	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inbound SMS">
+				<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents6" data-parent="#exampleAccordion">
+				  <i class="fa fa-envelope"></i>
+				  <span class="nav-link-text">Inbound SMS</span>
+				</a>
+				<ul class="sidenav-second-level collapse" id="collapseComponents6">
+				  <li>
+					<a href="PresetSms.aspx"><i class="fa fa-caret-right"></i>Set Preset Rules</a>
+				  </li>
+				 
+				
+             
+                </ul>
+          </li>
+          <%}%>
+           <% if (Session["RoleCode"].ToString() == "001" || Session["RoleCode"].ToString() == "002" || Session["RoleCode"].ToString() == "003")
+            {%>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="SMS Reports">
+				<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
+				  <i class="fa fa-file"></i>
+				  <span class="nav-link-text"> Reports</span>
+				</a>
+				<ul class="sidenav-second-level collapse" id="collapseComponents3">
+                  
+                    <li>
+					<a href="ViewListSmsSent.aspx"><i class="fa fa-caret-right"></i>OutBound SMS Report</a>
+				  </li>
+                   <li>
+					<a href="NonPresetSms.aspx"><i class="fa fa-caret-right"></i>InBound SMS Report</a>
+				  </li>
+                  <li>
+					<a href="UploadReport.aspx"><i class="fa fa-caret-right"></i>File Upload Reports</a>
+				  </li>
+                  <li>
+					<a href="OtherSmsReport.aspx"><i class="fa fa-caret-right"></i>Automated SMS Reports</a>
+				  </li>                  
+                   <li>
+                    <a href="Sms_logs.aspx"><i class="fa fa-caret-right"></i> View SMS Logs</a>
+                  </li>
+                  <% if (Session["RoleCode"].ToString() == "001" || Session["RoleCode"].ToString() == "002")
+                    {%>
+                   <li>
+					<a href="ViewCreditLog.aspx"><i class="fa fa-caret-right"></i> View Credit Log Report</a>
+				  </li>
+                  <li>
+					<a href="VendorSMSReport.aspx"><i class="fa fa-caret-right"></i>View  Vendor SMS Report</a>
+				  </li>
+                  <%}%>
+                  <% if (Session["RoleCode"].ToString() == "001")
+                    {%>
+				  
+                  <li>
+					<a href="LogActivity.aspx"><i class="fa fa-caret-right"></i> View Activity Logs</a>
+				  </li>
+                  <%}%>
+            
+            </ul>
+          </li>
+           <%}%>
+          <% if (Session["RoleCode"].ToString() == "001" || Session["RoleCode"].ToString() == "002")
+            {%>
+           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="System Tools">
+				<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents4" data-parent="#exampleAccordion">
+				  <i class="fa fa-cog"></i>
+				  <span class="nav-link-text"> System Tools</span>
+				</a>
+				<ul class="sidenav-second-level collapse" id="collapseComponents4">
+				  <li>
+					<a href="AddUser.aspx"><i class="fa fa-caret-right"></i> Add User</a>
+				  </li>
+				  <li>
+					<a href="ViewUsers.aspx"><i class="fa fa-caret-right"></i> View Users</a>
+				  </li>
+                  <% if (Session["RoleCode"].ToString() == "002")
+                    {%>
+				  <li>
+					<a href="CreditUser.aspx"><i class="fa fa-caret-right"></i> Credit SMS user</a>
+				  </li>
+               <%}%>   
+                  <% if (Session["RoleCode"].ToString() == "001"){%>
+                  <li>
+					<a href="Vendors.aspx"><i class="fa fa-caret-right"></i> Add Vendors </a>
+				</li>
+                <li>
+					<a href="ViewVendors.aspx"><i class="fa fa-caret-right"></i> View Vendors </a>
+				</li>
+                <li>
+				<a href="AssignVendorCredentials.aspx"><i class="fa fa-caret-right"></i> Assign Vendor Credentials</a>
+				</li>
+				<li>
+				<a href="AddMask.aspx"><i class="fa fa-caret-right"></i> Add Mask</a>
+				</li>
+                <li>
+				<a href="AssignMask.aspx"><i class="fa fa-caret-right"></i> Assign Mask</a>
+				</li>
+                 
+                 <%}%>
+            </ul>
+          </li>
+          <%} %>
+
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile Tools">
+				<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents5" data-parent="#exampleAccordion">
+				  <i class="fa fa-user-circle"></i>
+				  <span class="nav-link-text">Profile Tools</span>
+				</a>
+				<ul class="sidenav-second-level collapse" id="collapseComponents5">
+				  <li>
+					<a href="Password.aspx"><i class="fa fa-caret-right"></i> Change Password</a>
+				  </li>
+				 
+				  <li>
+                   <asp:LinkButton ID="LinkButton2" CssClass="nav-link" runat="server" OnClick="LinkButton1_Click"><i class="fa fa-fw fa-unlock"></i> Logout</asp:LinkButton>
+					
+				  </li>
+             
+            </ul>
+          </li>
+		  
+          
+        </ul>
+        
+        
+        <ul class="navbar-nav sidenav-toggler">
+          <li class="nav-item">
+            <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+          </li>
+        </ul>
+		
+		
+        <ul class="navbar-nav ml-auto" style="color:#FEFEFE">
+		
+		 
+		
+		<li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-fw fa-user-circle"></i> <asp:Label ID="FullNames" runat="server" Text="."></asp:Label></a>
+          </li>
+
+          <li class="nav-item" style="color:#FEFEFE">
+              <asp:LinkButton ID="LinkButton1" CssClass="nav-link" runat="server" OnClick="LinkButton1_Click" ForeColor="#FEFEFE"><i class="fa fa-fw fa-sign-out"></i> Logout</asp:LinkButton>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="content-wrapper" style="background-color: #E2E2E2;">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs -->
+        <%--<ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <font color="#007bff">Latest:</font>
+          </li>
+          <li class=" active">
+              <marquee width="90%" scrollamount="6">
+                <asp:Label ID="lblmsg" runat="server" Font-Bold="True" Font-Names="Courier New" ForeColor="Red" Text=".">
+              </asp:Label></marquee>
+          </li>
+        </ol>--%>
+       <center> <asp:Label ID="lblmsg" runat="server" Font-Bold="True" Font-Names="Courier New" ForeColor="Red" Text="."></asp:Label></center>
+        <div class="row" >
+            
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>  
+            <asp:Label ID="lblMainStatus" runat="server" Text="0" Visible="False"></asp:Label>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>&copy;  2018 - <%=DateTime.Now.ToString("yyyy") %> Pegasus Technologies LTD</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+</form>
+ <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="vendor/popper/popper.min.js" type="text/javascript"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="vendor/chart.js/Chart.min.js" type="text/javascript"></script>
+    <script src="vendor/datatables/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js" type="text/javascript"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/sb-admin.min.js" type="text/javascript"></script><script type="text/javascript" src="js/jquery-ui.js"> </script>
+    	<script type="text/javascript">
+    	    $(document).ready(function () {
+    	        $('.datepicker').datepicker({
+    	            dateFormat: 'yy-mm-dd'
+    	        });
+    	    });
+
+    	    
+	</script>
+    <script type="text/javascript">
+        $(function () {
+            $(".txtTime").timepicker({
+                showInputs: false 
+            });
+        })
+</script>
+</body>
+</html>

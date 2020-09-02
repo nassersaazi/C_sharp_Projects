@@ -1,0 +1,101 @@
+.ddcolortabs
+{
+font: bold 11px Arial, Verdana, sans-serif;
+padding: 0;
+width: 100%;
+height: 6px;
+background: transparent;
+voice-family: "\"}\"";
+voice-family: inherit;
+}
+
+.ddcolortabsline2{
+clear: both;
+padding: 0;
+width: 100%;
+height: 1px;
+line-height: 10px;
+background: #FFFFFF;
+}
+
+.ddcolortabsline3{
+clear: both;
+padding: 0;
+width: 1%;
+background: #FFFFFF;
+}
+
+.ddcolortabs ul{
+font: bold 11px Arial, Verdana, sans-serif;
+margin:0;
+padding:0;
+list-style:none;
+}
+
+.ddcolortabs li{
+display:inline;
+margin:0 2px 0 0;
+padding:0;
+text-transform:uppercase;
+}
+
+
+.ddcolortabs a
+{
+	float: left;
+	color: #3764A0;
+	margin: 0 1px 0 0;
+	padding: 0 0 1px 1px;
+	text-decoration: none;
+	letter-spacing: 1px;
+	background-image: none;
+	background-color: #eae8e3;
+	font-weight: bold;
+	font-size: 11pt;
+	font-family: Cambria;
+}
+
+.ddcolortabs a span
+{
+	float: left;
+	display: block;
+	padding: 6px 8px 3px 7px;
+	background-image: none;
+	background-color: transparent;
+}
+
+.ddcolortabs a span{
+float:none;
+}
+
+/*
+
+.ddcolortabs a:hover{
+background-color: #ebf3ff;
+} */
+
+/*
+.ddcolortabs a:hover span{
+background-color: #ebf3ff;
+} */
+
+
+.ddcolortabsline{
+clear: both;
+padding: 0;
+width: 100%;
+height: 8px;
+line-height: 8px;
+background: #eae8e3;
+border-top: 1px solid #fff; /*Remove this to remove border between bar and tabs*/
+}
+
+.tabcontainer{
+clear: left;
+width:95%; /*width of 2nd level sub menus*/
+height:0.5em; /*height of 2nd level sub menus. Set to largest's sub menu's height to avoid jittering.*/
+}
+
+.tabcontent{
+display:none;
+}

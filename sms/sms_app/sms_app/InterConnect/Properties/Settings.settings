@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InterConnect.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="InterConnect_SMSService_SMSService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/smsService/SMSService.asmx</Value>
+    </Setting>
+    <Setting Name="InterConnect_PegPay_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pegasus.co.ug:8896/LivePegPayApi/PegPay.asmx</Value>
+    </Setting>
+    <Setting Name="InterConnect_MailApi_Messenger" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.55.21:5099/MailApi/Messenger.asmx</Value>
+    </Setting>
+    <Setting Name="InterConnect_SMSConfigurationApi_SmsConfigWebApi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.55.3:5099/LiveSmsConfigurationApi/Service.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

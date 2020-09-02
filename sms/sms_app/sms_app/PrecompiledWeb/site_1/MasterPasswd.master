@@ -1,0 +1,145 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="MasterPasswd, App_Web_bl3ycrp3" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+     <link href="scripts/WQC_stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="scripts/globalscape.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color: buttonface">
+    <form id="form1" runat="server">
+    <div>
+    
+    </div>
+        <br />
+        <table style="width: 92%; border-right: #011C8F 1px solid; border-top: #011C8F 1px solid; border-left: #011C8F 1px solid; border-bottom: #011C8F 1px solid;" align="center">
+            <tr>
+                <td style="vertical-align: middle; width: 100%;
+                   height: 40px; text-align: center; background-color: white; border-top-width: 2px; border-left-width: 2px; border-left-color: #011c8f; border-bottom-width: 2px; border-bottom-color: #011c8f; border-top-color: #011c8f; border-right-width: 2px; border-right-color: #011c8f;">
+                    <img alt="" src="Images/peg.png" style="width: 48%; height: 46px;" />
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: middle; width: 100%;
+                    height: 2px; background-color: white; text-align: center; border-top-width: 2px; border-left-width: 2px; border-left-color: #011c8f; border-bottom-width: 2px; border-bottom-color: #011c8f; border-top-color: #011c8f; border-right-width: 2px; border-right-color: #011c8f;">
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 90%">
+                                <asp:Label ID="lbluserid" runat="server" Font-Bold="True" Font-Size="Medium" Style="color: #b40431;
+                                    text-align: justify" Text="." Width="774px"></asp:Label></td>
+                            <td style="width: 10%">
+                                <asp:LinkButton ID="LinkButton1" runat="server" Font-Bold="True" OnClick="LinkButton1_Click"
+                                    Style="text-align: left" Width="53px">Log off</asp:LinkButton></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-top-width: 2px; border-left-width: 2px; border-left-color: #cc3333;
+                    border-bottom-width: 2px; border-bottom-color: #cc3333; vertical-align: middle;
+                    width: 100%; border-top-color: #cc3333; height: 1px; text-align: center; border-right-width: 2px;
+                    border-right-color: #cc3333">
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: middle; width: 100%;
+                    height: 10px; text-align: left; border-top-width: 2px; border-left-width: 2px; border-left-color: #f2f2f2; border-bottom-width: 2px; border-bottom-color: #f2f2f2; font: menu; border-top-color: #f2f2f2; border-right-width: 2px; border-right-color: #f2f2f2;" class="InterfaceHeaderLabel2">
+                    <table style="width: 80%" align="left">
+                         <tr>
+                            <td style="vertical-align: top; width: 15%; text-align: center">
+                                <asp:LinkButton ID="lblsmsPanel" runat="server" Font-Bold="True" Font-Names="Courier New"
+                                    Font-Size="Large" Width="98%" BackColor="White" OnClick="lblRegistration_Click">SMS PANEL</asp:LinkButton></td>
+                                     <td style="vertical-align: top; width: 15%; text-align: center">
+                                <asp:LinkButton ID="lblReporting" runat="server" Font-Bold="True" Font-Names="Courier New"
+                                    Font-Size="Large" Width="98%" BackColor="White" OnClick="lblReporting_Click">REPORTS</asp:LinkButton></td>
+                            <td style="width: 15%; vertical-align: top; text-align: center;">
+                                <asp:LinkButton ID="lblSetup" runat="server" Font-Bold="True" Font-Names="Courier New"
+                                    Font-Size="Large" Width="98%" BackColor="White" OnClick="lblSetup_Click">PASSWORD</asp:LinkButton></td>
+                            <td style="vertical-align: top; width: 15%; text-align: center">
+                                <asp:LinkButton ID="lbtnSetting" runat="server" Font-Bold="True" Font-Names="Courier New"
+                                    Font-Size="Large" Width="98%" BackColor="White" OnClick="lbtnIncome_Click">SETTINGS PANEL</asp:LinkButton></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-top-width: 2px; border-left-width: 2px; border-left-color: #cc3333;
+                    border-bottom-width: 2px; border-bottom-color: #cc3333; vertical-align: middle;
+                    width: 100%; border-top-color: #cc3333; height: 2px; text-align: center; border-right-width: 2px;
+                    border-right-color: #cc3333">
+                </td>
+            </tr>
+            <tr>
+                <td style="border-right: #011C8F 2px solid; border-top: #011C8F 2px solid; vertical-align: middle;
+                    border-left: #011C8F 2px solid; width: 100%; border-bottom: #011C8F 2px solid;
+                    height: 10px; text-align: center; background-color: white;">
+                    <table id="TABLE1" align="left" cellpadding="0" cellspacing="0" onclick="return TABLE1_onclick()"
+                        style="font: menu; width: 100%; border-right: #617da6 1px solid; border-top: #617da6 1px solid; border-left: #617da6 1px solid; border-bottom: #617da6 1px solid;">
+                        <tr>
+                            <td class="leftnav" style="font: menu; vertical-align: middle; width: 2%; height: 19px;
+                                text-align: left">
+                                </td>
+                            <td class="leftnav" style="font: menu; vertical-align: middle; text-transform: uppercase;
+                                width: 15%; color: blue; height: 19px; text-align: left">
+                                <a href="Password.aspx" style="font: menu; text-transform: uppercase; color: blue">
+                                    CHANGE PASSWORD</a></td>
+                            <td class="leftnav" style="vertical-align: middle; width: 2%; height: 19px; text-align: left">
+                                |</td>
+                            <td class="leftnav" style="vertical-align: middle; width: 15%; height: 19px; text-align: left">
+                              </td>
+                            <td class="leftnav" style="vertical-align: middle; width: 2%; height: 19px; text-align: left">
+                                |</td>
+                        <td class="leftnav" style="vertical-align: middle; width: 15%; height: 19px; text-align: left">
+                                
+                                  </td> 
+                            <td class="leftnav" style="vertical-align: middle; width: 2%; height: 19px; text-align: left">
+                                |</td>
+                            <td class="leftnav" style="vertical-align: middle; width: 15%; height: 19px; text-align: left">
+                           </td>
+                            <td class="leftnav" style="vertical-align: middle; width: 2%; height: 19px; text-align: left">
+                                |</td>
+                                <td class="leftnav" style="vertical-align: middle; width: 20%; height: 19px; text-align: left">
+                                </td>                                
+                        </tr>
+                    </table>                
+                </td>
+            </tr>
+            <tr>
+                <td style="border-top-width: 2px; border-left-width: 2px; border-left-color: #cc3333;
+                    border-bottom-width: 2px; border-bottom-color: #cc3333; vertical-align: middle;
+                    width: 100%; border-top-color: #cc3333; height: 2px; text-align: center; border-right-width: 2px;
+                    border-right-color: #cc3333">
+                </td>
+            </tr>
+            <tr>
+                <td style="border-top-width: 2px; border-left-width: 2px; border-left-color: #cc3333;
+                    border-bottom-width: 2px; border-bottom-color: #cc3333; vertical-align: middle;
+                    width: 100%; border-top-color: #cc3333; height: 2px; background-color: white;
+                    text-align: center; border-right-width: 2px; border-right-color: #cc3333">
+                    <asp:Label ID="lblmsg" runat="server" Font-Bold="True" Font-Names="Courier New" ForeColor="Red"
+                        Text="."></asp:Label></td>
+            </tr>
+            <tr>
+                <td style="border-top-width: 2px; border-left-width: 2px; border-left-color: #cc3333;
+                    border-bottom-width: 2px; border-bottom-color: #cc3333; vertical-align: middle;
+                    width: 100%; border-top-color: #cc3333; height: 2px; text-align: center; border-right-width: 2px;
+                    border-right-color: #cc3333">
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; border-right: #011C8F 1px solid; border-top: #011C8F 1px solid; vertical-align: top; border-left: #011C8F 1px solid; border-bottom: #011C8F 1px solid; height: 200px; text-align: center; background-color: white;">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top; width: 100%;
+                    height: 2px; background-color: white; text-align: center; border-top-width: 1px; border-left-width: 1px; border-left-color: #011c8f; border-bottom-width: 1px; border-bottom-color: #011c8f; font: menu; color: blue; border-top-color: #011c8f; border-right-width: 1px; border-right-color: #011c8f;">
+                    @2012-Copyright | PegasusTechnologies&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
