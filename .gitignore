@@ -4,6 +4,7 @@
 # User-specific files
 kcb/**/App.config
 Web.config
+PrecompiledApp.config
 *.suo
 *.user
 *.userosscache
