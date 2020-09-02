@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sampleTDDApp", "sampleTDDAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sampleTDDAppLibrary", "sampleTDDAppLibrary\sampleTDDAppLibrary.csproj", "{4000493C-05FF-4D85-9693-7BC1D4763CA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sampleTDDApp.UnitTests", "sampleTDDApp.UnitTests\sampleTDDApp.UnitTests.csproj", "{7E0517C7-9DF4-461D-8188-CF9F79B65468}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4000493C-05FF-4D85-9693-7BC1D4763CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4000493C-05FF-4D85-9693-7BC1D4763CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4000493C-05FF-4D85-9693-7BC1D4763CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E0517C7-9DF4-461D-8188-CF9F79B65468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0517C7-9DF4-461D-8188-CF9F79B65468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0517C7-9DF4-461D-8188-CF9F79B65468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0517C7-9DF4-461D-8188-CF9F79B65468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

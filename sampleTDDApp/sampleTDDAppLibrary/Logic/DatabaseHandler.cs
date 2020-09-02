@@ -1,19 +1,15 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Data;
 using System.Data.Common;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
 
-namespace sampleTDDApp.Logic
+namespace sampleTDDAppLibrary.Logic
 {
     public class DatabaseHandler
     {
-        
+
         private DbCommand command;
         private const String constring = "TestPegPay";
         private Database pegpaydbase;
@@ -73,7 +69,7 @@ namespace sampleTDDApp.Logic
         {
             try
             {
-                string[] parameters ={ vendorCode };
+                string[] parameters = { vendorCode };
                 command = pegpaydbase.GetStoredProcCommand("GetVendorDetails", parameters);
                 DataTable dt = pegpaydbase.ExecuteDataSet(command).Tables[0];
                 return dt;
@@ -114,7 +110,7 @@ namespace sampleTDDApp.Logic
             return creds;
         }
 
-        
+
         internal string PostTransaction(NWSCTransaction trans, string utilityCode)
         {
             string receiptNo = "";
@@ -125,7 +121,7 @@ namespace sampleTDDApp.Logic
                 string[] parameters ={trans.CustRef, trans.CustName, trans.CustomerType, trans.CustomerTel, trans.Area, "", trans.TransactionAmount, ""+payDate, ""+DateTime.Now, trans.TransactionType, "", trans.VendorTransactionRef, trans.Narration,
                 ""+false, trans.VendorCode, trans.Teller, ""+false/*bool.Parse(trans.Reversal)*/, ""+false, ""+false/*bool.Parse(trans.Offline)*/, utilityCode, "", ""+false};
                 DataTable dt = pegpaydbase.ExecuteDataSet("InsertReceivedTransactions", parameters).Tables[0];
-               
+
                 if (dt.Rows.Count != 0)
                 {
                     receiptNo = dt.Rows[0][0].ToString();
@@ -155,7 +151,6 @@ namespace sampleTDDApp.Logic
         {
             try
             {
-                //command = PegPayInterface.GetStoredProcCommand("DeactivateVendor", vendorCode, ip_address);
                 string[] p = { vendorCode, ip_address };
                 pegpaydbase.ExecuteNonQuery("DeactivateVendor", p);
             }
@@ -208,7 +203,7 @@ namespace sampleTDDApp.Logic
             }
         }
 
-        
+
 
         internal DataTable CheckBlacklist(string customerRef)
         {
@@ -262,6 +257,37 @@ namespace sampleTDDApp.Logic
             }
             return blacklisted;
         }
+
+        internal bool IsChequeBlacklisted(Transaction trans)
+        {
+
+            if (trans.TransactionType.ToUpper().Contains("CHEQUE"))
+            {
+
+                DataTable dt = CheckBlacklist(trans.CustRef);
+                if (dt.Rows.Count > 0)
+                {
+                    string status = dt.Rows[0]["ChequeBlackListed"].ToString();
+                    if (status.Equals("1"))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         internal Hashtable GetNetworkCodes()
         {
             Hashtable networkCodes = new Hashtable();

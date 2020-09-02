@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace sampleTDDApp.Logic
+namespace sampleTDDAppLibrary.Logic
 {
     public class PhoneValidator
     {
@@ -105,7 +101,7 @@ namespace sampleTDDApp.Logic
             return validNumbers;
         }
 
-        private bool NumberContainsLetters(string number)
+        public bool NumberContainsLetters(string number)
         {
             bool containsLetters = false;
             ArrayList digits = new ArrayList();
@@ -129,6 +125,7 @@ namespace sampleTDDApp.Logic
                 }
             }
             return containsLetters;
+
         }
 
         private bool NumberFormatIsValid(string number)
@@ -235,7 +232,7 @@ namespace sampleTDDApp.Logic
                     dr["TotalCost"] = totalCost.ToString("0,0");
                     dr["Network"] = network;
                     dr["TotalSms"] = networkCount.ToString("0,0");
-                   
+
                 }
             }
             catch (Exception ex)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sampleTDDApp.Logic
+namespace sampleTDDAppLibrary.Logic
 {
     public class PostResponse : Response
     {

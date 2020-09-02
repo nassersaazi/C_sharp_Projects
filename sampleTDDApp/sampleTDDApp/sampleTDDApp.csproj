@@ -74,20 +74,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\BusinessLogic.cs" />
-    <Compile Include="Logic\DatabaseHandler.cs" />
-    <Compile Include="Logic\NWSCTransaction.cs" />
-    <Compile Include="Logic\PhoneValidator.cs" />
-    <Compile Include="Logic\PostResponse.cs" />
-    <Compile Include="Logic\Response.cs" />
-    <Compile Include="Logic\Transaction.cs" />
-    <Compile Include="Logic\UtilityCredentials.cs" />
+    <Compile Include="Logic\Payment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sampleTDDAppLibrary\sampleTDDAppLibrary.csproj">
+      <Project>{4000493c-05ff-4d85-9693-7bc1d4763ca5}</Project>
+      <Name>sampleTDDAppLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

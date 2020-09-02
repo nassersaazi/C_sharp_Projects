@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using Encryption;
-using System.Threading.Tasks;
 
-namespace sampleTDDApp.Logic
+namespace sampleTDDAppLibrary.Logic
 {
     public class BusinessLogic
     {
@@ -31,7 +26,7 @@ namespace sampleTDDApp.Logic
             DateTime date;
             string format = "dd/MM/yyyy";
             return DateTime.TryParseExact(paymentDate, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
-            
+
         }
 
         public string EncryptString(string ClearText)
@@ -48,5 +43,7 @@ namespace sampleTDDApp.Logic
             ret = Encryption.encrypt.DecryptString(Encrypted, "Umeme2501PegPay");
             return ret;
         }
+
+
     }
 }
