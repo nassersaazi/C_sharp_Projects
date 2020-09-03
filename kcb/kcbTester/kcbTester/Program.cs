@@ -22,7 +22,7 @@ namespace kcbTester
            // bs.ValidateCustomer(tran);
 
             PhoneValidator pv = new PhoneValidator();
-            pv.PhoneNumbersOk("0774784672");
+            var check = pv.PhoneNumbersOk("256774784672");
         }
     }
 }

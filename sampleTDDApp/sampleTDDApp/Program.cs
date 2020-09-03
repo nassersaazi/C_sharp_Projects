@@ -16,9 +16,17 @@ namespace sampleTDDApp
 {
     public class Program
     {
+        
         public static void Main(string[] args)
         {
+            var p = new Program();
+            var tran = p.GetTransaction();
+            p.MakePayment(tran);
             
+        }
+
+        public NWSCTransaction GetTransaction()
+        {
             NWSCTransaction transaction = new NWSCTransaction();
             transaction.CustRef = new Random().Next(1, int.MaxValue).ToString();
             transaction.CustName = "KESI INVESTMENTS LTD";
@@ -38,13 +46,16 @@ namespace sampleTDDApp
             transaction.Narration = "CUSTOMER NAME-SHAHZAD KAMALUDDIN UKANI:CUSTOMER ID-SHAHZAD85CONSUMER CODE-21287670:REFERENCE ID-18529084:VAS REQUEST AMOUNTUGX|96158.0";
             transaction.VendorTransactionRef = new Random().Next(1, int.MaxValue).ToString();
             transaction.UtilityCode = "NWSC";
+            return transaction;
+        }
 
-            
+        public void MakePayment(NWSCTransaction transaction)
+        {
             var paymentFactory = new PaymentFactory();
 
             try
             {
-                 var payment = paymentFactory.initialisePayment(transaction);
+                var payment = paymentFactory.initialisePayment(transaction);
                 var response = payment.pay(transaction);
 
                 Console.WriteLine(payment.Serialize(response));
@@ -54,8 +65,6 @@ namespace sampleTDDApp
 
                 Console.WriteLine($" Vendor {transaction.UtilityCode} does not exist");
             }
-
-            
         }
     }
 }

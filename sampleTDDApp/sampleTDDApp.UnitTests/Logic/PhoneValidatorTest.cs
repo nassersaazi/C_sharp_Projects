@@ -1,5 +1,4 @@
 ﻿using System;
-using sampleTDDApp.Logic;
 using Xunit;
 using sampleTDDAppLibrary.Logic;
 

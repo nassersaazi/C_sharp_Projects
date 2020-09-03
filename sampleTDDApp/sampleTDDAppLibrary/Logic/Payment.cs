@@ -75,25 +75,14 @@ namespace sampleTDDAppLibrary.Logic
             {
                 DatabaseHandler dp = new DatabaseHandler();
                 BusinessLogic bll = new BusinessLogic();
-                if (trans.VendorCode.Equals("MTN"))
+                if ((trans.VendorCode.Equals("MTN")) || (trans.VendorCode.Equals("TEST") || trans.VendorCode.ToUpper().Equals("PEGPAY") ||
+                    trans.VendorCode.ToUpper().Equals("AIRTEL")) || (trans.VendorCode.Equals("AFRICELL")) || trans.VendorCode.Equals("SMART") || trans.VendorCode.Equals("SMS2BET") ||
+                    (trans.VendorCode.Equals("TESTFLEXIPAY") && trans.UtilityCode.Equals("MOWE")) || trans.VendorCode.ToUpper().Equals("CELL") || trans.VendorCode.ToUpper().Equals("SMARTMONEY") ||
+                    (trans.VendorCode.Equals("CENTENARY") && trans.DigitalSignature.Equals("1234")))
                 {
-                    valid = true;
-                    return valid;
+                    return true;
                 }
-                else if (trans.VendorCode.Equals("AFRICELL"))
-                {
-                    valid = true;
-                    return valid;
-                }
-                else if (trans.VendorCode.Equals("TESTFLEXIPAY"))
-                {
-                    if (trans.UtilityCode.Equals("MOWE"))
-                    {
-                        valid = true;
-                        return valid;
-                    }
-
-                }
+               
                 else if (trans.VendorCode.Equals("EzeeMoney"))
                 {
                     string text = trans.CustRef + trans.CustName + trans.CustomerTel + trans.VendorTransactionRef + trans.VendorCode + trans.Password + trans.PaymentDate + trans.Teller + trans.TransactionAmount + trans.Narration + trans.TransactionType;
@@ -115,11 +104,7 @@ namespace sampleTDDAppLibrary.Logic
                     }
 
                 }
-                else if (trans.VendorCode.Equals("CENTENARY") && trans.DigitalSignature.Equals("1234"))
-                {
-                    valid = true;
-                    return valid;
-                }
+                
                 else if (trans.VendorCode.Equals("CENTENARY"))
                 {
                     string text = trans.CustRef + trans.CustName + trans.CustomerTel + trans.VendorTransactionRef + trans.VendorCode + trans.Password + trans.PaymentDate + trans.Teller + trans.TransactionAmount + trans.Narration + trans.TransactionType;
@@ -147,17 +132,6 @@ namespace sampleTDDAppLibrary.Logic
                         return valid;
                     }
 
-                }
-                else if (trans.VendorCode.Equals("TEST") || trans.VendorCode.ToUpper().Equals("PEGPAY") || trans.VendorCode.ToUpper().Equals("AIRTEL"))
-                {
-                    valid = true;
-                    return valid;
-                }
-
-                else if (trans.VendorCode.Equals("SMART") || trans.VendorCode.Equals("SMS2BET"))
-                {
-                    valid = true;
-                    return valid;
                 }
                 else if (trans.VendorCode.ToUpper().Equals("ISYS"))
                 {
@@ -188,16 +162,8 @@ namespace sampleTDDAppLibrary.Logic
                         return false;
                     }
                 }
-                else if (trans.VendorCode.ToUpper().Equals("CELL"))
-                {
-                    valid = true;
-                    return valid;
-                }
-                else if (trans.VendorCode.ToUpper().Equals("SMARTMONEY"))
-                {
-                    valid = true;
-                    return valid;
-                }
+                
+                
 
                 else
                 {
@@ -240,20 +206,14 @@ namespace sampleTDDAppLibrary.Logic
             try
             {
                 bool activeVendor = bool.Parse(vendorData.Rows[0]["Active"].ToString());
-                if (activeVendor)
-                {
-                    active = true;
-                }
-                else
-                {
-                    active = false;
-                }
+                return activeVendor == true ? true : false;
+                
             }
             catch (Exception ex)
             {
-                throw ex;
+                return false;
             }
-            return active;
+            
         }
 
         public bool isValidVendorCredentials(string vendorCode, string password, DataTable vendorData)
@@ -266,14 +226,8 @@ namespace sampleTDDAppLibrary.Logic
                 {
                     string vendor = vendorData.Rows[0]["VendorCode"].ToString();
                     string encVendorPassword = vendorData.Rows[0]["VendorPassword"].ToString();
-                    if (vendor.Trim().Equals(vendorCode.Trim()) && encVendorPassword.Trim().Equals(password.Trim()))
-                    {
-                        valid = true;
-                    }
-                    else
-                    {
-                        valid = false;
-                    }
+                    valid = (vendor.Trim().Equals(vendorCode.Trim()) && encVendorPassword.Trim().Equals(password.Trim())) ? true : false;
+                    
                 }
                 else
                 {
@@ -282,7 +236,7 @@ namespace sampleTDDAppLibrary.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                return valid;
             }
             return valid;
         }
@@ -368,14 +322,8 @@ namespace sampleTDDAppLibrary.Logic
                     double amount = double.Parse(trans.TransactionAmount);
                     double amountToreverse = double.Parse(dt.Rows[0]["TranAmount"].ToString());
                     double total = amountToreverse + amount;
-                    if (total.Equals(0))
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return total.Equals(0) ? true : false;
+                   
                 }
                 else
                 {
@@ -394,14 +342,8 @@ namespace sampleTDDAppLibrary.Logic
             else
             {
                 DataTable dt = dp.GetOriginalVendorRef(trans);
-                if (dt.Rows.Count > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return (dt.Rows.Count > 0) ? true : false;
+                
             }
         }
 
@@ -413,14 +355,8 @@ namespace sampleTDDAppLibrary.Logic
                 double amt = double.Parse(trans.TransactionAmount);
                 string amountstr = amt.ToString();
                 int amount = int.Parse(amountstr);
-                if (amount > 0)
-                {
-                    res = "0";
-                }
-                else
-                {
-                    res = "1";
-                }
+                res = (amount > 0) ? "0" : "1";
+                
             }
             return res;
         }
@@ -454,14 +390,8 @@ namespace sampleTDDAppLibrary.Logic
                 DateTime Postdate = DateTime.Parse(dt.Rows[0]["RecordDate"].ToString());
                 TimeSpan t = postDate.Subtract(Postdate);
                 int tmdiff = t.Minutes;
-                if (tmdiff < 10)
-                {
-                    ret = true;
-                }
-                else
-                {
-                    ret = false;
-                }
+                ret = (tmdiff < 10) ? true : false;
+                
             }
             else
             {

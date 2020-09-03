@@ -24,7 +24,6 @@ namespace sampleTDDAppLibrary.Logic
             string vendorCode = trans.VendorCode;
             try
             {
-                dp.SaveRequestlog(trans.VendorCode, "NWSC", "POSTING", trans.CustRef, trans.Password);
                 
                 if (!IsValidReversalStatus(trans))
                 {
