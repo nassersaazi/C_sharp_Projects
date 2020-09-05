@@ -11,7 +11,7 @@ namespace sampleTDDAppLibrary.Logic
     {
 
         private DbCommand command;
-        private const String constring = "TestPegPay";
+        private const string constring = "TestPegPay";
         private Database pegpaydbase;
 
         public DatabaseHandler()

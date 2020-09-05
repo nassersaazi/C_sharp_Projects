@@ -31,34 +31,13 @@ namespace sampleTDDAppLibrary.Logic
             {
                 switch (transaction.VendorCode)
                 {
-                    case "MTN":
-                    case "TEST":
-                    case "PEGPAY":
-                    case "AIRTEL":
-                    case "AFRICELL":
-                    case "SMART":
-                    case "SMS2BET":
-                    case "TESTFLEXIPAY":
-                    case "MOWE":
-                    case "CELL":
-                    case "SMARTMONEY":
-                    case "1234":
+                    case "MTN": case "TEST": case "PEGPAY": case "AIRTEL": case "AFRICELL":case "SMART":case "SMS2BET": case "TESTFLEXIPAY": case "MOWE": case "CELL": case "SMARTMONEY": case "1234":
                         valid = true;
                         break;
-                    case "EzeeMoney":
-                        VerifyEzeeMoney();
-                        break;
-                    case "CENTENARY":
-                        VerifyCentenary();
-                        break;
-                    case "ISYS":
-                        VerifyISYS();
-                        break;
-
-
-                    default:
-                        VerifyAnyOtherVendor();
-                        break;
+                    case "EzeeMoney": VerifyEzeeMoney(); break;
+                    case "CENTENARY": VerifyCentenary(); break;
+                    case "ISYS": VerifyISYS(); break; 
+                    default: VerifyAnyOtherVendor(); break;
                 }
             }
             
@@ -120,16 +99,24 @@ namespace sampleTDDAppLibrary.Logic
             string filePath = "";
             if (fileEntries.Length == 1)
             {
-                filePath = fileEntries[0].ToString();
-                X509Certificate2 cert = new X509Certificate2(filePath);
-                RSACryptoServiceProvider csp = (RSACryptoServiceProvider)cert.PublicKey.Key;
-                SHA1Managed sha1 = new SHA1Managed();
-                ASCIIEncoding encoding = new ASCIIEncoding();
-                byte[] data = encoding.GetBytes(text);
-                byte[] hash = sha1.ComputeHash(data);
-                byte[] sig = Convert.FromBase64String(transaction.DigitalSignature);
-                valid = csp.VerifyHash(hash, CryptoConfig.MapNameToOID("SHA1"), sig);
-
+                switch (vendorCode)
+                {
+                    case "EzeeMoney":
+                        valid = true;
+                        break;
+                    default:
+                        filePath = fileEntries[0].ToString();
+                        X509Certificate2 cert = new X509Certificate2(filePath);
+                        RSACryptoServiceProvider csp = (RSACryptoServiceProvider)cert.PublicKey.Key;
+                        SHA1Managed sha1 = new SHA1Managed();
+                        ASCIIEncoding encoding = new ASCIIEncoding();
+                        byte[] data = encoding.GetBytes(text);
+                        byte[] hash = sha1.ComputeHash(data);
+                        byte[] sig = Convert.FromBase64String(transaction.DigitalSignature);
+                        valid = csp.VerifyHash(hash, CryptoConfig.MapNameToOID("SHA1"), sig);
+                        break;
+                }
+                
 
             }
             else
@@ -142,27 +129,13 @@ namespace sampleTDDAppLibrary.Logic
         private void VerifyCentenary()
         {
             CheckForCertificate();
-
-
+            
         }
 
         private void VerifyEzeeMoney()
         {
-            string text = transaction.CustRef + transaction.CustName + transaction.CustomerTel + transaction.VendorTransactionRef + transaction.VendorCode + transaction.Password + transaction.PaymentDate +
-                transaction.Teller + transaction.TransactionAmount + transaction.Narration + transaction.TransactionType;
+            CheckForCertificate();
 
-            string certPath = "C:\\PegPayCertificates1\\";
-
-            string vendorCode = transaction.VendorCode;
-            certPath = certPath + "\\" + vendorCode + "\\";
-            string[] fileEntries = Directory.GetFiles(certPath);
-            string filePath = "";
-            if (fileEntries.Length == 1)
-            {
-
-                valid = true;
-            }
-            
         }
       
     }

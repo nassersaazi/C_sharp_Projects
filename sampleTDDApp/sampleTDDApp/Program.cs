@@ -24,6 +24,7 @@ namespace sampleTDDApp
             p.MakePayment(tran);
             
         }
+        
 
         public NWSCTransaction GetTransaction()
         {
