@@ -51,6 +51,7 @@ namespace sampleTDDApp
 
         public void MakePayment(NWSCTransaction transaction)
         {
+            PostResponse resp = new PostResponse();
             var paymentFactory = new PaymentFactory();
 
             try
@@ -58,7 +59,7 @@ namespace sampleTDDApp
                 var payment = paymentFactory.initialisePayment(transaction);
                 var response = payment.pay(transaction);
 
-                Console.WriteLine(payment.Serialize(response));
+                Console.WriteLine(resp.Serialize(response));
             }
             catch (Exception)
             {

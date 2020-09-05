@@ -9,7 +9,7 @@ using System.Web;
 
 namespace sampleTDDAppLibrary.Logic
 {
-    public class NWSCPayment : Payment
+    public class NWSCPayment : Payment,ITransactionValidity
     {
         public override PostResponse pay(NWSCTransaction trans)
         {
@@ -27,7 +27,7 @@ namespace sampleTDDAppLibrary.Logic
                 
                 if (!IsValidReversalStatus(trans))
                 {
-                    HandleResponse(trans, resp, "25", "");
+                    resp.HandleResponse(trans, resp, "25", "");
                 }
                 
                 else
@@ -52,90 +52,95 @@ namespace sampleTDDAppLibrary.Logic
                                                     trans.Reversal = GetReversalState(trans);
                                                     if (HasOriginalEntry(trans))
                                                     {
-                                                        if (ReverseAmountsMatch(trans))
+                                                        if (!ReverseAmountsMatch(trans))
                                                         {
-                                                            if (!dp.IsChequeBlacklisted(trans))
+                                                            resp.HandleResponse(trans, resp, "26", ""); 
+                                                            
+                                                        }
+                                                        else
+                                                        {
+                                                            if (dp.IsChequeBlacklisted(trans))
+                                                            {
+                                                                resp.HandleResponse(trans, resp, "29", "");
+
+                                                            }
+                                                            else
                                                             {
 
                                                                 string vendorType = vendaData.Rows[0]["VendorType"].ToString();
-                                                                if (!(vendorType.Equals("PREPAID")))
+                                                                if ((vendorType.Equals("PREPAID")))
+                                                                {
+                                                                    resp.HandleResponse(trans, resp, "29", "NOT ENABLED FOR PREPAID VENDORS");
+
+
+                                                                }
+                                                                else
                                                                 {
                                                                     UtilityCredentials creds = dp.GetUtilityCreds("NWSC", trans.VendorCode);
-                                                                    if (!creds.UtilityCode.Equals(""))
+                                                                    if (creds.UtilityCode.Equals(""))
+                                                                    {
+                                                                        resp.HandleResponse(trans, resp, "29", "");
+
+
+                                                                    }
+                                                                    else
                                                                     {
                                                                         if (string.IsNullOrEmpty(trans.CustomerType))
                                                                         {
                                                                             trans.CustomerType = "";
                                                                         }
-                                                                        HandleResponse(trans, resp, "0", "");
-
+                                                                        resp.HandleResponse(trans, resp, "0", "");
                                                                     }
-                                                                    else
-                                                                    {
-                                                                        HandleResponse(trans, resp, "29", "");
-                                                                    }
-                                                                }
-                                                                else
-                                                                {
-                                                                    HandleResponse(trans, resp, "29", "NOT ENABLED FOR PREPAID VENDORS");
 
                                                                 }
                                                             }
-                                                            else
-                                                            {
-                                                                HandleResponse(trans, resp, "29", "");
-                                                            }
-                                                        }
-                                                        else
-                                                        {
-                                                            HandleResponse(trans, resp, "26", "");
                                                         }
                                                     }
                                                     else
                                                     {
-                                                        HandleResponse(trans, resp, "24", "");
+                                                        resp.HandleResponse(trans, resp, "24", "");
                                                     }
 
                                                 }
                                                 else
                                                 {
-                                                    HandleResponse(trans, resp, "21", "");
+                                                    resp.HandleResponse(trans, resp, "21", "");
                                                 }
                                             }
                                             else
                                             {
-                                                HandleResponse(trans, resp, "20", "");
+                                                resp.HandleResponse(trans, resp, "20", "");
                                             }
                                         }
                                         else
                                         {
-                                            HandleResponse(trans, resp, "12", "");
+                                            resp.HandleResponse(trans, resp, "12", "");
                                         }
                                     }
                                     else
                                     {
-                                        HandleResponse(trans, resp, "18", "");
+                                        resp.HandleResponse(trans, resp, "18", "");
                                     }
                                 }
                                 else
                                 {
-                                    HandleResponse(trans, resp, "11", "");
+                                    resp.HandleResponse(trans, resp, "11", "");
                                 }
                             }
                             else
                             {
-                                HandleResponse(trans, resp, "2", "");
+                                resp.HandleResponse(trans, resp, "2", "");
                             }
                         }
                         else
                         {
-                            HandleResponse(trans, resp, "4", "");
+                            resp.HandleResponse(trans, resp, "4", "");
 
                         }
                     }
                     else
                     {
-                        HandleResponse(trans, resp, "3", "");
+                        resp.HandleResponse(trans, resp, "3", "");
                     }
                 }
                 if (resp.StatusCode.Equals("2"))
@@ -181,6 +186,13 @@ namespace sampleTDDAppLibrary.Logic
                 dp.LogError(ex.Message, trans.VendorCode, DateTime.Now, "NWSC");
             }
             return resp;
+        }
+
+        public override bool isValidVendorCredentials(string vendorCode, string password, DataTable vendorData)
+        {
+            Console.WriteLine("IsValidVendorCredentials from child class\n");
+
+            return true;
         }
     }
 }

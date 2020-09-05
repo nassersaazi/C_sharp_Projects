@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace sampleTDDAppLibrary.Logic
 {
-    public interface IValidity
+    public interface ITransactionValidity
     {
-        bool isActiveVendor(string vendorCode, DataTable vendorData);
-        bool isValidVendorCredentials(string vendorCode, string password, DataTable vendorData);
+        
         bool isSignatureValid(Transaction trans);
-        bool isValidVendorUtilityMapping();
-        bool isValidVendorTraficIpAccess();
+       
         bool IsduplicateVendorRef(Transaction trans);
         bool IsValidReversalStatus(Transaction trans);
         
