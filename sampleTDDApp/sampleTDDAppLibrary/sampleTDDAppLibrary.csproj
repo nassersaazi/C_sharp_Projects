@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Logic\BusinessLogic.cs" />
     <Compile Include="Logic\DatabaseHandler.cs" />
+    <Compile Include="Logic\DSTVTransaction.cs" />
     <Compile Include="Logic\ITransaction.cs" />
     <Compile Include="Logic\ITransactionValidity.cs" />
     <Compile Include="Logic\IVendorUtilityAccess.cs" />

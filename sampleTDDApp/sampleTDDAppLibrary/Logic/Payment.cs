@@ -19,55 +19,75 @@ namespace sampleTDDAppLibrary.Logic
         protected BusinessLogic bll = new BusinessLogic();
         protected PhoneValidator pv = new PhoneValidator();
 
-        protected void  CheckForEmptyProperties(NWSCTransaction trans)
+        protected bool  CheckForEmptyProperties(NWSCTransaction trans)
         {
             if (trans.CustName == null || trans.CustName.Trim().Equals(""))
             {
                 resp.HandleResponse(trans, resp, "13", "");
+                return false;
             }
 
             else if (trans.Area == null || trans.Area.Trim().Equals(""))
             {
                 resp.HandleResponse(trans, resp, "35", "");
+                return false;
+
             }
 
             else if (trans.TransactionType == null || trans.TransactionType.Trim().Equals(""))
             {
                 resp.HandleResponse(trans, resp, "14", "");
+                return false;
             }
 
             else if (trans.VendorTransactionRef == null || trans.VendorTransactionRef.Trim().Equals(""))
             {
                 resp.HandleResponse(trans, resp, "16", "");
+                return false;
             }
 
             else if (trans.Teller == null || trans.Teller.Trim().Equals(""))
             {
                 resp.HandleResponse(trans, resp, "17", "");
+                return false;
             }
 
             else if (trans.DigitalSignature == null || trans.DigitalSignature.Length == 0)
             {
                 resp.HandleResponse(trans, resp, "19", "");
+                return false;
             }
             else if (trans.Reversal == "1" && trans.TranIdToReverse == null)
             {
                 resp.HandleResponse(trans, resp, "22", "");
+                return false;
             }
             else if (trans.Reversal == "1" && trans.TranIdToReverse.Equals(""))
             {
                 resp.HandleResponse(trans, resp, "22", "");
+                return false;
             }
             else if ((trans.Reversal == "1" && trans.Narration == null) || (trans.Reversal == "1" && trans.Narration.Equals("")))
             {
                 resp.HandleResponse(trans, resp, "23", "");
+                return false;
             }
+
+            return true;
         }
         protected void CheckTranValidity(Transaction tran)
         {
 
         }
-        public abstract PostResponse pay(NWSCTransaction tran);
+        public virtual PostResponse pay(NWSCTransaction tran)
+        {
+            return resp;
+        }
+        public virtual PostResponse pay(DSTVTransaction tran)
+        {
+            return resp;
+            //throw new NotImplementedException();
+        }
         public bool isSignatureValid(Transaction trans)
         {
             Signature sign = new Signature();

@@ -22,168 +22,173 @@ namespace sampleTDDAppLibrary.Logic
                 trans.Email = "";
             }
             string vendorCode = trans.VendorCode;
-            try
+           
+
+            if (CheckForEmptyProperties(trans))
             {
-                
-                if (!IsValidReversalStatus(trans))
+                try
                 {
-                    resp.HandleResponse(trans, resp, "25", "");
-                }
-                
-                else
-                {
-                    if (bll.IsNumeric(trans.TransactionAmount))
+
+                    if (!IsValidReversalStatus(trans))
                     {
-                        if (bll.IsValidDate(trans.PaymentDate))
+                        resp.HandleResponse(trans, resp, "25", "");
+                    }
+
+                    else
+                    {
+                        if (bll.IsNumeric(trans.TransactionAmount))
                         {
-                            DataTable vendaData = dp.GetVendorDetails(trans.VendorCode);
-                            if (isValidVendorCredentials(trans.VendorCode, trans.Password, vendaData))
+                            if (bll.IsValidDate(trans.PaymentDate))
                             {
-                                if (isActiveVendor(trans.VendorCode, vendaData))
+                                DataTable vendaData = dp.GetVendorDetails(trans.VendorCode);
+                                if (isValidVendorCredentials(trans.VendorCode, trans.Password, vendaData))
                                 {
-                                    if (isSignatureValid(trans))
+                                    if (isActiveVendor(trans.VendorCode, vendaData))
                                     {
-                                        if (pv.PhoneNumbersOk(trans.CustomerTel))
+                                        if (isSignatureValid(trans))
                                         {
-                                            if (!IsduplicateVendorRef(trans))
+                                            if (pv.PhoneNumbersOk(trans.CustomerTel))
                                             {
-                                                if (!IsduplicateCustPayment(trans))
+                                                if (!IsduplicateVendorRef(trans))
                                                 {
-                                                    trans.Reversal = GetReversalState(trans);
-                                                    if (HasOriginalEntry(trans))
+                                                    if (!IsduplicateCustPayment(trans))
                                                     {
-                                                        if (!ReverseAmountsMatch(trans))
+                                                        trans.Reversal = GetReversalState(trans);
+                                                        if (HasOriginalEntry(trans))
                                                         {
-                                                            resp.HandleResponse(trans, resp, "26", ""); 
-                                                            
-                                                        }
-                                                        else
-                                                        {
-                                                            if (dp.IsChequeBlacklisted(trans))
+                                                            if (!ReverseAmountsMatch(trans))
                                                             {
-                                                                resp.HandleResponse(trans, resp, "29", "");
+                                                                resp.HandleResponse(trans, resp, "26", "");
 
                                                             }
                                                             else
                                                             {
-
-                                                                string vendorType = vendaData.Rows[0]["VendorType"].ToString();
-                                                                if ((vendorType.Equals("PREPAID")))
+                                                                if (dp.IsChequeBlacklisted(trans))
                                                                 {
-                                                                    resp.HandleResponse(trans, resp, "29", "NOT ENABLED FOR PREPAID VENDORS");
-
+                                                                    resp.HandleResponse(trans, resp, "29", "");
 
                                                                 }
                                                                 else
                                                                 {
-                                                                    UtilityCredentials creds = dp.GetUtilityCreds("NWSC", trans.VendorCode);
-                                                                    if (creds.UtilityCode.Equals(""))
+
+                                                                    string vendorType = vendaData.Rows[0]["VendorType"].ToString();
+                                                                    if ((vendorType.Equals("PREPAID")))
                                                                     {
-                                                                        resp.HandleResponse(trans, resp, "29", "");
+                                                                        resp.HandleResponse(trans, resp, "29", "NOT ENABLED FOR PREPAID VENDORS");
 
 
                                                                     }
                                                                     else
                                                                     {
-                                                                        if (string.IsNullOrEmpty(trans.CustomerType))
+                                                                        UtilityCredentials creds = dp.GetUtilityCreds("NWSC", trans.VendorCode);
+                                                                        if (creds.UtilityCode.Equals(""))
                                                                         {
-                                                                            trans.CustomerType = "";
-                                                                        }
-                                                                        resp.HandleResponse(trans, resp, "0", "");
-                                                                    }
+                                                                            resp.HandleResponse(trans, resp, "29", "");
 
+
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            if (string.IsNullOrEmpty(trans.CustomerType))
+                                                                            {
+                                                                                trans.CustomerType = "";
+                                                                            }
+                                                                            resp.HandleResponse(trans, resp, "0", "");
+                                                                        }
+
+                                                                    }
                                                                 }
                                                             }
                                                         }
+                                                        else
+                                                        {
+                                                            resp.HandleResponse(trans, resp, "24", "");
+                                                        }
+
                                                     }
                                                     else
                                                     {
-                                                        resp.HandleResponse(trans, resp, "24", "");
+                                                        resp.HandleResponse(trans, resp, "21", "");
                                                     }
-
                                                 }
                                                 else
                                                 {
-                                                    resp.HandleResponse(trans, resp, "21", "");
+                                                    resp.HandleResponse(trans, resp, "20", "");
                                                 }
                                             }
                                             else
                                             {
-                                                resp.HandleResponse(trans, resp, "20", "");
+                                                resp.HandleResponse(trans, resp, "12", "");
                                             }
                                         }
                                         else
                                         {
-                                            resp.HandleResponse(trans, resp, "12", "");
+                                            resp.HandleResponse(trans, resp, "18", "");
                                         }
                                     }
                                     else
                                     {
-                                        resp.HandleResponse(trans, resp, "18", "");
+                                        resp.HandleResponse(trans, resp, "11", "");
                                     }
                                 }
                                 else
                                 {
-                                    resp.HandleResponse(trans, resp, "11", "");
+                                    resp.HandleResponse(trans, resp, "2", "");
                                 }
                             }
                             else
                             {
-                                resp.HandleResponse(trans, resp, "2", "");
+                                resp.HandleResponse(trans, resp, "4", "");
+
                             }
                         }
                         else
                         {
-                            resp.HandleResponse(trans, resp, "4", "");
-
+                            resp.HandleResponse(trans, resp, "3", "");
                         }
                     }
-                    else
+                    if (resp.StatusCode.Equals("2"))
                     {
-                        resp.HandleResponse(trans, resp, "3", "");
+                        DataTable dt = dp.GetVendorDetails(vendorCode);
+                        if (dt.Rows.Count != 0)
+                        {
+                            string ipAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+                            string strLoginCount = dt.Rows[0]["InvalidLoginCount"].ToString();
+                            int loginCount = int.Parse(strLoginCount);
+                            loginCount = loginCount + 1;
+                            if (loginCount == 3)
+                            {
+                                dp.UpdateVendorInvalidLoginCount(vendorCode, loginCount, ipAddress);
+                                dp.DeactivateVendor(vendorCode, ipAddress);
+                            }
+                            {
+                                dp.UpdateVendorInvalidLoginCount(vendorCode, loginCount, ipAddress);
+                            }
+                        }
                     }
                 }
-                if (resp.StatusCode.Equals("2"))
+                catch (System.Net.WebException wex)
                 {
-                    DataTable dt = dp.GetVendorDetails(vendorCode);
-                    if (dt.Rows.Count != 0)
-                    {
-                        string ipAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
-                        string strLoginCount = dt.Rows[0]["InvalidLoginCount"].ToString();
-                        int loginCount = int.Parse(strLoginCount);
-                        loginCount = loginCount + 1;
-                        if (loginCount == 3)
-                        {
-                            dp.UpdateVendorInvalidLoginCount(vendorCode, loginCount, ipAddress);
-                            dp.DeactivateVendor(vendorCode, ipAddress);
-                        }
-                        {
-                            dp.UpdateVendorInvalidLoginCount(vendorCode, loginCount, ipAddress);
-                        }
-                    }
-                }
-            }
-            catch (System.Net.WebException wex)
-            {
 
-                resp.StatusCode = "0";
-                resp.StatusDescription = "SUCCESS";
-                dp.LogError(wex.Message, trans.VendorCode, DateTime.Now, "NWSC");
-            }
-            catch (SqlException sqlex)
-            {
-                resp.StatusCode = "31";
-                resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                dp.deleteTransaction(resp.PegPayPostId, resp.StatusDescription);
-                resp.PegPayPostId = "";
-            }
-            catch (Exception ex)
-            {
-                resp.StatusCode = "32";
-                resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
-                dp.deleteTransaction(resp.PegPayPostId, resp.StatusDescription);
-                resp.PegPayPostId = "";
-                dp.LogError(ex.Message, trans.VendorCode, DateTime.Now, "NWSC");
+                    resp.StatusCode = "0";
+                    resp.StatusDescription = "SUCCESS";
+                    dp.LogError(wex.Message, trans.VendorCode, DateTime.Now, "NWSC");
+                }
+                catch (SqlException sqlex)
+                {
+                    resp.StatusCode = "31";
+                    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
+                    dp.deleteTransaction(resp.PegPayPostId, resp.StatusDescription);
+                    resp.PegPayPostId = "";
+                }
+                catch (Exception ex)
+                {
+                    resp.StatusCode = "32";
+                    resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
+                    dp.deleteTransaction(resp.PegPayPostId, resp.StatusDescription);
+                    resp.PegPayPostId = "";
+                    dp.LogError(ex.Message, trans.VendorCode, DateTime.Now, "NWSC");
+                } 
             }
             return resp;
         }
