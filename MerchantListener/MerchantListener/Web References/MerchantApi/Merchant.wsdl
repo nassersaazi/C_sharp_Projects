@@ -1,0 +1,1783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://MerchantApi.org/" xmlns:s1="http://pegasus.co.ug/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://MerchantApi.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://MerchantApi.org/">
+      <s:import namespace="http://pegasus.co.ug/" />
+      <s:element name="ChangePin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Customer">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Defaults">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Active" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OtherNames" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessEmail" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessLicence" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessTelephone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsLoggedIn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerTelephone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerDateofBirth" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerImage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerIdType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerIdImage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerIdNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResetCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RunningBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WrongPasswordCount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserLevel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PasswordReset" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PartialPay" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Defaults">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Result">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ApiUsername" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Channel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RequestAgent" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MerchantResult">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Result">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Field1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Response">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Result">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RunningBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FullNames1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantResult" type="tns:MerchantResult" />
+              <s:element minOccurs="0" maxOccurs="1" name="Customer" type="tns:Customer" />
+              <s:element minOccurs="0" maxOccurs="1" name="ValuePair" type="tns:ArrayOfKeyValuePair" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantTrans" type="tns:ArrayOfMerchantTransaction" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfKeyValuePair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValuePair" nillable="true" type="tns:KeyValuePair" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValuePair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMerchantTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MerchantTransaction" nillable="true" type="tns:MerchantTransaction" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MerchantTransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Defaults">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AccountFrom" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountTo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Charge" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PhoneImei" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserLevel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Utility" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field4" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ChangePinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePinResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableBouquets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:SearchFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SearchFilters">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Defaults">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReferenceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Medium" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResultSize" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Utility" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetAvailableBouquetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableBouquetsResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMerchantCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:SearchFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMerchantCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMerchantCustomerResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:SearchFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionDetailsResult" type="tns:MerchantTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMerchantDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:SearchFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMerchantDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMerchantDetailsResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMerchantMiniStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:SearchFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMerchantMiniStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMerchantMiniStatementResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMerchantStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:SearchFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMerchantStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMerchantStatementResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDetailsResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtilityCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:SearchFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtilityCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUtilityCustomerDetailsResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeAirtimePurchase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transaction" type="tns:MerchantTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeAirtimePurchaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeAirtimePurchaseResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeBillPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transaction" type="tns:MerchantTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeBillPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeBillPaymentResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakePegPayTopUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transaction" type="tns:MerchantTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakePegPayTopUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakePegPayTopUpResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PayMerchant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transaction" type="tns:MerchantTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PayMerchantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PayMerchantResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMoney">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transaction" type="tns:MerchantTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMoneyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMoneyResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSignIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSignInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserSignInResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSignOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSignOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserSignOutResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSignUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSignUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserSignUpResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storedProcedureName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCharges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filters" type="tns:SearchFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChargesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChargesResult" type="s1:MerchantChargeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://pegasus.co.ug/">
+      <s:complexType name="MerchantChargeResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:MerchantCharge">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CalculatedChargeAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CalculationMethod" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OriginalTransactionAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FinalTransactionAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PegasusCommissionAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SbuCommissionAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TaxCommissionAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PegasusCommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SbuCommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TaxCommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PegasusPercentage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SbuPercentage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TaxPercentage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsSplit" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MerchantCharge">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranCategory" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsChargePassedOnToCustomer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransactionRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ToAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FromAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankTranId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranCategory" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChequeNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCharges" type="s1:ArrayOfBankCharge" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfBankCharge">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BankCharge" nillable="true" type="s1:BankCharge" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BankCharge">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MinimumValue" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MaximumValue" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PegasusCommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SbuCommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TaxCommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PegasusPercentage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SbuPercentage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TaxPercentage" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Result">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PegPayId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ThirdPartyId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BankAccountStatement">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:Result">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="statement" type="s1:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Defaults">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:Result">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ApiUsername" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Channel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RequestAgent" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MerchantTransaction">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:Defaults">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AccountFrom" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountTo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Charge" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PhoneImei" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserLevel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Utility" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CoreMerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VisaExpiryMonth" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VisaExpiryYear" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VisaCVC" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Field5" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Customer">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:Defaults">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Active" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OtherNames" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessEmail" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessLicence" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BusinessTelephone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsLoggedIn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerTelephone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerDateofBirth" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerImage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerIdType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerIdImage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerIdNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResetCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RunningBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WrongPasswordCount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserLevel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PasswordReset" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SearchFilters">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:Defaults">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReferenceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Medium" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResultSize" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Utility" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserPhone" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PostResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:Result">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RunningBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantTransaction" type="s1:MerchantTransaction" />
+              <s:element minOccurs="0" maxOccurs="1" name="Customer" type="s1:Customer" />
+              <s:element minOccurs="0" maxOccurs="1" name="ValuePair" type="s1:ArrayOfKeyValuePair" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantTrans" type="s1:ArrayOfMerchantTransaction" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfKeyValuePair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValuePair" nillable="true" type="s1:KeyValuePair" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValuePair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMerchantTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MerchantTransaction" nillable="true" type="s1:MerchantTransaction" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LoanRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LoanID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanAmout" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerContactTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GracePeriodInDays" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BussinessSector" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BussinessDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanApplicationFee" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanProcessingFee" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RepaymentFrequency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumberOfInstallments" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestDeductedOnDisbursement" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestRateInPercentage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MonthlyInstallmentAmounts" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AdditionalComments" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestRateType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MapToPlaceOfResidence" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Approver" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerCreditScore" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumberOfMissedPayments" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanAccountTitle" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LoanRepaymentRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SourceAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RepaymentAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BanksCommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankTranId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranCategory" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChequeNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Collateral">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="NameOfTitleOfOwnership" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PathToPictureOfTitleOfOwnership" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DescriptionOfCollateral" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TypeOfCollateral" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollateralID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EstimatedMonetaryValue" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BankAccount">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MinimumBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestRate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountCategory" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Referenced" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LiquidationType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LiquidationFrequency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountSignatories" type="s1:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestPayOutFreq" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankLiqAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankLiqAccountName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantContact" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BankCommissionAccount">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BankAccount">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CommissionAccountName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CommissionAccountCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Guarantor">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LoanID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GuarantorName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GuarantorRefNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GuarantorType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GuarantorPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PathToPicOfGuarantorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="GuarantorType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="GurantorTypeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GurantorTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Bank">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BankId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankContactEmail" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankPassword" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PathToPublicKey" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PathToLogoImage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankThemeColor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TextColor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankVaultAccNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankLoanCommissionAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankInterestPayableAccount" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AccessRule">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CanAccess" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RuleName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TransactionRule">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RuleName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RuleCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MinimumAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MaximumAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Approver" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BankUser">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OtherName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Usertype" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserCategory" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransactionLimit" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="RestPin" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="RestPassword" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="SecretKey" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BankCustomer">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BankUser">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PathToProfilePic" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PathToSignature" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PathToIdentityDocPic" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TypeOfID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NextOfKinName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NextOfKinContact" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MaritalStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountCategory" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BankTeller">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BankUser">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TellerAccountNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Currency">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ValueInLocalCurrency" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BankBranch">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BankBranchId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchVaultAccNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchTellerLimit" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchSupervisorLimit" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UserType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserTypeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Role" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CustomerType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:UserType" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AccountType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccTypeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MinimumBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="MinNumberOfSignatories" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaxNumberOfSignatories" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountTypeCategory" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestRate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestRateType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestPayOutFreq" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ChargeType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeTypeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChargeTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="GroupMember">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GroupID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Report">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReportType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReportCategory" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StoredProcedure" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SystemSetting">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SettingCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SettingValue" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TransactionCategory">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranCategoryCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranCategoryName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PaymentType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentTypeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PaymentFrequency">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RepaymentFreqCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RepayFreqName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DurationInDays" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Beneficiary">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BeneficiaryAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BeneficiaryBankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BeneficiaryName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Utility">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CommissionAccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CustomerTerminal">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerAccount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeviceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeviceType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SIMCard" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AcquiredBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Passcode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsActive" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Usertype" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LoanType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LoanTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanTypeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RequiresCollateral" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestRateAsPercentage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InterestRateType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GracePeriodInDays" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanApplicationFee" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LoanProcessingFee" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CollateralType">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CollateralTypeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollateralTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ChangePinSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePin" />
+  </wsdl:message>
+  <wsdl:message name="ChangePinSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePinResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBouquetsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableBouquets" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBouquetsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableBouquetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMerchantCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMerchantCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetMerchantCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMerchantCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMerchantDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMerchantDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetMerchantDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMerchantDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMerchantMiniStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMerchantMiniStatement" />
+  </wsdl:message>
+  <wsdl:message name="GetMerchantMiniStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMerchantMiniStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMerchantStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMerchantStatement" />
+  </wsdl:message>
+  <wsdl:message name="GetMerchantStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMerchantStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUtilityCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUtilityCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetUtilityCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUtilityCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeAirtimePurchaseSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeAirtimePurchase" />
+  </wsdl:message>
+  <wsdl:message name="MakeAirtimePurchaseSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeAirtimePurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeBillPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeBillPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeBillPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeBillPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakePegPayTopUpSoapIn">
+    <wsdl:part name="parameters" element="tns:MakePegPayTopUp" />
+  </wsdl:message>
+  <wsdl:message name="MakePegPayTopUpSoapOut">
+    <wsdl:part name="parameters" element="tns:MakePegPayTopUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="PayMerchantSoapIn">
+    <wsdl:part name="parameters" element="tns:PayMerchant" />
+  </wsdl:message>
+  <wsdl:message name="PayMerchantSoapOut">
+    <wsdl:part name="parameters" element="tns:PayMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMoneySoapIn">
+    <wsdl:part name="parameters" element="tns:SendMoney" />
+  </wsdl:message>
+  <wsdl:message name="SendMoneySoapOut">
+    <wsdl:part name="parameters" element="tns:SendMoneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSignInSoapIn">
+    <wsdl:part name="parameters" element="tns:UserSignIn" />
+  </wsdl:message>
+  <wsdl:message name="UserSignInSoapOut">
+    <wsdl:part name="parameters" element="tns:UserSignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSignOutSoapIn">
+    <wsdl:part name="parameters" element="tns:UserSignOut" />
+  </wsdl:message>
+  <wsdl:message name="UserSignOutSoapOut">
+    <wsdl:part name="parameters" element="tns:UserSignOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSignUpSoapIn">
+    <wsdl:part name="parameters" element="tns:UserSignUp" />
+  </wsdl:message>
+  <wsdl:message name="UserSignUpSoapOut">
+    <wsdl:part name="parameters" element="tns:UserSignUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteDataSet" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChargesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCharges" />
+  </wsdl:message>
+  <wsdl:message name="GetChargesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChargesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MerchantSoap">
+    <wsdl:operation name="ChangePin">
+      <wsdl:input message="tns:ChangePinSoapIn" />
+      <wsdl:output message="tns:ChangePinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBouquets">
+      <wsdl:input message="tns:GetAvailableBouquetsSoapIn" />
+      <wsdl:output message="tns:GetAvailableBouquetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantCustomer">
+      <wsdl:input message="tns:GetMerchantCustomerSoapIn" />
+      <wsdl:output message="tns:GetMerchantCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:input message="tns:GetTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:GetTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantDetails">
+      <wsdl:input message="tns:GetMerchantDetailsSoapIn" />
+      <wsdl:output message="tns:GetMerchantDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantMiniStatement">
+      <wsdl:input message="tns:GetMerchantMiniStatementSoapIn" />
+      <wsdl:output message="tns:GetMerchantMiniStatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantStatement">
+      <wsdl:input message="tns:GetMerchantStatementSoapIn" />
+      <wsdl:output message="tns:GetMerchantStatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetails">
+      <wsdl:input message="tns:GetUserDetailsSoapIn" />
+      <wsdl:output message="tns:GetUserDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityCustomerDetails">
+      <wsdl:input message="tns:GetUtilityCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:GetUtilityCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeAirtimePurchase">
+      <wsdl:input message="tns:MakeAirtimePurchaseSoapIn" />
+      <wsdl:output message="tns:MakeAirtimePurchaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeBillPayment">
+      <wsdl:input message="tns:MakeBillPaymentSoapIn" />
+      <wsdl:output message="tns:MakeBillPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakePegPayTopUp">
+      <wsdl:input message="tns:MakePegPayTopUpSoapIn" />
+      <wsdl:output message="tns:MakePegPayTopUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PayMerchant">
+      <wsdl:input message="tns:PayMerchantSoapIn" />
+      <wsdl:output message="tns:PayMerchantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMoney">
+      <wsdl:input message="tns:SendMoneySoapIn" />
+      <wsdl:output message="tns:SendMoneySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSignIn">
+      <wsdl:input message="tns:UserSignInSoapIn" />
+      <wsdl:output message="tns:UserSignInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSignOut">
+      <wsdl:input message="tns:UserSignOutSoapIn" />
+      <wsdl:output message="tns:UserSignOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSignUp">
+      <wsdl:input message="tns:UserSignUpSoapIn" />
+      <wsdl:output message="tns:UserSignUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDataSet">
+      <wsdl:input message="tns:ExecuteDataSetSoapIn" />
+      <wsdl:output message="tns:ExecuteDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCharges">
+      <wsdl:input message="tns:GetChargesSoapIn" />
+      <wsdl:output message="tns:GetChargesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MerchantSoap" type="tns:MerchantSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChangePin">
+      <soap:operation soapAction="http://MerchantApi.org/ChangePin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBouquets">
+      <soap:operation soapAction="http://MerchantApi.org/GetAvailableBouquets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantCustomer">
+      <soap:operation soapAction="http://MerchantApi.org/GetMerchantCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://MerchantApi.org/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantDetails">
+      <soap:operation soapAction="http://MerchantApi.org/GetMerchantDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantMiniStatement">
+      <soap:operation soapAction="http://MerchantApi.org/GetMerchantMiniStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantStatement">
+      <soap:operation soapAction="http://MerchantApi.org/GetMerchantStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetails">
+      <soap:operation soapAction="http://MerchantApi.org/GetUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityCustomerDetails">
+      <soap:operation soapAction="http://MerchantApi.org/GetUtilityCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeAirtimePurchase">
+      <soap:operation soapAction="http://MerchantApi.org/MakeAirtimePurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeBillPayment">
+      <soap:operation soapAction="http://MerchantApi.org/MakeBillPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakePegPayTopUp">
+      <soap:operation soapAction="http://MerchantApi.org/MakePegPayTopUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayMerchant">
+      <soap:operation soapAction="http://MerchantApi.org/PayMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMoney">
+      <soap:operation soapAction="http://MerchantApi.org/SendMoney" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSignIn">
+      <soap:operation soapAction="http://MerchantApi.org/UserSignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSignOut">
+      <soap:operation soapAction="http://MerchantApi.org/UserSignOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSignUp">
+      <soap:operation soapAction="http://MerchantApi.org/UserSignUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDataSet">
+      <soap:operation soapAction="http://MerchantApi.org/ExecuteDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCharges">
+      <soap:operation soapAction="http://MerchantApi.org/GetCharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MerchantSoap12" type="tns:MerchantSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChangePin">
+      <soap12:operation soapAction="http://MerchantApi.org/ChangePin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBouquets">
+      <soap12:operation soapAction="http://MerchantApi.org/GetAvailableBouquets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantCustomer">
+      <soap12:operation soapAction="http://MerchantApi.org/GetMerchantCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap12:operation soapAction="http://MerchantApi.org/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantDetails">
+      <soap12:operation soapAction="http://MerchantApi.org/GetMerchantDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantMiniStatement">
+      <soap12:operation soapAction="http://MerchantApi.org/GetMerchantMiniStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantStatement">
+      <soap12:operation soapAction="http://MerchantApi.org/GetMerchantStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetails">
+      <soap12:operation soapAction="http://MerchantApi.org/GetUserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityCustomerDetails">
+      <soap12:operation soapAction="http://MerchantApi.org/GetUtilityCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeAirtimePurchase">
+      <soap12:operation soapAction="http://MerchantApi.org/MakeAirtimePurchase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeBillPayment">
+      <soap12:operation soapAction="http://MerchantApi.org/MakeBillPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakePegPayTopUp">
+      <soap12:operation soapAction="http://MerchantApi.org/MakePegPayTopUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayMerchant">
+      <soap12:operation soapAction="http://MerchantApi.org/PayMerchant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMoney">
+      <soap12:operation soapAction="http://MerchantApi.org/SendMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSignIn">
+      <soap12:operation soapAction="http://MerchantApi.org/UserSignIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSignOut">
+      <soap12:operation soapAction="http://MerchantApi.org/UserSignOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSignUp">
+      <soap12:operation soapAction="http://MerchantApi.org/UserSignUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDataSet">
+      <soap12:operation soapAction="http://MerchantApi.org/ExecuteDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCharges">
+      <soap12:operation soapAction="http://MerchantApi.org/GetCharges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Merchant">
+    <wsdl:port name="MerchantSoap" binding="tns:MerchantSoap">
+      <soap:address location="http://localhost:8020/TestMerchantApi/Merchant.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MerchantSoap12" binding="tns:MerchantSoap12">
+      <soap12:address location="http://localhost:8020/TestMerchantApi/Merchant.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
