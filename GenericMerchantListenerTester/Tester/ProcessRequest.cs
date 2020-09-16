@@ -52,8 +52,8 @@ namespace Tester
 
             string ValidateMerch = @"
                                     <ValidateMerchant>
-                                    <Username>EXTUSSDVENDOR</Username>
-                                     <Password>4hs56ikx</Password> 
+                                    <Username>STANBIC</Username>
+                                     <Password>EO8DSAK</Password> 
                                      <MerchantCode>108633</MerchantCode>   
                                      <Channel>USSD</Channel> 
                                      <DigitalSignature>kS7W48loQWabNg2L3Espee8IfCUB8EfNao2KJ64g+L8y7rnbuZlxZint58HXL9+5uXM4D2uvpBAHYx3rOCHGdmWHcKJ1e3HVw+OKUBquDoVWT6MZfCgnyhv2fT7xTbjV0jBP9ULid6LpWYjBHlVewIP6KCgWw+vCEpCyuvAMGZLEgOHlk/P2orqp3/sJ51aPReJOfMATpJk3VBFSxYfHcS0QezXOCZ6QzlOPF/9h7Pl7K7LZJp2NQbrVDuX16kfo9qluQj3Sf0l69EWiPHpwoXG8GnghSIPVnJFQkQBMNkcFBFt6x4G8wAZolu77kGdJ5s3zdRFokG5SX7wYEubfFA==</DigitalSignature><RequestID>21372211</RequestID>   

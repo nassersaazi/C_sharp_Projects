@@ -16,6 +16,8 @@ using System.IO;
 using System.Web;
 using System.Net;
 using System.Net.Sockets;
+using System.Xml.Serialization;
+using System.Reflection;
 
 namespace MerchantListener.Logic
 {
@@ -49,7 +51,10 @@ namespace MerchantListener.Logic
             }
             catch (Exception ex)
             {
-                _custIP= GetServerIpIpValue();
+                MethodBase methodBase = MethodBase.GetCurrentMethod();
+                string method = methodBase.DeclaringType.Name + "." + methodBase.Name;
+                LogError("", method, "", "Exception", ex.Message, "");
+                _custIP = GetServerIpIpValue();
             }
             return _custIP;
         }
@@ -143,14 +148,27 @@ namespace MerchantListener.Logic
                 }
 
               
-                return xmlResponse;
+               
             }
             catch (Exception ex)
             {
-                throw ex;
                 valResponse.StatusCode = "200";
                 valResponse.StatusDescription = ex.Message;
                LogError("", "ProcessThread", "", "Exception", ex.Message, "");
+            }
+
+            return xmlResponse;
+        }
+
+        public string Serialize(object dataToSerialize)
+        {
+            if (dataToSerialize == null) return null;
+
+            using (StringWriter stringwriter = new System.IO.StringWriter())
+            {
+                var serializer = new XmlSerializer(dataToSerialize.GetType());
+                serializer.Serialize(stringwriter, dataToSerialize);
+                return stringwriter.ToString();
             }
         }
 
@@ -1004,7 +1022,9 @@ namespace MerchantListener.Logic
             }
             catch (Exception ex)
             {
-                throw ex;
+                MethodBase methodBase = MethodBase.GetCurrentMethod();
+                string method = methodBase.DeclaringType.Name + "." + methodBase.Name;
+                LogError("", method, "", "Exception", ex.Message, "");
             }
 
             return ipaddress;

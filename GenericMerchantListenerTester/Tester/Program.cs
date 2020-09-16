@@ -156,23 +156,13 @@ namespace Tester
 
         }
     }
-    public class TesttListener
-    {
-      
-
-      
-
- 
-
-
-
-    }
+   
     public class Program
     {
         static void Main(string[] args)
         {
 
-            var sample = new TesttListener();
+           
             string request = "";
             Console.WriteLine("1."+"Validate Merchant Customer");
             Console.WriteLine("2." + "ValidatCustomer Reference");
@@ -190,7 +180,7 @@ namespace Tester
 
         public void ProcessTransaction(string transaction)
         {
-            string url = "https://192.168.120.44:3999/externalmerchant/";
+            string url = "http://127.0.0.1:8085/externalmerchant/";
 
             try
             {
@@ -238,7 +228,7 @@ namespace Tester
                     syncStream.Dispose();
                 }
 
-                request.Timeout = 40000;
+                request.Timeout = 3 * 60 * 1000;
                 Console.WriteLine("Posted To Gateway  at: " + DateTime.Now.ToString());
                 var response = (HttpWebResponse)request.GetResponse();
 
