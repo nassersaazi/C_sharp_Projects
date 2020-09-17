@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MerchantListenerLibrary.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MerchantListenerLibrary_PegPayApi_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:8019/TestPegPayApi/PegPay.asmx</Value>
+    </Setting>
+    <Setting Name="MerchantListenerLibrary_MerchantApi_Merchant" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8020/TestMerchantApi/Merchant.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

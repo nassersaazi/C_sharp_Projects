@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MerchantListenerLibrary.EntityObjects
 {
-    class ValidateCustomerRefResponse
+    public class ValidateCustomerRefResponse
     {
         private string merchantName, merchantCode, customerName, oustandingBalance, minimumBalance, statusCode, statusDescription;
 

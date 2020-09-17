@@ -22,25 +22,5 @@ namespace MerchantListener.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8020/TestMerchantApi/Merchant.asmx")]
-        public string MerchantListener_MerchantApi_Merchant {
-            get {
-                return ((string)(this["MerchantListener_MerchantApi_Merchant"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:8019/TestPegPayApi/PegPay.asmx")]
-        public string MerchantListener_PegPayApi_PegPay {
-            get {
-                return ((string)(this["MerchantListener_PegPayApi_PegPay"]));
-            }
-        }
     }
 }

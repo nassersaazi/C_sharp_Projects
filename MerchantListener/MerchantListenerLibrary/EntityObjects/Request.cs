@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MerchantListenerLibrary.EntityObjects
 {
-    class Request
+    public class Request
     {
         private string username, password, channel, customertel, accountfrom, merchantcode, customerref, digitalsignature, requestid, transactionid, amount, statusCode, statusDesc, narration, transDate;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MerchantListenerLibrary.EntityObjects
 {
-    class ListenerResponse
+    public class ListenerResponse
     {
 
         private string statusCode, statusDesc, amount, charge, tranid, merchantCode, merchantName;

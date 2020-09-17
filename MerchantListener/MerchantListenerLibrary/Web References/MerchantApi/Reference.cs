@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace MerchantListener.MerchantApi {
+namespace MerchantListenerLibrary.MerchantApi {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -74,7 +74,7 @@ namespace MerchantListener.MerchantApi {
         
         /// <remarks/>
         public Merchant() {
-            this.Url = global::MerchantListener.Properties.Settings.Default.MerchantListener_MerchantApi_Merchant;
+            this.Url = global::MerchantListenerLibrary.Properties.Settings.Default.MerchantListenerLibrary_MerchantApi_Merchant;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

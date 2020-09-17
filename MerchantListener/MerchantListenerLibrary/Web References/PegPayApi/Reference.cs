@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace MerchantListener.PegPayApi {
+namespace MerchantListenerLibrary.PegPayApi {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -61,7 +61,7 @@ namespace MerchantListener.PegPayApi {
         
         /// <remarks/>
         public PegPay() {
-            this.Url = global::MerchantListener.Properties.Settings.Default.MerchantListener_PegPayApi_PegPay;
+            this.Url = global::MerchantListenerLibrary.Properties.Settings.Default.MerchantListenerLibrary_PegPayApi_PegPay;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

@@ -82,29 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityObjects\Request.cs" />
-    <Compile Include="EntityObjects\ListenerResponse.cs" />
-    <Compile Include="EntityObjects\TotalLogic.cs" />
-    <Compile Include="EntityObjects\ValidateCustomerRefResponse.cs" />
-    <Compile Include="Logic\BusinessLogic.cs" />
-    <Compile Include="Logic\DatabaseHandler.cs" />
-    <Compile Include="Logic\TCPServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\MerchantApi\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\PegPayApi\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -114,61 +97,15 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\MerchantApi\Merchant.wsdl" />
-    <None Include="Web References\MerchantApi\MerchantChargeResponse.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\MerchantApi\MerchantTransaction.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\MerchantApi\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\MerchantApi\Response.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\PegPayApi\BouquetDetails.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\PegPayApi\PegPay.wsdl" />
-    <None Include="Web References\PegPayApi\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\PegPayApi\Response.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="https://localhost:8019/TestPegPayApi/PegPay.asmx%3fWSDL">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\PegPayApi\</RelPath>
-      <UpdateFromURL>https://localhost:8019/TestPegPayApi/PegPay.asmx%3fWSDL</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>MerchantListener_PegPayApi_PegPay</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:8020/TestMerchantApi/Merchant.asmx%3fWSDL">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\MerchantApi\</RelPath>
-      <UpdateFromURL>http://localhost:8020/TestMerchantApi/Merchant.asmx%3fWSDL</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>MerchantListener_MerchantApi_Merchant</CachedSettingsPropName>
-    </WebReferenceUrl>
+    <ProjectReference Include="..\MerchantListenerLibrary\MerchantListenerLibrary.csproj">
+      <Project>{d1911b06-9e9f-4c5c-8992-795b2c7031ab}</Project>
+      <Name>MerchantListenerLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
