@@ -13,14 +13,12 @@ namespace sampleTDDAppLibrary.Logic
     public class Signature
     {
         bool valid = false;
-        public Transaction  transaction { get; set; }
-
+        
         DatabaseHandler dp = new DatabaseHandler();
         BusinessLogic bll = new BusinessLogic();
         
-        public bool VerifySignature(Transaction tran)
+        public bool VerifySignature(ITransaction transaction)
         {
-            transaction = tran;
             
             if (transaction.VendorCode.Equals("CENTENARY") && transaction.DigitalSignature.Equals("1234"))
             {
@@ -34,17 +32,17 @@ namespace sampleTDDAppLibrary.Logic
                     case "MTN": case "TEST": case "PEGPAY": case "AIRTEL": case "AFRICELL":case "SMART":case "SMS2BET": case "TESTFLEXIPAY": case "MOWE": case "CELL": case "SMARTMONEY": case "1234":
                         valid = true;
                         break;
-                    case "EzeeMoney": VerifyEzeeMoney(); break;
-                    case "CENTENARY": VerifyCentenary(); break;
-                    case "ISYS": VerifyISYS(); break; 
-                    default: VerifyAnyOtherVendor(); break;
+                    case "EzeeMoney": VerifyEzeeMoney(transaction); break;
+                    case "CENTENARY": VerifyCentenary(transaction); break;
+                    case "ISYS": VerifyISYS(transaction); break; 
+                    default: VerifyAnyOtherVendor(transaction); break;
                 }
             }
             
             return valid;
         }
 
-        private void VerifyAnyOtherVendor()
+        private void VerifyAnyOtherVendor(ITransaction transaction)
         {
             try
             {
@@ -80,13 +78,13 @@ namespace sampleTDDAppLibrary.Logic
             }
         }
 
-        private void VerifyISYS()
+        private void VerifyISYS(ITransaction tran)
         {
-            CheckForCertificate();
+            CheckForCertificate(tran);
             
         }
 
-        private void CheckForCertificate()
+        private void CheckForCertificate(ITransaction transaction)
         {
             string text = transaction.CustRef + transaction.CustName + transaction.CustomerTel + transaction.VendorTransactionRef + transaction.VendorCode + transaction.Password +
                 transaction.PaymentDate + transaction.Teller + transaction.TransactionAmount + transaction.Narration + transaction.TransactionType;
@@ -126,15 +124,15 @@ namespace sampleTDDAppLibrary.Logic
             }
         }
 
-        private void VerifyCentenary()
+        private void VerifyCentenary(ITransaction tran)
         {
-            CheckForCertificate();
+            CheckForCertificate(tran);
             
         }
 
-        private void VerifyEzeeMoney()
+        private void VerifyEzeeMoney(ITransaction tran)
         {
-            CheckForCertificate();
+            CheckForCertificate(tran);
 
         }
       

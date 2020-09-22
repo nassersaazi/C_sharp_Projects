@@ -49,7 +49,7 @@ namespace sampleTDDAppLibrary.Logic
             }
         }
 
-        public void HandleResponse(NWSCTransaction trans, PostResponse resp, string status, string statusDescription)
+        public void HandleResponse(ITransaction trans, PostResponse resp, string status, string statusDescription)
         {
 
             if (status == "0")

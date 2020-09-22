@@ -10,10 +10,10 @@ namespace sampleTDDAppLibrary.Logic
     public interface ITransactionValidity
     {
         
-        bool isSignatureValid(Transaction trans);
+        bool isSignatureValid(ITransaction trans);
        
-        bool IsduplicateVendorRef(Transaction trans);
-        bool IsValidReversalStatus(Transaction trans);
+        bool IsduplicateVendorRef(ITransaction trans);
+        bool IsValidReversalStatus(ITransaction trans);
         
     }
 }

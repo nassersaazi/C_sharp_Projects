@@ -8,26 +8,15 @@ namespace sampleTDDAppLibrary.Logic
 {
     public class PaymentFactory
     {
-        DatabaseHandler dp = new DatabaseHandler();
-
-        public Payment initialisePayment(NWSCTransaction transaction)
+        
+        public IPayment initialisePayment(string utilityCode)
         {
             
-            switch (transaction.UtilityCode)
+            switch (utilityCode)
             {
                 case "NWSC":
-                    try
-                    {
-                        dp.SaveRequestlog(transaction.VendorCode, "NWSC", "POSTING", transaction.CustRef, transaction.Password);
-                    }
-                    catch (Exception)
-                    {
-
-                        return null;
-                    }
                     return new NWSCPayment();
                 default:
-                    dp.SaveRequestlog(transaction.VendorCode, transaction.UtilityCode, "POSTING", transaction.CustRef, transaction.Password);
                     return null;
             }
             

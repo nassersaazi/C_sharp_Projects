@@ -49,7 +49,7 @@ namespace sampleTDDAppLibrary.Logic
             return descr;
         }
 
-        internal void SaveRequestlog(string VendorCode, string Utility, string LogType, string CustRef, string password)
+        public void SaveRequestlog(string VendorCode, string Utility, string LogType, string CustRef, string password)
         {
             try
             {
@@ -111,7 +111,7 @@ namespace sampleTDDAppLibrary.Logic
         }
 
 
-        internal string PostTransaction(NWSCTransaction trans, string utilityCode)
+        internal string PostTransaction(ITransaction trans, string utilityCode)
         {
             string receiptNo = "";
             try
@@ -189,7 +189,7 @@ namespace sampleTDDAppLibrary.Logic
             }
         }
 
-        internal DataTable GetOriginalVendorRef(Transaction trans)
+        internal DataTable GetOriginalVendorRef(ITransaction trans)
         {
             try
             {
@@ -258,7 +258,7 @@ namespace sampleTDDAppLibrary.Logic
             return blacklisted;
         }
 
-        internal bool IsChequeBlacklisted(Transaction trans)
+        internal bool IsChequeBlacklisted(ITransaction trans)
         {
 
             if (trans.TransactionType.ToUpper().Contains("CHEQUE"))
@@ -339,7 +339,7 @@ namespace sampleTDDAppLibrary.Logic
             return networkRates;
         }
 
-        internal DataTable GetDuplicateVendorRef(Transaction trans)
+        internal DataTable GetDuplicateVendorRef(ITransaction trans)
         {
             try
             {

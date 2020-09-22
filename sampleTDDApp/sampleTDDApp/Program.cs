@@ -1,15 +1,5 @@
-﻿using sampleTDDApp.Logic;
-using System;
-using System.Web;
-using System.Collections.Generic;
-using System.Data;
+﻿using System;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Cryptography.X509Certificates;
-using System.IO;
-using System.Security.Cryptography;
 using sampleTDDAppLibrary.Logic;
 
 namespace sampleTDDApp
@@ -50,23 +40,30 @@ namespace sampleTDDApp
             return transaction;
         }
 
-        public void MakePayment(NWSCTransaction transaction)
+        public void MakePayment(ITransaction transaction)
         {
-            PostResponse resp = new PostResponse();
-            var paymentFactory = new PaymentFactory();
-
             try
             {
-                var payment = paymentFactory.initialisePayment(transaction);
+                DatabaseHandler dp = new DatabaseHandler();
+                dp.SaveRequestlog(transaction.VendorCode, "NWSC", "POSTING", transaction.CustRef, transaction.Password);
+                PostResponse resp = new PostResponse();
+                var paymentFactory = new PaymentFactory();
+                var payment = paymentFactory.initialisePayment(transaction.UtilityCode);
                 var response = payment.pay(transaction);
 
                 Console.WriteLine(resp.Serialize(response));
+                Console.ReadLine();
+            }
+            catch (SqlException)
+            {
+
+                Console.WriteLine("Failed to log request!!!"); ;
             }
             catch (Exception)
             {
-
-                Console.WriteLine($" Vendor {transaction.UtilityCode} does not exist");
+                Console.WriteLine("GENERAL ERROR AT PEGPAY!!!");
             }
+            
         }
     }
 }

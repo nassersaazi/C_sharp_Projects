@@ -19,7 +19,7 @@ namespace sampleTDDAppLibrary.Logic
         protected BusinessLogic bll = new BusinessLogic();
         protected PhoneValidator pv = new PhoneValidator();
 
-        protected bool  CheckForEmptyProperties(NWSCTransaction trans)
+        protected bool  CheckForEmptyProperties(ITransaction trans)
         {
             if (trans.CustName == null || trans.CustName.Trim().Equals(""))
             {
@@ -79,16 +79,9 @@ namespace sampleTDDAppLibrary.Logic
         {
 
         }
-        public virtual PostResponse pay(NWSCTransaction tran)
-        {
-            return resp;
-        }
-        public virtual PostResponse pay(DSTVTransaction tran)
-        {
-            return resp;
-            //throw new NotImplementedException();
-        }
-        public bool isSignatureValid(Transaction trans)
+       
+        
+        public bool isSignatureValid(ITransaction trans)
         {
             Signature sign = new Signature();
             return sign.VerifySignature(trans);
@@ -149,7 +142,7 @@ namespace sampleTDDAppLibrary.Logic
             throw new NotImplementedException();
         }
 
-        public bool IsduplicateVendorRef(Transaction trans)
+        public bool IsduplicateVendorRef(ITransaction trans)
         {
             bool ret = false;
             DatabaseHandler dp = new DatabaseHandler();
@@ -165,7 +158,7 @@ namespace sampleTDDAppLibrary.Logic
             return ret;
         }
 
-        public bool IsValidReversalStatus(Transaction trans)
+        public bool IsValidReversalStatus(ITransaction trans)
         {
             if (trans.Reversal == null)
             {
@@ -188,7 +181,7 @@ namespace sampleTDDAppLibrary.Logic
 
         
 
-        protected bool ReverseAmountsMatch(Transaction trans)
+        protected bool ReverseAmountsMatch(ITransaction trans)
         {
             DatabaseHandler dp = new DatabaseHandler();
             if (trans.Reversal.Equals("0"))
@@ -213,7 +206,7 @@ namespace sampleTDDAppLibrary.Logic
             }
         }
 
-        protected bool HasOriginalEntry(Transaction trans)
+        protected bool HasOriginalEntry(ITransaction trans)
         {
             DatabaseHandler dp = new DatabaseHandler();
             if (trans.Reversal.Equals("0"))
@@ -228,7 +221,7 @@ namespace sampleTDDAppLibrary.Logic
             }
         }
 
-        protected string GetReversalState(Transaction trans)
+        protected string GetReversalState(ITransaction trans)
         {
             string res = "";
             if (trans.Reversal != null)
@@ -244,7 +237,7 @@ namespace sampleTDDAppLibrary.Logic
 
         
 
-        protected bool IsduplicateCustPayment(Transaction trans)
+        protected bool IsduplicateCustPayment(ITransaction trans)
         {
             if (trans.VendorCode.Trim().ToUpper() == "MTN")
             {

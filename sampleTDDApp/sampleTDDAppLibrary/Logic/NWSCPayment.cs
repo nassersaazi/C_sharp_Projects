@@ -9,10 +9,11 @@ using System.Web;
 
 namespace sampleTDDAppLibrary.Logic
 {
-    public class NWSCPayment : Payment,ITransactionValidity
+    public class NWSCPayment : Payment,ITransactionValidity,IPayment
     {
-        public override PostResponse pay(NWSCTransaction trans)
+        public PostResponse pay(ITransaction trans)
         {
+           
             if (trans.CustomerTel == null)
             {
                 trans.CustomerTel = "";
