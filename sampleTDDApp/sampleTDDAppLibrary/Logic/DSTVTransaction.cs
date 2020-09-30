@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace sampleTDDAppLibrary.Logic
 {
-    public class DSTVTransaction
+    public class DSTVTransaction : Transaction
     {
+        public string UtilityCode;
+        public string PaymentType;
+
+        public DSTVTransaction()
+        {
+
+        }
     }
 }

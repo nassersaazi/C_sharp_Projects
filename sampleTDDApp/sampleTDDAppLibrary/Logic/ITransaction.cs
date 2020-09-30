@@ -19,7 +19,7 @@ namespace sampleTDDAppLibrary.Logic
         string Password { get; set; }
         string Teller { get; set; }
         string Reversal { get; set; }
-        string ReversedTrans { get; set; }
+        string Area { get; set; }
         string Offline { get; set; }
         string UtilityCode { get; set; }
         string PaymentDate { get; set; }
@@ -29,9 +29,8 @@ namespace sampleTDDAppLibrary.Logic
         string Email { get; set; }
         string transactionID { get; set; }
         string Tin { get; set; }
-        string Area { get; set; }
-        string CustomerType { get; set; }
         string TranIdToReverse { get; set; }
-       
+        string CustomerType { get; set; }
+
     }
 }

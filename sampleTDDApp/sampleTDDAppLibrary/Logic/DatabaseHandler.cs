@@ -111,7 +111,7 @@ namespace sampleTDDAppLibrary.Logic
         }
 
 
-        internal string PostTransaction(ITransaction trans, string utilityCode)
+        internal string PostTransaction(NWSCTransaction trans, string utilityCode)
         {
             string receiptNo = "";
             try
@@ -256,6 +256,34 @@ namespace sampleTDDAppLibrary.Logic
                 throw ex;
             }
             return blacklisted;
+        }
+
+        internal string PostPayTvTransaction(Transaction trans, string utilityCode)
+        {
+            string receiptNo = "";
+            try
+            {
+                if (string.IsNullOrEmpty(trans.Tin))
+                {
+                    trans.Tin = "";
+                }
+                string format = "dd/MM/yyyy";
+                DateTime payDate = DateTime.ParseExact(trans.PaymentDate, format, CultureInfo.InvariantCulture);
+                object[] parameters ={trans.CustRef, trans.CustName, trans.CustomerType, trans.CustomerTel, trans.Area, trans.Tin, trans.TransactionAmount, ""+payDate,
+                    "" +DateTime.Now,trans.TransactionType, trans.PaymentType, trans.VendorTransactionRef, trans.Narration,
+                ""+false, trans.VendorCode, trans.Teller, ""+false/*bool.Parse(trans.Reversal)*/, ""+false, ""+false/*bool.Parse(trans.Offline)*/, utilityCode, "", ""+false};
+                command = pegpaydbase.GetStoredProcCommand("InsertReceivedTransactions", parameters);
+                DataTable dt = pegpaydbase.ExecuteDataSet(command).Tables[0];
+                if (dt.Rows.Count != 0)
+                {
+                    receiptNo = dt.Rows[0][0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return receiptNo;
         }
 
         internal bool IsChequeBlacklisted(ITransaction trans)

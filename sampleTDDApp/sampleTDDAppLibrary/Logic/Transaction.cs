@@ -2,30 +2,20 @@
 
 namespace sampleTDDAppLibrary.Logic
 {
-    public class Transaction : ITransaction
+    public class Transaction: ITransaction
     {
         private string chequeNumber, narration, custRef, custName, customerTel, vendorTransactionRef,
             transactionType, vendorCode, password, teller, reversal, reversedTrans, offline, utilityCode,
-            paymentDate, transactionAmount, digitalSignature, telephone, email, TransactionID, tin,customerType,area;
+            paymentDate, transactionAmount, digitalSignature, telephone, email, TransactionID, tin;
 
         public string Tin
         {
             get { return tin; }
             set { tin = value; }
         }
-        public string CustomerType
-        {
-            get
-            {
-                return customerType;
-            }
-            set
-            {
-                customerType = value;
-            }
-        }
+        public string CustomerType { get; set; }
         public string PaymentType = "";
-        
+        public string Area { get; set; }
         public string chargeType;
         private double pegpayCharge;
 
@@ -273,33 +263,5 @@ namespace sampleTDDAppLibrary.Logic
                 chargeType = value;
             }
         }
-
-        public string ReversedTrans
-        {
-            get
-            {
-                return reversedTrans;
-            }
-
-            set
-            {
-                reversedTrans = value;
-            }
-        }
-
-        public string Area
-        {
-            get
-            {
-                return area;
-            }
-
-            set
-            {
-                area = value;
-            }
-        }
-
-       
     }
 }

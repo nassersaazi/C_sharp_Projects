@@ -12,14 +12,16 @@ using System.Xml.Serialization;
 
 namespace sampleTDDAppLibrary.Logic
 {
-    public abstract class Payment : IVendorUtilityAccess
+    public abstract class Payment : IVendorUtilityAccess, ITransactionValidity
     {
         public PostResponse resp = new PostResponse();
         protected DatabaseHandler dp = new DatabaseHandler();
         protected BusinessLogic bll = new BusinessLogic();
         protected PhoneValidator pv = new PhoneValidator();
 
-        protected bool  CheckForEmptyProperties(ITransaction trans)
+
+
+        protected bool  CheckForEmptyProperties(Transaction trans)
         {
             if (trans.CustName == null || trans.CustName.Trim().Equals(""))
             {

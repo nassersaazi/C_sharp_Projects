@@ -54,7 +54,7 @@ namespace sampleTDDAppLibrary.Logic
 
             if (status == "0")
             {
-                resp.PegPayPostId = dp.PostTransaction(trans, "NWSC");
+                resp.PegPayPostId = dp.PostTransaction((NWSCTransaction)trans, "NWSC");
                 resp.StatusCode = "0";
                 resp.StatusDescription = dp.GetStatusDescr(resp.StatusCode);
             }

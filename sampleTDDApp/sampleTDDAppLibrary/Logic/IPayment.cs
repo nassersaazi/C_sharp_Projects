@@ -9,5 +9,6 @@ namespace sampleTDDAppLibrary.Logic
     public interface IPayment
     {
         PostResponse pay(ITransaction tran);
+
     }
 }
