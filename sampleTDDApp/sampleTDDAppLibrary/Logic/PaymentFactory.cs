@@ -16,8 +16,8 @@ namespace sampleTDDAppLibrary.Logic
             {
                 case "NWSC":
                     return new NWSCPayment();
-                case "DSTV":
-                    return new DSTVPayment();
+                //case "DSTV":
+                //    return new DSTVPayment();
                 default:
                     return null;
             }

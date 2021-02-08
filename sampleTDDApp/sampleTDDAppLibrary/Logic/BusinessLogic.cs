@@ -5,29 +5,9 @@ namespace sampleTDDAppLibrary.Logic
 {
     public class BusinessLogic
     {
-        public bool IsNumeric(string amount)
-        {
+        
 
-            if (amount.Equals("0"))
-            {
-                return false;
-            }
-            else
-            {
-                double amt = double.Parse(amount);
-                amount = amt.ToString();
-                float Result;
-                return float.TryParse(amount, out Result);
-            }
-        }
-
-        public bool IsValidDate(string paymentDate)
-        {
-            DateTime date;
-            string format = "dd/MM/yyyy";
-            return DateTime.TryParseExact(paymentDate, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
-
-        }
+        
 
         public string EncryptString(string ClearText)
         {

@@ -286,6 +286,32 @@ namespace sampleTDDAppLibrary.Logic
             return receiptNo;
         }
 
+        internal bool ReverseAmountsMatch(ITransaction trans)
+        {
+            DatabaseHandler dp = new DatabaseHandler();
+            if (trans.Reversal.Equals("0"))
+            {
+                return true;
+            }
+            else
+            {
+                DataTable dt = dp.GetOriginalVendorRef(trans);
+                if (dt.Rows.Count > 0)
+                {
+                    double amount = double.Parse(trans.TransactionAmount);
+                    double amountToreverse = double.Parse(dt.Rows[0]["TranAmount"].ToString());
+                    double total = amountToreverse + amount;
+                    return total.Equals(0) ? true : false;
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+
         internal bool IsChequeBlacklisted(ITransaction trans)
         {
 

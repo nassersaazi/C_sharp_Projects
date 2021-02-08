@@ -24,25 +24,37 @@ namespace MerchantListenerLibrary.Logic
             listener.Start();
             while (true)
             {
+                // var worker1 = new Thread(() => DoWork(listener));
+                //var worker2 = new Thread(() => DoWork(listener));
+                //var worker3 = new Thread(() => DoWork(listener));
+                //worker1.Start();
+                //worker2.Start();
+                //worker3.Start();
+                DoWork(listener);
 
-                string timeStamp = DateTime.Now.ToString("YYYYMMddHHss");
-                Console.WriteLine("Listening for Http Request.........");
 
-                try
-                {
-                    HttpListenerContext context = listener.GetContext();
-                    string _custIP = context.Request.RemoteEndPoint.ToString();
-                    // Worker = new Thread(new ParameterizedThreadStart(ProcessThread));
-                    // Worker.Start(context);
-                    ProcessThread(context);
-                }
-                catch (Exception ex)
-                {
-                    MethodBase methodBase = MethodBase.GetCurrentMethod();
-                    string method = methodBase.DeclaringType.Name + "." + methodBase.Name;
-                    bl.LogError("", method, "", "Exception", ex.Message, "");
+            }
+        }
 
-                }
+        public void DoWork(HttpListener listener)
+        {
+            string timeStamp = DateTime.Now.ToString("YYYYMMddHHss");
+            Console.WriteLine("Listening for Http Request.........");
+
+            try
+            {
+                HttpListenerContext context = listener.GetContext();
+                string _custIP = context.Request.RemoteEndPoint.ToString();
+                //Worker = new Thread(new ParameterizedThreadStart(ProcessThread));
+                //Worker.Start();
+                ProcessThread(context);
+            }
+            catch (Exception ex)
+            {
+                MethodBase methodBase = MethodBase.GetCurrentMethod();
+                string method = methodBase.DeclaringType.Name + "." + methodBase.Name;
+                bl.LogError("", method, "", "Exception", ex.Message, "");
+
             }
         }
 
