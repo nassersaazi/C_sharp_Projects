@@ -1,0 +1,6 @@
+E:\nasser\dstv\206\DSTV206ProcessorConsole\DSTV206ProcessorConsole\bin\Debug\DSTV206ProcessorConsole.exe.config
+E:\nasser\dstv\206\DSTV206ProcessorConsole\DSTV206ProcessorConsole\bin\Debug\DSTV206ProcessorConsole.exe
+E:\nasser\dstv\206\DSTV206ProcessorConsole\DSTV206ProcessorConsole\bin\Debug\DSTV206ProcessorConsole.pdb
+E:\nasser\dstv\206\DSTV206ProcessorConsole\DSTV206ProcessorConsole\obj\Debug\DSTV206ProcessorConsole.csprojResolveAssemblyReference.cache
+E:\nasser\dstv\206\DSTV206ProcessorConsole\DSTV206ProcessorConsole\obj\Debug\DSTV206ProcessorConsole.exe
+E:\nasser\dstv\206\DSTV206ProcessorConsole\DSTV206ProcessorConsole\obj\Debug\DSTV206ProcessorConsole.pdb
