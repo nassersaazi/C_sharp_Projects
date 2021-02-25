@@ -1,0 +1,14 @@
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\DSTVListener.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\log4net.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\DSTVListener.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\obj\Debug\LiveDstvListenerService.ProjectInstaller.resources
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\obj\Debug\LiveDstvListenerService.csproj.GenerateResource.Cache
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\obj\Debug\LiveDstvListenerService.exe
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\obj\Debug\LiveDstvListenerService.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe.config
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.pdb

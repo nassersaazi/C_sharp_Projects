@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DstvMSQProcessor", "UtilMSQProcessor\DstvMSQProcessor.csproj", "{45B28CF0-E699-42D2-8DA3-88E44A83B8A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilMSQService", "UtilMSQService\UtilMSQService.csproj", "{4732D318-5D04-4AD1-A0D7-2BBDD3EF74AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{3429D1DA-CE79-4358-A9AE-EA8D08B80684}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45B28CF0-E699-42D2-8DA3-88E44A83B8A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B28CF0-E699-42D2-8DA3-88E44A83B8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B28CF0-E699-42D2-8DA3-88E44A83B8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B28CF0-E699-42D2-8DA3-88E44A83B8A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4732D318-5D04-4AD1-A0D7-2BBDD3EF74AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4732D318-5D04-4AD1-A0D7-2BBDD3EF74AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4732D318-5D04-4AD1-A0D7-2BBDD3EF74AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4732D318-5D04-4AD1-A0D7-2BBDD3EF74AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3429D1DA-CE79-4358-A9AE-EA8D08B80684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3429D1DA-CE79-4358-A9AE-EA8D08B80684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3429D1DA-CE79-4358-A9AE-EA8D08B80684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3429D1DA-CE79-4358-A9AE-EA8D08B80684}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

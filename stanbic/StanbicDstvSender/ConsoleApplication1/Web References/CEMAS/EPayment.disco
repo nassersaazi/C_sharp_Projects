@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://154.72.196.76:8090/PegPayInterface/EPayment.asmx?wsdl" docRef="https://154.72.196.76:8090/PegPayInterface/EPayment.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://154.72.196.76:8090/PegPayInterface/EPayment.asmx" xmlns:q1="http://cemasinterface/" binding="q1:EPaymentSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://154.72.196.76:8090/PegPayInterface/EPayment.asmx" xmlns:q2="http://cemasinterface/" binding="q2:EPaymentSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

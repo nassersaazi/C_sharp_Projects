@@ -1,0 +1,26 @@
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.dll.config
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.pdb
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\obj\Debug\UtilReqSender.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\UtilReqSender\obj\Debug\UtilReqSender.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.dll.config
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\UtilReqSender\bin\Debug\log4net.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\UtilReqSender\bin\Debug\log4net.xml
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\UtilReqSender\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\UtilReqSender\obj\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\UtilReqSender\obj\Debug\UtilReqSender.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.dll.config
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\bin\Debug\UtilReqSender.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\bin\Debug\log4net.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\obj\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\obj\Debug\UtilReqSender.pdb

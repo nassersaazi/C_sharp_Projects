@@ -1,0 +1,16 @@
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\bin\Debug\UtilReqSender.dll.config
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\bin\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\bin\Debug\UtilReqSender.pdb
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\obj\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\UtilityRequestSender\obj\Debug\UtilReqSender.pdb
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\UtilityRequestSender\bin\Debug\UtilReqSender.dll.config
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\UtilityRequestSender\bin\Debug\UtilReqSender.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\UtilityRequestSender\bin\Debug\UtilReqSender.pdb
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\UtilityRequestSender\bin\Debug\log4net.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\UtilityRequestSender\bin\Debug\log4net.xml
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\UtilityRequestSender\obj\Debug\UtilReqSender.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\UtilityRequestSender\obj\Debug\UtilReqSender.pdb

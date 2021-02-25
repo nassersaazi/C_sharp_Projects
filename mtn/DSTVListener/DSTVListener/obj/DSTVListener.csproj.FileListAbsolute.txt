@@ -1,0 +1,20 @@
+E:\PePay\DSTVListener\DSTVListener\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\DSTVListener.exe
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\DSTVListener.pdb
+E:\PePay\DSTVListener\DSTVListener\obj\Debug\DSTVListener.exe
+E:\PePay\DSTVListener\DSTVListener\obj\Debug\DSTVListener.pdb
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\DSTVListener.exe.config
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\Encryption.dll
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\log4net.dll
+E:\PePay\DSTVListener\DSTVListener\bin\Debug\log4net.xml
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\DSTVListener.dll.config
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\DSTVListener.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\DSTVListener.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\log4net.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\obj\Debug\DSTVListener.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\obj\Debug\DSTVListener.pdb

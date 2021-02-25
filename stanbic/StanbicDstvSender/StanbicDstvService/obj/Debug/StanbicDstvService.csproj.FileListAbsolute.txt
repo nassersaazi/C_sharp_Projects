@@ -1,0 +1,17 @@
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe.config
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.pdb
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\ConsoleApplication1.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\log4net.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\ConsoleApplication1.pdb
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\obj\Debug\StanbicDstvService.csprojResolveAssemblyReference.cache
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\obj\Debug\StanbicDstvService.ProjectInstaller.resources
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\obj\Debug\StanbicDstvService.csproj.GenerateResource.Cache
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\obj\Debug\StanbicDstvService.exe
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\obj\Debug\StanbicDstvService.pdb

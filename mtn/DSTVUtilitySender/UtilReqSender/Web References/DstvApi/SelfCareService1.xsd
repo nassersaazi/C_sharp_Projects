@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://DataContracts.multichoice.co.za/SelfCare" elementFormDefault="qualified" targetNamespace="http://DataContracts.multichoice.co.za/SelfCare" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd2" namespace="http://datacontracts.multichoice.co.za/SelfCare" />
+  <xs:complexType name="CreateProfileRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://datacontracts.multichoice.co.za/SelfCare" minOccurs="0" name="Profile" nillable="true" type="q1:Profile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateProfileRequest" nillable="true" type="tns:CreateProfileRequest" />
+  <xs:complexType name="CreateProfileResponse">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://datacontracts.multichoice.co.za/SelfCare" minOccurs="0" name="Result" type="q2:TransactionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateProfileResponse" nillable="true" type="tns:CreateProfileResponse" />
+</xs:schema>

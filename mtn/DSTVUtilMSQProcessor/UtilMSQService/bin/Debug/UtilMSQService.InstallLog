@@ -1,0 +1,52 @@
+﻿Installing assembly 'E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.InstallLog
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+Installing service LiveDstvMSQService...
+Service LiveDstvMSQService has been successfully installed.
+Creating EventLog source LiveDstvMSQService in log Application...
+Committing assembly 'E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.InstallLog
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+Installing assembly 'E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+Installing service LiveDstvMSQService...
+Service LiveDstvMSQService has been successfully installed.
+Creating EventLog source LiveDstvMSQService in log Application...
+Committing assembly 'E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+Installing assembly 'E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+Installing service LiveDstvMSQService...
+Creating EventLog source LiveDstvMSQService in log Application...
+Rolling back assembly 'E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+Restoring event log to previous state for source LiveDstvMSQService.
+Installing assembly 'E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+Installing service LiveDstvMSQService...
+Creating EventLog source LiveDstvMSQService in log Application...
+Rolling back assembly 'E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+Restoring event log to previous state for source LiveDstvMSQService.

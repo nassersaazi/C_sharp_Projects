@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd4" filename="SelfCareService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd3" filename="SelfCareService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd8" filename="SelfCareService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://54.72.34.166//VendorSelfCare/SelfCareService.svc?wsdl" filename="SelfCareService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd0" filename="SelfCareService2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd5" filename="SelfCareService3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?wsdl=wsdl1" filename="SelfCareService0.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd6" filename="SelfCareService4.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd2" filename="SelfCareService5.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd1" filename="SelfCareService6.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?wsdl=wsdl0" filename="SelfCareService1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd7" filename="SelfCareService7.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

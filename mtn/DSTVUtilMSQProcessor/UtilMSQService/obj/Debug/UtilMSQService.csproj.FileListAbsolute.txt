@@ -1,0 +1,15 @@
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\log4net.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQProcessor.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe.config
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\log4net.xml
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQProcessor.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.csprojResolveAssemblyReference.cache
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.ProjectInstaller.resources
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.csproj.GenerateResource.Cache
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.exe
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.pdb

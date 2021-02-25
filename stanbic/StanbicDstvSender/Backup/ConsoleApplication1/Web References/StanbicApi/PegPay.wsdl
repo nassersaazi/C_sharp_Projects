@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://PegPayPaymentsApi/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://PegPayPaymentsApi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://PegPayPaymentsApi/">
+      <s:element name="GetServerStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStbcVasCustAcc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="tns:QueryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QueryRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueryField10" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStbcVasCustAccResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStbcVasCustAccResult" type="tns:VasResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VasResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Accounts" type="tns:ArrayOfCustomerAccount" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomerAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerAccount" nillable="true" type="tns:CustomerAccount" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsDefault" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegisterMerchant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:TransactionRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransactionRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PostField1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField21" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField25" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField26" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField27" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField28" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField29" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField30" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField31" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField32" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField33" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostField34" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegisterMerchantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterMerchantResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseField13" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReverseTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:TransactionRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReverseTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReverseTransactionResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateVASCustomerAcc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="tns:QueryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateVASCustomerAccResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateVASCustomerAccResult" type="tns:VasResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonitoringService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="tns:QueryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMonitoringServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMonitoringServiceResult" type="tns:MonitoringServiceResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MonitoringServiceResp">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Tableresp">
+                <s:complexType>
+                  <s:sequence>
+                    <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                    <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="tns:QueryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionDetailsResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuerySchoolAccountDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="tns:QueryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuerySchoolAccountDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuerySchoolAccountDetailsResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="tns:QueryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCustomerDetailsResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:TransactionRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostTransactionResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAgencyTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:TransactionRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAgencyTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostAgencyTransactionResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostSchoolFeesTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:TransactionRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostSchoolFeesTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostSchoolFeesTransactionResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlexiPayStatements">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="statementRequest" type="tns:FlexiPayStatementRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FlexiPayStatementRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schoolCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFlexiPayStatementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlexiPayStatementsResult" type="tns:FlexiPayStatementResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FlexiPayStatementResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="statusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="openBalance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionList" type="tns:ArrayOfFlexiPayStatementTxn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlexiPayStatementTxn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlexiPayStatementTxn" nillable="true" type="tns:FlexiPayStatementTxn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlexiPayStatementTxn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="narratin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="partTranType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="closingBalance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reference" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostPrePaidTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:TransactionRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostPrePaidTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostPrePaidTransactionResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServerStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStbcVasCustAccSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStbcVasCustAcc" />
+  </wsdl:message>
+  <wsdl:message name="GetStbcVasCustAccSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStbcVasCustAccResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterMerchantSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterMerchant" />
+  </wsdl:message>
+  <wsdl:message name="RegisterMerchantSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ReverseTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ReverseTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateVASCustomerAccSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateVASCustomerAcc" />
+  </wsdl:message>
+  <wsdl:message name="ValidateVASCustomerAccSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateVASCustomerAccResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMonitoringServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMonitoringService" />
+  </wsdl:message>
+  <wsdl:message name="GetMonitoringServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMonitoringServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuerySchoolAccountDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QuerySchoolAccountDetails" />
+  </wsdl:message>
+  <wsdl:message name="QuerySchoolAccountDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QuerySchoolAccountDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="QueryCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostAgencyTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostAgencyTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostAgencyTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostAgencyTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostSchoolFeesTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostSchoolFeesTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostSchoolFeesTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostSchoolFeesTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlexiPayStatementsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlexiPayStatements" />
+  </wsdl:message>
+  <wsdl:message name="GetFlexiPayStatementsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlexiPayStatementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostPrePaidTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostPrePaidTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostPrePaidTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostPrePaidTransactionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PegPaySoap">
+    <wsdl:operation name="GetServerStatus">
+      <wsdl:input message="tns:GetServerStatusSoapIn" />
+      <wsdl:output message="tns:GetServerStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStbcVasCustAcc">
+      <wsdl:input message="tns:GetStbcVasCustAccSoapIn" />
+      <wsdl:output message="tns:GetStbcVasCustAccSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMerchant">
+      <wsdl:input message="tns:RegisterMerchantSoapIn" />
+      <wsdl:output message="tns:RegisterMerchantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <wsdl:input message="tns:ReverseTransactionSoapIn" />
+      <wsdl:output message="tns:ReverseTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateVASCustomerAcc">
+      <wsdl:input message="tns:ValidateVASCustomerAccSoapIn" />
+      <wsdl:output message="tns:ValidateVASCustomerAccSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoringService">
+      <wsdl:input message="tns:GetMonitoringServiceSoapIn" />
+      <wsdl:output message="tns:GetMonitoringServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:input message="tns:GetTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:GetTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuerySchoolAccountDetails">
+      <wsdl:input message="tns:QuerySchoolAccountDetailsSoapIn" />
+      <wsdl:output message="tns:QuerySchoolAccountDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCustomerDetails">
+      <wsdl:input message="tns:QueryCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:QueryCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostTransaction">
+      <wsdl:input message="tns:PostTransactionSoapIn" />
+      <wsdl:output message="tns:PostTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyTransaction">
+      <wsdl:input message="tns:PostAgencyTransactionSoapIn" />
+      <wsdl:output message="tns:PostAgencyTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSchoolFeesTransaction">
+      <wsdl:input message="tns:PostSchoolFeesTransactionSoapIn" />
+      <wsdl:output message="tns:PostSchoolFeesTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlexiPayStatements">
+      <wsdl:input message="tns:GetFlexiPayStatementsSoapIn" />
+      <wsdl:output message="tns:GetFlexiPayStatementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostPrePaidTransaction">
+      <wsdl:input message="tns:PostPrePaidTransactionSoapIn" />
+      <wsdl:output message="tns:PostPrePaidTransactionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PegPaySoap" type="tns:PegPaySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServerStatus">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetServerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStbcVasCustAcc">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetStbcVasCustAcc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMerchant">
+      <soap:operation soapAction="http://PegPayPaymentsApi/RegisterMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <soap:operation soapAction="http://PegPayPaymentsApi/ReverseTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateVASCustomerAcc">
+      <soap:operation soapAction="http://PegPayPaymentsApi/ValidateVASCustomerAcc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoringService">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetMonitoringService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuerySchoolAccountDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QuerySchoolAccountDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCustomerDetails">
+      <soap:operation soapAction="http://PegPayPaymentsApi/QueryCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTransaction">
+      <soap:operation soapAction="http://PegPayPaymentsApi/PostTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyTransaction">
+      <soap:operation soapAction="http://PegPayPaymentsApi/PostAgencyTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSchoolFeesTransaction">
+      <soap:operation soapAction="http://PegPayPaymentsApi/PostSchoolFeesTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlexiPayStatements">
+      <soap:operation soapAction="http://PegPayPaymentsApi/GetFlexiPayStatements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostPrePaidTransaction">
+      <soap:operation soapAction="http://PegPayPaymentsApi/PostPrePaidTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PegPaySoap12" type="tns:PegPaySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServerStatus">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetServerStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStbcVasCustAcc">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetStbcVasCustAcc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMerchant">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/RegisterMerchant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/ReverseTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateVASCustomerAcc">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/ValidateVASCustomerAcc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoringService">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetMonitoringService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuerySchoolAccountDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QuerySchoolAccountDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCustomerDetails">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/QueryCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTransaction">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/PostTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyTransaction">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/PostAgencyTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSchoolFeesTransaction">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/PostSchoolFeesTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlexiPayStatements">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/GetFlexiPayStatements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostPrePaidTransaction">
+      <soap12:operation soapAction="http://PegPayPaymentsApi/PostPrePaidTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PegPay">
+    <wsdl:port name="PegPaySoap" binding="tns:PegPaySoap">
+      <soap:address location="https://196.8.208.117/liveleveloneapi/PegPay.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PegPaySoap12" binding="tns:PegPaySoap12">
+      <soap12:address location="https://196.8.208.117/liveleveloneapi/PegPay.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

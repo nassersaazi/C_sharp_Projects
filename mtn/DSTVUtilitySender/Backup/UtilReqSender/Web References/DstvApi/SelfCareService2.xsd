@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://DataContracts.DMG.MultiChoice.Com/CustomerCare" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://DataContracts.DMG.MultiChoice.Com/CustomerCare" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://prodlive-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="XtraviewRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Action" type="tns:XtraviewActions" />
+      <xs:element minOccurs="0" name="CustomerNo" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="FirstDecoder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstSmartcard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryDecoder" nillable="true" type="tns:DecoderType" />
+      <xs:element minOccurs="0" name="SecondDecoder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondSmartcard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmartCardNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XtraviewRequest" nillable="true" type="tns:XtraviewRequest" />
+  <xs:simpleType name="XtraviewActions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ActivateXtraview">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ReconnectXtraview">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DisconnectXtraview">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="XtraviewActions" nillable="true" type="tns:XtraviewActions" />
+  <xs:simpleType name="DecoderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FirstDecoder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SecondDecoder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DecoderType" nillable="true" type="tns:DecoderType" />
+  <xs:complexType name="AccountDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AHVCompliance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNumber" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="AuditReferenceNumber" type="ser:guid" />
+      <xs:element minOccurs="0" name="BankAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DebitOrderDay" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="MethodOfPayment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MethodOfPaymentDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MethodOfPaymentUserKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextInvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Number" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountDetails" nillable="true" type="tns:AccountDetails" />
+  <xs:complexType name="ValidateCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="invoicePeriod" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateCustomer" nillable="true" type="tns:ValidateCustomer" />
+  <xs:complexType name="ValidateDeviceNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="invoicePeriod" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateDeviceNumber" nillable="true" type="tns:ValidateDeviceNumber" />
+</xs:schema>

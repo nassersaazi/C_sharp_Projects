@@ -1,0 +1,65 @@
+﻿Installing assembly 'E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+   logfile = E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+Installing service LiveStanbicDstvSenderService...
+Service LiveStanbicDstvSenderService has been successfully installed.
+Creating EventLog source LiveStanbicDstvSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+   logfile = E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+Installing assembly 'E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+   logfile = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+Installing service LiveStanbicDstvSenderService...
+Service LiveStanbicDstvSenderService has been successfully installed.
+Creating EventLog source LiveStanbicDstvSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+   logfile = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+Installing assembly 'E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   assemblypath = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+   logfile = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+   logtoconsole = 
+Installing service LiveStanbicDstvSenderService...
+Service LiveStanbicDstvSenderService has been successfully installed.
+Creating EventLog source LiveStanbicDstvSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   assemblypath = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+   logfile = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+   logtoconsole = 
+Installing assembly 'E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+   assemblypath = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+Installing service LiveStanbicDstvSenderService...
+Service LiveStanbicDstvSenderService has been successfully installed.
+Creating EventLog source LiveStanbicDstvSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+   assemblypath = E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+Installing assembly 'E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe
+Installing service LiveStanbicDstvSenderService...
+Service LiveStanbicDstvSenderService has been successfully installed.
+Creating EventLog source LiveStanbicDstvSenderService in log Application...
+Committing assembly 'E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\StanbicDstvService\bin\Debug\StanbicDstvService.exe

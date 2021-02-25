@@ -1,0 +1,34 @@
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Tester.exe.config
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Tester.exe
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Tester.pdb
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\StartimesProcessor.dll
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.Unity.dll
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\StartimesProcessor.pdb
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.Unity.pdb
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\obj\Debug\Tester.exe
+E:\PePay\GenericApi\StarTimes\StartimesUSSDProcessor\Tester\obj\Debug\Tester.pdb
+E:\PePay\StarTimes\StarTimes - Copy\StartimesUSSDProcessor\Tester\bin\Debug\Tester.exe.config
+E:\PePay\StarTimes\StarTimes - Copy\StartimesUSSDProcessor\Tester\obj\Debug\Tester.exe
+E:\PePay\StarTimes\StarTimes - Copy\StartimesUSSDProcessor\Tester\obj\Debug\Tester.pdb
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\Tester.exe.config
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\Tester.exe
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\Tester.pdb
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\StartimesProcessor.dll
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\Encryption.dll
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\bin\Debug\StartimesProcessor.pdb
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\obj\Debug\Tester.exe
+D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\Tester\obj\Debug\Tester.pdb

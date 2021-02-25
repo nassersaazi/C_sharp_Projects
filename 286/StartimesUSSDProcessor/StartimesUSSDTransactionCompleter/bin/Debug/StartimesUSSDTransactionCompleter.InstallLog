@@ -1,0 +1,13 @@
+﻿Installing assembly 'D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\StartimesUSSDTransactionCompleter\bin\Debug\StartimesUSSDTransactionCompleter.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\StartimesUSSDTransactionCompleter\bin\Debug\StartimesUSSDTransactionCompleter.InstallLog
+   assemblypath = D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\StartimesUSSDTransactionCompleter\bin\Debug\StartimesUSSDTransactionCompleter.exe
+Installing service StartimesUssdTransactionProcessor...
+Service StartimesUssdTransactionProcessor has been successfully installed.
+Creating EventLog source StartimesUssdTransactionProcessor in log Application...
+Committing assembly 'D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\StartimesUSSDTransactionCompleter\bin\Debug\StartimesUSSDTransactionCompleter.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\StartimesUSSDTransactionCompleter\bin\Debug\StartimesUSSDTransactionCompleter.InstallLog
+   assemblypath = D:\USSD\286\LiveStarTimesAirtelListener\StartimesUSSDProcessor\StartimesUSSDTransactionCompleter\bin\Debug\StartimesUSSDTransactionCompleter.exe

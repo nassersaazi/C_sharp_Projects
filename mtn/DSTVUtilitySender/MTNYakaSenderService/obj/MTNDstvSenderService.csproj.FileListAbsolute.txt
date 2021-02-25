@@ -1,0 +1,46 @@
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe.config
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.pdb
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\UtilReqSender.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\UtilReqSender.pdb
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.ProjectInstaller.resources
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.TestMTNYakaSenderService.resources
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNDstvSenderService.csproj.GenerateResource.Cache
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.exe
+E:\PePay\DstvUtilitiiesSender\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe.config
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\log4net.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\log4net.xml
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\bin\Debug\UtilReqSender.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.ProjectInstaller.resources
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.TestMTNYakaSenderService.resources
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNDstvSenderService.csproj.GenerateResource.Cache
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.exe
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender_1\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe.config
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\log4net.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\UtilReqSender.pdb
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.ProjectInstaller.resources
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.TestMTNYakaSenderService.resources
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNDstvSenderService.csproj.GenerateResource.Cache
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.exe
+E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\obj\Debug\MTNYakaSenderService.pdb

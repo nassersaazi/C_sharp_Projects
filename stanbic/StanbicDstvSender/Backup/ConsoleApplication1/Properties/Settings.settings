@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConsoleApplication1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConsoleApplication1_UmemeApi_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://192.5.5.3:8098/umemebillinterface/EPayment.asmx</Value>
+    </Setting>
+    <Setting Name="ConsoleApplication1_NWSCApi_NWSCBillingInterface" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://mail.nwsc.co.ug/waterbillinginterface/NWSCBillingInterface.asmx</Value>
+    </Setting>
+    <Setting Name="ConsoleApplication1_StanbicApi_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://196.8.208.117/liveleveloneapi/PegPay.asmx</Value>
+    </Setting>
+    <Setting Name="ConsoleApplication1_MUKApi_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://196.43.133.113:8005/EpaymentInterface/EPayment.asmx</Value>
+    </Setting>
+    <Setting Name="ConsoleApplication1_ug_ac_kyu_kyupay_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://kyupay.kyu.ac.ug/epay</Value>
+    </Setting>
+    <Setting Name="ConsoleApplication1_DSTVApi_SelfCareService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc</Value>
+    </Setting>
+    <Setting Name="ConsoleApplication1_CEMAS_EPayment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://154.72.196.76:8090/PegPayInterface/EPayment.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

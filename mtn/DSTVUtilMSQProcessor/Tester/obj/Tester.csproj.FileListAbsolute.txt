@@ -1,0 +1,37 @@
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.exe.config
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.exe
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.pdb
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\UtilMSQProcessor.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\UtilMSQProcessor.pdb
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\Tester.exe
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\Tester.pdb
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\UtilMSQProcessor.dll
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\UtilMSQProcessor.pdb
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\Tester.exe
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\Tester.pdb
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.exe.config
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.exe
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.exe.config
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.exe
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Tester.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\log4net.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\UtilMSQProcessor.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\bin\Debug\UtilMSQProcessor.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\Tester.exe
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\Tester\obj\Debug\Tester.pdb

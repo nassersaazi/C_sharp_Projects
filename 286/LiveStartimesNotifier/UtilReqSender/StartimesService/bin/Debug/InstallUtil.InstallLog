@@ -1,0 +1,104 @@
+﻿
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+An exception occurred during the Install phase.
+System.ComponentModel.Win32Exception: The specified service already exists
+
+The Rollback phase of the installation is beginning.
+See the contents of the log file for the E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Rollback phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+An exception occurred during the Install phase.
+System.ComponentModel.Win32Exception: The specified service already exists
+
+The Rollback phase of the installation is beginning.
+See the contents of the log file for the E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Rollback phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the E:\PePay\GenericApi\StartTimes - Test\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\StartTimes - Test\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the E:\PePay\GenericApi\StartTimes - Test\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\StartTimes - Test\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe assembly's progress.
+The file is located at E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.

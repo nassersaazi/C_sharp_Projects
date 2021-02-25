@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://faultcontracts.multichoice.co.za/SelfCare" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://faultcontracts.multichoice.co.za/SelfCare" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://prod-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GeneralFaultContract">
+    <xs:sequence>
+      <xs:element name="Id" type="ser:guid" />
+      <xs:element name="ExceptionCode" nillable="true" type="xs:string" />
+      <xs:element name="ExceptionName" nillable="true" type="xs:string" />
+      <xs:element name="Message" nillable="true" type="xs:string" />
+      <xs:element name="ExceptionSeverity" nillable="true" type="xs:string" />
+      <xs:element name="CustomerCareReferenceId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneralFaultContract" nillable="true" type="tns:GeneralFaultContract" />
+  <xs:complexType name="SecurityFaultContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityFaultContract" nillable="true" type="tns:SecurityFaultContract" />
+  <xs:complexType name="ValidationFaultContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationFaultContract" nillable="true" type="tns:ValidationFaultContract" />
+  <xs:complexType name="UpdateFaultContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Reasons" nillable="true" type="tns:FailureReasons" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateFaultContract" nillable="true" type="tns:UpdateFaultContract" />
+  <xs:complexType name="FailureReasons">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FailureReasons" nillable="true" type="tns:FailureReasons" />
+</xs:schema>

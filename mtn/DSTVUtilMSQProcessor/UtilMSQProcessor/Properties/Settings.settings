@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UtilMSQProcessor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UtilMSQProcessor_PegPayLevel1Api_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:8896/LivePegPayApi_1/PegPay.asmx</Value>
+    </Setting>
+    <Setting Name="UtilMSQProcessor_MailApi_Messenger" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.55.21:5099/MailApi/Messenger.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

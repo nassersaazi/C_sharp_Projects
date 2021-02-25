@@ -1,0 +1,26 @@
+﻿Installing assembly 'E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.InstallLog
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe
+Installing service LiveDstvListenerService...
+Service LiveDstvListenerService has been successfully installed.
+Creating EventLog source LiveDstvListenerService in log Application...
+Committing assembly 'E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.InstallLog
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe
+Installing assembly 'E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe
+Installing service LiveDstvListenerService...
+Service LiveDstvListenerService has been successfully installed.
+Creating EventLog source LiveDstvListenerService in log Application...
+Committing assembly 'E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\LiveDstvListenerService\bin\Debug\LiveDstvListenerService.exe

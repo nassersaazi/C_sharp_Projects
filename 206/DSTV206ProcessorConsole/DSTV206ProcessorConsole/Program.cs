@@ -13,6 +13,10 @@ namespace DSTV206ProcessorConsole
             // Pick txns from mobile money received where sendToVendor = 1 and Status is SUCCESS
             // Insert the txns in bill payments with Status INSERTED
             // If insertion is successful, update sentToVendor = 1 in mobile money and PegpayTranId to the pegpayId
+
+            // Follow startimes flow to bill payments
+
+            //Test connection to VSC
         }
     }
 }

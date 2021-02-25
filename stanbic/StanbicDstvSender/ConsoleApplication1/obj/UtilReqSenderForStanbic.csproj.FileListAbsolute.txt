@@ -1,0 +1,39 @@
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.dll.config
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.dll
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\log4net.dll
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\log4net.xml
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.dll
+E:\PePay\GenericApi\UtilReqSender\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.dll.config
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.dll
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\log4net.dll
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\log4net.xml
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.dll
+E:\PePay\GenericApi\Stanbic VAS Live\UtilReqSenderForStanbic\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\ConsoleApplication1.dll.config
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\ConsoleApplication1.dll
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\log4net.dll
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\obj\Debug\ConsoleApplication1.dll
+E:\PePay\GenericApi\Stanbic VAS Live\StanbicDstvSender\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

@@ -1,0 +1,13 @@
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\Tester.exe.config
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\Tester.exe
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\Tester.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\DSTVListener.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\log4net.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\DSTVListener.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\bin\Debug\log4net.xml
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\obj\Debug\Tester.exe
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\Tester\obj\Debug\Tester.pdb

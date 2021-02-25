@@ -1,0 +1,7 @@
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\DSTVListener.dll.config
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\DSTVListener.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\DSTVListener.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\log4net.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\bin\Debug\log4net.xml
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\obj\Debug\DSTVListener.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVListener\DSTVListener\obj\Debug\DSTVListener.pdb

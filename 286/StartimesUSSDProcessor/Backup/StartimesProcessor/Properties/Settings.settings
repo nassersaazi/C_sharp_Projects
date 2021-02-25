@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="StartimesProcessor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StartimesProcessor_DbApi_DataAccess" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.55.3:5099/LiveDataAccess/DataAccess.asmx</Value>
+    </Setting>
+    <Setting Name="StartimesProcessor_momo_PegPayTelecomsApi" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://192.168.55.20:8002/LivePegPayTelecomsApi/PegPayTelecomsApi.asmx</Value>
+    </Setting>
+    <Setting Name="StartimesProcessor_LiveGenericApi_PegPay" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://192.168.55.3:8896/LivePegPayApi/PegPay.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,58 @@
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\UtilMSQService.exe.config
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\obj\Debug\UtilMSQService.exe
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\obj\Debug\UtilMSQService.pdb
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\UtilMSQService.exe
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\UtilMSQService.pdb
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\UtilMSQProcessor.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\bin\Debug\UtilMSQProcessor.pdb
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\obj\Debug\UtilMSQService.ProjectInstaller.resources
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor - Copy\UtilMSQService\obj\Debug\UtilMSQService.csproj.GenerateResource.Cache
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe.config
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.pdb
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQProcessor.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQProcessor.pdb
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.ProjectInstaller.resources
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.csproj.GenerateResource.Cache
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.exe
+E:\PePay\GenericApi\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.pdb
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQProcessor.dll
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQProcessor.pdb
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.ProjectInstaller.resources
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.csproj.GenerateResource.Cache
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.exe
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.pdb
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe.config
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+E:\PePay\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQProcessor.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.exe.config
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\log4net.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQProcessor.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\ResolveAssemblyReference.cache
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.ProjectInstaller.resources
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.csproj.GenerateResource.Cache
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.exe
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\obj\Debug\UtilMSQService.pdb
+E:\PePay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQService\bin\Debug\UtilMSQService.pdb

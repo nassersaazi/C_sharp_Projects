@@ -1,0 +1,32 @@
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe.config
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.pdb
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\UtilReqSender.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\UtilReqSender.pdb
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\obj\Debug\StartimesService.csprojResolveAssemblyReference.cache
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\obj\Debug\MTNYakaSenderService.ProjectInstaller.resources
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\obj\Debug\MTNYakaSenderService.StartimesNotifier.resources
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\obj\Debug\StartimesService.csproj.GenerateResource.Cache
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\obj\Debug\MTNYakaSenderService.exe
+E:\PePay\GenericApi\StarTimes\UtilReqSender\StartimesService\obj\Debug\MTNYakaSenderService.pdb
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe.config
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.exe
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\MTNYakaSenderService.pdb
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\UtilReqSender.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\log4net.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\Encryption.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\UtilReqSender.pdb
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\bin\Debug\log4net.xml
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\obj\Debug\StartimesService.csprojResolveAssemblyReference.cache
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\obj\Debug\MTNYakaSenderService.ProjectInstaller.resources
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\obj\Debug\MTNYakaSenderService.StartimesNotifier.resources
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\obj\Debug\StartimesService.csproj.GenerateResource.Cache
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\obj\Debug\MTNYakaSenderService.exe
+E:\PePay\StarTimes\StarTimes - Copy\UtilReqSender\StartimesService\obj\Debug\MTNYakaSenderService.pdb

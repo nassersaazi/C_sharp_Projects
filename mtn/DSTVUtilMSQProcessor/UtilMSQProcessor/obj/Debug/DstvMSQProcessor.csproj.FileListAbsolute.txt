@@ -1,0 +1,12 @@
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\UtilMSQProcessor.dll.config
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\UtilMSQProcessor.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\UtilMSQProcessor.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\Encryption.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\log4net.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\bin\Debug\log4net.xml
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\obj\Debug\UtilMSQProcessor.dll
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\obj\Debug\UtilMSQProcessor.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DSTVMsmqProcessor\UtilMSQProcessor\UtilMSQProcessor\UtilMSQProcessor\obj\Debug\DstvMSQProcessor.csprojResolveAssemblyReference.cache

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="https://154.72.196.76:8090/PegPayInterface/EPayment.asmx?disco" filename="EPayment.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://154.72.196.76:8090/PegPayInterface/EPayment.asmx?wsdl" filename="EPayment.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

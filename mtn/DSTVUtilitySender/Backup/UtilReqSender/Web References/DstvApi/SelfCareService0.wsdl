@@ -1,0 +1,3335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:i0="http://services.multichoice.co.za/SelfCare" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://services.multichoice.co.za/SelfCare" location="http://prodlive-vscservice.mcadmg.com/VendorSelfCare/SelfCareService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="SelfCareBasicEndpoint" type="i0:ISelfCareService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetReasonDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetReasonDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerNumberByDeviceNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerNumberByDeviceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPaymentBySmartCard">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SubmitPaymentBySmartCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSmartQuoteByBasketID">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSmartQuoteByBasketID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleBySlug">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetArticleBySlug" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UpdateFaultContractFault">
+        <soap:fault use="literal" name="UpdateFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignInByCustomerNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SignInByCustomerNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UpdateFaultContractFault">
+        <soap:fault use="literal" name="UpdateFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerCitiesWithPrefix">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetInstallerCitiesWithPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerNamesByCity">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetInstallerNamesByCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerContactDetail">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerContactDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UpdateFaultContractFault">
+        <soap:fault use="literal" name="UpdateFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketStatus">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetBasketStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UpdateFaultContractFault">
+        <soap:fault use="literal" name="UpdateFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveXmlFile">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SaveXmlFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UpdateFaultContractFault">
+        <soap:fault use="literal" name="UpdateFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPaymentReversal">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SubmitPaymentReversal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendSubmitReversalPaymentToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendSubmitReversalPaymentToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSQSDetailsByAgentNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSQSDetailsByAgentNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDueAmountFileDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetDueAmountFileDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetHardwarebyCountry">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetHardwarebyCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAgentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AgentSubmitPayment">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/AgentSubmitPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AgentSubmitPaymentReversal">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/AgentSubmitPaymentReversal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendAgentSubmitReversalPaymentToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendAgentSubmitReversalPaymentToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AgentPaymentConfirmation">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/AgentPaymentConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AgentGetTransactionHistory">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/AgentGetTransactionHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendAgentSubmitPaymentToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendAgentSubmitPaymentToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductListForCity">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetProductListForCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableCurrencies">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAvailableCurrencies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompatibleProductForHardware">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCompatibleProductForHardware" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetPaymentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HasWalletforCountry">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/HasWalletforCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpgradeToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendUpgradeToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendLinkServiceToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendLinkServiceToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExceptionCode">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetExceptionCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCellNumberToInternational">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ConvertCellNumberToInternational" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompatibleProductsbyCustomer">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCompatibleProductsbyCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetBannerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriberInFo">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSubscriberInFo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VendorPaymentTransaction">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/VendorPaymentTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideos">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetVideos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideoCategory">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetVideoCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomerPackage">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ValidateCustomerPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByEmailAddress">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SearchByEmailAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCellPhoneNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SearchByCellPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByPassport">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SearchByPassport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdentityNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SearchByIdentityNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidPVRSmartCards">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetValidPVRSmartCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayAtReferenceNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetPayAtReferenceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMethodOfPayments">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetMethodOfPayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankBranches">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetBankBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/UpdateAccountDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddonProductsForDecSc">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAddonProductsForDecSc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDowngradeProductList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetDowngradeProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Downgrade">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/Downgrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectProducts">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/DisconnectProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomer">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/CreateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddDccProduct">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/AddDccProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIBSAvailability">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/CheckIBSAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureXtraView">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ConfigureXtraView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAccountDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriberWarranty">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSubscriberWarranty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentOptionTypes">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetPaymentOptionTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerOptOutData">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerOptOutData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureCustomerOptOutPref">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/CaptureCustomerOptOutPref" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetPackageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSitemapInfo">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSitemapInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemittanceCountryList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetRemittanceCountryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByProductKey">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetProductsByProductKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClearErrorCodes">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetClearErrorCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentalHistory">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetRentalHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SupportRental">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SupportRental" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsRegisteredForBoxOffice">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/IsRegisteredForBoxOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountType">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAccountType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddSmartCard">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/AddSmartCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileBySmartCard">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetProfileBySmartCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileByCustomerNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetProfileByCustomerNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileByMSISDN">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetProfileByMSISDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Registration">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/Registration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxOfficeTransactionHistory">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetBoxOfficeTransactionHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIBSBalanceAndSC">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetIBSBalanceAndSC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BalanceSync">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/BalanceSync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineRegistration">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/OnlineRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProfile">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/CreateProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuote">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmQuote">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ConfirmQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuote">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ProcessQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessQuoteIbsImport">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ProcessQuoteIbsImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerUpgradeProduct">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerUpgradeProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDowngradeProduct">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerDowngradeProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAddonProduct">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerAddonProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerPrimaryProduct">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerPrimaryProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSmartQuote">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSmartQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SmartQuotePayment">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SmartQuotePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTransactionIdForVendor">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/CreateTransactionIdForVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileChangeHistoryDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetProfileChangeHistoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestPayment">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/RequestPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubscriberLookUp">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SubscriberLookUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SoulsticePaymentConfirmation">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SoulsticePaymentConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCareContactList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerCareContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWalletVendorFieldInfo">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetWalletVendorFieldInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDueAmountandDate">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetDueAmountandDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableProducts">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAvailableProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/UpdateContactDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UpdateFaultContractFault">
+        <soap:fault use="literal" name="UpdateFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestPaymentHistory">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetLatestPaymentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetailsByCustomerNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerDetailsByCustomerNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomer">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ValidateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateDeviceNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ValidateDeviceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetailsByDeviceNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCustomerDetailsByDeviceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallersCitiesByCountry">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetInstallersCitiesByCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReAuthorize">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ReAuthorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddresses">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAddressDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/UpdateAddressDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvince">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetProvince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByProvince">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCityByProvince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuburbByCity">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSuburbByCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateGOtvCustomer">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ActivateGOtvCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsCountry">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/IsCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsCity">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/IsCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesByBusinessUnit">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCountriesByBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesByCountry">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCitiesByCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultProduct">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetDefaultProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticles">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableProductsWithoutChannels">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAvailableProductsWithoutChannels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableProductsWithChannels">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAvailableProductsWithChannels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelListFromProduct">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetChannelListFromProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountrySchemalistbyCountry">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetCountrySchemalistbyCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultConfiguration">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetDefaultConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetPaymentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionHistory">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetTransactionHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFAQList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetFAQList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTransactionDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/InsertTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/UpdateTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetLabelList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestSource">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetRequestSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpgradeProductList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetUpgradeProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrocodeList">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetErrocodeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookup">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallers">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetInstallers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranches">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Logon">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/Logon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UpdateFaultContractFault">
+        <soap:fault use="literal" name="UpdateFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogOnWithReference">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/LogOnWithReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendReAuthorizeToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendReAuthorizeToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateContactToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendUpdateContactToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendActivateGOtvCustomerToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendActivateGOtvCustomerToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateAddressDetailsToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendUpdateAddressDetailsToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendSubmitPaymentToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendSubmitPaymentToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CapturePackage">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/CapturePackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimaryProducts">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetPrimaryProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddonProducts">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAddonProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackages">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetPackages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceByDeviceNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetDeviceByDeviceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSmartCards">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSmartCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDecoders">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetDecoders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDealerDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetDealerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableInvoicePeriod">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAvailableInvoicePeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCustomerNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SearchByCustomerNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByDeviceSerialNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SearchByDeviceSerialNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetByCustomerNumber">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetByCustomerNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrimaryAccountBySmartCard">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetPrimaryAccountBySmartCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableImmediateSWOPReasons">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetAvailableImmediateSWOPReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ImmediateSWOP">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ImmediateSWOP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendImmediateSWOPToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendImmediateSWOPToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Upgrade">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/Upgrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reconnect">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/Reconnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendReconnectToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendReconnectToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeInvoicePeriod">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/ChangeInvoicePeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerAndAccount">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/CreateCustomerAndAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkDecoderSmartCardSerial">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/LinkDecoderSmartCardSerial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendLinkDecoderSmartCardSerialToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendLinkDecoderSmartCardSerialToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkSerial">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/LinkSerial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendLinkSerialToQueue">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SendLinkSerialToQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkService">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/LinkService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPayment">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/SubmitPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentConfirmation">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/PaymentConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleCategories">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetArticleCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFaqCategories">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetFaqCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleById">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetArticleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticlesByCategory">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetArticlesByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSQSDetails">
+      <soap:operation soapAction="http://services.multichoice.co.za/SelfCare/ISelfCareService/GetSQSDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GeneralFaultContractFault">
+        <soap:fault use="literal" name="GeneralFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SecurityFaultContractFault">
+        <soap:fault use="literal" name="SecurityFaultContractFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationFaultContractFault">
+        <soap:fault use="literal" name="ValidationFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

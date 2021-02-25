@@ -1,0 +1,15 @@
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Tester.exe.config
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Tester.exe
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Tester.pdb
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\ConsoleApplication1.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\log4net.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\ConsoleApplication1.pdb
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\obj\Debug\Tester.exe
+E:\Pepay\GenericApi\Stanbic VAS Live\StanbicDstvSender\Tester\obj\Debug\Tester.pdb

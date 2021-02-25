@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{BBA4D8BD-98FF-420F-8FC0-CBDC2C238AF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilReqSenderForStanbic", "ConsoleApplication1\UtilReqSenderForStanbic.csproj", "{5E3930F3-1D78-497E-ACBB-909E8FF48D9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StanbicDstvService", "StanbicDstvService\StanbicDstvService.csproj", "{22A633F9-CD8F-4786-8335-319C88C11D66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBA4D8BD-98FF-420F-8FC0-CBDC2C238AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA4D8BD-98FF-420F-8FC0-CBDC2C238AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA4D8BD-98FF-420F-8FC0-CBDC2C238AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA4D8BD-98FF-420F-8FC0-CBDC2C238AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E3930F3-1D78-497E-ACBB-909E8FF48D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3930F3-1D78-497E-ACBB-909E8FF48D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3930F3-1D78-497E-ACBB-909E8FF48D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3930F3-1D78-497E-ACBB-909E8FF48D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A633F9-CD8F-4786-8335-319C88C11D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A633F9-CD8F-4786-8335-319C88C11D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A633F9-CD8F-4786-8335-319C88C11D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A633F9-CD8F-4786-8335-319C88C11D66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
