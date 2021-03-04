@@ -1,0 +1,104 @@
+﻿Installing assembly 'E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Installing service Service1...
+Creating EventLog source Service1 in log Application...
+Rolling back assembly 'E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Restoring event log to previous state for source Service1.
+Installing assembly 'E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Installing service Service1...
+Creating EventLog source Service1 in log Application...
+Rolling back assembly 'E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Restoring event log to previous state for source Service1.
+Installing assembly 'E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Installing service MTNYakaSenderService...
+Service MTNYakaSenderService has been successfully installed.
+Creating EventLog source MTNYakaSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Installing assembly 'E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Installing service TestMTNYakaSenderService...
+Service TestMTNYakaSenderService has been successfully installed.
+Creating EventLog source TestMTNYakaSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\UtilReqSenderTest\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Installing assembly 'E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Installing service LiveMTNDstvSenderService...
+Service LiveMTNDstvSenderService has been successfully installed.
+Creating EventLog source LiveMTNDstvSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+Installing assembly 'E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+   logtoconsole = 
+Installing service LiveMTNDstvSenderService...
+Service LiveMTNDstvSenderService has been successfully installed.
+Creating EventLog source LiveMTNDstvSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+   logtoconsole = 
+Installing assembly 'E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+Installing service LiveMTNDstvSenderService...
+Service LiveMTNDstvSenderService has been successfully installed.
+Creating EventLog source LiveMTNDstvSenderService in log Application...
+Committing assembly 'E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+   assemblypath = E:\PePay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+Installing assembly 'E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe
+Installing service LiveMTNDstvSenderService...
+Service LiveMTNDstvSenderService has been successfully installed.
+Creating EventLog source LiveMTNDstvSenderService in log Application...
+Committing assembly 'E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.InstallLog
+   assemblypath = E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\MTNYakaSenderService\bin\Debug\MTNYakaSenderService.exe

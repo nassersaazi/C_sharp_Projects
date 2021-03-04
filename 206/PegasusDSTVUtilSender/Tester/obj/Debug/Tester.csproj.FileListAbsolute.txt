@@ -1,0 +1,43 @@
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\bin\Debug\Tester.exe.config
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\obj\Debug\Tester.exe
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\obj\Debug\Tester.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\bin\Debug\Tester.exe
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\bin\Debug\Tester.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\bin\Debug\UtilReqSender.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\bin\Debug\UtilReqSender.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSenderNew\UtilReqSender\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Tester.exe.config
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Tester.exe
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Tester.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\UtilReqSender.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\UtilReqSender.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\obj\Debug\Tester.exe
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\UtilReqSender\Tester\obj\Debug\Tester.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Tester.exe.config
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Tester.exe
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Tester.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\UtilReqSender.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\bin\Debug\UtilReqSender.pdb
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\obj\Debug\Tester.exe
+E:\Pepay\GenericApi\DSTV Live Code\DstvUtilitiiesSender\UtilReqSender\UtilReqSender\Tester\obj\Debug\Tester.pdb
+E:\nasser\dstv\mtn\DSTVUtilitySender\Tester\bin\Debug\Tester.exe.config
+E:\nasser\dstv\mtn\DSTVUtilitySender\Tester\obj\Debug\Tester.exe
+E:\nasser\dstv\mtn\DSTVUtilitySender\Tester\obj\Debug\Tester.pdb
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\bin\Debug\Tester.exe.config
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\obj\Debug\Tester.exe
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\obj\Debug\Tester.pdb
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\bin\Debug\Tester.exe
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\bin\Debug\Tester.pdb
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\bin\Debug\UtilReqSender.dll
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\bin\Debug\UtilReqSender.pdb
+E:\nasser\dstv\206\PegasusDSTVUtilSender\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache

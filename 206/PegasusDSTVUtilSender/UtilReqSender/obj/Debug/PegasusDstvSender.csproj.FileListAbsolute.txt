@@ -1,0 +1,6 @@
+E:\nasser\dstv\206\PegasusDSTVUtilSender\UtilReqSender\bin\Debug\UtilReqSender.dll.config
+E:\nasser\dstv\206\PegasusDSTVUtilSender\UtilReqSender\bin\Debug\UtilReqSender.dll
+E:\nasser\dstv\206\PegasusDSTVUtilSender\UtilReqSender\bin\Debug\UtilReqSender.pdb
+E:\nasser\dstv\206\PegasusDSTVUtilSender\UtilReqSender\obj\Debug\PegasusDstvSender.csprojResolveAssemblyReference.cache
+E:\nasser\dstv\206\PegasusDSTVUtilSender\UtilReqSender\obj\Debug\UtilReqSender.dll
+E:\nasser\dstv\206\PegasusDSTVUtilSender\UtilReqSender\obj\Debug\UtilReqSender.pdb
